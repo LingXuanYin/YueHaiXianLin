@@ -113,14 +113,13 @@ def get_url():
     log_path='''.\output_log.txt'''
     log_file=open(log_path,'r+',encoding='UTF-8')
     file_buf=log_file.read()
-    start=file_buf.index('https:')
+    start=file_buf.index('''https://webstatic.mihoyo.com/hk4e/event/''')
     end=file_buf.index('''#/log''')+5
     url_forfirst=file_buf[start:end]
 
-
-
-
     return url_forfirst
+
+    
 def get_log():
     try:
         log_path=os.getenv("APPDATA")
@@ -140,15 +139,44 @@ def get_log():
 
 
 def get_result(gacha_type):
+    global url_query
+
     get_log()
     try:
+
         url_forfirst=get_url()
+
+        data= get_data(url_forfirst, 200, 1, 0)  
+        url_buf=url_query
+        url_buf=url_buf+'authkey_ver' +'='+str(data['authkey_ver'])
+        del data['authkey_ver']
+        for key in data:
+            url_buf=url_buf+'''&'''+key+'=' +str(data[key])
+        response= requests.get(url_buf)
+        result_dic=eval(response.text)
     except:
-        raise Exception("日志文件损坏\n请打开原神查询界面刷新日志")
+        os.remove('output_log.txt')
+        get_log()
+        try:
+
+            url_forfirst=get_url()
+            data= get_data(url_forfirst, 200, 1, 0)    
+            url_buf=url_query
+            url_buf=url_buf+'authkey_ver' +'='+str(data['authkey_ver'])
+            del data['authkey_ver']
+            for key in data:
+                url_buf=url_buf+'''&'''+key+'=' +str(data[key])
+            response= requests.get(url_buf)
+            result_dic=eval(response.text)
+        except:
+            os.remove('output_log.txt')
+
+            print("日志文件损坏\n请打开原神查询界面刷新日志")
+            time.sleep(5)
+            raise Exception("日志文件损坏\n请打开原神查询界面刷新日志")
     #gacha_type=int(url_forfirst[url_forfirst.index('init_type=')+10:url_forfirst.index('''&gacha_id''')])
     result_dic={}
     result_list={}
-    global url_query
     page=1
     end_id=0
     if(gacha_type==200):
@@ -162,6 +190,11 @@ def get_result(gacha_type):
     while(True):
         print("正在截取 "+pri_text+" 第 "+str(page)+" 页 ")
         data=get_data(url_forfirst, gacha_type, page, end_id)
+        if data=='':
+            print ("链接已过期或不存在，请打开原神查询界面刷新日志后重试,或删除文件夹下的output_log.txt再试")
+            os.remove("output_log.txt")
+            time.sleep(5)
+            raise Exception("链接已过期或不存在，请打开原神查询界面刷新日志后重试,或删除文件夹下的output_log.txt再试")
         url_buf=url_query
         url_buf=url_buf+'authkey_ver' +'='+str(data['authkey_ver'])
         del data['authkey_ver']
