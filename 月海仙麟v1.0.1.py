@@ -148,15 +148,11 @@ class Log():#日志类
         'size':20,
         'end_id':end_id
     }
-        url='''https://hk4e-api.mihoyo.com/event/gacha_info/api/getGachaLog?'''
-        for key in data:
-            
-            data['timestamp'] =int(time.time())        
-
-            url=url+'''&'''+key+'=' +str(data[key])
-            #print(url)
-        #print(url)
-        
+        url='''https://hk4e-api.mihoyo.com/event/gacha_info/api/getGachaLog?authkey_ver='''+str(data['authkey_ver'])
+        for dat in data.keys():
+            if dat=='authkey_ver':continue
+            url+='&'+dat+'='+str(data[dat])
+        url+='#/log'
         return url
 
 
@@ -852,7 +848,9 @@ class Request():
  
     def request(self,src_url,typecode,data_old=None):
         pagecount,endid=0,0
+        global self_path
         list_buf=[]
+
         while True:
             response=requests.get(Log().trans_url(src_url,typecode,pagecount,endid))
             #print(response.text)
@@ -864,7 +862,10 @@ class Request():
             pagecount+=1#页码4
             if  'null' in response.text:
                 #print (response.text)
-                raise Exception(str(typecode)+response.text[24:39])
+                os.remove(self_path+'/output_log.txt')
+                
+                
+                raise Exception(str(typecode)+response.text[24:39]+'/n已尝试删除错误的文件，请登录 原神->祈愿->历史记录 刷新链接后重试')
             list_buf= eval(response.text)['data']['list']#字典化
             #print(list_buf)
 
@@ -894,6 +895,7 @@ class Request():
 def main():
     global self_path
     Log().get_log()
+    
     Request().request( Log().get_url(),200)#常驻祈愿
     Request().request( Log().get_url(),100)#新手祈愿
     Request().request( Log().get_url(),301)#角色活动祈愿
