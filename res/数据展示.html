@@ -1,0 +1,866 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>数据查询结果</title>
+    <!-- 引入 echarts.js -->
+</head><body>
+        <script src="https://cdn.bootcdn.net/ajax/libs/echarts/5.3.0/echarts.js"></script>
+    <script type="text/javascript" src="https://lf3-cdn-tos.bytecdntp.com/cdn/expire-1-M/jquery/3.5.1/jquery.min.js"></script>
+    <script type="text/javascript" src="https://lf3-cdn-tos.bytecdntp.com/cdn/expire-1-M/jquery/3.5.1/jquery.js"></script>
+    <!-- 为ECharts准备一个具备大小（宽高）的Dom -->
+    <div id="main_series"       style=" width: 100%;height: 800px  ;"></div>
+    <!--<div id="detail_log"    ondblclick="hide_div()"    style="display: none;  color: rgb(0, 0, 255); background-image: linear-gradient(to bottom right,rgba(0, 255, 255, 0.6),rgba(255, 255, 255, 0.2)) ; padding: 15px; border-style: groove;border-width: 2px; border-radius:2em;width: 400px;height: auto ;visibility:visible;position: fixed;top: 100px;left: 200px;z-index: 2;"></div></div>-->
+    <script type="text/javascript">
+        // 基于准备好的dom，初始化echarts实例
+        document.body.parentNode.style.overflowY = "hidden";
+        document.body.parentNode.style.overflowX = "hidden";
+        var myChart = echarts.init(document.getElementById('main_series'));
+        /////////////////数据区域(25-90)，源码注入区请勿添加代码
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+        /////////////////end(25-90)
+var   data =    [
+     {name: "常驻祈愿",value: 常驻_totalname.length,"selected": true},
+
+     {name: "新手祈愿",value: 新手_totalname.length,"selected": true},
+
+     {name: "角色活动祈愿",value: 角色_totalname.length,"selected": true},
+
+     {name: "武器活动祈愿",value:武器_totalname.length,"selected": true}]
+
+
+
+var ringData1= [{name: "五星武器",value: 常驻_wapname_5.length},
+      {name: "五星人物",value: 常驻_charname_5.length},
+
+      {name: "四星武器",value: 常驻_wapname_4.length},
+      {name: "四星人物",value: 常驻_charname_4.length},
+      {name: "三星",value: 常驻_totalname.length-常驻_wapname_5.length-常驻_wapname_4.length-常驻_charname_5.length-常驻_charname_4.length}]
+
+var ringData2=[{name: "五星武器",value: 新手_wapname_5.length},
+      {name: "五星人物",value: 新手_charname_5.length},
+
+      {name: "四星武器",value: 新手_wapname_4.length},
+      {name: "四星人物",value: 新手_charname_4.length},
+      {name: "三星",value: 新手_totalname.length-新手_wapname_5.length-新手_wapname_4.length-新手_charname_5.length-新手_charname_4.length}]
+
+      var ringData3=[{name: "五星武器",value: 角色_wapname_5.length},
+            {name: "五星人物",value: 角色_charname_5.length},
+
+      {name: "四星武器",value: 角色_wapname_4.length},
+      {name: "四星人物",value: 角色_charname_4.length},
+      {name: "三星",value: 角色_totalname.length-角色_wapname_5.length-角色_wapname_4.length-角色_charname_5.length-角色_charname_4.length}]
+      var ringData4= [{name: "五星武器",value: 武器_wapname_5.length},
+            {name: "五星人物",value: 武器_charname_5.length},
+
+      {name: "四星武器",value: 武器_wapname_4.length},
+      {name: "四星人物",value: 武器_charname_4.length},
+      {name: "三星",value: 武器_totalname.length-武器_wapname_5.length-武器_wapname_4.length-武器_charname_5.length-武器_charname_4.length}]
+
+var ringdata=[{name: "五星武器",value: ringData1[0].value+ringData2[0].value+ringData3[0].value+ringData4[0].value},
+      {name: "五星人物",value:  ringData1[1].value+ringData2[1].value+ringData3[1].value+ringData4[1].value},
+
+      {name: "四星武器",value:  ringData1[2].value+ringData2[2].value+ringData3[2].value+ringData4[2].value},
+      {name: "四星人物",value:  ringData1[3].value+ringData2[3].value+ringData3[3].value+ringData4[3].value},
+      {name: "三星",value:  ringData1[4].value+ringData2[4].value+ringData3[4].value+ringData4[4].value}]
+var select_flag0=true
+var select_flag1=false
+var select_flag2=false
+var select_flag3=false
+var select_flag4=false
+
+var select_flag33=false 
+var select_flagchar4=false
+var select_flagwap4=false
+var select_flagchar5=false
+var select_flagwap5=false
+
+
+    option_defult = {
+            tooltip: {
+                trigger: 'item',
+                
+                
+                formatter: '{b}: {c} ({d}%)'+'</br>'+'(点击查看)'
+            },
+            legend: {
+                
+                data: data.name
+            },
+            series: [
+                {
+
+                    name: ringdata.name,
+                    selectedMode: 'single',
+                    startAngle:60,
+                    id:'series2',
+                    type: 'pie',
+                    radius: ['50%', '70%'],
+                    labelLine: {
+                        length: 30
+                    },
+                    label: {
+                        formatter: '{hr|}\n  {b|{b}:}{c}  {per|{d}%}  \n',
+                        backgroundColor: '#F6F8FC',
+                        borderColor: '#8C8D8E',
+                        borderWidth: 1,
+                        borderRadius: 4,
+                        
+
+                        rich: {
+                            a: {
+                                color: '#6E7079',
+                                lineHeight: 22,
+                                align: 'center'
+                            },
+                            hr: {
+                                borderColor: '#8C8D8E',
+                                width: '100%',
+                                borderWidth: 1,
+                                height: 0
+                            },
+                            b: {
+                                color: '#4C5058',
+                                fontSize: 14,
+                                fontWeight: 'bold',
+                                lineHeight: 30
+                            },
+                            per: {
+                                color: '#fff',
+                                backgroundColor: '#4C5058',
+                                padding: [3, 4],
+                                borderRadius: 4
+                            }
+                        }
+                    },
+                    data: ringdata
+                }    ,            {
+                    name: '总数据',
+                    startAngle:120,
+
+                    type: 'pie',
+                    id:'series1',
+                    selectedMode: 'single',
+                    radius: [0, '25%'],
+                    label: {
+                        position: 'outside',
+                        fontSize: 15,
+                        
+                        
+
+                    },
+                    labelLine: {
+                        show: false
+                    },
+                    data: data
+                }
+
+            ]
+        };
+
+
+
+         myChart.setOption(option_defult);
+
+
+function wap4(){
+
+    if(select_flag0){
+        var arr_buf=常驻_wapname_4.concat(新手_wapname_4.concat(角色_wapname_4.concat(武器_wapname_4)));
+        var str_buf="";
+        var i=0;
+        var flag=arr_buf.length % 3
+        var count_flag=Math.floor(arr_buf.length/3)
+        for(var count=0;count<count_flag;count++){
+            str_buf=str_buf+" "+arr_buf[i].split("(")[0]+" "+arr_buf[i+1].split("(")[0]+" "+arr_buf[i+2].split("(")[0]+'</br>';
+            i=i+3;
+        }if(flag==2){
+            str_buf=str_buf+" "+arr_buf[count_flag*3].split("(")[0]+" "+arr_buf[count_flag*3+1].split("(")[0]+'</br>';
+}
+        else if (flag==1){str_buf=str_buf+" "+arr_buf[count_flag*3].split("(")[0]+'</br>';}       
+    }else if(select_flag1){
+        var name_buf=常驻_wapname_4;
+        var code_buf=常驻_wapcode_4;
+        var str_buf="";
+        var i=0;
+        var flag=name_buf.length % 3
+        var count_flag=Math.floor(name_buf.length/3)
+
+        for(var count=0;count<count_flag;count++){
+            str_buf=str_buf+" ["+code_buf[i]+"] "+name_buf[i].split("(")[0]+" ["+code_buf[i+1]+"] "+name_buf[i+1].split("(")[0]+" ["+code_buf[i+2]+"] "+name_buf[i+2].split("(")[0]+'</br>';
+            i=i+3;
+        }if(flag==2){
+            str_buf=str_buf+" ["+code_buf[count_flag*3]+"] "+name_buf[count_flag*3].split("(")[0]+" ["+code_buf[count_flag*3+1]+"] "+name_buf[count_flag*3+1].split("(")[0]+'</br>';
+}
+        else if (flag==1){str_buf=str_buf+" ["+code_buf[count_flag*3]+"] "+name_buf[count_flag*3].split("(")[0]+'</br>';}       
+
+    }
+    else if(select_flag2){
+        var name_buf=新手_wapname_4;
+        var code_buf=新手_wapcode_4;
+        var str_buf="";
+        var i=0;
+        var flag=name_buf.length % 3
+        var count_flag=Math.floor(name_buf.length/3)
+
+        for(var count=0;count<count_flag;count++){
+            str_buf=str_buf+" ["+code_buf[i]+"] "+name_buf[i].split("(")[0]+" ["+code_buf[i+1]+"] "+name_buf[i+1].split("(")[0]+" ["+code_buf[i+2]+"] "+name_buf[i+2].split("(")[0]+'</br>';
+            i=i+3;
+        }if(flag==2){
+            str_buf=str_buf+" ["+code_buf[count_flag*3]+"] "+name_buf[count_flag*3].split("(")[0]+" ["+code_buf[count_flag*3+1]+"] "+name_buf[count_flag*3+1].split("(")[0]+'</br>';
+}
+        else if (flag==1){str_buf=str_buf+" ["+code_buf[count_flag*3]+"] "+name_buf[count_flag*3].split("(")[0]+'</br>';}       
+
+        
+    }else if(select_flag3){
+        var name_buf=角色_wapname_4;
+        var code_buf=角色_wapcode_4;
+        var str_buf="";
+        var i=0;
+        var flag=name_buf.length % 3
+        var count_flag=Math.floor(name_buf.length/3)
+
+        for(var count=0;count<count_flag;count++){
+            str_buf=str_buf+" ["+code_buf[i]+"] "+name_buf[i].split("(")[0]+" ["+code_buf[i+1]+"] "+name_buf[i+1].split("(")[0]+" ["+code_buf[i+2]+"] "+name_buf[i+2].split("(")[0]+'</br>';
+            i=i+3;
+        }if(flag==2){
+            str_buf=str_buf+" ["+code_buf[count_flag*3]+"] "+name_buf[count_flag*3].split("(")[0]+" ["+code_buf[count_flag*3+1]+"] "+name_buf[count_flag*3+1].split("(")[0]+'</br>';
+}
+        else if (flag==1){str_buf=str_buf+" ["+code_buf[count_flag*3]+"] "+name_buf[count_flag*3].split("(")[0]+'</br>';}       
+
+        
+    }else if(select_flag4){
+        var name_buf=武器_wapname_4;
+        var code_buf=武器_wapcode_4;
+        var str_buf="";
+        var i=0;
+        var flag=name_buf.length % 3
+        var count_flag=Math.floor(name_buf.length/3)
+
+        for(var count=0;count<count_flag;count++){
+            str_buf=str_buf+" ["+code_buf[i]+"] "+name_buf[i].split("(")[0]+" ["+code_buf[i+1]+"] "+name_buf[i+1].split("(")[0]+" ["+code_buf[i+2]+"] "+name_buf[i+2].split("(")[0]+'</br>';
+            i=i+3;
+        }if(flag==2){
+            str_buf=str_buf+" ["+code_buf[count_flag*3]+"] "+name_buf[count_flag*3].split("(")[0]+" ["+code_buf[count_flag*3+1]+"] "+name_buf[count_flag*3+1].split("(")[0]+'</br>';
+}
+        else if (flag==1){str_buf=str_buf+" ["+code_buf[count_flag*3]+"] "+name_buf[count_flag*3].split("(")[0]+'</br>';}       
+
+        
+    }
+    option={
+                    series:[{                    id:'series2',
+                    tooltip: {
+                trigger: 'item',
+                
+                extraCssText:'width:auto;height:auto;',
+                formatter: '{b}: {c} ({d}%)\n'+'</br>'+str_buf
+            },
+
+
+                    },{                    id:'series1',
+
+                        data:data}]
+                };
+                myChart.setOption(option);
+
+select_flagwap4=true;
+
+
+
+}
+
+function wap5(){    if(select_flag0){
+        var arr_buf=常驻_wapname_5.concat(新手_wapname_5.concat(角色_wapname_5.concat(武器_wapname_5)));
+        var str_buf="";
+        var i=0;
+        var flag=arr_buf.length % 3
+        var count_flag=Math.floor(arr_buf.length/3)
+        for(var count=0;count<count_flag;count++){
+            str_buf=str_buf+" "+arr_buf[i].split("(")[0]+" "+arr_buf[i+1].split("(")[0]+" "+arr_buf[i+2].split("(")[0]+'</br>';
+            i=i+3;
+        }if(flag==2){
+            str_buf=str_buf+" "+arr_buf[count_flag*3].split("(")[0]+" "+arr_buf[count_flag*3+1].split("(")[0]+'</br>';
+}
+        else if (flag==1){str_buf=str_buf+" "+arr_buf[count_flag*3].split("(")[0]+'</br>';}       
+    }else if(select_flag1){
+        var name_buf=常驻_wapname_5;
+        var code_buf=常驻_wapcode_5;
+        var str_buf="";
+        var i=0;
+        var flag=name_buf.length % 3
+        var count_flag=Math.floor(name_buf.length/3)
+
+        for(var count=0;count<count_flag;count++){
+            str_buf=str_buf+" ["+code_buf[i]+"] "+name_buf[i].split("(")[0]+" ["+code_buf[i+1]+"] "+name_buf[i+1].split("(")[0]+" ["+code_buf[i+2]+"] "+name_buf[i+2].split("(")[0]+'</br>';
+            i=i+3;
+        }if(flag==2){
+            str_buf=str_buf+" ["+code_buf[count_flag*3]+"] "+name_buf[count_flag*3].split("(")[0]+" ["+code_buf[count_flag*3+1]+"] "+name_buf[count_flag*3+1].split("(")[0]+'</br>';
+}
+        else if (flag==1){str_buf=str_buf+" ["+code_buf[count_flag*3]+"] "+name_buf[count_flag*3].split("(")[0]+'</br>';}       
+
+
+    }
+    else if(select_flag2){
+        var name_buf=新手_wapname_5;
+        var code_buf=新手_wapcode_5;
+        var str_buf="";
+        var i=0;
+        var flag=name_buf.length % 3
+        var count_flag=Math.floor(name_buf.length/3)
+
+        for(var count=0;count<count_flag;count++){
+            str_buf=str_buf+" ["+code_buf[i]+"] "+name_buf[i].split("(")[0]+" ["+code_buf[i+1]+"] "+name_buf[i+1].split("(")[0]+" ["+code_buf[i+2]+"] "+name_buf[i+2].split("(")[0]+'</br>';
+            i=i+3;
+        }if(flag==2){
+            str_buf=str_buf+" ["+code_buf[count_flag*3]+"] "+name_buf[count_flag*3].split("(")[0]+" ["+code_buf[count_flag*3+1]+"] "+name_buf[count_flag*3+1].split("(")[0]+'</br>';
+}
+        else if (flag==1){str_buf=str_buf+" ["+code_buf[count_flag*3]+"] "+name_buf[count_flag*3].split("(")[0]+'</br>';}       
+
+        
+    }else if(select_flag3){
+        var name_buf=角色_wapname_5;
+        var code_buf=角色_wapcode_5;
+        var str_buf="";
+        var i=0;
+        var flag=name_buf.length % 3
+        var count_flag=Math.floor(name_buf.length/3)
+
+        for(var count=0;count<count_flag;count++){
+            str_buf=str_buf+" ["+code_buf[i]+"] "+name_buf[i].split("(")[0]+" ["+code_buf[i+1]+"] "+name_buf[i+1].split("(")[0]+" ["+code_buf[i+2]+"] "+name_buf[i+2].split("(")[0]+'</br>';
+            i=i+3;
+        }if(flag==2){
+            str_buf=str_buf+" ["+code_buf[count_flag*3]+"] "+name_buf[count_flag*3].split("(")[0]+" ["+code_buf[count_flag*3+1]+"] "+name_buf[count_flag*3+1].split("(")[0]+'</br>';
+}
+        else if (flag==1){str_buf=str_buf+" ["+code_buf[count_flag*3]+"] "+name_buf[count_flag*3].split("(")[0]+'</br>';}       
+
+        
+    }else if(select_flag4){
+        var name_buf=武器_wapname_5;
+        var code_buf=武器_wapcode_5;
+        var str_buf="";
+        var i=0;
+        var flag=name_buf.length % 3
+        var count_flag=Math.floor(name_buf.length/3)
+
+        for(var count=0;count<count_flag;count++){
+            str_buf=str_buf+" ["+code_buf[i]+"] "+name_buf[i].split("(")[0]+" ["+code_buf[i+1]+"] "+name_buf[i+1].split("(")[0]+" ["+code_buf[i+2]+"] "+name_buf[i+2].split("(")[0]+'</br>';
+            i=i+3;
+        }if(flag==2){
+            str_buf=str_buf+" ["+code_buf[count_flag*3]+"] "+name_buf[count_flag*3].split("(")[0]+" ["+code_buf[count_flag*3+1]+"] "+name_buf[count_flag*3+1].split("(")[0]+'</br>';
+}
+        else if (flag==1){str_buf=str_buf+" ["+code_buf[count_flag*3]+"] "+name_buf[count_flag*3].split("(")[0]+'</br>';}       
+
+        
+    }
+    option={
+                    series:[{                    id:'series2',
+                    tooltip: {
+                trigger: 'item',
+                
+                extraCssText:'width:auto;height:auto;',
+                formatter: '{b}: {c} ({d}%)\n'+'</br>'+str_buf
+            },
+
+
+                    },{                    id:'series1',
+
+                        data:data}]
+                };
+                myChart.setOption(option);
+
+select_flagwap5=true;
+
+
+
+
+}
+function char4(){    if(select_flag0){
+        var arr_buf=常驻_charname_4.concat(新手_charname_4.concat(角色_charname_4.concat(武器_charname_4)));
+        var str_buf="";
+        var i=0;
+        var flag=arr_buf.length % 3
+        var count_flag=Math.floor(arr_buf.length/3)
+        for(var count=0;count<count_flag;count++){
+            str_buf=str_buf+" "+arr_buf[i].split("(")[0]+" "+arr_buf[i+1].split("(")[0]+" "+arr_buf[i+2].split("(")[0]+'</br>';
+            i=i+3;
+        }if(flag==2){
+            str_buf=str_buf+" "+arr_buf[count_flag*3].split("(")[0]+" "+arr_buf[count_flag*3+1].split("(")[0]+'</br>';
+}
+        else if (flag==1){str_buf=str_buf+" "+arr_buf[count_flag*3].split("(")[0]+'</br>';}       
+
+    }
+    else if(select_flag1){
+        var name_buf=常驻_charname_4;
+        var code_buf=常驻_charcode_4;
+        var str_buf="";
+        var i=0;
+        var flag=name_buf.length % 3
+        var count_flag=Math.floor(name_buf.length/3)
+
+        for(var count=0;count<count_flag;count++){
+            str_buf=str_buf+" ["+code_buf[i]+"] "+name_buf[i].split("(")[0]+" ["+code_buf[i+1]+"] "+name_buf[i+1].split("(")[0]+" ["+code_buf[i+2]+"] "+name_buf[i+2].split("(")[0]+'</br>';
+            i=i+3;
+        }if(flag==2){
+            str_buf=str_buf+" ["+code_buf[count_flag*3]+"] "+name_buf[count_flag*3].split("(")[0]+" ["+code_buf[count_flag*3+1]+"] "+name_buf[count_flag*3+1].split("(")[0]+'</br>';
+}
+        else if (flag==1){str_buf=str_buf+" ["+code_buf[count_flag*3]+"] "+name_buf[count_flag*3].split("(")[0]+'</br>';}       
+
+
+    }
+    else if(select_flag2){
+        var name_buf=新手_charname_4;
+        var code_buf=新手_charcode_4;
+        var str_buf="";
+        var i=0;
+        var flag=name_buf.length % 3
+        var count_flag=Math.floor(name_buf.length/3)
+
+        for(var count=0;count<count_flag;count++){
+            str_buf=str_buf+" ["+code_buf[i]+"] "+name_buf[i].split("(")[0]+" ["+code_buf[i+1]+"] "+name_buf[i+1].split("(")[0]+" ["+code_buf[i+2]+"] "+name_buf[i+2].split("(")[0]+'</br>';
+            i=i+3;
+        }if(flag==2){
+            str_buf=str_buf+" ["+code_buf[count_flag*3]+"] "+name_buf[count_flag*3].split("(")[0]+" ["+code_buf[count_flag*3+1]+"] "+name_buf[count_flag*3+1].split("(")[0]+'</br>';
+}
+        else if (flag==1){str_buf=str_buf+" ["+code_buf[count_flag*3]+"] "+name_buf[count_flag*3].split("(")[0]+'</br>';}       
+
+        
+    }else if(select_flag3){
+        var name_buf=角色_charname_4;
+        var code_buf=角色_charcode_4;
+        var str_buf="";
+        var i=0;
+        var flag=name_buf.length % 3
+        var count_flag=Math.floor(name_buf.length/3)
+
+        for(var count=0;count<count_flag;count++){
+            str_buf=str_buf+" ["+code_buf[i]+"] "+name_buf[i].split("(")[0]+" ["+code_buf[i+1]+"] "+name_buf[i+1].split("(")[0]+" ["+code_buf[i+2]+"] "+name_buf[i+2].split("(")[0]+'</br>';
+            i=i+3;
+        }if(flag==2){
+            str_buf=str_buf+" ["+code_buf[count_flag*3]+"] "+name_buf[count_flag*3].split("(")[0]+" ["+code_buf[count_flag*3+1]+"] "+name_buf[count_flag*3+1].split("(")[0]+'</br>';
+}
+        else if (flag==1){str_buf=str_buf+" ["+code_buf[count_flag*3]+"] "+name_buf[count_flag*3].split("(")[0]+'</br>';}       
+
+        
+    }else if(select_flag4){
+        var name_buf=武器_charname_4;
+        var code_buf=武器_charcode_4;
+        var str_buf="";
+        var i=0;
+        var flag=name_buf.length % 3
+        var count_flag=Math.floor(name_buf.length/3)
+
+        for(var count=0;count<count_flag;count++){
+            str_buf=str_buf+" ["+code_buf[i]+"] "+name_buf[i].split("(")[0]+" ["+code_buf[i+1]+"] "+name_buf[i+1].split("(")[0]+" ["+code_buf[i+2]+"] "+name_buf[i+2].split("(")[0]+'</br>';
+            i=i+3;
+        }if(flag==2){
+            str_buf=str_buf+" ["+code_buf[count_flag*3]+"] "+name_buf[count_flag*3].split("(")[0]+" ["+code_buf[count_flag*3+1]+"] "+name_buf[count_flag*3+1].split("(")[0]+'</br>';
+}
+        else if (flag==1){str_buf=str_buf+" ["+code_buf[count_flag*3]+"] "+name_buf[count_flag*3].split("(")[0]+'</br>';}       
+
+        
+    }else alert("666")
+    option={
+                    series:[{                    id:'series2',
+                    tooltip: {
+                trigger: 'item',
+                
+                extraCssText:'width:auto;height:auto;',
+                formatter: '{b}: {c} ({d}%)\n'+'</br>'+str_buf
+            },
+
+
+                    },{                    id:'series1',
+
+                        data:data}]
+                };
+                myChart.setOption(option);
+
+select_flagchar4=true;
+
+
+
+
+}
+function char5(){  if(select_flag0){
+        var arr_buf=常驻_charname_5.concat(新手_charname_5.concat(角色_charname_5.concat(武器_charname_5)));
+        var str_buf="";
+        var i=0;
+        var flag=arr_buf.length % 3
+        var count_flag=Math.floor(arr_buf.length/3)
+        for(var count=0;count<count_flag;count++){
+            str_buf=str_buf+" "+arr_buf[i].split("(")[0]+" "+arr_buf[i+1].split("(")[0]+" "+arr_buf[i+2].split("(")[0]+'</br>';
+            i=i+3;
+        }if(flag==2){
+            str_buf=str_buf+" "+arr_buf[count_flag*3].split("(")[0]+" "+arr_buf[count_flag*3+1].split("(")[0]+'</br>';
+}
+        else if (flag==1){str_buf=str_buf+" "+arr_buf[count_flag*3].split("(")[0]+'</br>';}       
+    }else if(select_flag1){
+        var name_buf=常驻_charname_5;
+        var code_buf=常驻_charcode_5;
+        var str_buf="";
+        var i=0;
+        var flag=name_buf.length % 3
+        var count_flag=Math.floor(name_buf.length/3)
+
+        for(var count=0;count<count_flag;count++){
+            str_buf=str_buf+" ["+code_buf[i]+"] "+name_buf[i].split("(")[0]+" ["+code_buf[i+1]+"] "+name_buf[i+1].split("(")[0]+" ["+code_buf[i+2]+"] "+name_buf[i+2].split("(")[0]+'</br>';
+            i=i+3;
+        }if(flag==2){
+            str_buf=str_buf+" ["+code_buf[count_flag*3]+"] "+name_buf[count_flag*3].split("(")[0]+" ["+code_buf[count_flag*3+1]+"] "+name_buf[count_flag*3+1].split("(")[0]+'</br>';
+}
+        else if (flag==1){str_buf=str_buf+" ["+code_buf[count_flag*3]+"] "+name_buf[count_flag*3].split("(")[0]+'</br>';}       
+
+
+    }
+    else if(select_flag2){
+        var name_buf=新手_charname_5;
+        var code_buf=新手_charcode_5;
+        var str_buf="";
+        var str_buf="";
+        var i=0;
+        var flag=name_buf.length % 3
+        var count_flag=Math.floor(name_buf.length/3)
+
+        for(var count=0;count<count_flag;count++){
+            str_buf=str_buf+" ["+code_buf[i]+"] "+name_buf[i].split("(")[0]+" ["+code_buf[i+1]+"] "+name_buf[i+1].split("(")[0]+" ["+code_buf[i+2]+"] "+name_buf[i+2].split("(")[0]+'</br>';
+            i=i+3;
+        }if(flag==2){
+            str_buf=str_buf+" ["+code_buf[count_flag*3]+"] "+name_buf[count_flag*3].split("(")[0]+" ["+code_buf[count_flag*3+1]+"] "+name_buf[count_flag*3+1].split("(")[0]+'</br>';
+}
+        else if (flag==1){str_buf=str_buf+" ["+code_buf[count_flag*3]+"] "+name_buf[count_flag*3].split("(")[0]+'</br>';}       
+
+        
+    }else if(select_flag3){
+        var name_buf=角色_charname_5;
+        var code_buf=角色_charcode_5;
+        var str_buf="";
+        var i=0;
+        var flag=name_buf.length % 3
+        var count_flag=Math.floor(name_buf.length/3)
+
+        for(var count=0;count<count_flag;count++){
+            str_buf=str_buf+" ["+code_buf[i]+"] "+name_buf[i].split("(")[0]+" ["+code_buf[i+1]+"] "+name_buf[i+1].split("(")[0]+" ["+code_buf[i+2]+"] "+name_buf[i+2].split("(")[0]+'</br>';
+            i=i+3;
+        }if(flag==2){
+            str_buf=str_buf+" ["+code_buf[count_flag*3]+"] "+name_buf[count_flag*3].split("(")[0]+" ["+code_buf[count_flag*3+1]+"] "+name_buf[count_flag*3+1].split("(")[0]+'</br>';
+}
+        else if (flag==1){str_buf=str_buf+" ["+code_buf[count_flag*3]+"] "+name_buf[count_flag*3].split("(")[0]+'</br>';}       
+
+        
+    }else if(select_flag4){
+        var name_buf=武器_charname_5;
+        var code_buf=武器_charcode_5;
+        var str_buf="";
+        var i=0;
+        var flag=name_buf.length % 3
+        var count_flag=Math.floor(name_buf.length/3)
+
+        for(var count=0;count<count_flag;count++){
+            str_buf=str_buf+" ["+code_buf[i]+"] "+name_buf[i].split("(")[0]+" ["+code_buf[i+1]+"] "+name_buf[i+1].split("(")[0]+" ["+code_buf[i+2]+"] "+name_buf[i+2].split("(")[0]+'</br>';
+            i=i+3;
+        }if(flag==2){
+            str_buf=str_buf+" ["+code_buf[count_flag*3]+"] "+name_buf[count_flag*3].split("(")[0]+" ["+code_buf[count_flag*3+1]+"] "+name_buf[count_flag*3+1].split("(")[0]+'</br>';
+}
+        else if (flag==1){str_buf=str_buf+" ["+code_buf[count_flag*3]+"] "+name_buf[count_flag*3].split("(")[0]+'</br>';}       
+
+        
+    }
+    option={
+                    series:[{                    id:'series2',
+                    tooltip: {
+                trigger: 'item',
+                
+                extraCssText:'width:auto;height:auto;',
+                formatter: '{b}: {c} ({d}%)\n'+'</br>'+str_buf
+            },
+
+
+                    },{                    id:'series1',
+
+                        data:data}]
+                };
+                myChart.setOption(option);
+
+select_flagchar5=true;
+
+
+
+}
+function c0(){
+
+select_flag33=true;
+
+
+}
+function c00(){
+option={
+                    series:[{                    id:'series2',
+                    tooltip: {
+                trigger: 'item',
+                
+                extraCssText:'width:auto;height:auto;',
+                formatter: '{b}: {c} ({d}%)\n'
+            },
+
+
+                    },{                    id:'series1',
+
+                        data:data}]
+                };
+                myChart.setOption(option);
+
+    select_flag33=true;
+
+}
+
+function a1(){
+        option={
+                    series:[{                    id:'series2',
+
+                        data:ringData1
+                    },{                    id:'series1',
+
+                        data:data}]
+                };
+                myChart.setOption(option);
+
+}
+
+function a2(){
+        option={
+                    series:[{                    id:'series2',
+
+                        data:ringData2
+                    },{                    id:'series1',
+
+                        data:data}]
+                };
+                myChart.setOption(option);
+
+}
+
+function a3(){
+        option={
+                    series:[{                    id:'series2',
+
+                        data:ringData3
+                    },{                    id:'series1',
+
+                        data:data}]
+                };
+                myChart.setOption(option);
+
+}
+
+function a4(){
+        option={
+                    series:[{                    id:'series2',
+
+                        data:ringData4
+                    },{                    id:'series1',
+
+                        data:data}]
+                };
+                myChart.setOption(option);
+
+}
+
+function a0(){
+        option={
+                    series:[{                    id:'series2',
+
+                        data:ringdata
+                    },{                    id:'series1',
+
+                        data:data}]
+                };
+                myChart.setOption(option);
+select_flag0=true;
+}
+
+
+
+
+myChart.dispatchAction({
+    type: 'unselect',
+
+    // 用 index 或 id 或 name 来指定系列。
+    name:"武器活动祈愿"
+})
+//取消初始选中
+
+
+myChart.on("click",function(params){
+    if(params.name=="常驻祈愿"){if(!select_flag1){select_flag1=true; select_flag0=false;
+select_flag2=false;select_flag3=false;select_flag4=false}else select_flag1=false;
+if(select_flag1){
+a1();}else if(!select_flag1){
+    a0();
+}
+}
+            else if(params.name=="新手祈愿"){if(!select_flag2){select_flag1=false; select_flag0=false;select_flag2=true;select_flag3=false;select_flag4=false}else select_flag2=false;
+                if(select_flag2){
+
+                a2();}else if(!select_flag2){
+    a0();
+}}
+            else if(params.name=="角色活动祈愿"){if(!select_flag3){select_flag1=false;select_flag0=false; select_flag2=false;select_flag3=true;select_flag4=false}else select_flag3=false;
+                    if(select_flag3){
+
+                a3();}else if(!select_flag3){
+    a0();
+}
+}
+
+            else if(params.name=="武器活动祈愿"){if(!select_flag4){select_flag1=false; select_flag0=false;select_flag2=false;select_flag3=false;select_flag4=true}else select_flag4=false;
+                if(select_flag4){
+
+a4();
+            }else if(!select_flag4){
+    a0();
+}
+
+}else {
+    if(params.name== "三星"){c0();}
+   else if(params.name== "四星武器"){if(!select_flagwap4){select_flagwap4=true; select_flagwap5=false;select_flagchar4=false;select_flagchar5=false}else select_flagwap4=false;
+if(select_flagwap4){
+wap4();}else if(!select_flagwap4){
+    c0();
+}
+}
+    
+else  if(params.name== "五星武器"){if(!select_flagwap5){select_flagwap5=true; select_flagwap4=false;select_flagchar4=false;select_flagchar5=false}else select_flagwap5=false;
+if(select_flagwap5){
+wap5();}else if(!select_flagwap5){
+    c0();
+}
+}
+else if(params.name== "四星人物"){if(!select_flagchar4){select_flagchar4=true; select_flagwap4=false;select_flagwap5=false;select_flagchar5=false}else select_flagchar4=false;
+if(select_flagchar4){
+    char4();}else if(!select_flagchar4){
+    c0();
+}
+}
+else if(params.name== "五星人物"){if(!select_flagchar5){select_flagchar5=true; select_flagwap4=false;select_flagwap5=false;select_flagchar4=false}else select_flagchar5=false;
+if(select_flagchar5){
+    char5();}else if(!select_flagchar5){
+    c0();
+}
+}else{;}
+
+};});
+//具体数据展示
+
+myChart.on("mousemove",function(params){
+   if(params.name== "三星"){c0();}
+   else if(params.name== "四星武器"){if(!select_flagwap4){select_flagwap4=true; select_flagwap5=false;select_flagchar4=false;select_flagchar5=false}else select_flagwap4=false;
+if(select_flagwap4){
+wap4();}else if(!select_flagwap4){
+    c0();
+}
+}
+    
+else  if(params.name== "五星武器"){if(!select_flagwap5){select_flagwap5=true; select_flagwap4=false;select_flagchar4=false;select_flagchar5=false}else select_flagwap5=false;
+if(select_flagwap5){
+wap5();}else if(!select_flagwap5){
+    c0();
+}
+}
+else if(params.name== "四星人物"){if(!select_flagchar4){select_flagchar4=true; select_flagwap4=false;select_flagwap5=false;select_flagchar5=false}else select_flagchar4=false;
+if(select_flagchar4){
+    char4();}else if(!select_flagchar4){
+    c0();
+}
+}
+else if(params.name== "五星人物"){if(!select_flagchar5){select_flagchar5=true; select_flagwap4=false;select_flagwap5=false;select_flagchar4=false}else select_flagchar5=false;
+if(select_flagchar5){
+    char5();}else if(!select_flagchar5){
+    c0();
+}
+}else{;}
+    
+});
+
+myChart.on("mouseout",function(params){
+c00();    
+});
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>
