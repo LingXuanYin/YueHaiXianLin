@@ -368,9 +368,10 @@ class Data():#数据类
             #print(Data().wapactivity().ensure_list)
 #处理概率
         #print(Data().wapactivity().ensure_list)
-        self.prize().wapactivity().average_pro_4[0]=int(((len(Data().wapactivity().char_4)+len(Data().wapactivity().wap_4))/len(Data().charactivity_data))*10000)/100
-        self.prize().wapactivity().average_pro_5[0]=int(((len(Data().wapactivity().char_5)+len(Data().wapactivity().wap_5))/len(Data().charactivity_data))*10000)/100
-        
+        try:
+            self.prize().wapactivity().average_pro_4[0]=int(((len(Data().wapactivity().char_4)+len(Data().wapactivity().wap_4))/len(Data().charactivity_data))*10000)/100
+            self.prize().wapactivity().average_pro_5[0]=int(((len(Data().wapactivity().char_5)+len(Data().wapactivity().wap_5))/len(Data().charactivity_data))*10000)/100
+        except ZeroDivisionError:{}
         ensure_buf_4,ensure_buf_5=0,0
         for sth in Data().wapactivity().ensure_list:
             if sth['rank_type'] =='4':
@@ -378,33 +379,36 @@ class Data():#数据类
             else:
                 ensure_buf_5+=sth['ensure_count']
             #print(sth)
-        '''try:
+        try:
             self.prize().wapactivity().average_cou_4=int((ensure_buf_4/(len(Data().wapactivity().char_4)+len(Data().wapactivity().wap_4)))*100)/100
             self.prize().wapactivity().average_cou_5=int((ensure_buf_5/(len(Data().wapactivity().char_5)+len(Data().wapactivity().wap_5)))*100)/100
-        except ZeroDivisionError:{}'''
-        self.prize().wapactivity().average_cou_4[0]=int((ensure_buf_4/(len(Data().wapactivity().char_4)+len(Data().wapactivity().wap_4)))*100)/100
-        self.prize().wapactivity().average_cou_5[0]=int((ensure_buf_5/(len(Data().wapactivity().char_5)+len(Data().wapactivity().wap_5)))*100)/100
+        except ZeroDivisionError:{}
+        #self.prize().wapactivity().average_cou_4[0]=int((ensure_buf_4/(len(Data().wapactivity().char_4)+len(Data().wapactivity().wap_4)))*100)/100
+        #self.prize().wapactivity().average_cou_5[0]=int((ensure_buf_5/(len(Data().wapactivity().char_5)+len(Data().wapactivity().wap_5)))*100)/100
 
     #
-        self.prize().permanent().average_pro_4[0]=int(((len(Data().permanent().char_4)+len(Data().permanent().wap_4))/len(Data().charactivity_data))*10000)/100
-        self.prize().permanent().average_pro_5[0]=int(((len(Data().permanent().char_5)+len(Data().permanent().wap_5))/len(Data().charactivity_data))*10000)/100
-        
+        try:
+            self.prize().permanent().average_pro_4[0]=int(((len(Data().permanent().char_4)+len(Data().permanent().wap_4))/len(Data().charactivity_data))*10000)/100
+            self.prize().permanent().average_pro_5[0]=int(((len(Data().permanent().char_5)+len(Data().permanent().wap_5))/len(Data().charactivity_data))*10000)/100
+        except ZeroDivisionError:{}
         ensure_buf_4,ensure_buf_5=0,0
         for sth in Data().permanent().ensure_list:
             if sth['rank_type'] =='4':
                 ensure_buf_4+=sth['ensure_count']
             else:
                 ensure_buf_5+=sth['ensure_count']
-        '''try:
+        try:
             self.prize().permanent().average_cou_4=int((ensure_buf_4/(len(Data().permanent().char_4)+len(Data().permanent().wap_4)))*100)/100
             self.prize().permanent().average_cou_5=int((ensure_buf_5/(len(Data().permanent().char_5)+len(Data().permanent().wap_5)))*100)/100
-        except ZeroDivisionError:{}'''
-        self.prize().permanent().average_cou_4[0]=int((ensure_buf_4/(len(Data().permanent().char_4)+len(Data().permanent().wap_4)))*100)/100
-        self.prize().permanent().average_cou_5[0]=int((ensure_buf_5/(len(Data().permanent().char_5)+len(Data().permanent().wap_5)))*100)/100
+        except ZeroDivisionError:{}
+        #self.prize().permanent().average_cou_4[0]=int((ensure_buf_4/(len(Data().permanent().char_4)+len(Data().permanent().wap_4)))*100)/100
+        #self.prize().permanent().average_cou_5[0]=int((ensure_buf_5/(len(Data().permanent().char_5)+len(Data().permanent().wap_5)))*100)/100
     #
-        self.prize().charactivity().average_pro_4[0]=int(((len(Data().charactivity().char_4)+len(Data().charactivity().wap_4))/len(Data().charactivity_data))*10000)/100
-        self.prize().charactivity().average_pro_5[0]=int(((len(Data().charactivity().char_5)+len(Data().charactivity().wap_5))/len(Data().charactivity_data))*10000)/100
-        
+        try:
+            self.prize().charactivity().average_pro_4[0]=int(((len(Data().charactivity().char_4)+len(Data().charactivity().wap_4))/len(Data().charactivity_data))*10000)/100
+            self.prize().charactivity().average_pro_5[0]=int(((len(Data().charactivity().char_5)+len(Data().charactivity().wap_5))/len(Data().charactivity_data))*10000)/100
+        except ZeroDivisionError:{}
+
         ensure_buf_4,ensure_buf_5=0,0
         for sth in Data().charactivity().ensure_list:
             if sth['rank_type'] =='4':
@@ -412,20 +416,21 @@ class Data():#数据类
                 
             else:
                 ensure_buf_5+=sth['ensure_count']
-        '''try:
+        try:
             self.prize().charactivity().average_cou_4=int((ensure_buf_4/(len(Data().charactivity().char_4)+len(Data().charactivity().wap_4)))*100)/100
             self.prize().charactivity().average_cou_5=int((ensure_buf_5/(len(Data().charactivity().char_5)+len(Data().charactivity().wap_5)))*100)/100
-        except ZeroDivisionError:{}'''
-        self.prize().charactivity().average_cou_4[0]=int((ensure_buf_4/(len(Data().charactivity().char_4)+len(Data().charactivity().wap_4)))*100)/100
-        self.prize().charactivity().average_cou_5[0]=int((ensure_buf_5/(len(Data().charactivity().char_5)+len(Data().charactivity().wap_5)))*100)/100
+        except ZeroDivisionError:{}
+        #self.prize().charactivity().average_cou_4[0]=int((ensure_buf_4/(len(Data().charactivity().char_4)+len(Data().charactivity().wap_4)))*100)/100
+        #self.prize().charactivity().average_cou_5[0]=int((ensure_buf_5/(len(Data().charactivity().char_5)+len(Data().charactivity().wap_5)))*100)/100
        
 
     #
+        try:
 
+            self.prize().novice().average_pro_4[0]=int(((len(Data().novice().char_4)+len(Data().novice().wap_4))/len(Data().charactivity_data))*10000)/100
+            self.prize().novice().average_pro_5[0]=int(((len(Data().novice().char_5)+len(Data().novice().wap_5))/len(Data().charactivity_data))*10000)/100
+        except ZeroDivisionError:{}
 
-        self.prize().novice().average_pro_4[0]=int(((len(Data().novice().char_4)+len(Data().novice().wap_4))/len(Data().charactivity_data))*10000)/100
-        self.prize().novice().average_pro_5[0]=int(((len(Data().novice().char_5)+len(Data().novice().wap_5))/len(Data().charactivity_data))*10000)/100
-        
         ensure_buf_4,ensure_buf_5=0,0
         for sth in Data().novice().ensure_list:
             if sth['rank_type'] =='4':
