@@ -10,6 +10,7 @@ import Save
 import glob
 import webbrowser
 import time
+import json
 self_path=os.getcwd()
 #print(self_path)
 def resource_path(relative_path):
@@ -21,9 +22,9 @@ def resource_path(relative_path):
 os.environ['REQUESTS_CA_BUNDLE'] =  os.path.join(os.path.dirname(sys.argv[0]), '''cacert.pem''')
 file_json= resource_path(os.path.join("res","chart_config.json"))
 file_dem = resource_path(os.path.join("res","cacert.pem"))
-open("cacert.pem",'w+').write( open(file_dem,'r+').read())
+open(self_path+"/cacert.pem",'w+').write( open(file_dem,'r+').read())
 
-open("chart_config.json",'w+').write( open(file_json,'r+').read())
+open(self_path+"/chart_config.json",'w+').write( open(file_json,'r+').read())
 
 ###########
 if not os.path.exists('chart_config.json'):
@@ -39,7 +40,7 @@ class Log():#日志类
     def get_log(self):
         
 
-        if(os.path.exists('./output_log.txt') and os.stat('./output_log.txt').st_mtime<time.time()+60*60*24 and not open('./output_log.txt','r',encoding='UTF-8').read()=="") :
+        if(os.path.exists(self_path+'/output_log.txt') and os.stat(self_path+'/output_log.txt').st_mtime<time.time()+60*60*24 and not open(self_path+'/output_log.txt','r',encoding='UTF-8').read()=="") :
             return 0
         l_path=os.getenv("APPDATA")
         #log_path=input("获取日志目录失败，请手动输入/n 示例:C://Users//Username//AppData//LocalLow//")
@@ -51,16 +52,16 @@ class Log():#日志类
                 
                 return "链接已过期或不存在，请打开原神查询界面刷新日志后重试"
             else:
-                open('''./output_log.txt''','w+',encoding='UTF-8').write( open(log_last_path,'r',encoding='UTF-8').read())
+                open(self_path+'/output_log.txt','w+',encoding='UTF-8').write( open(log_last_path,'r',encoding='UTF-8').read())
 
     #判断日志文件是否存在或为空或过期+
         else:
-            open('''./output_log.txt''','w+',encoding='UTF-8').write( open(log_path,'r',encoding='UTF-8').read())
+            open(self_path+'/output_log.txt','w+',encoding='UTF-8').write( open(log_path,'r',encoding='UTF-8').read())
 
 #获取url
     def get_url(self):
-        if os.path.exists('''./output_log.txt'''):
-            log = open('''./output_log.txt''','r',encoding='UTF-8').read()
+        if os.path.exists(self_path+'/output_log.txt'):
+            log = open(self_path+'/output_log.txt','r',encoding='UTF-8').read()
     
         start=log.rfind('https://webstatic.mihoyo.com/hk4e/event/')
         end=log.rfind('#/log')+5
@@ -159,13 +160,15 @@ class Log():#日志类
 
 
 class Data():#数据类
+    global self_path
+
     permanent_data=[]#常驻祈愿
     charactivity_data=[]#角色活动祈愿
     wapactivity_data=[]#武器活动祈愿
     novice_data=[]#新手祈愿  
     alldata=[charactivity_data,wapactivity_data,novice_data,permanent_data]
-    global self_path
-
+    chart_cfg=json.loads(open(self_path+'/chart_config.json','r',encoding='utf-8').readline())
+    
     class permanent():#常驻祈愿
         wap_5=[]
         wap_4=[]
@@ -696,10 +699,12 @@ class Data():#数据类
         scatter.height='480px'
         
         return scatter
-    def draw(self):
-        #绘制日历图
-        calend2021=pyecharts.charts.Calendar( init_opts=pyecharts.options.InitOpts(chart_id='calendar2021', width="1160px", height="240px",theme=pyecharts.globals.ThemeType.MACARONS))
-        calend2022=pyecharts.charts.Calendar( init_opts=pyecharts.options.InitOpts( chart_id='calendar2022',width="1160px", height="240px",theme=pyecharts.globals.ThemeType.MACARONS))
+    
+    
+    def make_calendar(self):
+        global self_path
+        calendar2021=pyecharts.charts.Calendar( init_opts=pyecharts.options.InitOpts(chart_id='calendar2021', width="1160px", height="240px",theme=pyecharts.globals.ThemeType.MACARONS))
+        calendar2022=pyecharts.charts.Calendar( init_opts=pyecharts.options.InitOpts( chart_id='calendar2022',width="1160px", height="240px",theme=pyecharts.globals.ThemeType.MACARONS))
         
         def takeSecond(elem):
             return elem[1]
@@ -716,14 +721,16 @@ class Data():#数据类
                 try:
                     Y_data2022[k.split(' ')[0]]+=1
                 except:Y_data2022[k.split(' ')[0]]=1
-
+        #print(Y_data2021)
         Y_data2021= list(Y_data2021.items())
         Y_data2021.sort(key=takeSecond,reverse=True)
         Y_data2022= list(Y_data2022.items())
         Y_data2022.sort(key=takeSecond,reverse=True)
-        ##print(Y_data2022)##
-        (
-        calend2021
+        #print(Y_data2022)
+        #print(Y_data2021)
+        if Y_data2021 !=[]:
+            (
+        calendar2021
     .add(
         series_name="2021",
         yaxis_data=Y_data2021,
@@ -731,18 +738,30 @@ class Data():#数据类
             pos_left="30",
             
             range_="2021",
-            yearlabel_opts=pyecharts.options.CalendarYearLabelOpts(is_show=False),
+            yearlabel_opts=pyecharts.options.CalendarYearLabelOpts(is_show=False)
         ),
     )
     .set_global_opts(
         title_opts=pyecharts.options.TitleOpts( pos_left="left", title="抽卡分布"),
         visualmap_opts=pyecharts.options.VisualMapOpts(
-            max_=Y_data2021[0][1], min_=1, orient="horizontal", is_piecewise=False,pos_left='center',
+            max_=Y_data2021[0][1], min_=1, orient="horizontal", is_piecewise=False,pos_left='center'
     
     )        
         ))
-        (
-        calend2022
+        else:
+            print('2021 Data not exists')
+            #print(Data().chart_cfg)
+            for chart in Data().chart_cfg:
+                if 'calendar2021' in chart['cid']:
+                    #print('\nreplace\n')
+                    chart['cid']='calendar2022'
+                    Data().chart_cfg.pop(Data().chart_cfg.index(chart)+1)
+                    open(self_path+'/chart_config.json','w+').write(json.dumps(Data().chart_cfg ) )
+                    break
+                
+        if Y_data2022 !=[]:
+            (
+        calendar2022
     .add(
         series_name="2022",
         yaxis_data=Y_data2022,
@@ -750,16 +769,29 @@ class Data():#数据类
             pos_left="30",
             
             range_="2022",
-            yearlabel_opts=pyecharts.options.CalendarYearLabelOpts(is_show=False),
+            yearlabel_opts=pyecharts.options.CalendarYearLabelOpts(is_show=False)
         ),
     )
     .set_global_opts( 
         visualmap_opts=pyecharts.options.VisualMapOpts(
-            max_=Y_data2022[0][1], min_=1, orient="horizontal", is_piecewise=False,pos_left='center',
+            max_=Y_data2022[0][1], min_=1, orient="horizontal", is_piecewise=False,pos_left='center'
         
     )        
         ))
+        else:
+            print('2022 Data not exists')
+            #print(Data().chart_cfg)
+            for chart in Data().chart_cfg:
+                if 'calendar2022'in chart['cid']:
+                    #print('\nreplace\n')
+                    Data().chart_cfg.pop(Data().chart_cfg.index(chart))
+                    open(self_path+'/chart_config.json','w+').write(json.dumps(Data().chart_cfg ) )
+                    break
         #日历图完
+        return calendar2021,calendar2022
+        
+    def draw(self):
+        #绘制日历图
         data_src=Data.wapactivity()
         pie1=self.make_pie(data_src, '武器活动祈愿')
         
@@ -772,11 +804,12 @@ class Data():#数据类
         scatter1=self.make_scatter()
         #散点图完
         global self_path
+        calend2021,calend2022=self.make_calendar()
         page=pyecharts.charts.Page(page_title='山泽麟迹', layout=pyecharts.charts.Page.DraggablePageLayout)
-        page.add(pie1,pie2,pie3,calend2021,calend2022,scatter1).render('./TEST.html')#添加图表
+        page.add(pie1,pie2,pie3,calend2021,calend2022,scatter1).render(self_path+'/TEST.html')#添加图表
         #page.add(pie1,pie2,pie3).render('TEST.html')#添加图表,不含日历图
-        page.save_resize_html('./TEST.html',cfg_file='./chart_config.json',dest=self_path+'/山泽麟迹.html')
-        os.remove( './TEST.html')
+        page.save_resize_html(self_path+'/TEST.html',cfg_file=self_path+'/chart_config.json',dest=self_path+'/山泽麟迹.html')
+        os.remove(self_path+ '/TEST.html')
         #需要改变图表布局则屏蔽这两行，在测试网页里保存配置(*.json)，或者直接修改
         
     
@@ -871,7 +904,7 @@ class Request():
                 os.remove(self_path+'/output_log.txt')
                 
                 
-                raise Exception(str(typecode)+response.text[24:39]+'/n已尝试删除错误的文件，请登录 原神->祈愿->历史记录 刷新链接后重试')
+                raise Exception(str(typecode)+response.text[24:39]+'已尝试删除错误的文件，请登录 原神->祈愿->历史记录 刷新链接后重试')
             list_buf= eval(response.text)['data']['list']#字典化
             #print(list_buf)
 
@@ -900,6 +933,7 @@ class Request():
 
 def main():
     global self_path
+    if os.path.exists(self_path+"/山泽麟迹.html"):os.remove(self_path+"/山泽麟迹.html")
     Log().get_log()
     
     Request().request( Log().get_url(),200)#常驻祈愿
@@ -917,6 +951,10 @@ def main():
     Data().draw()
     Save.Save_all_data(Data)
     webbrowser.open(self_path+"/山泽麟迹.html")
-
-main()
-#except Exception as e:open('log.txt', 'a',encoding='utf-8').writelines('\n'+str(e))
+    print("success")
+    time.sleep(5)
+try:
+    main()
+except Exception as e:
+    print(e)
+    input("\n 错误未处理 联系开发者或重试 \n press enter to exit \n")
