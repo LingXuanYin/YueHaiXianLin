@@ -788,6 +788,8 @@ class Data():#数据类
                     open(self_path+'/chart_config.json','w+').write(json.dumps(Data().chart_cfg ) )
                     break
         #日历图完
+        #print(Y_data2022)
+        #print(Y_data2021)
         return calendar2021,calendar2022
         
     def draw(self):
@@ -889,7 +891,18 @@ class Request():
         pagecount,endid=0,0
         global self_path
         list_buf=[]
-
+        try:
+            Log().trans_url(src_url,typecode,pagecount,endid)        
+        except Exception as e:
+            print(e)
+            os.remove(self_path+"/output_log.txt")
+            print("\n已尝试删除错误的日志文件，请刷新链接后重试或手动输入包含查询链接的文本\n")
+            input_url=input("\ninput your url or just press enter to exit\n")
+            if 'https://webstatic.mihoyo.com/hk4e/event/' not in input_url:
+                raise Exception("\n URL ERROR \n ")
+            else :
+                open(self_path+"/output_log.txt",'w+',encoding='utf-8').writelines([input_url])
+                main()
         while True:
             response=requests.get(Log().trans_url(src_url,typecode,pagecount,endid))
             #print(response.text)
@@ -904,7 +917,7 @@ class Request():
                 os.remove(self_path+'/output_log.txt')
                 
                 
-                raise Exception(str(typecode)+response.text[24:39]+'已尝试删除错误的文件，请登录 原神->祈愿->历史记录 刷新链接后重试')
+                raise Exception(str(typecode)+response.text[24:39]+'\n已尝试删除错误的文件，请登录 原神->祈愿->历史记录 刷新链接后重试')
             list_buf= eval(response.text)['data']['list']#字典化
             #print(list_buf)
 
@@ -934,8 +947,17 @@ class Request():
 def main():
     global self_path
     if os.path.exists(self_path+"/山泽麟迹.html"):os.remove(self_path+"/山泽麟迹.html")
-    Log().get_log()
-    
+    try:
+        Log().get_log()
+        Log().get_url()
+    except:
+        os.remove(self_path+"/output_log.txt")
+        print("已尝试删除错误的日志文件，请刷新链接后重试或手动输入包含查询链接的文本")
+        input_url=input("press enter to exit")
+        if 'https://webstatic.mihoyo.com/hk4e/event/' not in input_url:
+            raise Exception("url error")
+        else :
+            open(self_path+"/output_log.txt",'w+',encoding='utf-8').writelines([input_url])
     Request().request( Log().get_url(),200)#常驻祈愿
     Request().request( Log().get_url(),100)#新手祈愿
     Request().request( Log().get_url(),301)#角色活动祈愿
@@ -953,8 +975,9 @@ def main():
     webbrowser.open(self_path+"/山泽麟迹.html")
     print("success")
     time.sleep(5)
+    os.system( 'taskkill /pid ' + str(os.getpid()) + ' /f')
 try:
     main()
 except Exception as e:
     print(e)
-    input("\n 错误未处理 联系开发者或重试 \n press enter to exit \n")
+    input(" \n press enter to exit \n")
