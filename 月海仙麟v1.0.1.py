@@ -493,6 +493,7 @@ class Data():#数据类
         for i in data_:
             total_count+=i[1]
         
+        if total_count == 0:total_count=1
         pie = (
         pyecharts.charts.Pie(init_opts=pyecharts.options.InitOpts( chart_id=title,theme=pyecharts.globals.ThemeType.MACARONS))#设置id和主题
         .add(
@@ -561,6 +562,7 @@ class Data():#数据类
                         }
                        }]};
                        '''+charts_name+'''.setOption(option_defult);''')
+        
         pie.width='720px'
         pie.height ='540px'
         #保存格式化之后的数据
@@ -976,8 +978,5 @@ def main():
     print("success")
     time.sleep(5)
     os.system( 'taskkill /pid ' + str(os.getpid()) + ' /f')
-try:
-    main()
-except Exception as e:
-    print(e)
-    input(" \n press enter to exit \n")
+
+main()
