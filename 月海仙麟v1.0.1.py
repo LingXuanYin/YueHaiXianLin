@@ -1,3 +1,22 @@
+print('''
+                    月海仙麟 -- 原神祈愿数据统计 v1.0.1
+        作者：南辰燏炚  联系QQ：3546599908  原神交流群：777974176
+        
+        github：https://github.com/LingXuanYin/YueHaiXianLin
+        
+        bilibili：https://space.bilibili.com/162599415
+        
+        使用出现任何问题请直接联系开发者
+        
+        本软件禁止任何未授权转载、转发
+        
+        请勿删除软件目录下的‘藏弓待用.txt’
+        这是您的数据文件
+        删除或更改其内容会导致展示数据不准确等错误
+        
+        
+        ''')
+
 import os
 import sys
 import requests
@@ -874,7 +893,7 @@ def resource_path(relative_path):
 def main():
     #初始化资源文件
     print("Loading...\n")
-    
+    time.sleep(3)
     os.environ['REQUESTS_CA_BUNDLE'] =  os.path.join(os.path.dirname(sys.argv[0]), "cacert.pem")
     file_json= resource_path(os.path.join("res","chart_config.json"))
     file_dem = resource_path(os.path.join("res","cacert.pem"))
