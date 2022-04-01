@@ -14,8 +14,8 @@
     #运行后闪退：
         #拖到cmd或者powershell中执行：
             #报错：
-#                 Failed to establish a new connection: [WinError 10013] 以一种访问权限不允许的方式做了一个访问套接字的尝试：
-#                    关闭杀软（包括火绒和wdf）或者加白并允许访问互联网
+                # Failed to establish a new connection: [WinError 10013] 以一种访问权限不允许的方式做了一个访问套接字的尝试：
+                    # 关闭杀软（包括火绒和wdf）或者加白并允许访问互联网
                  #其他：
                     #尝试以win7兼容性模式+管理员权限运行
     #运行后报错：
