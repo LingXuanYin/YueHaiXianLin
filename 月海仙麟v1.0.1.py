@@ -12,6 +12,7 @@ import time
 import json
 import base64
 import urllib
+import threading
 self_path=os.getcwd()
 class Tool():#工具类函数
     def dict_to_list(self,dict={}):#字典转列表
@@ -755,28 +756,41 @@ class charts():#图表类
         return scatter
 
     def draw_charts(self):#绘制所有图表对象
+        page=pyecharts.charts.Page(page_title='山泽麟迹', layout=pyecharts.charts.Page.DraggablePageLayout)
+
         if data().charactivity().total!=[]:       
             pie_char=self.make_pie(data().charactivity() )
-        else:print("角色活动祈愿为空")
+            page.add(pie_char)
+        else:
+            pie_char=0
+            print("角色活动祈愿为空")
         
         if data().wapactivity().total!=[]:       
             pie_wap=self.make_pie(data().wapactivity() )
-        else:print("武器活动祈愿为空")
+            page.add(pie_wap)
+        else:
+            pie_wap=0
+            print("武器活动祈愿为空")
         
         if data().permanent().total!=[]:       
             pie_per=self.make_pie(data().permanent() )
-        else:print("常驻祈愿为空")
+            page.add(pie_per)
+
+        else:
+            pie_per=0
+            print("常驻祈愿为空")
         
         if data().novice().total!=[]:       
             pie_nov=self.make_pie(data().novice())
-        else:print("新手祈愿为空")
+            page.add(pie_nov)
+        else:
+            pie_nov=0
+            print("新手祈愿为空")
         
         scatter=self.make_scatter()
         
         calendar2021,calendar2022=self.make_calendar()
 
-        page=pyecharts.charts.Page(page_title='山泽麟迹', layout=pyecharts.charts.Page.DraggablePageLayout)
-        page.add(pie_char,pie_wap,pie_per,scatter)#添加图表
         #page.add(pie1,pie2,pie3).render('TEST.html')#添加图表,不含日历图
         if calendar2021!=0:
             page.add(calendar2021)
@@ -872,11 +886,19 @@ def main():
     
 
 
-    print("Getting data from miHoYo API...\n")
-    request().get_srcdata(301)
-    request().get_srcdata(302)
-    request().get_srcdata(200)
-    request().get_srcdata(100)
+    print("Getting data from miHoYo API with 4 threads...\n")
+    thread_301= threading.Thread(target=request().get_srcdata,args=(301,))
+    thread_302= threading.Thread(target=request().get_srcdata,args=(302,))
+    thread_200= threading.Thread(target=request().get_srcdata,args=(200,))
+    thread_100= threading.Thread(target=request().get_srcdata,args=(100,))
+    thread_301.start()
+    thread_302.start()
+    thread_200.start()
+    thread_100.start()
+    while True:
+        #time.sleep(0.5)
+        if len(threading.enumerate())==1:break
+
     print('Saving data...\n')
     Save.Save_all_data(data().charactivity().total+data().wapactivity().total+data().permanent().total+data().novice().total)#调用Save保存数据到对应文件
     print('Saving success !\n')
