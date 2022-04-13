@@ -904,11 +904,14 @@ class request():  # 请求数据
 
         if 'null' in response.text:
             os.remove(self_path + '/output_log.txt')
-            try:
-                self.get_srcdata(src_data['gacha_type'])
-            except:
-                raise Exception(
-                    str(src_data['gacha_type']) + ' ' + response.text[24:39] + '\n已尝试删除错误的文件，请登录 原神->祈愿->历史记录 刷新链接后重试')
+
+            if (os.path.exists('ERRORFLAG')):
+                raise Exception(str(src_data['gacha_type']) + ' ' + response.text[24:39] + '\n已尝试删除错误的文件，请登录 原神->祈愿->历史记录 刷新链接后重试')
+            else:
+                open('ERRORFLAG','w+').close()
+                print('\nURL Error or Exceed the Time Limit\n\nRetry...\n')
+                time.sleep(3)
+                main()
 
         return eval(response.text)['data']['list']
 
@@ -922,8 +925,9 @@ def resource_path(relative_path):
 
 
 def main():
+
     # 初始化资源文件
-    print("Loading...\n")
+    print("\nLoading...\n")
     time.sleep(3)
     os.environ['REQUESTS_CA_BUNDLE'] = os.path.join(os.path.dirname(sys.argv[0]), "cacert.pem")
     file_json = resource_path(os.path.join("res", "chart_config.json"))
@@ -932,6 +936,17 @@ def main():
     open(self_path + "/chart_config.json", 'w+').write(open(file_json, 'r+').read())
     if not os.path.exists('chart_config.json'):
         open("chart_config.json", 'w+').writelines(open(file_json, 'r+', encoding='utf-8').read())
+    print('Checking URL...')
+    try:
+        request().get_srcdata(301)
+    except  Exception as e:
+        print('\nUnexcept Error : \n')
+        print(e)
+        print('\nExit in 10 sec')
+        if os.path.exists('ERRORFLAG'): os.remove('ERRORFLAG')
+
+        time.sleep(10)
+        os.system('taskkill /pid ' + str(os.getpid()) + ' /f')
 
     print("Getting data from miHoYo API with 4 threads...\n")
     thread_301 = threading.Thread(target=request().get_srcdata, args=(301,))
@@ -962,15 +977,15 @@ def main():
     print("Drawing...\n")
     charts().draw_charts()
     print('Success !\n')
+
     webbrowser.open(self_path + "/山泽麟迹.html")
+
+    if os.path.exists('ERRORFLAG'): os.remove('ERRORFLAG')
+
     print('Exit...')
     time.sleep(5)
     os.system('taskkill /pid ' + str(os.getpid()) + ' /f')
 
 
-try:
-    main()
-except Exception as e:
-    print("未处理的错误\n")
-    print(e)
-    time.sleep(10)
+
+main()

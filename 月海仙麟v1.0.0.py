@@ -12,8 +12,8 @@ def resource_path(relative_path):
     return os.path.join(base_path, relative_path)
 
 os.environ['REQUESTS_CA_BUNDLE'] =  os.path.join(os.path.dirname(sys.argv[0]), '''cacert.pem''')
-file_web = resource_path(os.path.join("res","数据展示.html"))
-file_dem = resource_path(os.path.join("res","cacert.pem"))
+file_web = resource_path(os.path.join("res", "数据展示.html"))
+file_dem = resource_path(os.path.join("res", "cacert.pem"))
 open("cacert.pem",'w').close()
 open("cacert.pem",'r+').write( open(file_dem,'r+').read())
 
