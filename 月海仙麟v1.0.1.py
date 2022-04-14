@@ -936,17 +936,25 @@ def main():
     open(self_path + "/chart_config.json", 'w+').write(open(file_json, 'r+').read())
     if not os.path.exists('chart_config.json'):
         open("chart_config.json", 'w+').writelines(open(file_json, 'r+', encoding='utf-8').read())
-    print('Checking URL...')
+    print('Checking URL...\n')
     try:
-        request().get_srcdata(301)
-    except  Exception as e:
-        print('\nUnexcept Error : \n')
-        print(e)
-        print('\nExit in 10 sec')
-        if os.path.exists('ERRORFLAG'): os.remove('ERRORFLAG')
+        page, endid = 1, 0
+        src_url = Log().get_url()
+        url, request_data = Log().trans_url(src_url, 301, page, endid)
 
-        time.sleep(10)
-        os.system('taskkill /pid ' + str(os.getpid()) + ' /f')
+        response_list =request(). request(url, request_data)
+        print('URL correct !\n')
+    except  Exception as e:
+        os.remove(self_path + '/output_log.txt')
+
+        if (os.path.exists('ERRORFLAG')):
+            raise Exception(str(src_data['gacha_type']) + ' ' + response.text[24:39] + '\n已尝试删除错误的文件，请登录 原神->祈愿->历史记录 刷新链接后重试')
+        else:
+            open('ERRORFLAG','w+').close()
+            print('\nURL Error or Exceed the Time Limit\n\nRetry...\n')
+            time.sleep(3)
+            main()
+
 
     print("Getting data from miHoYo API with 4 threads...\n")
     thread_301 = threading.Thread(target=request().get_srcdata, args=(301,))
@@ -987,5 +995,13 @@ def main():
     os.system('taskkill /pid ' + str(os.getpid()) + ' /f')
 
 
+try:
+    main()
+except Exception as e:
+    print('\nUnexcept Error : \n')
+    print(e)
+    print('\nExit in 10 sec')
+    if os.path.exists('ERRORFLAG'): os.remove('ERRORFLAG')
 
-main()
+    time.sleep(10)
+    os.system('taskkill /pid ' + str(os.getpid()) + ' /f')
