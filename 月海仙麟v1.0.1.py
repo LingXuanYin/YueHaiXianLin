@@ -47,31 +47,14 @@ class Log():  # 日志类
     # 复制日志文件到根目录
     def get_log(self):
 
-        if (os.path.exists(self_path + '/output_log.txt') and os.stat(
-                self_path + '/output_log.txt').st_mtime < time.time() + 60 * 60 * 24 and not open(
-                self_path + '/output_log.txt', 'r', encoding='UTF-8').read() == ""):
-            return 0
         l_path = os.getenv("APPDATA")
         # log_path=input("获取日志目录失败，请手动输入/n 示例:C://Users//Username//AppData//LocalLow//")
 
         log_path = os.path.join(l_path, "../") + "LocalLow/miHoYo/原神/output_log.txt"
         log_last_path = os.path.join(l_path, "../") + "LocalLow/miHoYo/原神/output_log.txt.last"
-        if (not os.path.exists(log_path) or os.stat(log_path).st_mtime > time.time() + 60 * 60 * 24 or open(log_path,
-                                                                                                            'r',
-                                                                                                            encoding='UTF-8').read() == ""):
-            if (not os.path.exists(log_last_path) or os.stat(
-                    log_last_path).st_mtime > time.time() + 60 * 60 * 24 or open(log_last_path, 'r',
-                                                                                 encoding='UTF-8').read() == ""):
 
-                return "链接已过期或不存在，请打开原神查询界面刷新日志后重试"
-            else:
-                open(self_path + '/output_log.txt', 'w+', encoding='UTF-8').write(
-                    open(log_last_path, 'r', encoding='UTF-8').read())
-
-        # 判断日志文件是否存在或为空或过期
-        else:
-            open(self_path + '/output_log.txt', 'w+', encoding='UTF-8').write(
-                open(log_path, 'r', encoding='UTF-8').read())
+        open(self_path + '/output_log.txt', 'w+', encoding='UTF-8').write(
+            open(log_path, 'r', encoding='UTF-8').read())
 
     # 获取初始url
     def get_url(self):
@@ -903,10 +886,10 @@ class request():  # 请求数据
             {}
 
         if 'null' in response.text:
-            os.remove(self_path + '/output_log.txt')
+            #os.remove(self_path + '/output_log.txt')
 
             if (os.path.exists('ERRORFLAG')):
-                raise Exception(str(src_data['gacha_type']) + ' ' + response.text[24:39] + '\n已尝试删除错误的文件，请登录 原神->祈愿->历史记录 刷新链接后重试')
+                raise Exception(str(src_data['gacha_type']) + ' ' + response.text[24:39] + '\n请登录 原神->祈愿->历史记录 刷新链接后重试')
             else:
                 open('ERRORFLAG','w+').close()
                 print('\nURL Error or Exceed the Time Limit\n\nRetry...\n')
@@ -945,10 +928,10 @@ def main():
         response_list =request(). request(url, request_data)
         print('URL correct !\n')
     except  Exception as e:
-        os.remove(self_path + '/output_log.txt')
+        #os.remove(self_path + '/output_log.txt')
 
         if (os.path.exists('ERRORFLAG')):
-            raise Exception(str(src_data['gacha_type']) + ' ' + response.text[24:39] + '\n已尝试删除错误的文件，请登录 原神->祈愿->历史记录 刷新链接后重试')
+            raise Exception('\n请登录 原神->祈愿->历史记录 刷新链接后重试\n')
         else:
             open('ERRORFLAG','w+').close()
             print('\nURL Error or Exceed the Time Limit\n\nRetry...\n')
