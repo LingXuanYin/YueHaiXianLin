@@ -1,0 +1,2553 @@
+Initialize engine version: 2017.4.30f1 (0)
+GfxDevice: creating device client; threaded=1
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.1]
+    Renderer: NVIDIA GeForce GTX 1650 Ti (ID=0x1f95)
+    Vendor:   NVIDIA
+    VRAM:     3962 MB
+    Driver:   30.0.15.1215
+WARNING: Shader Unsupported: 'Hidden/Internal-ScreenSpaceShadows-PCF-Specify' - Pass '' has no vertex shader
+<RI> Initializing input.
+
+<RI> Input initialized.
+
+<RI> Initialized touch support.
+
+UnloadTime: 1.671300 ms
+Genshin Start Log: GameManager Awake - NowTimeStamp:1650602541
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+MoleMole.Miscs:GenshinCommonLog(String)
+MoleMole.GameManager:Awake()
+ 
+(Filename: E:\WKSPC\2.6Fix\sourceCode\artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 81)
+
+Genshin Start Log: GameManager Start - NowTimeStamp:1650602542
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+MoleMole.Miscs:GenshinCommonLog(String)
+MoleMole.GameManager:Start()
+ 
+(Filename: E:\WKSPC\2.6Fix\sourceCode\artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 81)
+
+Genshin Start Log: GameManager InitGame - NowTimeStamp:1650602542
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+MoleMole.Miscs:GenshinCommonLog(String)
+MoleMole.GameManager:FGJPMOIBHHP()
+ 
+(Filename: E:\WKSPC\2.6Fix\sourceCode\artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 81)
+
+Rewired: Searching for compatible XInput library...
+UnityEngine.Logger:Log(String, Object)
+Rewired.Logger:LogNow(Object, Boolean)
+Rewired.Logger:Log(Object, Boolean)
+khPCPJgtQFokObAEkJKNQbaUfSZG:.ctor(Boolean, UpdateLoopSetting, Func`2, Func`1)
+nWJFPaVEAnZVBaejiLScyIzPghU:LfpiwBhSrvZSHbyDQmKrMiwRKycl(ConfigVars, Boolean)
+nWJFPaVEAnZVBaejiLScyIzPghU:.ctor(ConfigVars, Func`2, Func`1)
+Rewired.InputManagers.Initializer:Initialize(ConfigVars)
+bGFFlqWHmLhYQxaMwARBAauOhZKw:YJaAHaimrHWIfKrgfWxeihnqrcza(String, List`1, ConfigVars)
+Rewired.InputManager_Base:InitializePlatform(ConfigVars)
+Epic.OnlineServices.KWS.OnUpdateParentEmailCallback:Invoke(UpdateParentEmailCallbackInfo)
+Rewired.ReInput:lZCArPkLoSgJaEkxbPbqcntMgGtG(Func`2)
+Rewired.ReInput:YJaAHaimrHWIfKrgfWxeihnqrcza(InputManager_Base, Func`2, ConfigVars, ControllerDataFiles, UserData)
+Rewired.InputManager_Base:Initialize()
+Rewired.InputManager_Base:Awake()
+UnityEngine.Object:Instantiate(T)
+KLNDJPGJCON:CJFDOKANFFO()
+NILCCLILGBB:MoveNext()
+UnityEngine.SetupCoroutine:InvokeMoveNext(IEnumerator, IntPtr)
+JFEEBNIKEPB:HNNALGALOLF(IEnumerator, Boolean)
+FHJLIGPNIHB:Init()
+MoleMole.Singleton`1:Create()
+MoleMole.ManagerController:CreateGlobalManager()
+MoleMole.GameManager:LNPONCNCMHA()
+MoleMole.GameManager:FGJPMOIBHHP()
+ 
+(Filename: E:\WKSPC\2.6Fix\sourceCode\artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 81)
+
+Rewired: Found Xinput1_4.dll.
+UnityEngine.Logger:Log(String, Object)
+Rewired.Logger:LogNow(Object, Boolean)
+Rewired.Logger:Log(Object, Boolean)
+khPCPJgtQFokObAEkJKNQbaUfSZG:.ctor(Boolean, UpdateLoopSetting, Func`2, Func`1)
+nWJFPaVEAnZVBaejiLScyIzPghU:LfpiwBhSrvZSHbyDQmKrMiwRKycl(ConfigVars, Boolean)
+nWJFPaVEAnZVBaejiLScyIzPghU:.ctor(ConfigVars, Func`2, Func`1)
+Rewired.InputManagers.Initializer:Initialize(ConfigVars)
+bGFFlqWHmLhYQxaMwARBAauOhZKw:YJaAHaimrHWIfKrgfWxeihnqrcza(String, List`1, ConfigVars)
+Rewired.InputManager_Base:InitializePlatform(ConfigVars)
+Epic.OnlineServices.KWS.OnUpdateParentEmailCallback:Invoke(UpdateParentEmailCallbackInfo)
+Rewired.ReInput:lZCArPkLoSgJaEkxbPbqcntMgGtG(Func`2)
+Rewired.ReInput:YJaAHaimrHWIfKrgfWxeihnqrcza(InputManager_Base, Func`2, ConfigVars, ControllerDataFiles, UserData)
+Rewired.InputManager_Base:Initialize()
+Rewired.InputManager_Base:Awake()
+UnityEngine.Object:Instantiate(T)
+KLNDJPGJCON:CJFDOKANFFO()
+NILCCLILGBB:MoveNext()
+UnityEngine.SetupCoroutine:InvokeMoveNext(IEnumerator, IntPtr)
+JFEEBNIKEPB:HNNALGALOLF(IEnumerator, Boolean)
+FHJLIGPNIHB:Init()
+MoleMole.Singleton`1:Create()
+MoleMole.ManagerController:CreateGlobalManager()
+MoleMole.GameManager:LNPONCNCMHA()
+MoleMole.GameManager:FGJPMOIBHHP()
+ 
+(Filename: E:\WKSPC\2.6Fix\sourceCode\artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 81)
+
+[MTRManager]client create sucess!
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+OIINBPBMCCA:Init()
+MoleMole.Singleton`1:Create()
+MoleMole.ManagerController:CreateGlobalManager()
+MoleMole.GameManager:LNPONCNCMHA()
+MoleMole.GameManager:FGJPMOIBHHP()
+ 
+(Filename: E:\WKSPC\2.6Fix\sourceCode\artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 81)
+
+Genshin Start Log: GameManager ShowLogo - NowTimeStamp:1650602543
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+MoleMole.Miscs:GenshinCommonLog(String)
+MoleMole.GameManager:ShowLogo()
+MoleMole.GameManager:FGJPMOIBHHP()
+ 
+(Filename: E:\WKSPC\2.6Fix\sourceCode\artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 81)
+
+Genshin Start Log: LogoPageContext SetupView - NowTimeStamp:1650602543
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+MoleMole.Miscs:GenshinCommonLog(String)
+LPEDFHKPHON:SetupView()
+MoleMole.BaseContext:Setup()
+MoleMole.BaseContext:OnLoadedView(GameObject)
+EAJODIIJNNH:OnLoadedView(GameObject)
+Epic.OnlineServices.KWS.OnUpdateParentEmailCallback:Invoke(UpdateParentEmailCallbackInfo)
+KGBFLIEKNFO:FNMCNHCEBCG(GameObject)
+Epic.OnlineServices.KWS.OnUpdateParentEmailCallback:Invoke(UpdateParentEmailCallbackInfo)
+LCGDGCLHGOF:LEJAKMEFAMH(PLGGMHHGNJK, GameObject, Action`1)
+LCGDGCLHGOF:FBGMPGMPGBN(PLGGMHHGNJK, Action`1, Boolean)
+LCGDGCLHGOF:GDKIIHFOBGG(PLGGMHHGNJK, Action`1, Boolean, Boolean)
+IOKGKOLCHPN:GDKIIHFOBGG(BaseContext, Action`1, Boolean)
+MoleMole.BaseContext:InstantiateView()
+MoleMole.BaseContext:Init()
+EAJODIIJNNH:Init()
+IOKGKOLCHPN:HKINKNNIACN(EAJODIIJNNH, Boolean, JMIOAFJCAGE)
+MoleMole.GameManager:ShowLogo()
+MoleMole.GameManager:FGJPMOIBHHP()
+ 
+(Filename: E:\WKSPC\2.6Fix\sourceCode\artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 81)
+
+Genshin Start Log: LogoPageContext ClosePage - NowTimeStamp:1650602549
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+MoleMole.Miscs:GenshinCommonLog(String)
+LPEDFHKPHON:AAHIFJEGCAK()
+System.Func`1:Invoke()
+GFEPHALMDCP:MoveNext()
+UnityEngine.SetupCoroutine:InvokeMoveNext(IEnumerator, IntPtr)
+ 
+(Filename: E:\WKSPC\2.6Fix\sourceCode\artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 81)
+
+Genshin Start Log: GameManager StartHome - NowTimeStamp:1650602549
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+MoleMole.Miscs:GenshinCommonLog(String)
+MoleMole.GameManager:StartHome()
+System.Func`1:Invoke()
+LPEDFHKPHON:AAHIFJEGCAK()
+System.Func`1:Invoke()
+GFEPHALMDCP:MoveNext()
+UnityEngine.SetupCoroutine:InvokeMoveNext(IEnumerator, IntPtr)
+ 
+(Filename: E:\WKSPC\2.6Fix\sourceCode\artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 81)
+
+Genshin Start Log: GameManager ChangeGameWorld Home - NowTimeStamp:1650602550
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+MoleMole.Miscs:GenshinCommonLog(String)
+MoleMole.GameManager:ChangeGameWorld(WorldType, UInt32, String, Action, String)
+MoleMole.GameManager:StartHome()
+System.Func`1:Invoke()
+LPEDFHKPHON:AAHIFJEGCAK()
+System.Func`1:Invoke()
+GFEPHALMDCP:MoveNext()
+UnityEngine.SetupCoroutine:InvokeMoveNext(IEnumerator, IntPtr)
+ 
+(Filename: E:\WKSPC\2.6Fix\sourceCode\artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 81)
+
+Genshin Start Log: GameManager CreateNewGameWorld Home - NowTimeStamp:1650602550
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+MoleMole.Miscs:GenshinCommonLog(String)
+MoleMole.GameManager:NBMALCCBHBC(WorldType, UInt32, String, String)
+MoleMole.BEDPLKLCDIE:FNMCNHCEBCG()
+System.Func`1:Invoke()
+LGCNGDOICKO:Tick()
+MoleMole.GameManager:ICBKANLKGGH()
+MoleMole.GameManager:Update()
+ 
+(Filename: E:\WKSPC\2.6Fix\sourceCode\artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 81)
+
+Genshin Start Log: Home LoadScene - NowTimeStamp:1650602550
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+MoleMole.Miscs:GenshinCommonLog(String)
+JMCCFDKDILB:DFHIDJABMJE()
+MoleMole.GameManager:NBMALCCBHBC(WorldType, UInt32, String, String)
+MoleMole.BEDPLKLCDIE:FNMCNHCEBCG()
+System.Func`1:Invoke()
+LGCNGDOICKO:Tick()
+MoleMole.GameManager:ICBKANLKGGH()
+MoleMole.GameManager:Update()
+ 
+(Filename: E:\WKSPC\2.6Fix\sourceCode\artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 81)
+
+Unloading 5 Unused Serialized files (Serialized files now loaded: 46)
+Genshin Start Log: GameManager FirstChangeToHomeCallback - NowTimeStamp:1650602550
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+MoleMole.Miscs:GenshinCommonLog(String)
+MoleMole.GameManager:HECDFKAALAJ()
+System.Func`1:Invoke()
+MoleMole.BEDPLKLCDIE:FNMCNHCEBCG()
+System.Func`1:Invoke()
+LGCNGDOICKO:Tick()
+MoleMole.GameManager:ICBKANLKGGH()
+MoleMole.GameManager:Update()
+ 
+(Filename: E:\WKSPC\2.6Fix\sourceCode\artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 81)
+
+Failed to open file /00/00000000.blk
+MoleMole.AssetBundleExternalResourceProvider:ShaderBlockWarmUp()
+LGCNGDOICKO:LHIABLGGLBB()
+System.Func`1:Invoke()
+MoleMole.BEDPLKLCDIE:FNMCNHCEBCG()
+System.Func`1:Invoke()
+LGCNGDOICKO:Tick()
+MoleMole.GameManager:ICBKANLKGGH()
+MoleMole.GameManager:Update()
+
+[ line 1237] 
+(Filename:  Line: 1237)
+
+Warmup file C:/Genshin Impact Game/YuanShen_Data/StreamingAssets\AssetBundles/blocks/00/01280956.blk 3407872
+MoleMole.AssetBundleExternalResourceProvider:ShaderBlockWarmUp()
+LGCNGDOICKO:LHIABLGGLBB()
+System.Func`1:Invoke()
+MoleMole.BEDPLKLCDIE:FNMCNHCEBCG()
+System.Func`1:Invoke()
+LGCNGDOICKO:Tick()
+MoleMole.GameManager:ICBKANLKGGH()
+MoleMole.GameManager:Update()
+
+[ line 1233] 
+(Filename:  Line: 1233)
+
+Warmup file C:/Genshin Impact Game/YuanShen_Data/StreamingAssets\AssetBundles/blocks/00/03145032.blk 4456448
+MoleMole.AssetBundleExternalResourceProvider:ShaderBlockWarmUp()
+LGCNGDOICKO:LHIABLGGLBB()
+System.Func`1:Invoke()
+MoleMole.BEDPLKLCDIE:FNMCNHCEBCG()
+System.Func`1:Invoke()
+LGCNGDOICKO:Tick()
+MoleMole.GameManager:ICBKANLKGGH()
+MoleMole.GameManager:Update()
+
+[ line 1233] 
+(Filename:  Line: 1233)
+
+Warmup file C:/Genshin Impact Game/YuanShen_Data/StreamingAssets\AssetBundles/blocks/00/02001440.blk 8650752
+MoleMole.AssetBundleExternalResourceProvider:ShaderBlockWarmUp()
+LGCNGDOICKO:LHIABLGGLBB()
+System.Func`1:Invoke()
+MoleMole.BEDPLKLCDIE:FNMCNHCEBCG()
+System.Func`1:Invoke()
+LGCNGDOICKO:Tick()
+MoleMole.GameManager:ICBKANLKGGH()
+MoleMole.GameManager:Update()
+
+[ line 1233] 
+(Filename:  Line: 1233)
+
+Warmup file C:/Genshin Impact Game/YuanShen_Data/StreamingAssets\AssetBundles/blocks/00/06386407.blk 3538944
+MoleMole.AssetBundleExternalResourceProvider:ShaderBlockWarmUp()
+LGCNGDOICKO:LHIABLGGLBB()
+System.Func`1:Invoke()
+MoleMole.BEDPLKLCDIE:FNMCNHCEBCG()
+System.Func`1:Invoke()
+LGCNGDOICKO:Tick()
+MoleMole.GameManager:ICBKANLKGGH()
+MoleMole.GameManager:Update()
+
+[ line 1233] 
+(Filename:  Line: 1233)
+
+Warmup file C:/Genshin Impact Game/YuanShen_Data/StreamingAssets\AssetBundles/blocks/00/11565709.blk 5242880
+MoleMole.AssetBundleExternalResourceProvider:ShaderBlockWarmUp()
+LGCNGDOICKO:LHIABLGGLBB()
+System.Func`1:Invoke()
+MoleMole.BEDPLKLCDIE:FNMCNHCEBCG()
+System.Func`1:Invoke()
+LGCNGDOICKO:Tick()
+MoleMole.GameManager:ICBKANLKGGH()
+MoleMole.GameManager:Update()
+
+[ line 1233] 
+(Filename:  Line: 1233)
+
+Warmup file C:/Genshin Impact Game/YuanShen_Data/StreamingAssets\AssetBundles/blocks/00/03039329.blk 393216
+MoleMole.AssetBundleExternalResourceProvider:ShaderBlockWarmUp()
+LGCNGDOICKO:LHIABLGGLBB()
+System.Func`1:Invoke()
+MoleMole.BEDPLKLCDIE:FNMCNHCEBCG()
+System.Func`1:Invoke()
+LGCNGDOICKO:Tick()
+MoleMole.GameManager:ICBKANLKGGH()
+MoleMole.GameManager:Update()
+
+[ line 1233] 
+(Filename:  Line: 1233)
+
+Warmup file C:/Genshin Impact Game/YuanShen_Data/StreamingAssets\AssetBundles/blocks/00/06374384.blk 5373952
+MoleMole.AssetBundleExternalResourceProvider:ShaderBlockWarmUp()
+LGCNGDOICKO:LHIABLGGLBB()
+System.Func`1:Invoke()
+MoleMole.BEDPLKLCDIE:FNMCNHCEBCG()
+System.Func`1:Invoke()
+LGCNGDOICKO:Tick()
+MoleMole.GameManager:ICBKANLKGGH()
+MoleMole.GameManager:Update()
+
+[ line 1233] 
+(Filename:  Line: 1233)
+
+Warmup file C:/Genshin Impact Game/YuanShen_Data/StreamingAssets\AssetBundles/blocks/00/04720824.blk 1179648
+MoleMole.AssetBundleExternalResourceProvider:ShaderBlockWarmUp()
+LGCNGDOICKO:LHIABLGGLBB()
+System.Func`1:Invoke()
+MoleMole.BEDPLKLCDIE:FNMCNHCEBCG()
+System.Func`1:Invoke()
+LGCNGDOICKO:Tick()
+MoleMole.GameManager:ICBKANLKGGH()
+MoleMole.GameManager:Update()
+
+[ line 1233] 
+(Filename:  Line: 1233)
+
+Warmup file C:/Genshin Impact Game/YuanShen_Data/StreamingAssets\AssetBundles/blocks/00/12858676.blk 0
+MoleMole.AssetBundleExternalResourceProvider:ShaderBlockWarmUp()
+LGCNGDOICKO:LHIABLGGLBB()
+System.Func`1:Invoke()
+MoleMole.BEDPLKLCDIE:FNMCNHCEBCG()
+System.Func`1:Invoke()
+LGCNGDOICKO:Tick()
+MoleMole.GameManager:ICBKANLKGGH()
+MoleMole.GameManager:Update()
+
+[ line 1233] 
+(Filename:  Line: 1233)
+
+Failed to open file /00/00000000.blk
+MoleMole.AssetBundleExternalResourceProvider:ShaderBlockWarmUp()
+LGCNGDOICKO:LHIABLGGLBB()
+System.Func`1:Invoke()
+MoleMole.BEDPLKLCDIE:FNMCNHCEBCG()
+System.Func`1:Invoke()
+LGCNGDOICKO:Tick()
+MoleMole.GameManager:ICBKANLKGGH()
+MoleMole.GameManager:Update()
+
+[ line 1237] 
+(Filename:  Line: 1237)
+
+Warmup file C:/Genshin Impact Game/YuanShen_Data/StreamingAssets\AssetBundles/blocks/00/09174106.blk 7864320
+MoleMole.AssetBundleExternalResourceProvider:ShaderBlockWarmUp()
+LGCNGDOICKO:LHIABLGGLBB()
+System.Func`1:Invoke()
+MoleMole.BEDPLKLCDIE:FNMCNHCEBCG()
+System.Func`1:Invoke()
+LGCNGDOICKO:Tick()
+MoleMole.GameManager:ICBKANLKGGH()
+MoleMole.GameManager:Update()
+
+[ line 1233] 
+(Filename:  Line: 1233)
+
+Warmup file C:/Genshin Impact Game/YuanShen_Data/StreamingAssets\AssetBundles/blocks/00/13914455.blk 3145728
+MoleMole.AssetBundleExternalResourceProvider:ShaderBlockWarmUp()
+LGCNGDOICKO:LHIABLGGLBB()
+System.Func`1:Invoke()
+MoleMole.BEDPLKLCDIE:FNMCNHCEBCG()
+System.Func`1:Invoke()
+LGCNGDOICKO:Tick()
+MoleMole.GameManager:ICBKANLKGGH()
+MoleMole.GameManager:Update()
+
+[ line 1233] 
+(Filename:  Line: 1233)
+
+Warmup file C:/Genshin Impact Game/YuanShen_Data/StreamingAssets\AssetBundles/blocks/00/07330968.blk 3276800
+MoleMole.AssetBundleExternalResourceProvider:ShaderBlockWarmUp()
+LGCNGDOICKO:LHIABLGGLBB()
+System.Func`1:Invoke()
+MoleMole.BEDPLKLCDIE:FNMCNHCEBCG()
+System.Func`1:Invoke()
+LGCNGDOICKO:Tick()
+MoleMole.GameManager:ICBKANLKGGH()
+MoleMole.GameManager:Update()
+
+[ line 1233] 
+(Filename:  Line: 1233)
+
+Warmup file C:/Genshin Impact Game/YuanShen_Data/StreamingAssets\AssetBundles/blocks/00/16332545.blk 5111808
+MoleMole.AssetBundleExternalResourceProvider:ShaderBlockWarmUp()
+LGCNGDOICKO:LHIABLGGLBB()
+System.Func`1:Invoke()
+MoleMole.BEDPLKLCDIE:FNMCNHCEBCG()
+System.Func`1:Invoke()
+LGCNGDOICKO:Tick()
+MoleMole.GameManager:ICBKANLKGGH()
+MoleMole.GameManager:Update()
+
+[ line 1233] 
+(Filename:  Line: 1233)
+
+Warmup file C:/Genshin Impact Game/YuanShen_Data/StreamingAssets\AssetBundles/blocks/00/13290125.blk 51249152
+MoleMole.AssetBundleExternalResourceProvider:ShaderBlockWarmUp()
+LGCNGDOICKO:LHIABLGGLBB()
+System.Func`1:Invoke()
+MoleMole.BEDPLKLCDIE:FNMCNHCEBCG()
+System.Func`1:Invoke()
+LGCNGDOICKO:Tick()
+MoleMole.GameManager:ICBKANLKGGH()
+MoleMole.GameManager:Update()
+
+[ line 1233] 
+(Filename:  Line: 1233)
+
+Warmup file C:/Genshin Impact Game/YuanShen_Data/StreamingAssets\AssetBundles/blocks/00/04502400.blk 3145728
+MoleMole.AssetBundleExternalResourceProvider:ShaderBlockWarmUp()
+LGCNGDOICKO:LHIABLGGLBB()
+System.Func`1:Invoke()
+MoleMole.BEDPLKLCDIE:FNMCNHCEBCG()
+System.Func`1:Invoke()
+LGCNGDOICKO:Tick()
+MoleMole.GameManager:ICBKANLKGGH()
+MoleMole.GameManager:Update()
+
+[ line 1233] 
+(Filename:  Line: 1233)
+
+Warmup file C:/Genshin Impact Game/YuanShen_Data/StreamingAssets\AssetBundles/blocks/00/16235684.blk 4718592
+MoleMole.AssetBundleExternalResourceProvider:ShaderBlockWarmUp()
+LGCNGDOICKO:LHIABLGGLBB()
+System.Func`1:Invoke()
+MoleMole.BEDPLKLCDIE:FNMCNHCEBCG()
+System.Func`1:Invoke()
+LGCNGDOICKO:Tick()
+MoleMole.GameManager:ICBKANLKGGH()
+MoleMole.GameManager:Update()
+
+[ line 1233] 
+(Filename:  Line: 1233)
+
+Warmup file C:/Genshin Impact Game/YuanShen_Data/StreamingAssets\AssetBundles/blocks/00/08393700.blk 10092544
+MoleMole.AssetBundleExternalResourceProvider:ShaderBlockWarmUp()
+LGCNGDOICKO:LHIABLGGLBB()
+System.Func`1:Invoke()
+MoleMole.BEDPLKLCDIE:FNMCNHCEBCG()
+System.Func`1:Invoke()
+LGCNGDOICKO:Tick()
+MoleMole.GameManager:ICBKANLKGGH()
+MoleMole.GameManager:Update()
+
+[ line 1233] 
+(Filename:  Line: 1233)
+
+Warmup file C:/Genshin Impact Game/YuanShen_Data/StreamingAssets\AssetBundles/blocks/00/01775650.blk 4849664
+MoleMole.AssetBundleExternalResourceProvider:ShaderBlockWarmUp()
+LGCNGDOICKO:LHIABLGGLBB()
+System.Func`1:Invoke()
+MoleMole.BEDPLKLCDIE:FNMCNHCEBCG()
+System.Func`1:Invoke()
+LGCNGDOICKO:Tick()
+MoleMole.GameManager:ICBKANLKGGH()
+MoleMole.GameManager:Update()
+
+[ line 1233] 
+(Filename:  Line: 1233)
+
+Warmup file C:/Genshin Impact Game/YuanShen_Data/StreamingAssets\AssetBundles/blocks/00/00347163.blk 4980736
+MoleMole.AssetBundleExternalResourceProvider:ShaderBlockWarmUp()
+LGCNGDOICKO:LHIABLGGLBB()
+System.Func`1:Invoke()
+MoleMole.BEDPLKLCDIE:FNMCNHCEBCG()
+System.Func`1:Invoke()
+LGCNGDOICKO:Tick()
+MoleMole.GameManager:ICBKANLKGGH()
+MoleMole.GameManager:Update()
+
+[ line 1233] 
+(Filename:  Line: 1233)
+
+Warmup file C:/Genshin Impact Game/YuanShen_Data/StreamingAssets\AssetBundles/blocks/00/15777359.blk 4718592
+MoleMole.AssetBundleExternalResourceProvider:ShaderBlockWarmUp()
+LGCNGDOICKO:LHIABLGGLBB()
+System.Func`1:Invoke()
+MoleMole.BEDPLKLCDIE:FNMCNHCEBCG()
+System.Func`1:Invoke()
+LGCNGDOICKO:Tick()
+MoleMole.GameManager:ICBKANLKGGH()
+MoleMole.GameManager:Update()
+
+[ line 1233] 
+(Filename:  Line: 1233)
+
+Warmup file C:/Genshin Impact Game/YuanShen_Data/StreamingAssets\AssetBundles/blocks/00/05240993.blk 14680064
+MoleMole.AssetBundleExternalResourceProvider:ShaderBlockWarmUp()
+LGCNGDOICKO:LHIABLGGLBB()
+System.Func`1:Invoke()
+MoleMole.BEDPLKLCDIE:FNMCNHCEBCG()
+System.Func`1:Invoke()
+LGCNGDOICKO:Tick()
+MoleMole.GameManager:ICBKANLKGGH()
+MoleMole.GameManager:Update()
+
+[ line 1233] 
+(Filename:  Line: 1233)
+
+Warmup file C:/Genshin Impact Game/YuanShen_Data/StreamingAssets\AssetBundles/blocks/00/10162735.blk 5767168
+MoleMole.AssetBundleExternalResourceProvider:ShaderBlockWarmUp()
+LGCNGDOICKO:LHIABLGGLBB()
+System.Func`1:Invoke()
+MoleMole.BEDPLKLCDIE:FNMCNHCEBCG()
+System.Func`1:Invoke()
+LGCNGDOICKO:Tick()
+MoleMole.GameManager:ICBKANLKGGH()
+MoleMole.GameManager:Update()
+
+[ line 1233] 
+(Filename:  Line: 1233)
+
+Warmup file C:/Genshin Impact Game/YuanShen_Data/StreamingAssets\AssetBundles/blocks/00/09441605.blk 6815744
+MoleMole.AssetBundleExternalResourceProvider:ShaderBlockWarmUp()
+LGCNGDOICKO:LHIABLGGLBB()
+System.Func`1:Invoke()
+MoleMole.BEDPLKLCDIE:FNMCNHCEBCG()
+System.Func`1:Invoke()
+LGCNGDOICKO:Tick()
+MoleMole.GameManager:ICBKANLKGGH()
+MoleMole.GameManager:Update()
+
+[ line 1233] 
+(Filename:  Line: 1233)
+
+Warmup file C:/Genshin Impact Game/YuanShen_Data/StreamingAssets\AssetBundles/blocks/00/03207066.blk 5111808
+MoleMole.AssetBundleExternalResourceProvider:ShaderBlockWarmUp()
+LGCNGDOICKO:LHIABLGGLBB()
+System.Func`1:Invoke()
+MoleMole.BEDPLKLCDIE:FNMCNHCEBCG()
+System.Func`1:Invoke()
+LGCNGDOICKO:Tick()
+MoleMole.GameManager:ICBKANLKGGH()
+MoleMole.GameManager:Update()
+
+[ line 1233] 
+(Filename:  Line: 1233)
+
+Warmup file C:/Genshin Impact Game/YuanShen_Data/StreamingAssets\AssetBundles/blocks/00/07459103.blk 6422528
+MoleMole.AssetBundleExternalResourceProvider:ShaderBlockWarmUp()
+LGCNGDOICKO:LHIABLGGLBB()
+System.Func`1:Invoke()
+MoleMole.BEDPLKLCDIE:FNMCNHCEBCG()
+System.Func`1:Invoke()
+LGCNGDOICKO:Tick()
+MoleMole.GameManager:ICBKANLKGGH()
+MoleMole.GameManager:Update()
+
+[ line 1233] 
+(Filename:  Line: 1233)
+
+Warmup file C:/Genshin Impact Game/YuanShen_Data/StreamingAssets\AssetBundles/blocks/00/13159064.blk 4980736
+MoleMole.AssetBundleExternalResourceProvider:ShaderBlockWarmUp()
+LGCNGDOICKO:LHIABLGGLBB()
+System.Func`1:Invoke()
+MoleMole.BEDPLKLCDIE:FNMCNHCEBCG()
+System.Func`1:Invoke()
+LGCNGDOICKO:Tick()
+MoleMole.GameManager:ICBKANLKGGH()
+MoleMole.GameManager:Update()
+
+[ line 1233] 
+(Filename:  Line: 1233)
+
+Warmup file C:/Genshin Impact Game/YuanShen_Data/StreamingAssets\AssetBundles/blocks/00/14747828.blk 5898240
+MoleMole.AssetBundleExternalResourceProvider:ShaderBlockWarmUp()
+LGCNGDOICKO:LHIABLGGLBB()
+System.Func`1:Invoke()
+MoleMole.BEDPLKLCDIE:FNMCNHCEBCG()
+System.Func`1:Invoke()
+LGCNGDOICKO:Tick()
+MoleMole.GameManager:ICBKANLKGGH()
+MoleMole.GameManager:Update()
+
+[ line 1233] 
+(Filename:  Line: 1233)
+
+Warmup file C:/Genshin Impact Game/YuanShen_Data/StreamingAssets\AssetBundles/blocks/00/03655484.blk 5242880
+MoleMole.AssetBundleExternalResourceProvider:ShaderBlockWarmUp()
+LGCNGDOICKO:LHIABLGGLBB()
+System.Func`1:Invoke()
+MoleMole.BEDPLKLCDIE:FNMCNHCEBCG()
+System.Func`1:Invoke()
+LGCNGDOICKO:Tick()
+MoleMole.GameManager:ICBKANLKGGH()
+MoleMole.GameManager:Update()
+
+[ line 1233] 
+(Filename:  Line: 1233)
+
+Warmup file C:/Genshin Impact Game/YuanShen_Data/StreamingAssets\AssetBundles/blocks/00/12283723.blk 4718592
+MoleMole.AssetBundleExternalResourceProvider:ShaderBlockWarmUp()
+LGCNGDOICKO:LHIABLGGLBB()
+System.Func`1:Invoke()
+MoleMole.BEDPLKLCDIE:FNMCNHCEBCG()
+System.Func`1:Invoke()
+LGCNGDOICKO:Tick()
+MoleMole.GameManager:ICBKANLKGGH()
+MoleMole.GameManager:Update()
+
+[ line 1233] 
+(Filename:  Line: 1233)
+
+Warmup file C:/Genshin Impact Game/YuanShen_Data/StreamingAssets\AssetBundles/blocks/00/13763956.blk 5767168
+MoleMole.AssetBundleExternalResourceProvider:ShaderBlockWarmUp()
+LGCNGDOICKO:LHIABLGGLBB()
+System.Func`1:Invoke()
+MoleMole.BEDPLKLCDIE:FNMCNHCEBCG()
+System.Func`1:Invoke()
+LGCNGDOICKO:Tick()
+MoleMole.GameManager:ICBKANLKGGH()
+MoleMole.GameManager:Update()
+
+[ line 1233] 
+(Filename:  Line: 1233)
+
+Warmup file C:/Genshin Impact Game/YuanShen_Data/StreamingAssets\AssetBundles/blocks/00/16462616.blk 5636096
+MoleMole.AssetBundleExternalResourceProvider:ShaderBlockWarmUp()
+LGCNGDOICKO:LHIABLGGLBB()
+System.Func`1:Invoke()
+MoleMole.BEDPLKLCDIE:FNMCNHCEBCG()
+System.Func`1:Invoke()
+LGCNGDOICKO:Tick()
+MoleMole.GameManager:ICBKANLKGGH()
+MoleMole.GameManager:Update()
+
+[ line 1233] 
+(Filename:  Line: 1233)
+
+Warmup file C:/Genshin Impact Game/YuanShen_Data/StreamingAssets\AssetBundles/blocks/00/11075725.blk 4849664
+MoleMole.AssetBundleExternalResourceProvider:ShaderBlockWarmUp()
+LGCNGDOICKO:LHIABLGGLBB()
+System.Func`1:Invoke()
+MoleMole.BEDPLKLCDIE:FNMCNHCEBCG()
+System.Func`1:Invoke()
+LGCNGDOICKO:Tick()
+MoleMole.GameManager:ICBKANLKGGH()
+MoleMole.GameManager:Update()
+
+[ line 1233] 
+(Filename:  Line: 1233)
+
+Warmup file C:/Genshin Impact Game/YuanShen_Data/StreamingAssets\AssetBundles/blocks/00/11627021.blk 5636096
+MoleMole.AssetBundleExternalResourceProvider:ShaderBlockWarmUp()
+LGCNGDOICKO:LHIABLGGLBB()
+System.Func`1:Invoke()
+MoleMole.BEDPLKLCDIE:FNMCNHCEBCG()
+System.Func`1:Invoke()
+LGCNGDOICKO:Tick()
+MoleMole.GameManager:ICBKANLKGGH()
+MoleMole.GameManager:Update()
+
+[ line 1233] 
+(Filename:  Line: 1233)
+
+Warmup file C:/Genshin Impact Game/YuanShen_Data/StreamingAssets\AssetBundles/blocks/00/01265883.blk 5505024
+MoleMole.AssetBundleExternalResourceProvider:ShaderBlockWarmUp()
+LGCNGDOICKO:LHIABLGGLBB()
+System.Func`1:Invoke()
+MoleMole.BEDPLKLCDIE:FNMCNHCEBCG()
+System.Func`1:Invoke()
+LGCNGDOICKO:Tick()
+MoleMole.GameManager:ICBKANLKGGH()
+MoleMole.GameManager:Update()
+
+[ line 1233] 
+(Filename:  Line: 1233)
+
+Warmup file C:/Genshin Impact Game/YuanShen_Data/StreamingAssets\AssetBundles/blocks/00/10216623.blk 4849664
+MoleMole.AssetBundleExternalResourceProvider:ShaderBlockWarmUp()
+LGCNGDOICKO:LHIABLGGLBB()
+System.Func`1:Invoke()
+MoleMole.BEDPLKLCDIE:FNMCNHCEBCG()
+System.Func`1:Invoke()
+LGCNGDOICKO:Tick()
+MoleMole.GameManager:ICBKANLKGGH()
+MoleMole.GameManager:Update()
+
+[ line 1233] 
+(Filename:  Line: 1233)
+
+Warmup file C:/Genshin Impact Game/YuanShen_Data/StreamingAssets\AssetBundles/blocks/00/02910746.blk 4849664
+MoleMole.AssetBundleExternalResourceProvider:ShaderBlockWarmUp()
+LGCNGDOICKO:LHIABLGGLBB()
+System.Func`1:Invoke()
+MoleMole.BEDPLKLCDIE:FNMCNHCEBCG()
+System.Func`1:Invoke()
+LGCNGDOICKO:Tick()
+MoleMole.GameManager:ICBKANLKGGH()
+MoleMole.GameManager:Update()
+
+[ line 1233] 
+(Filename:  Line: 1233)
+
+Warmup file C:/Genshin Impact Game/YuanShen_Data/StreamingAssets\AssetBundles/blocks/00/08750916.blk 6553600
+MoleMole.AssetBundleExternalResourceProvider:ShaderBlockWarmUp()
+LGCNGDOICKO:LHIABLGGLBB()
+System.Func`1:Invoke()
+MoleMole.BEDPLKLCDIE:FNMCNHCEBCG()
+System.Func`1:Invoke()
+LGCNGDOICKO:Tick()
+MoleMole.GameManager:ICBKANLKGGH()
+MoleMole.GameManager:Update()
+
+[ line 1233] 
+(Filename:  Line: 1233)
+
+Warmup file C:/Genshin Impact Game/YuanShen_Data/StreamingAssets\AssetBundles/blocks/00/10079595.blk 5111808
+MoleMole.AssetBundleExternalResourceProvider:ShaderBlockWarmUp()
+LGCNGDOICKO:LHIABLGGLBB()
+System.Func`1:Invoke()
+MoleMole.BEDPLKLCDIE:FNMCNHCEBCG()
+System.Func`1:Invoke()
+LGCNGDOICKO:Tick()
+MoleMole.GameManager:ICBKANLKGGH()
+MoleMole.GameManager:Update()
+
+[ line 1233] 
+(Filename:  Line: 1233)
+
+Warmup file C:/Genshin Impact Game/YuanShen_Data/StreamingAssets\AssetBundles/blocks/00/08590311.blk 5505024
+MoleMole.AssetBundleExternalResourceProvider:ShaderBlockWarmUp()
+LGCNGDOICKO:LHIABLGGLBB()
+System.Func`1:Invoke()
+MoleMole.BEDPLKLCDIE:FNMCNHCEBCG()
+System.Func`1:Invoke()
+LGCNGDOICKO:Tick()
+MoleMole.GameManager:ICBKANLKGGH()
+MoleMole.GameManager:Update()
+
+[ line 1233] 
+(Filename:  Line: 1233)
+
+Warmup file C:/Genshin Impact Game/YuanShen_Data/StreamingAssets\AssetBundles/blocks/00/12580122.blk 5898240
+MoleMole.AssetBundleExternalResourceProvider:ShaderBlockWarmUp()
+LGCNGDOICKO:LHIABLGGLBB()
+System.Func`1:Invoke()
+MoleMole.BEDPLKLCDIE:FNMCNHCEBCG()
+System.Func`1:Invoke()
+LGCNGDOICKO:Tick()
+MoleMole.GameManager:ICBKANLKGGH()
+MoleMole.GameManager:Update()
+
+[ line 1233] 
+(Filename:  Line: 1233)
+
+Warmup file C:/Genshin Impact Game/YuanShen_Data/StreamingAssets\AssetBundles/blocks/00/14234290.blk 5505024
+MoleMole.AssetBundleExternalResourceProvider:ShaderBlockWarmUp()
+LGCNGDOICKO:LHIABLGGLBB()
+System.Func`1:Invoke()
+MoleMole.BEDPLKLCDIE:FNMCNHCEBCG()
+System.Func`1:Invoke()
+LGCNGDOICKO:Tick()
+MoleMole.GameManager:ICBKANLKGGH()
+MoleMole.GameManager:Update()
+
+[ line 1233] 
+(Filename:  Line: 1233)
+
+Warmup file C:/Genshin Impact Game/YuanShen_Data/StreamingAssets\AssetBundles/blocks/00/15666165.blk 13369344
+MoleMole.AssetBundleExternalResourceProvider:ShaderBlockWarmUp()
+LGCNGDOICKO:LHIABLGGLBB()
+System.Func`1:Invoke()
+MoleMole.BEDPLKLCDIE:FNMCNHCEBCG()
+System.Func`1:Invoke()
+LGCNGDOICKO:Tick()
+MoleMole.GameManager:ICBKANLKGGH()
+MoleMole.GameManager:Update()
+
+[ line 1233] 
+(Filename:  Line: 1233)
+
+Warmup file C:/Genshin Impact Game/YuanShen_Data/Persistent\AssetBundles/blocks/00/04457931.blk 11141120
+MoleMole.AssetBundleExternalResourceProvider:ShaderBlockWarmUp()
+LGCNGDOICKO:LHIABLGGLBB()
+System.Func`1:Invoke()
+MoleMole.BEDPLKLCDIE:FNMCNHCEBCG()
+System.Func`1:Invoke()
+LGCNGDOICKO:Tick()
+MoleMole.GameManager:ICBKANLKGGH()
+MoleMole.GameManager:Update()
+
+[ line 1233] 
+(Filename:  Line: 1233)
+
+Warmup file C:/Genshin Impact Game/YuanShen_Data/StreamingAssets\AssetBundles/blocks/00/15651535.blk 3407872
+MoleMole.AssetBundleExternalResourceProvider:ShaderBlockWarmUp()
+LGCNGDOICKO:LHIABLGGLBB()
+System.Func`1:Invoke()
+MoleMole.BEDPLKLCDIE:FNMCNHCEBCG()
+System.Func`1:Invoke()
+LGCNGDOICKO:Tick()
+MoleMole.GameManager:ICBKANLKGGH()
+MoleMole.GameManager:Update()
+
+[ line 1233] 
+(Filename:  Line: 1233)
+
+Warmup file C:/Genshin Impact Game/YuanShen_Data/StreamingAssets\AssetBundles/blocks/00/14638915.blk 3538944
+MoleMole.AssetBundleExternalResourceProvider:ShaderBlockWarmUp()
+LGCNGDOICKO:LHIABLGGLBB()
+System.Func`1:Invoke()
+MoleMole.BEDPLKLCDIE:FNMCNHCEBCG()
+System.Func`1:Invoke()
+LGCNGDOICKO:Tick()
+MoleMole.GameManager:ICBKANLKGGH()
+MoleMole.GameManager:Update()
+
+[ line 1233] 
+(Filename:  Line: 1233)
+
+Warmup file C:/Genshin Impact Game/YuanShen_Data/StreamingAssets\AssetBundles/blocks/00/15105361.blk 4718592
+MoleMole.AssetBundleExternalResourceProvider:ShaderBlockWarmUp()
+LGCNGDOICKO:LHIABLGGLBB()
+System.Func`1:Invoke()
+MoleMole.BEDPLKLCDIE:FNMCNHCEBCG()
+System.Func`1:Invoke()
+LGCNGDOICKO:Tick()
+MoleMole.GameManager:ICBKANLKGGH()
+MoleMole.GameManager:Update()
+
+[ line 1233] 
+(Filename:  Line: 1233)
+
+Warmup file C:/Genshin Impact Game/YuanShen_Data/StreamingAssets\AssetBundles/blocks/00/07738094.blk 4980736
+MoleMole.AssetBundleExternalResourceProvider:ShaderBlockWarmUp()
+LGCNGDOICKO:LHIABLGGLBB()
+System.Func`1:Invoke()
+MoleMole.BEDPLKLCDIE:FNMCNHCEBCG()
+System.Func`1:Invoke()
+LGCNGDOICKO:Tick()
+MoleMole.GameManager:ICBKANLKGGH()
+MoleMole.GameManager:Update()
+
+[ line 1233] 
+(Filename:  Line: 1233)
+
+Warmup file C:/Genshin Impact Game/YuanShen_Data/StreamingAssets\AssetBundles/blocks/00/11739912.blk 3145728
+MoleMole.AssetBundleExternalResourceProvider:ShaderBlockWarmUp()
+LGCNGDOICKO:LHIABLGGLBB()
+System.Func`1:Invoke()
+MoleMole.BEDPLKLCDIE:FNMCNHCEBCG()
+System.Func`1:Invoke()
+LGCNGDOICKO:Tick()
+MoleMole.GameManager:ICBKANLKGGH()
+MoleMole.GameManager:Update()
+
+[ line 1233] 
+(Filename:  Line: 1233)
+
+Warmup file C:/Genshin Impact Game/YuanShen_Data/StreamingAssets\AssetBundles/blocks/00/10480679.blk 3407872
+MoleMole.AssetBundleExternalResourceProvider:ShaderBlockWarmUp()
+LGCNGDOICKO:LHIABLGGLBB()
+System.Func`1:Invoke()
+MoleMole.BEDPLKLCDIE:FNMCNHCEBCG()
+System.Func`1:Invoke()
+LGCNGDOICKO:Tick()
+MoleMole.GameManager:ICBKANLKGGH()
+MoleMole.GameManager:Update()
+
+[ line 1233] 
+(Filename:  Line: 1233)
+
+Warmup file C:/Genshin Impact Game/YuanShen_Data/StreamingAssets\AssetBundles/blocks/00/04965881.blk 3932160
+MoleMole.AssetBundleExternalResourceProvider:ShaderBlockWarmUp()
+LGCNGDOICKO:LHIABLGGLBB()
+System.Func`1:Invoke()
+MoleMole.BEDPLKLCDIE:FNMCNHCEBCG()
+System.Func`1:Invoke()
+LGCNGDOICKO:Tick()
+MoleMole.GameManager:ICBKANLKGGH()
+MoleMole.GameManager:Update()
+
+[ line 1233] 
+(Filename:  Line: 1233)
+
+Warmup file C:/Genshin Impact Game/YuanShen_Data/StreamingAssets\AssetBundles/blocks/00/16050280.blk 3801088
+MoleMole.AssetBundleExternalResourceProvider:ShaderBlockWarmUp()
+LGCNGDOICKO:LHIABLGGLBB()
+System.Func`1:Invoke()
+MoleMole.BEDPLKLCDIE:FNMCNHCEBCG()
+System.Func`1:Invoke()
+LGCNGDOICKO:Tick()
+MoleMole.GameManager:ICBKANLKGGH()
+MoleMole.GameManager:Update()
+
+[ line 1233] 
+(Filename:  Line: 1233)
+
+Warmup file C:/Genshin Impact Game/YuanShen_Data/StreamingAssets\AssetBundles/blocks/00/13134405.blk 4980736
+MoleMole.AssetBundleExternalResourceProvider:ShaderBlockWarmUp()
+LGCNGDOICKO:LHIABLGGLBB()
+System.Func`1:Invoke()
+MoleMole.BEDPLKLCDIE:FNMCNHCEBCG()
+System.Func`1:Invoke()
+LGCNGDOICKO:Tick()
+MoleMole.GameManager:ICBKANLKGGH()
+MoleMole.GameManager:Update()
+
+[ line 1233] 
+(Filename:  Line: 1233)
+
+Warmup file C:/Genshin Impact Game/YuanShen_Data/StreamingAssets\AssetBundles/blocks/00/05857622.blk 3145728
+MoleMole.AssetBundleExternalResourceProvider:ShaderBlockWarmUp()
+LGCNGDOICKO:LHIABLGGLBB()
+System.Func`1:Invoke()
+MoleMole.BEDPLKLCDIE:FNMCNHCEBCG()
+System.Func`1:Invoke()
+LGCNGDOICKO:Tick()
+MoleMole.GameManager:ICBKANLKGGH()
+MoleMole.GameManager:Update()
+
+[ line 1233] 
+(Filename:  Line: 1233)
+
+Warmup file C:/Genshin Impact Game/YuanShen_Data/StreamingAssets\AssetBundles/blocks/00/14980991.blk 3145728
+MoleMole.AssetBundleExternalResourceProvider:ShaderBlockWarmUp()
+LGCNGDOICKO:LHIABLGGLBB()
+System.Func`1:Invoke()
+MoleMole.BEDPLKLCDIE:FNMCNHCEBCG()
+System.Func`1:Invoke()
+LGCNGDOICKO:Tick()
+MoleMole.GameManager:ICBKANLKGGH()
+MoleMole.GameManager:Update()
+
+[ line 1233] 
+(Filename:  Line: 1233)
+
+Warmup file C:/Genshin Impact Game/YuanShen_Data/StreamingAssets\AssetBundles/blocks/00/03796296.blk 4194304
+MoleMole.AssetBundleExternalResourceProvider:ShaderBlockWarmUp()
+LGCNGDOICKO:LHIABLGGLBB()
+System.Func`1:Invoke()
+MoleMole.BEDPLKLCDIE:FNMCNHCEBCG()
+System.Func`1:Invoke()
+LGCNGDOICKO:Tick()
+MoleMole.GameManager:ICBKANLKGGH()
+MoleMole.GameManager:Update()
+
+[ line 1233] 
+(Filename:  Line: 1233)
+
+Warmup file C:/Genshin Impact Game/YuanShen_Data/StreamingAssets\AssetBundles/blocks/00/04932747.blk 12320768
+MoleMole.AssetBundleExternalResourceProvider:ShaderBlockWarmUp()
+LGCNGDOICKO:LHIABLGGLBB()
+System.Func`1:Invoke()
+MoleMole.BEDPLKLCDIE:FNMCNHCEBCG()
+System.Func`1:Invoke()
+LGCNGDOICKO:Tick()
+MoleMole.GameManager:ICBKANLKGGH()
+MoleMole.GameManager:Update()
+
+[ line 1233] 
+(Filename:  Line: 1233)
+
+Warmup file C:/Genshin Impact Game/YuanShen_Data/StreamingAssets\AssetBundles/blocks/00/15215749.blk 31326208
+MoleMole.AssetBundleExternalResourceProvider:ShaderBlockWarmUp()
+LGCNGDOICKO:LHIABLGGLBB()
+System.Func`1:Invoke()
+MoleMole.BEDPLKLCDIE:FNMCNHCEBCG()
+System.Func`1:Invoke()
+LGCNGDOICKO:Tick()
+MoleMole.GameManager:ICBKANLKGGH()
+MoleMole.GameManager:Update()
+
+[ line 1233] 
+(Filename:  Line: 1233)
+
+Warmup file C:/Genshin Impact Game/YuanShen_Data/StreamingAssets\AssetBundles/blocks/00/09615644.blk 11534336
+MoleMole.AssetBundleExternalResourceProvider:ShaderBlockWarmUp()
+LGCNGDOICKO:LHIABLGGLBB()
+System.Func`1:Invoke()
+MoleMole.BEDPLKLCDIE:FNMCNHCEBCG()
+System.Func`1:Invoke()
+LGCNGDOICKO:Tick()
+MoleMole.GameManager:ICBKANLKGGH()
+MoleMole.GameManager:Update()
+
+[ line 1233] 
+(Filename:  Line: 1233)
+
+Warmup file C:/Genshin Impact Game/YuanShen_Data/StreamingAssets\AssetBundles/blocks/00/15674857.blk 4587520
+MoleMole.AssetBundleExternalResourceProvider:ShaderBlockWarmUp()
+LGCNGDOICKO:LHIABLGGLBB()
+System.Func`1:Invoke()
+MoleMole.BEDPLKLCDIE:FNMCNHCEBCG()
+System.Func`1:Invoke()
+LGCNGDOICKO:Tick()
+MoleMole.GameManager:ICBKANLKGGH()
+MoleMole.GameManager:Update()
+
+[ line 1233] 
+(Filename:  Line: 1233)
+
+Warmup file C:/Genshin Impact Game/YuanShen_Data/StreamingAssets\AssetBundles/blocks/00/02585139.blk 3276800
+MoleMole.AssetBundleExternalResourceProvider:ShaderBlockWarmUp()
+LGCNGDOICKO:LHIABLGGLBB()
+System.Func`1:Invoke()
+MoleMole.BEDPLKLCDIE:FNMCNHCEBCG()
+System.Func`1:Invoke()
+LGCNGDOICKO:Tick()
+MoleMole.GameManager:ICBKANLKGGH()
+MoleMole.GameManager:Update()
+
+[ line 1233] 
+(Filename:  Line: 1233)
+
+Warmup file C:/Genshin Impact Game/YuanShen_Data/StreamingAssets\AssetBundles/blocks/00/08244757.blk 131072
+MoleMole.AssetBundleExternalResourceProvider:ShaderBlockWarmUp()
+LGCNGDOICKO:LHIABLGGLBB()
+System.Func`1:Invoke()
+MoleMole.BEDPLKLCDIE:FNMCNHCEBCG()
+System.Func`1:Invoke()
+LGCNGDOICKO:Tick()
+MoleMole.GameManager:ICBKANLKGGH()
+MoleMole.GameManager:Update()
+
+[ line 1233] 
+(Filename:  Line: 1233)
+
+Warmup file C:/Genshin Impact Game/YuanShen_Data/StreamingAssets\AssetBundles/blocks/00/13250589.blk 12058624
+MoleMole.AssetBundleExternalResourceProvider:ShaderBlockWarmUp()
+LGCNGDOICKO:LHIABLGGLBB()
+System.Func`1:Invoke()
+MoleMole.BEDPLKLCDIE:FNMCNHCEBCG()
+System.Func`1:Invoke()
+LGCNGDOICKO:Tick()
+MoleMole.GameManager:ICBKANLKGGH()
+MoleMole.GameManager:Update()
+
+[ line 1233] 
+(Filename:  Line: 1233)
+
+WARNING: Shader Unsupported: 'Hidden/Internal-ScreenSpaceShadows-PCF-Specify' - Pass '' has no vertex shader
+Warmup shaders Assets/Standard Assets/ShaderVars/FrequentUsed_WindowsPlayer@warmup
+UnityEngine.Logger:LogFormat(LogType, String, Object[])
+UnityEngine.Debug:LogFormat(String, Object[])
+LGCNGDOICKO:LPAPMHIGAAA(String)
+LGCNGDOICKO:IGFADAOJALM(String)
+LGCNGDOICKO:LHIABLGGLBB()
+System.Func`1:Invoke()
+MoleMole.BEDPLKLCDIE:FNMCNHCEBCG()
+System.Func`1:Invoke()
+LGCNGDOICKO:Tick()
+MoleMole.GameManager:ICBKANLKGGH()
+MoleMole.GameManager:Update()
+ 
+(Filename: E:\WKSPC\2.6Fix\sourceCode\artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 81)
+
+UnloadTime: 1.216500 ms
+
+Unloading 6 unused Assets to reduce memory usage. Loaded Objects now: 12058.
+Total: 102.678000 ms (FindLiveObjects: 0.543500 ms CreateObjectMapping: 0.766700 ms MarkObjects: 101.308900 ms  DeleteObjects: 0.058600 ms)
+
+Genshin Start Log: LoginMainPageContext SetupView - NowTimeStamp:1650602554
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+MoleMole.Miscs:GenshinCommonLog(String)
+JBAFBKNHHCD:SetupView()
+MoleMole.BaseContext:Setup()
+MoleMole.BaseContext:OnLoadedView(GameObject)
+EAJODIIJNNH:OnLoadedView(GameObject)
+Epic.OnlineServices.KWS.OnUpdateParentEmailCallback:Invoke(UpdateParentEmailCallbackInfo)
+KGBFLIEKNFO:EHJKJIBKDIL(GameObject)
+Epic.OnlineServices.KWS.OnUpdateParentEmailCallback:Invoke(UpdateParentEmailCallbackInfo)
+LCGDGCLHGOF:LEJAKMEFAMH(PLGGMHHGNJK, GameObject, Action`1)
+LCGDGCLHGOF:FBGMPGMPGBN(PLGGMHHGNJK, Action`1, Boolean)
+LCGDGCLHGOF:GDKIIHFOBGG(PLGGMHHGNJK, Action`1, Boolean, Boolean)
+IOKGKOLCHPN:GDKIIHFOBGG(BaseContext, Action`1, Boolean)
+MoleMole.BaseContext:InstantiateView()
+MoleMole.BaseContext:Init()
+EAJODIIJNNH:Init()
+IOKGKOLCHPN:HKINKNNIACN(EAJODIIJNNH, Boolean, JMIOAFJCAGE)
+IOKGKOLCHPN:CJFDOKANFFO(WorldType, Boolean)
+OICNEDBFFIL:MoveNext()
+UnityEngine.SetupCoroutine:InvokeMoveNext(IEnumerator, IntPtr)
+ 
+(Filename: E:\WKSPC\2.6Fix\sourceCode\artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 81)
+
+WARNING: Shader Unsupported: 'miHoYo/Hidden/DebugVertexDensity' - Pass '' has no vertex shader
+WARNING: Shader Unsupported: 'miHoYo/Hidden/DebugVertexDensity' - All passes removed
+Genshin Start Log: LoginMainPageContext OnAgreement - NowTimeStamp:1650602554
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+MoleMole.Miscs:GenshinCommonLog(String)
+JBAFBKNHHCD:ADJEJBFGGED()
+JBAFBKNHHCD:ABAKCEHEGEG()
+JBAFBKNHHCD:UpdateView()
+IOKGKOLCHPN:Tick()
+MoleMole.GameManager:IDNIDPEAOGB()
+ 
+(Filename: E:\WKSPC\2.6Fix\sourceCode\artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 81)
+
+Genshin Start Log: LoginMainPageContext OnShowUserAgreementResult - NowTimeStamp:1650602554
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+MoleMole.Miscs:GenshinCommonLog(String)
+JBAFBKNHHCD:JDDAOEHCJPI(String)
+Epic.OnlineServices.KWS.OnUpdateParentEmailCallback:Invoke(UpdateParentEmailCallbackInfo)
+MiHoYo.SDK.<Invoke>c__AnonStorey0:<>m__0(String)
+Epic.OnlineServices.KWS.OnUpdateParentEmailCallback:Invoke(UpdateParentEmailCallbackInfo)
+MiHoYo.SDK.MiHoYoSDKComboManager:OnNoShowUserAgreement(Action`1)
+MiHoYo.SDK.MiHoYoSDKComboManager:ShowUserAgreement(String, Action`1)
+MiHoYo.SDK.MiHoYoSDKDll:launch_show_user_agreement_with_parameters(String, Action`1)
+System.Reflection.MonoMethod:Invoke(Object, BindingFlags, Binder, Object[], CultureInfo)
+System.Reflection.MethodBase:Invoke(Object, Object[])
+MiHoYo.SDK.MiHoYoSDKDll:Invoke(String, String, Action`1)
+MiHoYo.SDK.MiHoYoSDK:Invoke(String, String, Action`1)
+JBAFBKNHHCD:DLLBNGIIGPL()
+JBAFBKNHHCD:ABAKCEHEGEG()
+JBAFBKNHHCD:UpdateView()
+IOKGKOLCHPN:Tick()
+MoleMole.GameManager:IDNIDPEAOGB()
+ 
+(Filename: E:\WKSPC\2.6Fix\sourceCode\artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 81)
+
+Genshin Start Log: LoginMainPageContext OnPreInit - NowTimeStamp:1650602554
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+MoleMole.Miscs:GenshinCommonLog(String)
+JBAFBKNHHCD:BFOJDJCGJAB()
+JBAFBKNHHCD:ABAKCEHEGEG()
+JBAFBKNHHCD:UpdateView()
+IOKGKOLCHPN:Tick()
+MoleMole.GameManager:IDNIDPEAOGB()
+ 
+(Filename: E:\WKSPC\2.6Fix\sourceCode\artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 81)
+
+Genshin Start Log: LoginMainPageContext InitServerDispatch - NowTimeStamp:1650602554
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+MoleMole.Miscs:GenshinCommonLog(String)
+JBAFBKNHHCD:MJOGLLDGOIG()
+JBAFBKNHHCD:ABAKCEHEGEG()
+JBAFBKNHHCD:UpdateView()
+IOKGKOLCHPN:Tick()
+MoleMole.GameManager:IDNIDPEAOGB()
+ 
+(Filename: E:\WKSPC\2.6Fix\sourceCode\artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 81)
+
+Genshin Start Log: NetworkManager ConnectGlobalDispatchServer 1 - NowTimeStamp:1650602554
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+MoleMole.Miscs:GenshinCommonLog(String)
+MDDFKIMACIK:MoveNext()
+UnityEngine.SetupCoroutine:InvokeMoveNext(IEnumerator, IntPtr)
+JFEEBNIKEPB:HNNALGALOLF(IEnumerator, Boolean)
+JBAFBKNHHCD:ABAKCEHEGEG()
+JBAFBKNHHCD:UpdateView()
+IOKGKOLCHPN:Tick()
+MoleMole.GameManager:IDNIDPEAOGB()
+ 
+(Filename: E:\WKSPC\2.6Fix\sourceCode\artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 81)
+
+Genshin Start Log: NetworkManager ConnectGlobalDispatchServer https://dispatchcnglobal.yuanshen.com/query_region_list - NowTimeStamp:1650602554
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+MoleMole.Miscs:GenshinCommonLog(String)
+MDDFKIMACIK:MoveNext()
+UnityEngine.SetupCoroutine:InvokeMoveNext(IEnumerator, IntPtr)
+JFEEBNIKEPB:HNNALGALOLF(IEnumerator, Boolean)
+JBAFBKNHHCD:ABAKCEHEGEG()
+JBAFBKNHHCD:UpdateView()
+IOKGKOLCHPN:Tick()
+MoleMole.GameManager:IDNIDPEAOGB()
+ 
+(Filename: E:\WKSPC\2.6Fix\sourceCode\artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 81)
+
+Genshin Start Log: NetworkManager OnConnectGlobalDispatch - NowTimeStamp:1650602555
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+MoleMole.Miscs:GenshinCommonLog(String)
+JKBFHKFABDN:AGHHOFLHHDM(String, Action)
+MDDFKIMACIK:MoveNext()
+UnityEngine.SetupCoroutine:InvokeMoveNext(IEnumerator, IntPtr)
+ 
+(Filename: E:\WKSPC\2.6Fix\sourceCode\artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 81)
+
+Genshin Start Log: NetworkManager SetServerDispatchConfig isGlobal=True - NowTimeStamp:1650602555
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+MoleMole.Miscs:GenshinCommonLog(String)
+JKBFHKFABDN:HGMHKIBJDLF(Byte[], Byte[], Boolean)
+JKBFHKFABDN:AGHHOFLHHDM(String, Action)
+MDDFKIMACIK:MoveNext()
+UnityEngine.SetupCoroutine:InvokeMoveNext(IEnumerator, IntPtr)
+ 
+(Filename: E:\WKSPC\2.6Fix\sourceCode\artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 81)
+
+Genshin Start Log: ChromaSDKManager InitChroma Start - NowTimeStamp:1650602555
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+MoleMole.Miscs:GenshinCommonLog(String)
+KKGEFICJJHG:JGEMJGJIPOE()
+JKBFHKFABDN:AGHHOFLHHDM(String, Action)
+MDDFKIMACIK:MoveNext()
+UnityEngine.SetupCoroutine:InvokeMoveNext(IEnumerator, IntPtr)
+ 
+(Filename: E:\WKSPC\2.6Fix\sourceCode\artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 81)
+
+Genshin Start Log: LoginMainPageContext OnGlobalDP - NowTimeStamp:1650602555
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+MoleMole.Miscs:GenshinCommonLog(String)
+JBAFBKNHHCD:GNJGCICEEGJ()
+System.Func`1:Invoke()
+JKBFHKFABDN:AGHHOFLHHDM(String, Action)
+MDDFKIMACIK:MoveNext()
+UnityEngine.SetupCoroutine:InvokeMoveNext(IEnumerator, IntPtr)
+ 
+(Filename: E:\WKSPC\2.6Fix\sourceCode\artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 81)
+
+Genshin Start Log: LoginMainPageContext OnLogin - NowTimeStamp:1650602555
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+MoleMole.Miscs:GenshinCommonLog(String)
+JBAFBKNHHCD:OFOEOMICIMC()
+JBAFBKNHHCD:ABAKCEHEGEG()
+JBAFBKNHHCD:UpdateView()
+IOKGKOLCHPN:Tick()
+MoleMole.GameManager:IDNIDPEAOGB()
+ 
+(Filename: E:\WKSPC\2.6Fix\sourceCode\artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 81)
+
+Genshin Start Log: MiHoYoSDKManager SDKInit - NowTimeStamp:1650602555
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+MoleMole.Miscs:GenshinCommonLog(String)
+JELDPHKLGHC:DNNPHIMBCOL(Action`1)
+JBAFBKNHHCD:OFOEOMICIMC()
+JBAFBKNHHCD:ABAKCEHEGEG()
+JBAFBKNHHCD:UpdateView()
+IOKGKOLCHPN:Tick()
+MoleMole.GameManager:IDNIDPEAOGB()
+ 
+(Filename: E:\WKSPC\2.6Fix\sourceCode\artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 81)
+
+mdk config response: {"retcode":0,"message":"OK","data":{"id":6,"game_key":"hk4e_cn","client":"PC","identity":"I_IDENTITY","guest":false,"ignore_versions":"","scene":"S_ACCOUNT","name":"原神","disable_regist":false,"enable_email_captcha":true,"thirdparty":["tp"],"disable_mmt":true,"server_guest":false,"thirdparty_ignore":{},"enable_ps_bind_account":false,"thirdparty_login_configs":{}}}
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+MiHoYo.SDK.MiHoYoSDKConfigManager:OnGetConfig(String)
+Epic.OnlineServices.KWS.OnUpdateParentEmailCallback:Invoke(UpdateParentEmailCallbackInfo)
+MiHoYo.SDK.<WWWRequestWithRetry>c__Iterator0:MoveNext()
+UnityEngine.SetupCoroutine:InvokeMoveNext(IEnumerator, IntPtr)
+ 
+(Filename: E:\WKSPC\2.6Fix\sourceCode\artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 81)
+
+Genshin Start Log: LoginMainPageContext OnInitResponse - NowTimeStamp:1650602555
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+MoleMole.Miscs:GenshinCommonLog(String)
+JBAFBKNHHCD:EGIHJMDBNLM(String)
+Epic.OnlineServices.KWS.OnUpdateParentEmailCallback:Invoke(UpdateParentEmailCallbackInfo)
+MiHoYo.SDK.MiHoYoSDKConfigManager:OnComboCallback()
+Epic.OnlineServices.KWS.OnUpdateParentEmailCallback:Invoke(UpdateParentEmailCallbackInfo)
+MiHoYo.SDK.<WWWRequestWithRetry>c__Iterator0:MoveNext()
+UnityEngine.SetupCoroutine:InvokeMoveNext(IEnumerator, IntPtr)
+ 
+(Filename: E:\WKSPC\2.6Fix\sourceCode\artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 81)
+
+Genshin Start Log: MiHoYoSDKManager SDKLogin - NowTimeStamp:1650602555
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+MoleMole.Miscs:GenshinCommonLog(String)
+JELDPHKLGHC:IPNAJOBDDGA(Action`1)
+JBAFBKNHHCD:EGIHJMDBNLM(String)
+Epic.OnlineServices.KWS.OnUpdateParentEmailCallback:Invoke(UpdateParentEmailCallbackInfo)
+MiHoYo.SDK.MiHoYoSDKConfigManager:OnComboCallback()
+Epic.OnlineServices.KWS.OnUpdateParentEmailCallback:Invoke(UpdateParentEmailCallbackInfo)
+MiHoYo.SDK.<WWWRequestWithRetry>c__Iterator0:MoveNext()
+UnityEngine.SetupCoroutine:InvokeMoveNext(IEnumerator, IntPtr)
+ 
+(Filename: E:\WKSPC\2.6Fix\sourceCode\artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 81)
+
+[0422/124235.659:INFO:api.cpp(275)] zfb_init: Started browser
+[0422/124235.659:INFO:api.cpp(277)] zfb_init: Using --ignore-certificate-errors
+[0422/124235.659:INFO:api.cpp(277)] zfb_init: Using --disable-web-security
+[0422/124235.659:INFO:api.cpp(277)] zfb_init: Using --autoplay-policy=no-user-gesture-required
+[0422/124235.659:INFO:api.cpp(277)] zfb_init: Using --disable-gpu-vsync
+[0422/124235.682:ERROR:browser_host_impl.cc(230)] Creating a windowless browser without setting CefSettings.windowless_rendering_enabled may result in reduced performance or runtime errors.
+OnGetBeforeNavigationMessage:https://user.mihoyo.com/geetestV2.html
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+MiHoYo.SDK.MiHoYoSDKWebView:OnGetBeforeNavigationMessage(String)
+MiHoYo.SDK.MiHoYoSDKWebViewManager:OnBeforeNavigationMsgReceive(JSONNode)
+Epic.OnlineServices.KWS.OnUpdateParentEmailCallback:Invoke(UpdateParentEmailCallbackInfo)
+ZenFulcrum.EmbeddedBrowser.Browser:OnItemChange(ChangeType, String)
+System.Func`1:Invoke()
+ZenFulcrum.EmbeddedBrowser.Browser:ProcessCallbacks()
+ZenFulcrum.EmbeddedBrowser.Browser:LateUpdate()
+ 
+(Filename: E:\WKSPC\2.6Fix\sourceCode\artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 81)
+
+OnGetWebViewPageFinish:https://user.mihoyo.com/geetestV2.html
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+MiHoYo.SDK.MiHoYoSDKWebView:OnGetWebViewPageFinish(String)
+MiHoYo.SDK.MiHoYoSDKWebViewManager:OnLoad(JSONNode)
+Epic.OnlineServices.KWS.OnUpdateParentEmailCallback:Invoke(UpdateParentEmailCallbackInfo)
+ZenFulcrum.EmbeddedBrowser.Browser:OnItemChange(ChangeType, String)
+System.Func`1:Invoke()
+ZenFulcrum.EmbeddedBrowser.Browser:ProcessCallbacks()
+ZenFulcrum.EmbeddedBrowser.Browser:LateUpdate()
+ 
+(Filename: E:\WKSPC\2.6Fix\sourceCode\artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 81)
+
+OnGetWebViewPageClose:
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+MiHoYo.SDK.MiHoYoSDKWebView:OnGetWebViewPageClose(String)
+MiHoYo.SDK.MiHoYoSDKWebViewManager:OnClose()
+MiHoYo.SDK.MiHoYoSDKWebViewManager:OnDestroy()
+ 
+(Filename: E:\WKSPC\2.6Fix\sourceCode\artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 81)
+
+Genshin Start Log: LoginMainPageContext OnSDKLoginCB - NowTimeStamp:1650602556
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+MoleMole.Miscs:GenshinCommonLog(String)
+JBAFBKNHHCD:KLCIOLFAHAE(String)
+Epic.OnlineServices.KWS.OnUpdateParentEmailCallback:Invoke(UpdateParentEmailCallbackInfo)
+MiHoYo.SDK.<Invoke>c__AnonStorey0:<>m__0(String)
+Epic.OnlineServices.KWS.OnUpdateParentEmailCallback:Invoke(UpdateParentEmailCallbackInfo)
+MiHoYo.SDK.MiHoYoSDKComboManager:OnComboLogin(NetworkResponseModel)
+Epic.OnlineServices.KWS.OnUpdateParentEmailCallback:Invoke(UpdateParentEmailCallbackInfo)
+Epic.OnlineServices.KWS.OnUpdateParentEmailCallback:Invoke(UpdateParentEmailCallbackInfo)
+MiHoYo.SDK.<WWWRequestWithRetry>c__Iterator0:MoveNext()
+UnityEngine.SetupCoroutine:InvokeMoveNext(IEnumerator, IntPtr)
+ 
+(Filename: E:\WKSPC\2.6Fix\sourceCode\artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 81)
+
+Genshin Start Log: LoginMainPageContext OnChooseServer - NowTimeStamp:1650602556
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+MoleMole.Miscs:GenshinCommonLog(String)
+JBAFBKNHHCD:KCEIJPOKNMF(BDDFEBOPMGL)
+JBAFBKNHHCD:LOJJPOJEKDN()
+JBAFBKNHHCD:KLCIOLFAHAE(String)
+Epic.OnlineServices.KWS.OnUpdateParentEmailCallback:Invoke(UpdateParentEmailCallbackInfo)
+MiHoYo.SDK.<Invoke>c__AnonStorey0:<>m__0(String)
+Epic.OnlineServices.KWS.OnUpdateParentEmailCallback:Invoke(UpdateParentEmailCallbackInfo)
+MiHoYo.SDK.MiHoYoSDKComboManager:OnComboLogin(NetworkResponseModel)
+Epic.OnlineServices.KWS.OnUpdateParentEmailCallback:Invoke(UpdateParentEmailCallbackInfo)
+Epic.OnlineServices.KWS.OnUpdateParentEmailCallback:Invoke(UpdateParentEmailCallbackInfo)
+MiHoYo.SDK.<WWWRequestWithRetry>c__Iterator0:MoveNext()
+UnityEngine.SetupCoroutine:InvokeMoveNext(IEnumerator, IntPtr)
+ 
+(Filename: E:\WKSPC\2.6Fix\sourceCode\artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 81)
+
+Genshin Start Log: NetworkManager SetServerDispatchConfig isGlobal=False - NowTimeStamp:1650602556
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+MoleMole.Miscs:GenshinCommonLog(String)
+JKBFHKFABDN:HGMHKIBJDLF(Byte[], Byte[], Boolean)
+JKBFHKFABDN:CCAPJOBOAOI(String, Action`1)
+PJFNILCOKCI:MoveNext()
+UnityEngine.SetupCoroutine:InvokeMoveNext(IEnumerator, IntPtr)
+ 
+(Filename: E:\WKSPC\2.6Fix\sourceCode\artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 81)
+
+Genshin Start Log: NetworkManager SetServerDispatchConfig isGlobal=False - NowTimeStamp:1650602556
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+MoleMole.Miscs:GenshinCommonLog(String)
+JKBFHKFABDN:HGMHKIBJDLF(Byte[], Byte[], Boolean)
+JKBFHKFABDN:CCAPJOBOAOI(String, Action`1)
+PJFNILCOKCI:MoveNext()
+UnityEngine.SetupCoroutine:InvokeMoveNext(IEnumerator, IntPtr)
+ 
+(Filename: E:\WKSPC\2.6Fix\sourceCode\artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 81)
+
+Genshin Start Log: LoginMainPageContext OnDownloadBunddleFinish - NowTimeStamp:1650602557
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+MoleMole.Miscs:GenshinCommonLog(String)
+JBAFBKNHHCD:CDAKPCILHIF(IPPMAHFJLOI)
+Epic.OnlineServices.KWS.OnUpdateParentEmailCallback:Invoke(UpdateParentEmailCallbackInfo)
+System.Func`1:Invoke()
+GILBIFNGGCL:CAHBDDMDBCA(Boolean, Boolean, Boolean)
+EKAOONLAJML:OANNNBNMMGI()
+EKAOONLAJML:EKNGAGLAGDO()
+GILBIFNGGCL:Tick()
+JMCCFDKDILB:EKNGAGLAGDO()
+MoleMole.GameManager:Update()
+ 
+(Filename: E:\WKSPC\2.6Fix\sourceCode\artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 81)
+
+Genshin Start Log: LoginMainPageContext GlobalDataManager Refresh Start - NowTimeStamp:1650602557
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+MoleMole.Miscs:GenshinCommonLog(String)
+OOLEFCOEOBE:MoveNext()
+UnityEngine.SetupCoroutine:InvokeMoveNext(IEnumerator, IntPtr)
+JFEEBNIKEPB:HNNALGALOLF(IEnumerator, Boolean)
+JBAFBKNHHCD:CDAKPCILHIF(IPPMAHFJLOI)
+Epic.OnlineServices.KWS.OnUpdateParentEmailCallback:Invoke(UpdateParentEmailCallbackInfo)
+System.Func`1:Invoke()
+GILBIFNGGCL:CAHBDDMDBCA(Boolean, Boolean, Boolean)
+EKAOONLAJML:OANNNBNMMGI()
+EKAOONLAJML:EKNGAGLAGDO()
+GILBIFNGGCL:Tick()
+JMCCFDKDILB:EKNGAGLAGDO()
+MoleMole.GameManager:Update()
+ 
+(Filename: E:\WKSPC\2.6Fix\sourceCode\artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 81)
+
+Genshin Start Log: LoginMainPageContext AfterOnBundleLoadFinish - NowTimeStamp:1650602561
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+MoleMole.Miscs:GenshinCommonLog(String)
+JBAFBKNHHCD:OCHOGHCPBFP()
+System.Func`1:Invoke()
+OOLEFCOEOBE:MoveNext()
+UnityEngine.SetupCoroutine:InvokeMoveNext(IEnumerator, IntPtr)
+ 
+(Filename: E:\WKSPC\2.6Fix\sourceCode\artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 81)
+
+Genshin Start Log: LoginMainPageContext OnLogin - NowTimeStamp:1650602571
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+MoleMole.Miscs:GenshinCommonLog(String)
+JBAFBKNHHCD:OFOEOMICIMC()
+JBAFBKNHHCD:ABAKCEHEGEG()
+JBAFBKNHHCD:UpdateView()
+IOKGKOLCHPN:Tick()
+MoleMole.GameManager:IDNIDPEAOGB()
+ 
+(Filename: E:\WKSPC\2.6Fix\sourceCode\artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 81)
+
+Genshin Start Log: MiHoYoSDKManager SDKInit - NowTimeStamp:1650602571
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+MoleMole.Miscs:GenshinCommonLog(String)
+JELDPHKLGHC:DNNPHIMBCOL(Action`1)
+JBAFBKNHHCD:OFOEOMICIMC()
+JBAFBKNHHCD:ABAKCEHEGEG()
+JBAFBKNHHCD:UpdateView()
+IOKGKOLCHPN:Tick()
+MoleMole.GameManager:IDNIDPEAOGB()
+ 
+(Filename: E:\WKSPC\2.6Fix\sourceCode\artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 81)
+
+mdk config response: {"retcode":0,"message":"OK","data":{"id":6,"game_key":"hk4e_cn","client":"PC","identity":"I_IDENTITY","guest":false,"ignore_versions":"","scene":"S_ACCOUNT","name":"原神","disable_regist":false,"enable_email_captcha":true,"thirdparty":["tp"],"disable_mmt":true,"server_guest":false,"thirdparty_ignore":{},"enable_ps_bind_account":false,"thirdparty_login_configs":{}}}
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+MiHoYo.SDK.MiHoYoSDKConfigManager:OnGetConfig(String)
+Epic.OnlineServices.KWS.OnUpdateParentEmailCallback:Invoke(UpdateParentEmailCallbackInfo)
+MiHoYo.SDK.<WWWRequestWithRetry>c__Iterator0:MoveNext()
+UnityEngine.SetupCoroutine:InvokeMoveNext(IEnumerator, IntPtr)
+ 
+(Filename: E:\WKSPC\2.6Fix\sourceCode\artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 81)
+
+Genshin Start Log: LoginMainPageContext OnInitResponse - NowTimeStamp:1650602571
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+MoleMole.Miscs:GenshinCommonLog(String)
+JBAFBKNHHCD:EGIHJMDBNLM(String)
+Epic.OnlineServices.KWS.OnUpdateParentEmailCallback:Invoke(UpdateParentEmailCallbackInfo)
+MiHoYo.SDK.MiHoYoSDKConfigManager:OnComboCallback()
+Epic.OnlineServices.KWS.OnUpdateParentEmailCallback:Invoke(UpdateParentEmailCallbackInfo)
+MiHoYo.SDK.<WWWRequestWithRetry>c__Iterator0:MoveNext()
+UnityEngine.SetupCoroutine:InvokeMoveNext(IEnumerator, IntPtr)
+ 
+(Filename: E:\WKSPC\2.6Fix\sourceCode\artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 81)
+
+Genshin Start Log: MiHoYoSDKManager SDKLogin - NowTimeStamp:1650602571
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+MoleMole.Miscs:GenshinCommonLog(String)
+JELDPHKLGHC:IPNAJOBDDGA(Action`1)
+JBAFBKNHHCD:EGIHJMDBNLM(String)
+Epic.OnlineServices.KWS.OnUpdateParentEmailCallback:Invoke(UpdateParentEmailCallbackInfo)
+MiHoYo.SDK.MiHoYoSDKConfigManager:OnComboCallback()
+Epic.OnlineServices.KWS.OnUpdateParentEmailCallback:Invoke(UpdateParentEmailCallbackInfo)
+MiHoYo.SDK.<WWWRequestWithRetry>c__Iterator0:MoveNext()
+UnityEngine.SetupCoroutine:InvokeMoveNext(IEnumerator, IntPtr)
+ 
+(Filename: E:\WKSPC\2.6Fix\sourceCode\artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 81)
+
+Genshin Start Log: LoginMainPageContext OnSDKLoginCB - NowTimeStamp:1650602579
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+MoleMole.Miscs:GenshinCommonLog(String)
+JBAFBKNHHCD:KLCIOLFAHAE(String)
+Epic.OnlineServices.KWS.OnUpdateParentEmailCallback:Invoke(UpdateParentEmailCallbackInfo)
+MiHoYo.SDK.<Invoke>c__AnonStorey0:<>m__0(String)
+Epic.OnlineServices.KWS.OnUpdateParentEmailCallback:Invoke(UpdateParentEmailCallbackInfo)
+MiHoYo.SDK.MiHoYoSDKComboManager:OnComboLogin(NetworkResponseModel)
+Epic.OnlineServices.KWS.OnUpdateParentEmailCallback:Invoke(UpdateParentEmailCallbackInfo)
+Epic.OnlineServices.KWS.OnUpdateParentEmailCallback:Invoke(UpdateParentEmailCallbackInfo)
+MiHoYo.SDK.<WWWRequestWithRetry>c__Iterator0:MoveNext()
+UnityEngine.SetupCoroutine:InvokeMoveNext(IEnumerator, IntPtr)
+ 
+(Filename: E:\WKSPC\2.6Fix\sourceCode\artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 81)
+
+Genshin Start Log: LoginMainPageContext OnChooseServer - NowTimeStamp:1650602579
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+MoleMole.Miscs:GenshinCommonLog(String)
+JBAFBKNHHCD:KCEIJPOKNMF(BDDFEBOPMGL)
+JBAFBKNHHCD:LOJJPOJEKDN()
+JBAFBKNHHCD:KLCIOLFAHAE(String)
+Epic.OnlineServices.KWS.OnUpdateParentEmailCallback:Invoke(UpdateParentEmailCallbackInfo)
+MiHoYo.SDK.<Invoke>c__AnonStorey0:<>m__0(String)
+Epic.OnlineServices.KWS.OnUpdateParentEmailCallback:Invoke(UpdateParentEmailCallbackInfo)
+MiHoYo.SDK.MiHoYoSDKComboManager:OnComboLogin(NetworkResponseModel)
+Epic.OnlineServices.KWS.OnUpdateParentEmailCallback:Invoke(UpdateParentEmailCallbackInfo)
+Epic.OnlineServices.KWS.OnUpdateParentEmailCallback:Invoke(UpdateParentEmailCallbackInfo)
+MiHoYo.SDK.<WWWRequestWithRetry>c__Iterator0:MoveNext()
+UnityEngine.SetupCoroutine:InvokeMoveNext(IEnumerator, IntPtr)
+ 
+(Filename: E:\WKSPC\2.6Fix\sourceCode\artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 81)
+
+Genshin Start Log: NetworkManager SetServerDispatchConfig isGlobal=False - NowTimeStamp:1650602579
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+MoleMole.Miscs:GenshinCommonLog(String)
+JKBFHKFABDN:HGMHKIBJDLF(Byte[], Byte[], Boolean)
+JKBFHKFABDN:CCAPJOBOAOI(String, Action`1)
+PJFNILCOKCI:MoveNext()
+UnityEngine.SetupCoroutine:InvokeMoveNext(IEnumerator, IntPtr)
+ 
+(Filename: E:\WKSPC\2.6Fix\sourceCode\artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 81)
+
+Genshin Start Log: NetworkManager SetServerDispatchConfig isGlobal=False - NowTimeStamp:1650602579
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+MoleMole.Miscs:GenshinCommonLog(String)
+JKBFHKFABDN:HGMHKIBJDLF(Byte[], Byte[], Boolean)
+JKBFHKFABDN:CCAPJOBOAOI(String, Action`1)
+PJFNILCOKCI:MoveNext()
+UnityEngine.SetupCoroutine:InvokeMoveNext(IEnumerator, IntPtr)
+ 
+(Filename: E:\WKSPC\2.6Fix\sourceCode\artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 81)
+
+Genshin Start Log: LoginMainPageContext OnDownloadBunddleFinish - NowTimeStamp:1650602580
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+MoleMole.Miscs:GenshinCommonLog(String)
+JBAFBKNHHCD:CDAKPCILHIF(IPPMAHFJLOI)
+Epic.OnlineServices.KWS.OnUpdateParentEmailCallback:Invoke(UpdateParentEmailCallbackInfo)
+System.Func`1:Invoke()
+GILBIFNGGCL:CAHBDDMDBCA(Boolean, Boolean, Boolean)
+EKAOONLAJML:OANNNBNMMGI()
+EKAOONLAJML:EKNGAGLAGDO()
+GILBIFNGGCL:Tick()
+JMCCFDKDILB:EKNGAGLAGDO()
+MoleMole.GameManager:Update()
+ 
+(Filename: E:\WKSPC\2.6Fix\sourceCode\artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 81)
+
+Genshin Start Log: LoginMainPageContext AfterOnBundleLoadFinish - NowTimeStamp:1650602580
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+MoleMole.Miscs:GenshinCommonLog(String)
+JBAFBKNHHCD:OCHOGHCPBFP()
+System.Func`1:Invoke()
+OOLEFCOEOBE:MoveNext()
+UnityEngine.SetupCoroutine:InvokeMoveNext(IEnumerator, IntPtr)
+ 
+(Filename: E:\WKSPC\2.6Fix\sourceCode\artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 81)
+
+Genshin Start Log: LoginMainPageContext AfterOpenDoor - NowTimeStamp:1650602601
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+MoleMole.Miscs:GenshinCommonLog(String)
+JBAFBKNHHCD:MGNJGCBAMFJ()
+System.Func`1:Invoke()
+MoleMole.MonoLoginScene:LPAHPJGHHAJ()
+System.Func`1:Invoke()
+OBECBJMOIAM:MoveNext()
+UnityEngine.SetupCoroutine:InvokeMoveNext(IEnumerator, IntPtr)
+ 
+(Filename: E:\WKSPC\2.6Fix\sourceCode\artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 81)
+
+Genshin Start Log: LoginMainPageContext LoginGameServer - NowTimeStamp:1650602601
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+MoleMole.Miscs:GenshinCommonLog(String)
+HBGCHJAIIEF:MoveNext()
+UnityEngine.SetupCoroutine:InvokeMoveNext(IEnumerator, IntPtr)
+JFEEBNIKEPB:HNNALGALOLF(IEnumerator, Boolean)
+JBAFBKNHHCD:MGNJGCBAMFJ()
+System.Func`1:Invoke()
+MoleMole.MonoLoginScene:LPAHPJGHHAJ()
+System.Func`1:Invoke()
+OBECBJMOIAM:MoveNext()
+UnityEngine.SetupCoroutine:InvokeMoveNext(IEnumerator, IntPtr)
+ 
+(Filename: E:\WKSPC\2.6Fix\sourceCode\artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 81)
+
+Genshin Loading Log: PlayerModule OnPlayerEnterSceneNotify - NowTimeStamp:1650602604
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+MoleMole.Miscs:GenshinCommonLog(String)
+NEOGDEDNDHF:APKDKOHJIPE(BDHHFLBHDPO)
+NEOGDEDNDHF:KDEFMBMNNBH(KMFEGPABGNL)
+OPPLEIEAEPI:MIAEDHJOLJN(KMFEGPABGNL)
+OPPLEIEAEPI:DKOBMCBKMED(KMFEGPABGNL, Boolean&)
+JKBFHKFABDN:GIANMCPJIEO(KMFEGPABGNL)
+Epic.OnlineServices.KWS.OnUpdateParentEmailCallback:Invoke(UpdateParentEmailCallbackInfo)
+NBGBHCELJML:EKNGAGLAGDO()
+JKBFHKFABDN:Tick()
+MoleMole.GameManager:ICBKANLKGGH()
+MoleMole.GameManager:Update()
+ 
+(Filename: E:\WKSPC\2.6Fix\sourceCode\artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 81)
+
+Genshin Loading Log: LoadingManager OnPlayerEnterSceneNotify - NowTimeStamp:1650602604
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+MoleMole.Miscs:GenshinCommonLog(String)
+JOOGGKMAMJO:APKDKOHJIPE(BDHHFLBHDPO)
+NEOGDEDNDHF:APKDKOHJIPE(BDHHFLBHDPO)
+NEOGDEDNDHF:KDEFMBMNNBH(KMFEGPABGNL)
+OPPLEIEAEPI:MIAEDHJOLJN(KMFEGPABGNL)
+OPPLEIEAEPI:DKOBMCBKMED(KMFEGPABGNL, Boolean&)
+JKBFHKFABDN:GIANMCPJIEO(KMFEGPABGNL)
+Epic.OnlineServices.KWS.OnUpdateParentEmailCallback:Invoke(UpdateParentEmailCallbackInfo)
+NBGBHCELJML:EKNGAGLAGDO()
+JKBFHKFABDN:Tick()
+MoleMole.GameManager:ICBKANLKGGH()
+MoleMole.GameManager:Update()
+ 
+(Filename: E:\WKSPC\2.6Fix\sourceCode\artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 81)
+
+Genshin Loading Log: LoadingManager RealEnterScene - NowTimeStamp:1650602604
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+MoleMole.Miscs:GenshinCommonLog(String)
+JOOGGKMAMJO:OGCOAJIEHHB(BDHHFLBHDPO)
+JOOGGKMAMJO:APKDKOHJIPE(BDHHFLBHDPO)
+NEOGDEDNDHF:APKDKOHJIPE(BDHHFLBHDPO)
+NEOGDEDNDHF:KDEFMBMNNBH(KMFEGPABGNL)
+OPPLEIEAEPI:MIAEDHJOLJN(KMFEGPABGNL)
+OPPLEIEAEPI:DKOBMCBKMED(KMFEGPABGNL, Boolean&)
+JKBFHKFABDN:GIANMCPJIEO(KMFEGPABGNL)
+Epic.OnlineServices.KWS.OnUpdateParentEmailCallback:Invoke(UpdateParentEmailCallbackInfo)
+NBGBHCELJML:EKNGAGLAGDO()
+JKBFHKFABDN:Tick()
+MoleMole.GameManager:ICBKANLKGGH()
+MoleMole.GameManager:Update()
+ 
+(Filename: E:\WKSPC\2.6Fix\sourceCode\artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 81)
+
+Genshin Loading Log: LoadingManager LoadNewScene - NowTimeStamp:1650602604
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+MoleMole.Miscs:GenshinCommonLog(String)
+JOOGGKMAMJO:EEEIGNAAGHK(BDHHFLBHDPO)
+JOOGGKMAMJO:OGCOAJIEHHB(BDHHFLBHDPO)
+JOOGGKMAMJO:APKDKOHJIPE(BDHHFLBHDPO)
+NEOGDEDNDHF:APKDKOHJIPE(BDHHFLBHDPO)
+NEOGDEDNDHF:KDEFMBMNNBH(KMFEGPABGNL)
+OPPLEIEAEPI:MIAEDHJOLJN(KMFEGPABGNL)
+OPPLEIEAEPI:DKOBMCBKMED(KMFEGPABGNL, Boolean&)
+JKBFHKFABDN:GIANMCPJIEO(KMFEGPABGNL)
+Epic.OnlineServices.KWS.OnUpdateParentEmailCallback:Invoke(UpdateParentEmailCallbackInfo)
+NBGBHCELJML:EKNGAGLAGDO()
+JKBFHKFABDN:Tick()
+MoleMole.GameManager:ICBKANLKGGH()
+MoleMole.GameManager:Update()
+ 
+(Filename: E:\WKSPC\2.6Fix\sourceCode\artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 81)
+
+Genshin Loading Log: NetworkManager RequestEnterSceneReady - NowTimeStamp:1650602605
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+MoleMole.Miscs:GenshinCommonLog(String)
+JKBFHKFABDN:IIJKIAIGFIH(UInt32)
+System.Func`1:Invoke()
+BBMPAMGLHBL:IKEKAPHIFEN()
+System.Func`1:Invoke()
+OBECBJMOIAM:MoveNext()
+UnityEngine.SetupCoroutine:InvokeMoveNext(IEnumerator, IntPtr)
+ 
+(Filename: E:\WKSPC\2.6Fix\sourceCode\artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 81)
+
+Genshin Loading Log: LoadingManager OnBeginLoadScene - NowTimeStamp:1650602605
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+MoleMole.Miscs:GenshinCommonLog(String)
+JOOGGKMAMJO:CODNNGGNDKH(CPIDJEBOLPH)
+NEOGDEDNDHF:KDEFMBMNNBH(KMFEGPABGNL)
+OPPLEIEAEPI:MIAEDHJOLJN(KMFEGPABGNL)
+OPPLEIEAEPI:DKOBMCBKMED(KMFEGPABGNL, Boolean&)
+JKBFHKFABDN:GIANMCPJIEO(KMFEGPABGNL)
+Epic.OnlineServices.KWS.OnUpdateParentEmailCallback:Invoke(UpdateParentEmailCallbackInfo)
+NBGBHCELJML:EKNGAGLAGDO()
+JKBFHKFABDN:Tick()
+MoleMole.GameManager:ICBKANLKGGH()
+MoleMole.GameManager:Update()
+ 
+(Filename: E:\WKSPC\2.6Fix\sourceCode\artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 81)
+
+Genshin Loading Log: PlayerModule OnEnterSceneReadyRsp - NowTimeStamp:1650602605
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+MoleMole.Miscs:GenshinCommonLog(String)
+NEOGDEDNDHF:DMGPNOJCIHD(LMBFMFJFMEF)
+NEOGDEDNDHF:KDEFMBMNNBH(KMFEGPABGNL)
+OPPLEIEAEPI:MIAEDHJOLJN(KMFEGPABGNL)
+OPPLEIEAEPI:DKOBMCBKMED(KMFEGPABGNL, Boolean&)
+JKBFHKFABDN:GIANMCPJIEO(KMFEGPABGNL)
+Epic.OnlineServices.KWS.OnUpdateParentEmailCallback:Invoke(UpdateParentEmailCallbackInfo)
+NBGBHCELJML:EKNGAGLAGDO()
+JKBFHKFABDN:Tick()
+MoleMole.GameManager:ICBKANLKGGH()
+MoleMole.GameManager:Update()
+ 
+(Filename: E:\WKSPC\2.6Fix\sourceCode\artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 81)
+
+Genshin Loading Log: BaseLevel Init - NowTimeStamp:1650602605
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+MoleMole.Miscs:GenshinCommonLog(String)
+JGLADINOHAG:CJFDOKANFFO(UInt32)
+MoleMole.GameManager:NBMALCCBHBC(WorldType, UInt32, String, String)
+MoleMole.BEDPLKLCDIE:FNMCNHCEBCG()
+System.Func`1:Invoke()
+LGCNGDOICKO:Tick()
+MoleMole.GameManager:ICBKANLKGGH()
+MoleMole.GameManager:Update()
+ 
+(Filename: E:\WKSPC\2.6Fix\sourceCode\artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 81)
+
+Genshin Loading Log: BaseLevel LoadingLevelProgress ClearAsset 0.1 - NowTimeStamp:1650602605
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+MoleMole.Miscs:GenshinCommonLog(String)
+JGLADINOHAG:GNHCJMKEPPA(CBEGCPPLCAI, Single)
+JGLADINOHAG:CJFDOKANFFO(UInt32)
+MoleMole.GameManager:NBMALCCBHBC(WorldType, UInt32, String, String)
+MoleMole.BEDPLKLCDIE:FNMCNHCEBCG()
+System.Func`1:Invoke()
+LGCNGDOICKO:Tick()
+MoleMole.GameManager:ICBKANLKGGH()
+MoleMole.GameManager:Update()
+ 
+(Filename: E:\WKSPC\2.6Fix\sourceCode\artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 81)
+
+Genshin Loading Log: BaseLevel Init - NowTimeStamp:1650602605
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+MoleMole.Miscs:GenshinCommonLog(String)
+ADDFMONNJPC:MoveNext()
+UnityEngine.SetupCoroutine:InvokeMoveNext(IEnumerator, IntPtr)
+JGLADINOHAG:HAGPABNDKFM(IEnumerator)
+JGLADINOHAG:CJFDOKANFFO(UInt32)
+MoleMole.GameManager:NBMALCCBHBC(WorldType, UInt32, String, String)
+MoleMole.BEDPLKLCDIE:FNMCNHCEBCG()
+System.Func`1:Invoke()
+LGCNGDOICKO:Tick()
+MoleMole.GameManager:ICBKANLKGGH()
+MoleMole.GameManager:Update()
+ 
+(Filename: E:\WKSPC\2.6Fix\sourceCode\artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 81)
+
+Genshin Loading Log: LoadingManager EnterInitScene - NowTimeStamp:1650602605
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+MoleMole.Miscs:GenshinCommonLog(String)
+JOOGGKMAMJO:OMJPNMNOAAA(UInt32)
+ADDFMONNJPC:MoveNext()
+UnityEngine.SetupCoroutine:InvokeMoveNext(IEnumerator, IntPtr)
+JGLADINOHAG:HAGPABNDKFM(IEnumerator)
+JGLADINOHAG:CJFDOKANFFO(UInt32)
+MoleMole.GameManager:NBMALCCBHBC(WorldType, UInt32, String, String)
+MoleMole.BEDPLKLCDIE:FNMCNHCEBCG()
+System.Func`1:Invoke()
+LGCNGDOICKO:Tick()
+MoleMole.GameManager:ICBKANLKGGH()
+MoleMole.GameManager:Update()
+ 
+(Filename: E:\WKSPC\2.6Fix\sourceCode\artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 81)
+
+Genshin Loading Log: BaseLevel LoadingLevelProgress LoadScene 0.2 - NowTimeStamp:1650602605
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+MoleMole.Miscs:GenshinCommonLog(String)
+JGLADINOHAG:GNHCJMKEPPA(CBEGCPPLCAI, Single)
+ADDFMONNJPC:MoveNext()
+UnityEngine.SetupCoroutine:InvokeMoveNext(IEnumerator, IntPtr)
+JGLADINOHAG:HAGPABNDKFM(IEnumerator)
+JGLADINOHAG:CJFDOKANFFO(UInt32)
+MoleMole.GameManager:NBMALCCBHBC(WorldType, UInt32, String, String)
+MoleMole.BEDPLKLCDIE:FNMCNHCEBCG()
+System.Func`1:Invoke()
+LGCNGDOICKO:Tick()
+MoleMole.GameManager:ICBKANLKGGH()
+MoleMole.GameManager:Update()
+ 
+(Filename: E:\WKSPC\2.6Fix\sourceCode\artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 81)
+
+Unloading 5 Unused Serialized files (Serialized files now loaded: 1242)
+UnloadTime: 1.722500 ms
+
+Unloading 936 unused Assets to reduce memory usage. Loaded Objects now: 14268.
+Total: 274.913900 ms (FindLiveObjects: 0.787500 ms CreateObjectMapping: 0.760900 ms MarkObjects: 271.764300 ms  DeleteObjects: 1.600800 ms)
+
+Genshin Loading Log: BaseLevel LoadingLevelProgress PreInit 0.28 - NowTimeStamp:1650602606
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+MoleMole.Miscs:GenshinCommonLog(String)
+JGLADINOHAG:GNHCJMKEPPA(CBEGCPPLCAI, Single)
+ADDFMONNJPC:MoveNext()
+UnityEngine.SetupCoroutine:InvokeMoveNext(IEnumerator, IntPtr)
+ 
+(Filename: E:\WKSPC\2.6Fix\sourceCode\artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 81)
+
+WARNING: Shader Unsupported: 'miHoYo/Hidden/DebugVertexDensity' - Pass '' has no vertex shader
+WARNING: Shader Unsupported: 'miHoYo/Hidden/DebugVertexDensity' - All passes removed
+Genshin Loading Log: BaseLevel LoadingLevelProgress Init 0.3 - NowTimeStamp:1650602606
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+MoleMole.Miscs:GenshinCommonLog(String)
+JGLADINOHAG:GNHCJMKEPPA(CBEGCPPLCAI, Single)
+ADDFMONNJPC:MoveNext()
+UnityEngine.SetupCoroutine:InvokeMoveNext(IEnumerator, IntPtr)
+ 
+(Filename: E:\WKSPC\2.6Fix\sourceCode\artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 81)
+
+Genshin Loading Log: LoadingManager EnterLoadStage - NowTimeStamp:1650602606
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+MoleMole.Miscs:GenshinCommonLog(String)
+JOOGGKMAMJO:CIHNACFAEPF(UInt32, Boolean)
+ADDFMONNJPC:MoveNext()
+UnityEngine.SetupCoroutine:InvokeMoveNext(IEnumerator, IntPtr)
+ 
+(Filename: E:\WKSPC\2.6Fix\sourceCode\artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 81)
+
+AssetBatchLoader::LoadingProgress0 0.333333
+Genshin Loading Log: BaseLevel LoadingLevelProgress LoadStage 0.3035042 - NowTimeStamp:1650602607
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+MoleMole.Miscs:GenshinCommonLog(String)
+JGLADINOHAG:GNHCJMKEPPA(CBEGCPPLCAI, Single)
+UnityEngine.Events.UnityAction`2:Invoke(T0, T1)
+ENOINHCOGGN:FNMCNHCEBCG(KLLMCKJNAMC, Single)
+UnityEngine.Events.UnityAction`2:Invoke(T0, T1)
+PAEPKBENAKD:MoveNext()
+UnityEngine.SetupCoroutine:InvokeMoveNext(IEnumerator, IntPtr)
+ 
+(Filename: E:\WKSPC\2.6Fix\sourceCode\artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 81)
+
+AssetBatchLoader::LoadingProgress0 0.666667
+Genshin Loading Log: BaseLevel LoadingLevelProgress LoadStage 0.405 - NowTimeStamp:1650602608
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+MoleMole.Miscs:GenshinCommonLog(String)
+JGLADINOHAG:GNHCJMKEPPA(CBEGCPPLCAI, Single)
+UnityEngine.Events.UnityAction`2:Invoke(T0, T1)
+ENOINHCOGGN:EHJKJIBKDIL(Single)
+System.Func`2:Invoke(T)
+MoleMole.AssetBundleExternalResourceProvider:AssetBatchTick()
+MoleMole.AssetBundleExternalResourceProvider:Tick()
+LGCNGDOICKO:Tick()
+MoleMole.GameManager:ICBKANLKGGH()
+MoleMole.GameManager:Update()
+ 
+(Filename: E:\WKSPC\2.6Fix\sourceCode\artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 81)
+
+AssetBatchLoader::LoadingProgress0 0.166667
+Genshin Loading Log: BaseLevel LoadingLevelProgress LoadStage 0.4458333 - NowTimeStamp:1650602609
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+MoleMole.Miscs:GenshinCommonLog(String)
+JGLADINOHAG:GNHCJMKEPPA(CBEGCPPLCAI, Single)
+UnityEngine.Events.UnityAction`2:Invoke(T0, T1)
+ENOINHCOGGN:PMMNDFBNLPK(Single)
+System.Func`2:Invoke(T)
+MoleMole.AssetBundleExternalResourceProvider:AssetBatchTick()
+MoleMole.AssetBundleExternalResourceProvider:Tick()
+LGCNGDOICKO:Tick()
+MoleMole.GameManager:ICBKANLKGGH()
+MoleMole.GameManager:Update()
+ 
+(Filename: E:\WKSPC\2.6Fix\sourceCode\artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 81)
+
+Genshin Loading Log: BaseLevel OnSceneLoadedPostInit - NowTimeStamp:1650602609
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+MoleMole.Miscs:GenshinCommonLog(String)
+JGLADINOHAG:INFANFAFHGG(UInt32)
+ADDFMONNJPC:MoveNext()
+UnityEngine.SetupCoroutine:InvokeMoveNext(IEnumerator, IntPtr)
+ 
+(Filename: E:\WKSPC\2.6Fix\sourceCode\artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 81)
+
+Genshin Loading Log: BaseLevel OnPlayerEnterSceneFinish - NowTimeStamp:1650602609
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+MoleMole.Miscs:GenshinCommonLog(String)
+JGLADINOHAG:IMMPAJBGBAN(UInt32, Boolean)
+JGLADINOHAG:INFANFAFHGG(UInt32)
+ADDFMONNJPC:MoveNext()
+UnityEngine.SetupCoroutine:InvokeMoveNext(IEnumerator, IntPtr)
+ 
+(Filename: E:\WKSPC\2.6Fix\sourceCode\artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 81)
+
+Genshin Loading Log: NetworkManager RequestSceneInitFinish - NowTimeStamp:1650602609
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+MoleMole.Miscs:GenshinCommonLog(String)
+JKBFHKFABDN:OIFBPJBBCAC(UInt32, Boolean)
+JGLADINOHAG:IMMPAJBGBAN(UInt32, Boolean)
+JGLADINOHAG:INFANFAFHGG(UInt32)
+ADDFMONNJPC:MoveNext()
+UnityEngine.SetupCoroutine:InvokeMoveNext(IEnumerator, IntPtr)
+ 
+(Filename: E:\WKSPC\2.6Fix\sourceCode\artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 81)
+
+Genshin Loading Log: LoadingManager EnterSceneInitFinish - NowTimeStamp:1650602609
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+MoleMole.Miscs:GenshinCommonLog(String)
+JOOGGKMAMJO:LCPDFIAGHKB(UInt32)
+JGLADINOHAG:IMMPAJBGBAN(UInt32, Boolean)
+JGLADINOHAG:INFANFAFHGG(UInt32)
+ADDFMONNJPC:MoveNext()
+UnityEngine.SetupCoroutine:InvokeMoveNext(IEnumerator, IntPtr)
+ 
+(Filename: E:\WKSPC\2.6Fix\sourceCode\artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 81)
+
+AssetBatchLoader::LoadingProgress0 0.333333
+Genshin Loading Log: BaseLevel LoadingLevelProgress LoadStage 0.4866667 - NowTimeStamp:1650602610
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+MoleMole.Miscs:GenshinCommonLog(String)
+JGLADINOHAG:GNHCJMKEPPA(CBEGCPPLCAI, Single)
+UnityEngine.Events.UnityAction`2:Invoke(T0, T1)
+ENOINHCOGGN:PMMNDFBNLPK(Single)
+System.Func`2:Invoke(T)
+MoleMole.AssetBundleExternalResourceProvider:AssetBatchTick()
+MoleMole.AssetBundleExternalResourceProvider:Tick()
+LGCNGDOICKO:Tick()
+MoleMole.GameManager:ICBKANLKGGH()
+MoleMole.GameManager:Update()
+ 
+(Filename: E:\WKSPC\2.6Fix\sourceCode\artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 81)
+
+Genshin Loading Log: NetworkManager RequestEnterSceneDone - NowTimeStamp:1650602610
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+MoleMole.Miscs:GenshinCommonLog(String)
+JKBFHKFABDN:APDOFIHADPN(UInt32)
+OMPCMEGPBLL:MoveNext()
+UnityEngine.SetupCoroutine:InvokeMoveNext(IEnumerator, IntPtr)
+JGLADINOHAG:HAGPABNDKFM(IEnumerator)
+JGLADINOHAG:LIKKAGMCOCP(UInt32, UInt32, CIFNHJIKNMH)
+JOOGGKMAMJO:LIFAFIOGCFI(NGHLEJKBCAP)
+NEOGDEDNDHF:GPDLAJEMCPB(NGHLEJKBCAP)
+NEOGDEDNDHF:KDEFMBMNNBH(KMFEGPABGNL)
+OPPLEIEAEPI:MIAEDHJOLJN(KMFEGPABGNL)
+OPPLEIEAEPI:DKOBMCBKMED(KMFEGPABGNL, Boolean&)
+JKBFHKFABDN:GIANMCPJIEO(KMFEGPABGNL)
+Epic.OnlineServices.KWS.OnUpdateParentEmailCallback:Invoke(UpdateParentEmailCallbackInfo)
+NBGBHCELJML:EKNGAGLAGDO()
+JKBFHKFABDN:Tick()
+MoleMole.GameManager:ICBKANLKGGH()
+MoleMole.GameManager:Update()
+ 
+(Filename: E:\WKSPC\2.6Fix\sourceCode\artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 81)
+
+Genshin Loading Log: PlayerModule OnSceneInitFinishRsp - NowTimeStamp:1650602610
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+MoleMole.Miscs:GenshinCommonLog(String)
+NEOGDEDNDHF:ENLANLBPLAF(ICFBDNCIKBJ)
+NEOGDEDNDHF:KDEFMBMNNBH(KMFEGPABGNL)
+OPPLEIEAEPI:MIAEDHJOLJN(KMFEGPABGNL)
+OPPLEIEAEPI:DKOBMCBKMED(KMFEGPABGNL, Boolean&)
+JKBFHKFABDN:GIANMCPJIEO(KMFEGPABGNL)
+Epic.OnlineServices.KWS.OnUpdateParentEmailCallback:Invoke(UpdateParentEmailCallbackInfo)
+NBGBHCELJML:EKNGAGLAGDO()
+JKBFHKFABDN:Tick()
+MoleMole.GameManager:ICBKANLKGGH()
+MoleMole.GameManager:Update()
+ 
+(Filename: E:\WKSPC\2.6Fix\sourceCode\artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 81)
+
+AssetBatchLoader::LoadingProgress0 0.500000
+Genshin Loading Log: BaseLevel LoadingLevelProgress LoadStage 0.5275 - NowTimeStamp:1650602611
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+MoleMole.Miscs:GenshinCommonLog(String)
+JGLADINOHAG:GNHCJMKEPPA(CBEGCPPLCAI, Single)
+UnityEngine.Events.UnityAction`2:Invoke(T0, T1)
+ENOINHCOGGN:PMMNDFBNLPK(Single)
+System.Func`2:Invoke(T)
+MoleMole.AssetBundleExternalResourceProvider:AssetBatchTick()
+MoleMole.AssetBundleExternalResourceProvider:Tick()
+LGCNGDOICKO:Tick()
+MoleMole.GameManager:ICBKANLKGGH()
+MoleMole.GameManager:Update()
+ 
+(Filename: E:\WKSPC\2.6Fix\sourceCode\artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 81)
+
+Genshin Loading Log: PlayerModule OnEnterSceneDoneRsp - NowTimeStamp:1650602611
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+MoleMole.Miscs:GenshinCommonLog(String)
+NEOGDEDNDHF:ELEPAECEEGJ(IBHPPEJNKGC)
+NEOGDEDNDHF:KDEFMBMNNBH(KMFEGPABGNL)
+OPPLEIEAEPI:MIAEDHJOLJN(KMFEGPABGNL)
+OPPLEIEAEPI:DKOBMCBKMED(KMFEGPABGNL, Boolean&)
+JKBFHKFABDN:GIANMCPJIEO(KMFEGPABGNL)
+Epic.OnlineServices.KWS.OnUpdateParentEmailCallback:Invoke(UpdateParentEmailCallbackInfo)
+NBGBHCELJML:EKNGAGLAGDO()
+JKBFHKFABDN:Tick()
+MoleMole.GameManager:ICBKANLKGGH()
+MoleMole.GameManager:Update()
+ 
+(Filename: E:\WKSPC\2.6Fix\sourceCode\artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 81)
+
+Genshin Loading Log: LoadingManager AfterEnterSceneDone - NowTimeStamp:1650602611
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+MoleMole.Miscs:GenshinCommonLog(String)
+JOOGGKMAMJO:DKICHEJHKOG(IBHPPEJNKGC)
+NEOGDEDNDHF:ELEPAECEEGJ(IBHPPEJNKGC)
+NEOGDEDNDHF:KDEFMBMNNBH(KMFEGPABGNL)
+OPPLEIEAEPI:MIAEDHJOLJN(KMFEGPABGNL)
+OPPLEIEAEPI:DKOBMCBKMED(KMFEGPABGNL, Boolean&)
+JKBFHKFABDN:GIANMCPJIEO(KMFEGPABGNL)
+Epic.OnlineServices.KWS.OnUpdateParentEmailCallback:Invoke(UpdateParentEmailCallbackInfo)
+NBGBHCELJML:EKNGAGLAGDO()
+JKBFHKFABDN:Tick()
+MoleMole.GameManager:ICBKANLKGGH()
+MoleMole.GameManager:Update()
+ 
+(Filename: E:\WKSPC\2.6Fix\sourceCode\artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 81)
+
+Genshin Loading Log: BaseLevel FinishLoadScene - NowTimeStamp:1650602611
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+MoleMole.Miscs:GenshinCommonLog(String)
+JGLADINOHAG:KPNENNKOLJD(UInt32, Boolean, Boolean)
+JOOGGKMAMJO:DKICHEJHKOG(IBHPPEJNKGC)
+NEOGDEDNDHF:ELEPAECEEGJ(IBHPPEJNKGC)
+NEOGDEDNDHF:KDEFMBMNNBH(KMFEGPABGNL)
+OPPLEIEAEPI:MIAEDHJOLJN(KMFEGPABGNL)
+OPPLEIEAEPI:DKOBMCBKMED(KMFEGPABGNL, Boolean&)
+JKBFHKFABDN:GIANMCPJIEO(KMFEGPABGNL)
+Epic.OnlineServices.KWS.OnUpdateParentEmailCallback:Invoke(UpdateParentEmailCallbackInfo)
+NBGBHCELJML:EKNGAGLAGDO()
+JKBFHKFABDN:Tick()
+MoleMole.GameManager:ICBKANLKGGH()
+MoleMole.GameManager:Update()
+ 
+(Filename: E:\WKSPC\2.6Fix\sourceCode\artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 81)
+
+Genshin Loading Log: BaseLevel FinishLoadSceneReal - NowTimeStamp:1650602611
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+MoleMole.Miscs:GenshinCommonLog(String)
+JGLADINOHAG:MGBPKICDOFL(UInt32, Boolean, Boolean)
+JGLADINOHAG:KPNENNKOLJD(UInt32, Boolean, Boolean)
+JOOGGKMAMJO:DKICHEJHKOG(IBHPPEJNKGC)
+NEOGDEDNDHF:ELEPAECEEGJ(IBHPPEJNKGC)
+NEOGDEDNDHF:KDEFMBMNNBH(KMFEGPABGNL)
+OPPLEIEAEPI:MIAEDHJOLJN(KMFEGPABGNL)
+OPPLEIEAEPI:DKOBMCBKMED(KMFEGPABGNL, Boolean&)
+JKBFHKFABDN:GIANMCPJIEO(KMFEGPABGNL)
+Epic.OnlineServices.KWS.OnUpdateParentEmailCallback:Invoke(UpdateParentEmailCallbackInfo)
+NBGBHCELJML:EKNGAGLAGDO()
+JKBFHKFABDN:Tick()
+MoleMole.GameManager:ICBKANLKGGH()
+MoleMole.GameManager:Update()
+ 
+(Filename: E:\WKSPC\2.6Fix\sourceCode\artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 81)
+
+AssetBatchLoader::LoadingProgress0 0.666667
+Genshin Loading Log: BaseLevel LoadingLevelProgress LoadStage 0.5683333 - NowTimeStamp:1650602611
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+MoleMole.Miscs:GenshinCommonLog(String)
+JGLADINOHAG:GNHCJMKEPPA(CBEGCPPLCAI, Single)
+UnityEngine.Events.UnityAction`2:Invoke(T0, T1)
+ENOINHCOGGN:PMMNDFBNLPK(Single)
+System.Func`2:Invoke(T)
+MoleMole.AssetBundleExternalResourceProvider:AssetBatchTick()
+MoleMole.AssetBundleExternalResourceProvider:Tick()
+LGCNGDOICKO:Tick()
+MoleMole.GameManager:ICBKANLKGGH()
+MoleMole.GameManager:Update()
+ 
+(Filename: E:\WKSPC\2.6Fix\sourceCode\artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 81)
+
+AssetBatchLoader::LoadingProgress0 0.741531
+Genshin Loading Log: BaseLevel LoadingLevelProgress LoadStage 0.586675 - NowTimeStamp:1650602612
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+MoleMole.Miscs:GenshinCommonLog(String)
+JGLADINOHAG:GNHCJMKEPPA(CBEGCPPLCAI, Single)
+UnityEngine.Events.UnityAction`2:Invoke(T0, T1)
+ENOINHCOGGN:PMMNDFBNLPK(Single)
+System.Func`2:Invoke(T)
+MoleMole.AssetBundleExternalResourceProvider:AssetBatchTick()
+MoleMole.AssetBundleExternalResourceProvider:Tick()
+LGCNGDOICKO:Tick()
+MoleMole.GameManager:ICBKANLKGGH()
+MoleMole.GameManager:Update()
+ 
+(Filename: E:\WKSPC\2.6Fix\sourceCode\artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 81)
+
+AssetBatchLoader::LoadingProgress0 0.833333
+Genshin Loading Log: BaseLevel LoadingLevelProgress LoadStage 0.6091666 - NowTimeStamp:1650602612
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+MoleMole.Miscs:GenshinCommonLog(String)
+JGLADINOHAG:GNHCJMKEPPA(CBEGCPPLCAI, Single)
+UnityEngine.Events.UnityAction`2:Invoke(T0, T1)
+ENOINHCOGGN:PMMNDFBNLPK(Single)
+System.Func`2:Invoke(T)
+MoleMole.AssetBundleExternalResourceProvider:AssetBatchTick()
+MoleMole.AssetBundleExternalResourceProvider:Tick()
+LGCNGDOICKO:Tick()
+MoleMole.GameManager:ICBKANLKGGH()
+MoleMole.GameManager:Update()
+ 
+(Filename: E:\WKSPC\2.6Fix\sourceCode\artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 81)
+
+Genshin Loading Log: BaseLevel LoadingLevelProgress LoadStage 0.65 - NowTimeStamp:1650602613
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+MoleMole.Miscs:GenshinCommonLog(String)
+JGLADINOHAG:GNHCJMKEPPA(CBEGCPPLCAI, Single)
+UnityEngine.Events.UnityAction`2:Invoke(T0, T1)
+ENOINHCOGGN:PMMNDFBNLPK(Single)
+System.Func`2:Invoke(T)
+MoleMole.AssetBundleExternalResourceProvider:AssetBatchTick()
+MoleMole.AssetBundleExternalResourceProvider:Tick()
+LGCNGDOICKO:Tick()
+MoleMole.GameManager:ICBKANLKGGH()
+MoleMole.GameManager:Update()
+ 
+(Filename: E:\WKSPC\2.6Fix\sourceCode\artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 81)
+
+Genshin Loading Log: BaseLevel LoadingLevelProgress LoadStage 0.65 - NowTimeStamp:1650602613
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+MoleMole.Miscs:GenshinCommonLog(String)
+JGLADINOHAG:GNHCJMKEPPA(CBEGCPPLCAI, Single)
+UnityEngine.Events.UnityAction`2:Invoke(T0, T1)
+ENOINHCOGGN:PMMNDFBNLPK(Single)
+System.Func`2:Invoke(T)
+MoleMole.AssetBundleExternalResourceProvider:AssetBatchTick()
+MoleMole.AssetBundleExternalResourceProvider:Tick()
+LGCNGDOICKO:Tick()
+MoleMole.GameManager:ICBKANLKGGH()
+MoleMole.GameManager:Update()
+ 
+(Filename: E:\WKSPC\2.6Fix\sourceCode\artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 81)
+
+AssetBatchLoader::LoadingProgress0 0.250000
+Genshin Loading Log: BaseLevel LoadingLevelProgress LoadEntity 0.7125 - NowTimeStamp:1650602613
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+MoleMole.Miscs:GenshinCommonLog(String)
+JGLADINOHAG:GNHCJMKEPPA(CBEGCPPLCAI, Single)
+System.Func`2:Invoke(T)
+MoleMole.AssetBundleExternalResourceProvider:AssetBatchTick()
+MoleMole.AssetBundleExternalResourceProvider:Tick()
+LGCNGDOICKO:Tick()
+MoleMole.GameManager:ICBKANLKGGH()
+MoleMole.GameManager:Update()
+ 
+(Filename: E:\WKSPC\2.6Fix\sourceCode\artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 81)
+
+AssetBatchLoader::LoadingProgress0 0.403995
+Genshin Loading Log: BaseLevel LoadingLevelProgress LoadEntity 0.7509987 - NowTimeStamp:1650602613
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+MoleMole.Miscs:GenshinCommonLog(String)
+JGLADINOHAG:GNHCJMKEPPA(CBEGCPPLCAI, Single)
+System.Func`2:Invoke(T)
+MoleMole.AssetBundleExternalResourceProvider:AssetBatchTick()
+MoleMole.AssetBundleExternalResourceProvider:Tick()
+LGCNGDOICKO:Tick()
+MoleMole.GameManager:ICBKANLKGGH()
+MoleMole.GameManager:Update()
+ 
+(Filename: E:\WKSPC\2.6Fix\sourceCode\artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 81)
+
+AssetBatchLoader::LoadingProgress0 0.500000
+Genshin Loading Log: BaseLevel LoadingLevelProgress LoadEntity 0.775 - NowTimeStamp:1650602614
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+MoleMole.Miscs:GenshinCommonLog(String)
+JGLADINOHAG:GNHCJMKEPPA(CBEGCPPLCAI, Single)
+System.Func`2:Invoke(T)
+MoleMole.AssetBundleExternalResourceProvider:AssetBatchTick()
+MoleMole.AssetBundleExternalResourceProvider:Tick()
+LGCNGDOICKO:Tick()
+MoleMole.GameManager:ICBKANLKGGH()
+MoleMole.GameManager:Update()
+ 
+(Filename: E:\WKSPC\2.6Fix\sourceCode\artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 81)
+
+AssetBatchLoader::LoadingProgress0 0.575378
+Genshin Loading Log: BaseLevel LoadingLevelProgress LoadEntity 0.7938445 - NowTimeStamp:1650602614
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+MoleMole.Miscs:GenshinCommonLog(String)
+JGLADINOHAG:GNHCJMKEPPA(CBEGCPPLCAI, Single)
+System.Func`2:Invoke(T)
+MoleMole.AssetBundleExternalResourceProvider:AssetBatchTick()
+MoleMole.AssetBundleExternalResourceProvider:Tick()
+LGCNGDOICKO:Tick()
+MoleMole.GameManager:ICBKANLKGGH()
+MoleMole.GameManager:Update()
+ 
+(Filename: E:\WKSPC\2.6Fix\sourceCode\artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 81)
+
+AssetBatchLoader::LoadingProgress0 0.750000
+Genshin Loading Log: BaseLevel LoadingLevelProgress LoadEntity 0.8375 - NowTimeStamp:1650602614
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+MoleMole.Miscs:GenshinCommonLog(String)
+JGLADINOHAG:GNHCJMKEPPA(CBEGCPPLCAI, Single)
+System.Func`2:Invoke(T)
+MoleMole.AssetBundleExternalResourceProvider:AssetBatchTick()
+MoleMole.AssetBundleExternalResourceProvider:Tick()
+LGCNGDOICKO:Tick()
+MoleMole.GameManager:ICBKANLKGGH()
+MoleMole.GameManager:Update()
+ 
+(Filename: E:\WKSPC\2.6Fix\sourceCode\artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 81)
+
+AssetBatchLoader::LoadingProgress0 0.923689
+Genshin Loading Log: BaseLevel LoadingLevelProgress LoadEntity 0.8809223 - NowTimeStamp:1650602615
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+MoleMole.Miscs:GenshinCommonLog(String)
+JGLADINOHAG:GNHCJMKEPPA(CBEGCPPLCAI, Single)
+System.Func`2:Invoke(T)
+MoleMole.AssetBundleExternalResourceProvider:AssetBatchTick()
+MoleMole.AssetBundleExternalResourceProvider:Tick()
+LGCNGDOICKO:Tick()
+MoleMole.GameManager:ICBKANLKGGH()
+MoleMole.GameManager:Update()
+ 
+(Filename: E:\WKSPC\2.6Fix\sourceCode\artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 81)
+
+Genshin Loading Log: BaseLevel LoadingLevelProgress LoadEntity 0.9 - NowTimeStamp:1650602615
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+MoleMole.Miscs:GenshinCommonLog(String)
+JGLADINOHAG:GNHCJMKEPPA(CBEGCPPLCAI, Single)
+System.Func`2:Invoke(T)
+MoleMole.AssetBundleExternalResourceProvider:AssetBatchTick()
+MoleMole.AssetBundleExternalResourceProvider:Tick()
+LGCNGDOICKO:Tick()
+MoleMole.GameManager:ICBKANLKGGH()
+MoleMole.GameManager:Update()
+ 
+(Filename: E:\WKSPC\2.6Fix\sourceCode\artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 81)
+
+Genshin Loading Log: BaseLevel LoadingLevelProgress UIInit 0.94 - NowTimeStamp:1650602616
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+MoleMole.Miscs:GenshinCommonLog(String)
+JGLADINOHAG:GNHCJMKEPPA(CBEGCPPLCAI, Single)
+NBKKHMIDGJD:MoveNext()
+UnityEngine.SetupCoroutine:InvokeMoveNext(IEnumerator, IntPtr)
+ 
+(Filename: E:\WKSPC\2.6Fix\sourceCode\artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 81)
+
+Genshin Loading Log: BaseLevel LoadingLevelProgress PostLua 0.96 - NowTimeStamp:1650602616
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+MoleMole.Miscs:GenshinCommonLog(String)
+JGLADINOHAG:GNHCJMKEPPA(CBEGCPPLCAI, Single)
+NBKKHMIDGJD:MoveNext()
+UnityEngine.SetupCoroutine:InvokeMoveNext(IEnumerator, IntPtr)
+ 
+(Filename: E:\WKSPC\2.6Fix\sourceCode\artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 81)
+
+Genshin Loading Log: LoadingManager EnterSceneDoneFinish - NowTimeStamp:1650602616
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+MoleMole.Miscs:GenshinCommonLog(String)
+JOOGGKMAMJO:IBCEEBPMOOO(UInt32)
+NBKKHMIDGJD:MoveNext()
+UnityEngine.SetupCoroutine:InvokeMoveNext(IEnumerator, IntPtr)
+ 
+(Filename: E:\WKSPC\2.6Fix\sourceCode\artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 81)
+
+Genshin Loading Log: BaseLevel LoadingLevelProgress PostReady 0.98 - NowTimeStamp:1650602616
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+MoleMole.Miscs:GenshinCommonLog(String)
+JGLADINOHAG:GNHCJMKEPPA(CBEGCPPLCAI, Single)
+NBKKHMIDGJD:MoveNext()
+UnityEngine.SetupCoroutine:InvokeMoveNext(IEnumerator, IntPtr)
+ 
+(Filename: E:\WKSPC\2.6Fix\sourceCode\artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 81)
+
+Genshin Loading Log: NetworkManager RequesetPostEnterSceneReq - NowTimeStamp:1650602616
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+MoleMole.Miscs:GenshinCommonLog(String)
+JKBFHKFABDN:LECLFDAGHFA(UInt32)
+NBKKHMIDGJD:MoveNext()
+UnityEngine.SetupCoroutine:InvokeMoveNext(IEnumerator, IntPtr)
+ 
+(Filename: E:\WKSPC\2.6Fix\sourceCode\artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 81)
+
+Genshin Loading Log: PlayerModule OnPostEnterSceneRsp - NowTimeStamp:1650602616
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+MoleMole.Miscs:GenshinCommonLog(String)
+NEOGDEDNDHF:BPADLPOGFIJ(DKJPJDHMCJD)
+NEOGDEDNDHF:KDEFMBMNNBH(KMFEGPABGNL)
+OPPLEIEAEPI:MIAEDHJOLJN(KMFEGPABGNL)
+OPPLEIEAEPI:DKOBMCBKMED(KMFEGPABGNL, Boolean&)
+JKBFHKFABDN:GIANMCPJIEO(KMFEGPABGNL)
+Epic.OnlineServices.KWS.OnUpdateParentEmailCallback:Invoke(UpdateParentEmailCallbackInfo)
+NBGBHCELJML:EKNGAGLAGDO()
+JKBFHKFABDN:Tick()
+MoleMole.GameManager:ICBKANLKGGH()
+MoleMole.GameManager:Update()
+ 
+(Filename: E:\WKSPC\2.6Fix\sourceCode\artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 81)
+
+Genshin Loading Log: BaseLevel PostInitFinish - NowTimeStamp:1650602616
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+MoleMole.Miscs:GenshinCommonLog(String)
+JGLADINOHAG:ILPEAHAOAOO(UInt32)
+NEOGDEDNDHF:BPADLPOGFIJ(DKJPJDHMCJD)
+NEOGDEDNDHF:KDEFMBMNNBH(KMFEGPABGNL)
+OPPLEIEAEPI:MIAEDHJOLJN(KMFEGPABGNL)
+OPPLEIEAEPI:DKOBMCBKMED(KMFEGPABGNL, Boolean&)
+JKBFHKFABDN:GIANMCPJIEO(KMFEGPABGNL)
+Epic.OnlineServices.KWS.OnUpdateParentEmailCallback:Invoke(UpdateParentEmailCallbackInfo)
+NBGBHCELJML:EKNGAGLAGDO()
+JKBFHKFABDN:Tick()
+MoleMole.GameManager:ICBKANLKGGH()
+MoleMole.GameManager:Update()
+ 
+(Filename: E:\WKSPC\2.6Fix\sourceCode\artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 81)
+
+Genshin Loading Log: BaseLevel LoadingLevelProgress Finish 1 - NowTimeStamp:1650602616
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+MoleMole.Miscs:GenshinCommonLog(String)
+JGLADINOHAG:GNHCJMKEPPA(CBEGCPPLCAI, Single)
+JGLADINOHAG:ILPEAHAOAOO(UInt32)
+NEOGDEDNDHF:BPADLPOGFIJ(DKJPJDHMCJD)
+NEOGDEDNDHF:KDEFMBMNNBH(KMFEGPABGNL)
+OPPLEIEAEPI:MIAEDHJOLJN(KMFEGPABGNL)
+OPPLEIEAEPI:DKOBMCBKMED(KMFEGPABGNL, Boolean&)
+JKBFHKFABDN:GIANMCPJIEO(KMFEGPABGNL)
+Epic.OnlineServices.KWS.OnUpdateParentEmailCallback:Invoke(UpdateParentEmailCallbackInfo)
+NBGBHCELJML:EKNGAGLAGDO()
+JKBFHKFABDN:Tick()
+MoleMole.GameManager:ICBKANLKGGH()
+MoleMole.GameManager:Update()
+ 
+(Filename: E:\WKSPC\2.6Fix\sourceCode\artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 81)
+
+Genshin Loading Log: LoadingManager EnterScenePostFinish - NowTimeStamp:1650602616
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+MoleMole.Miscs:GenshinCommonLog(String)
+JOOGGKMAMJO:KNHAJBKAOCA(UInt32, Boolean)
+JGLADINOHAG:ILPEAHAOAOO(UInt32)
+NEOGDEDNDHF:BPADLPOGFIJ(DKJPJDHMCJD)
+NEOGDEDNDHF:KDEFMBMNNBH(KMFEGPABGNL)
+OPPLEIEAEPI:MIAEDHJOLJN(KMFEGPABGNL)
+OPPLEIEAEPI:DKOBMCBKMED(KMFEGPABGNL, Boolean&)
+JKBFHKFABDN:GIANMCPJIEO(KMFEGPABGNL)
+Epic.OnlineServices.KWS.OnUpdateParentEmailCallback:Invoke(UpdateParentEmailCallbackInfo)
+NBGBHCELJML:EKNGAGLAGDO()
+JKBFHKFABDN:Tick()
+MoleMole.GameManager:ICBKANLKGGH()
+MoleMole.GameManager:Update()
+ 
+(Filename: E:\WKSPC\2.6Fix\sourceCode\artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 81)
+
+UNITY_DATA_TEXT	17e800000d23:163e13f6d38b
+SetBackButtonEnabled only supports Android. You current platform WindowsPlayer is not supported.
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+MiHoYo.SDK.MiHoYoSDKInterface:SetBackButtonEnabled(String, Boolean)
+PFIEODOEGAL:LHELDJONLHE(String, Boolean, Boolean)
+GBBPBAFEDIF:HJNADMPIEKN(String)
+Epic.OnlineServices.KWS.OnUpdateParentEmailCallback:Invoke(UpdateParentEmailCallbackInfo)
+OPFHHKNANAI:FNMCNHCEBCG(KMFEGPABGNL)
+Epic.OnlineServices.KWS.OnUpdateParentEmailCallback:Invoke(UpdateParentEmailCallbackInfo)
+JGNAJCMIIHE:OnPacket(KMFEGPABGNL)
+MoleMole.BaseContext:DoPacket(KMFEGPABGNL)
+MoleMole.BaseContext:HandlePacket(KMFEGPABGNL, Boolean&)
+OPPLEIEAEPI:DKOBMCBKMED(KMFEGPABGNL, Boolean&)
+JKBFHKFABDN:GIANMCPJIEO(KMFEGPABGNL)
+Epic.OnlineServices.KWS.OnUpdateParentEmailCallback:Invoke(UpdateParentEmailCallbackInfo)
+NBGBHCELJML:EKNGAGLAGDO()
+JKBFHKFABDN:Tick()
+MoleMole.GameManager:ICBKANLKGGH()
+MoleMole.GameManager:Update()
+ 
+(Filename: E:\WKSPC\2.6Fix\sourceCode\artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 81)
+
+[0422/124349.310:ERROR:browser_host_impl.cc(230)] Creating a windowless browser without setting CefSettings.windowless_rendering_enabled may result in reduced performance or runtime errors.
+OnGetBeforeNavigationMessage:https://webstatic.mihoyo.com/hk4e/event/e20190909gacha/index.html?authkey_ver=1&sign_type=2&auth_appid=webview_gacha&init_type=302&gacha_id=db9eddc6811aa7170b49f251fa5c488e030bd7&timestamp=1648598032&lang=zh-cn&device_type=pc&ext=%7b%22loc%22%3a%7b%22x%22%3a2659.369140625%2c%22y%22%3a301.46051025390627%2c%22z%22%3a118.11184692382813%7d%2c%22platform%22%3a%22WinST%22%7d&game_version=CNRELWin2.6.0_R6708157_S6845002_D6731353&plat_type=pc&region=cn_gf01&authkey=pkPGmtdV9wtIoPma4SBAPOAC6aJ09jglZuaN6cPDowqASBeRdXKMRFZlw6Jg3PbrMiwklrMT3DgZUv3cRjriik9um8uMFwrited1OlCuXSXuMCs5P2AjnalnzzK3tp8lbeb5joDHMupeO3b0viAGxuw%2fJX3HdlMI3it4lt22RS9A7yoNGitBI%2bCMoIErmD6VfxQ8PiiQ5ETOmwIw6CKf2th%2bPPGkRLBaNAc1305v2wzcV2EcTAFzc%2fN7XOD4RB%2flHhc%2brI1R4RoKe1E45KcqnyzAbkEguc55x87%2fBhWyOPCLdteK2CT4VfkK4GTcdkZg8SfgQs%2bZ31oNj%2b3819f%2bMIDbfs81XAZI%2b8KWSN8X8TPqTEn%2bXqsINRIe5XrJQocVrHPOqB70ZV6HA0bIW4jyTjfTkvoVKL4giUp0%2fBcBkFPHKy1KSzWH0i4Wu0NXycBjFccL6NKa9mX%2bBqqlt%2byEIdU%2bCwQnGQQS7NFL9Mj4ZJT1%2bg4FxgSv6e3ML6zNhkVVViY5k4gck4bzpZAlAD4EyTw5dgh4WffB7DGXnSg4r6blLJsuBGRoG1ugmA2Ls2h%2byA12cmWyC2VHm77r%2fC2pvlWxMBQ4%2f8r4lsAETSfJrcRkcOfP37%2bbxC4ifY4a5b4l6Sjh%2fbCTajZZ%2bR7ANljP%2brPMnxzPNInjtgsjCREmaILyoMVhbG6pehGIwr6LXVv%2bqP%2fDiu%2bkiO5DZCNQ8M4lOZqaJCokHWk74G9uXBQxmKRiLLX2qsVd6cp3LSYvXu2UL4CzjJHvSpd0yVFLDFxFB6ACYHe2jMcDeSJ6O%2bXSfnkGDUBEyfxfGZQxhLSuS%2bSiYP75N0pTQZ0t%2bZZ2isVrHziAJ5EQOK3PPZsey5xsHkfzm6Y9256OhRqdK6QZNt8tMrEeKK%2fUrRUtmhh0Adg8sY7VxZbFE7fmK7EysjeZCNgL%2bKMv7SWpbp8fALEU5hSihQorwJGPkB1fgkA%2fWSRtFaq1b5JfHqLsQsLoBE4XOtOBviUg%2bU4yl0VMDt0EsnJXjOO%2f14EJ0o6ySm4fDOpKTxeBw1zjvsVfbRGcYvidHA24dECDPbGCttxQDwpRzUtruynP22V%2bSbga6cdOZqMHE3hB6Ra81nbjExOvkrCHdU6huG5tnPk4GqeBkn4h7nGZ7YJrc%2b7A%2fc8AKVsxfbqPskiw8XsexjoCohQTBzTwBndDjBx7%2bkBMaAL1oVL3yXK4as1RG1evuLgH%2fENtxigBRryBQoaBM9bUOz1JAV7f597xSutlQxlb64WGf6bSLCtSuMbyk1wi35NgAqBumgUBbzmKj2mZhz2GfPOv5aUwLBRjXvLhgjOJdCoDpOSgjwEF%2bEqV%2fG5WdZ2M5Q9ZgPt6Og%3d%3d&game_biz=hk4e_cn#/log
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+MiHoYo.SDK.MiHoYoSDKWebView:OnGetBeforeNavigationMessage(String)
+MiHoYo.SDK.MiHoYoSDKWebViewManager:OnBeforeNavigationMsgReceive(JSONNode)
+Epic.OnlineServices.KWS.OnUpdateParentEmailCallback:Invoke(UpdateParentEmailCallbackInfo)
+ZenFulcrum.EmbeddedBrowser.Browser:OnItemChange(ChangeType, String)
+System.Func`1:Invoke()
+ZenFulcrum.EmbeddedBrowser.Browser:ProcessCallbacks()
+ZenFulcrum.EmbeddedBrowser.Browser:LateUpdate()
+ 
+(Filename: E:\WKSPC\2.6Fix\sourceCode\artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 81)
+
+OnGetWebViewPageFinish:https://webstatic.mihoyo.com/hk4e/event/e20190909gacha/index.html?authkey_ver=1&sign_type=2&auth_appid=webview_gacha&init_type=302&gacha_id=db9eddc6811aa7170b49f251fa5c488e030bd7&timestamp=1648598032&lang=zh-cn&device_type=pc&ext=%7b%22loc%22%3a%7b%22x%22%3a2659.369140625%2c%22y%22%3a301.46051025390627%2c%22z%22%3a118.11184692382813%7d%2c%22platform%22%3a%22WinST%22%7d&game_version=CNRELWin2.6.0_R6708157_S6845002_D6731353&plat_type=pc&region=cn_gf01&authkey=pkPGmtdV9wtIoPma4SBAPOAC6aJ09jglZuaN6cPDowqASBeRdXKMRFZlw6Jg3PbrMiwklrMT3DgZUv3cRjriik9um8uMFwrited1OlCuXSXuMCs5P2AjnalnzzK3tp8lbeb5joDHMupeO3b0viAGxuw%2fJX3HdlMI3it4lt22RS9A7yoNGitBI%2bCMoIErmD6VfxQ8PiiQ5ETOmwIw6CKf2th%2bPPGkRLBaNAc1305v2wzcV2EcTAFzc%2fN7XOD4RB%2flHhc%2brI1R4RoKe1E45KcqnyzAbkEguc55x87%2fBhWyOPCLdteK2CT4VfkK4GTcdkZg8SfgQs%2bZ31oNj%2b3819f%2bMIDbfs81XAZI%2b8KWSN8X8TPqTEn%2bXqsINRIe5XrJQocVrHPOqB70ZV6HA0bIW4jyTjfTkvoVKL4giUp0%2fBcBkFPHKy1KSzWH0i4Wu0NXycBjFccL6NKa9mX%2bBqqlt%2byEIdU%2bCwQnGQQS7NFL9Mj4ZJT1%2bg4FxgSv6e3ML6zNhkVVViY5k4gck4bzpZAlAD4EyTw5dgh4WffB7DGXnSg4r6blLJsuBGRoG1ugmA2Ls2h%2byA12cmWyC2VHm77r%2fC2pvlWxMBQ4%2f8r4lsAETSfJrcRkcOfP37%2bbxC4ifY4a5b4l6Sjh%2fbCTajZZ%2bR7ANljP%2brPMnxzPNInjtgsjCREmaILyoMVhbG6pehGIwr6LXVv%2bqP%2fDiu%2bkiO5DZCNQ8M4lOZqaJCokHWk74G9uXBQxmKRiLLX2qsVd6cp3LSYvXu2UL4CzjJHvSpd0yVFLDFxFB6ACYHe2jMcDeSJ6O%2bXSfnkGDUBEyfxfGZQxhLSuS%2bSiYP75N0pTQZ0t%2bZZ2isVrHziAJ5EQOK3PPZsey5xsHkfzm6Y9256OhRqdK6QZNt8tMrEeKK%2fUrRUtmhh0Adg8sY7VxZbFE7fmK7EysjeZCNgL%2bKMv7SWpbp8fALEU5hSihQorwJGPkB1fgkA%2fWSRtFaq1b5JfHqLsQsLoBE4XOtOBviUg%2bU4yl0VMDt0EsnJXjOO%2f14EJ0o6ySm4fDOpKTxeBw1zjvsVfbRGcYvidHA24dECDPbGCttxQDwpRzUtruynP22V%2bSbga6cdOZqMHE3hB6Ra81nbjExOvkrCHdU6huG5tnPk4GqeBkn4h7nGZ7YJrc%2b7A%2fc8AKVsxfbqPskiw8XsexjoCohQTBzTwBndDjBx7%2bkBMaAL1oVL3yXK4as1RG1evuLgH%2fENtxigBRryBQoaBM9bUOz1JAV7f597xSutlQxlb64WGf6bSLCtSuMbyk1wi35NgAqBumgUBbzmKj2mZhz2GfPOv5aUwLBRjXvLhgjOJdCoDpOSgjwEF%2bEqV%2fG5WdZ2M5Q9ZgPt6Og%3d%3d&game_biz=hk4e_cn#/log
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+MiHoYo.SDK.MiHoYoSDKWebView:OnGetWebViewPageFinish(String)
+MiHoYo.SDK.MiHoYoSDKWebViewManager:OnLoad(JSONNode)
+Epic.OnlineServices.KWS.OnUpdateParentEmailCallback:Invoke(UpdateParentEmailCallbackInfo)
+ZenFulcrum.EmbeddedBrowser.Browser:OnItemChange(ChangeType, String)
+System.Func`1:Invoke()
+ZenFulcrum.EmbeddedBrowser.Browser:ProcessCallbacks()
+ZenFulcrum.EmbeddedBrowser.Browser:LateUpdate()
+ 
+(Filename: E:\WKSPC\2.6Fix\sourceCode\artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 81)
+
+Rejection: ReferenceError: miHoYoGameJSSDK is not defined
+    at eval (eval at <anonymous> (:1:35), <anonymous>:1:892)
+    at <anonymous>:1:35
+
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+System.Timers.ElapsedEventHandler:Invoke(Object, ElapsedEventArgs)
+ZenFulcrum.EmbeddedBrowser.Promise:PropagateUnhandledException(Object, Exception)
+Epic.OnlineServices.KWS.OnUpdateParentEmailCallback:Invoke(UpdateParentEmailCallbackInfo)
+ZenFulcrum.EmbeddedBrowser.<Catch>c__AnonStorey1:<>m__1(Exception)
+Epic.OnlineServices.KWS.OnUpdateParentEmailCallback:Invoke(UpdateParentEmailCallbackInfo)
+ZenFulcrum.EmbeddedBrowser.Promise`1:InvokeHandler(Action`1, IRejectable, T)
+ZenFulcrum.EmbeddedBrowser.<InvokeRejectHandlers>c__AnonStorey0:<>m__0(RejectHandler)
+System.Action`1:Invoke(T)
+ZenFulcrum.EmbeddedBrowser.Promises.EnumerableExt:Each(IEnumerable`1, Action`1)
+ZenFulcrum.EmbeddedBrowser.Promise`1:InvokeRejectHandlers(Exception)
+FFICKCCIJDC:Invoke(CBKBPPFBNIL, Boolean)
+ZenFulcrum.EmbeddedBrowser.<CB_ForwardJSCallFunc>c__AnonStorey11:<>m__0()
+System.Func`1:Invoke()
+ZenFulcrum.EmbeddedBrowser.Browser:ProcessCallbacks()
+ZenFulcrum.EmbeddedBrowser.Browser:LateUpdate()
+ 
+(Filename: E:\WKSPC\2.6Fix\sourceCode\artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 81)
+
+Call QuitApplication
+ 
+(Filename:  Line: 1260)
+
+[0422/124352.179:INFO:api.cpp(336)] zfb_shutdown called on thread 6936
+try to dispose a LuaEnv with C# callback!
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:LogWarning(Object)
+XLua.LuaEnv:Dispose(Boolean)
+XLua.LuaEnv:Dispose()
+MoleMole.LuaBaseManager:Destroy()
+MoleMole.Singleton`1:Destroy()
+MoleMole.GameManager:GMAGOIDMEAH()
+MoleMole.GameManager:OnApplicationQuit()
+ 
+(Filename: E:\WKSPC\2.6Fix\sourceCode\artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 81)
+
+Begin CleanupEngine
+ 
+(Filename:  Line: 682)
+
+CleanupAllObjects
+ 
+(Filename:  Line: 682)
+
+Setting up 4 worker threads for Enlighten.
+  Thread -> id: 346c -> priority: 1 
+  Thread -> id: 2d00 -> priority: 1 
+  Thread -> id: 12e0 -> priority: 1 
+  Thread -> id: 1c54 -> priority: 1 
+OnGetWebViewPageClose:
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+MiHoYo.SDK.MiHoYoSDKWebView:OnGetWebViewPageClose(String)
+MiHoYo.SDK.MiHoYoSDKWebViewManager:OnClose()
+MiHoYo.SDK.MiHoYoSDKWebViewManager:OnDestroy()
+ 
+(Filename: E:\WKSPC\2.6Fix\sourceCode\artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 81)
+
+NullReferenceException: A null value was found where an object instance was required.
+  at PFIEODOEGAL.IOEEMOLFNAI (MiHoYo.SDK.MiHoYoSDKWebView DHPNNMBJHNJ) [0x00000] in <filename unknown>:0 
+  at Epic.OnlineServices.KWS.OnUpdateParentEmailCallback.Invoke (Epic.OnlineServices.KWS.UpdateParentEmailCallbackInfo data) [0x00000] in <filename unknown>:0 
+  at MiHoYo.SDK.MiHoYoSDKWebView.OnGetWebViewPageClose (System.String message) [0x00000] in <filename unknown>:0 
+  at MiHoYo.SDK.MiHoYoSDKWebViewManager.OnClose () [0x00000] in <filename unknown>:0 
+  at MiHoYo.SDK.MiHoYoSDKWebViewManager.OnDestroy () [0x00000] in <filename unknown>:0 
+ 
+(Filename: currently not available on il2cpp Line: -1)
+
+NullReferenceException: A null value was found where an object instance was required.
+  at MoleMole.MonoGachaScene.OnDisable () [0x00000] in <filename unknown>:0 
+ 
+(Filename: currently not available on il2cpp Line: -1)
+
+Cleanup MonoTypes
+ 
+(Filename:  Line: 682)
+
+Cleanup Profiler
+ 
+(Filename:  Line: 682)
+
+Cleanup Graphics
+ 
+(Filename:  Line: 682)
+
+Cleanup BatchDelete
+ 
+(Filename:  Line: 682)
+
+Cleanup Others
+ 
+(Filename:  Line: 682)
+
+End CleanupEngine
+ 
+(Filename:  Line: 682)
+

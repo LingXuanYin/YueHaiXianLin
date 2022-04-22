@@ -1,0 +1,1435 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>山泽麟迹</title>
+            <script type="text/javascript" src="https://assets.pyecharts.org/assets/echarts.min.js"></script>
+        <script type="text/javascript" src="https://assets.pyecharts.org/assets/themes/macarons.js"></script>
+        <script type="text/javascript" src="https://assets.pyecharts.org/assets/jquery.min.js"></script>
+        <script type="text/javascript" src="https://assets.pyecharts.org/assets/jquery-ui.min.js"></script>
+        <script type="text/javascript" src="https://assets.pyecharts.org/assets/ResizeSensor.js"></script>
+
+            <link rel="stylesheet"  href="https://assets.pyecharts.org/assets/jquery-ui.css">
+
+</head>
+<body>
+    <style>.box {  }; </style>
+        
+    <div class="box">
+                <div id="角色活动祈愿" class="chart-container" style="position: absolute; width: 720px; height: 540px; top: 0px; left: 640px;"></div>
+    <script>
+        var chart_角色活动祈愿 = echarts.init(
+            document.getElementById('角色活动祈愿'), 'macarons', {renderer: 'canvas'});
+            
+                       option_defult = {
+
+            series: [
+                {type:'pie',
+                    name:角色活动祈愿,
+
+                    itemStyle: {
+                Radius: 5,
+        borderColor: 'yellow',
+        borderWidth: 2
+      },
+                    startAngle:-75,
+                    selectedMode: 'single',
+                     label: {
+                        position: 'outside',
+                        fontSize: 20,
+
+                        }
+                       }]};
+                       chart_角色活动祈愿.setOption(option_defult);
+        var option_角色活动祈愿 = {
+    "animation": true,
+    "animationThreshold": 2000,
+    "animationDuration": 1000,
+    "animationEasing": "cubicOut",
+    "animationDelay": 0,
+    "animationDurationUpdate": 300,
+    "animationEasingUpdate": "cubicOut",
+    "animationDelayUpdate": 0,
+    "series": [
+        {
+            "type": "pie",
+            "name": "\u89d2\u8272\u6d3b\u52a8\u7948\u613f",
+            "clockwise": true,
+            "data": [
+                {
+                    "name": "\u4e09\u661f",
+                    "value": 200
+                },
+                {
+                    "name": "\u56db\u661f\u6b66\u5668",
+                    "value": 9
+                },
+                {
+                    "name": "\u56db\u661f\u89d2\u8272",
+                    "value": 21
+                },
+                {
+                    "name": "\u4e94\u661f\u6b66\u5668",
+                    "value": 0
+                },
+                {
+                    "name": "\u4e94\u661f\u89d2\u8272",
+                    "value": 3
+                }
+            ],
+            "radius": [
+                "35%",
+                "70%"
+            ],
+            "center": [
+                "50%",
+                "50%"
+            ],
+            "label": {
+                "show": true,
+                "position": "top",
+                "margin": 8
+            },
+            "tooltip": {
+                "show": true,
+                "trigger": "item",
+                "triggerOn": "mousemove|click",
+                "axisPointer": {
+                    "type": "line"
+                },
+                "showContent": true,
+                "alwaysShowContent": false,
+                "showDelay": 0,
+                "hideDelay": 100,
+                "formatter": function(parg){                    if( parg.name == '\u4e09\u661f')                    {                    return ' \u4e09\u661f\uff1a 200 ( 85.83 % )</br>'+' \u51b7\u5203[22]  \u7fe1\u7389\u6cd5\u7403[19]  \u8ba8\u9f99\u82f1\u6770\u8c2d[18] </br>  \u9b54\u5bfc\u7eea\u8bba[18]  \u4ee5\u7406\u670d\u4eba[17]  \u94c1\u5f71\u9614\u5251[16] </br>  \u9ece\u660e\u795e\u5251[15]  \u9e26\u7fbd\u5f13[15]  \u98de\u5929\u5fa1\u5251[14] </br>  \u795e\u5c04\u624b\u4e4b\u8a93[14]  \u5f39\u5f13[12]  \u9ed1\u7f28\u67aa[11] </br>  \u6c90\u6d74\u9f99\u8840\u7684\u5251[9] ' ;                    }else if (parg.name == '\u56db\u661f\u6b66\u5668')                    {                    return ' \u56db\u661f\u6b66\u5668\uff1a 30 ( 12.87 % )</br>'+'[3]-- \u5323\u91cc\u9f99\u541f --[9]-- \u8f9b\u7131 --[8]-- \u8f9b\u7131 --</br> [8]-- \u4e5d\u6761\u88df\u7f57 --[9]-- \u73ed\u5c3c\u7279 --[8]-- \u82ad\u82ad\u62c9 --</br> [5]-- \u6258\u9a6c --[1]-- \u5323\u91cc\u706d\u8fb0 --[5]-- \u8fea\u5965\u5a1c --</br> [2]-- \u796d\u793c\u5251 --[9]-- \u8fea\u5965\u5a1c --[8]-- \u5f13\u85cf --</br> [8]-- \u83f2\u8c22\u5c14 --[8]-- \u796d\u793c\u5f13 --[9]-- \u8fea\u5965\u5a1c --</br> [9]-- \u6258\u9a6c --[8]-- \u949f\u5251 --[8]-- \u6258\u9a6c --</br> [9]-- \u6258\u9a6c --[2]-- \u897f\u98ce\u957f\u67aa --[4]-- \u4e91\u5807 --</br> [8]-- \u796d\u793c\u6b8b\u7ae0 --[8]-- \u9999\u83f1 --[8]-- \u8bfa\u827e\u5c14 --</br> [5]-- \u9999\u83f1 --[8]-- \u796d\u793c\u6b8b\u7ae0 --[9]-- \u73ed\u5c3c\u7279 --</br> [9]-- \u8bfa\u827e\u5c14 --[0]-- \u96f7\u6cfd --[6]-- \u8bfa\u827e\u5c14 --' ;                    }else if (parg.name == '\u4e94\u661f\u6b66\u5668')                    {                    return ' \u4e94\u661f\uff1a 3 ( 1.28 % )</br>'+'[73]-- \u516b\u91cd\u795e\u5b50 --[75]-- \u8fea\u5362\u514b --[76]-- \u4f18\u83c8 --[6]' ;                    }else if (parg.name == '\u56db\u661f\u89d2\u8272')                    {                    return ' \u56db\u661f\u89d2\u8272\uff1a 30 ( 12.87 % )</br>'+'[3]-- \u5323\u91cc\u9f99\u541f --[9]-- \u8f9b\u7131 --[8]-- \u8f9b\u7131 --</br> [8]-- \u4e5d\u6761\u88df\u7f57 --[9]-- \u73ed\u5c3c\u7279 --[8]-- \u82ad\u82ad\u62c9 --</br> [5]-- \u6258\u9a6c --[1]-- \u5323\u91cc\u706d\u8fb0 --[5]-- \u8fea\u5965\u5a1c --</br> [2]-- \u796d\u793c\u5251 --[9]-- \u8fea\u5965\u5a1c --[8]-- \u5f13\u85cf --</br> [8]-- \u83f2\u8c22\u5c14 --[8]-- \u796d\u793c\u5f13 --[9]-- \u8fea\u5965\u5a1c --</br> [9]-- \u6258\u9a6c --[8]-- \u949f\u5251 --[8]-- \u6258\u9a6c --</br> [9]-- \u6258\u9a6c --[2]-- \u897f\u98ce\u957f\u67aa --[4]-- \u4e91\u5807 --</br> [8]-- \u796d\u793c\u6b8b\u7ae0 --[8]-- \u9999\u83f1 --[8]-- \u8bfa\u827e\u5c14 --</br> [5]-- \u9999\u83f1 --[8]-- \u796d\u793c\u6b8b\u7ae0 --[9]-- \u73ed\u5c3c\u7279 --</br> [9]-- \u8bfa\u827e\u5c14 --[0]-- \u96f7\u6cfd --[6]-- \u8bfa\u827e\u5c14 --' ;                    }else if (parg.name == '\u4e94\u661f\u89d2\u8272')                    {                    return ' \u4e94\u661f\uff1a 3 ( 1.28 % )</br>'+'[73]-- \u516b\u91cd\u795e\u5b50 --[75]-- \u8fea\u5362\u514b --[76]-- \u4f18\u83c8 --[6]' ;                    }                }                                                   ,
+                "textStyle": {
+                    "fontSize": 16
+                },
+                "borderColor": "red",
+                "borderWidth": "1",
+                "padding": 5
+            }
+        }
+    ],
+    "legend": [
+        {
+            "data": [
+                "\u4e09\u661f",
+                "\u56db\u661f\u6b66\u5668",
+                "\u56db\u661f\u89d2\u8272",
+                "\u4e94\u661f\u6b66\u5668",
+                "\u4e94\u661f\u89d2\u8272"
+            ],
+            "selected": {},
+            "show": true,
+            "padding": 5,
+            "itemGap": 10,
+            "itemWidth": 25,
+            "itemHeight": 14
+        }
+    ],
+    "tooltip": {
+        "show": true,
+        "trigger": "item",
+        "triggerOn": "mousemove|click",
+        "axisPointer": {
+            "type": "line"
+        },
+        "showContent": true,
+        "alwaysShowContent": false,
+        "showDelay": 0,
+        "hideDelay": 100,
+        "textStyle": {
+            "fontSize": 14
+        },
+        "borderWidth": 0,
+        "padding": 5
+    },
+    "title": [
+        {
+            "text": "\u89d2\u8272\u6d3b\u52a8\u7948\u613f",
+            "padding": 5,
+            "itemGap": 10
+        }
+    ]
+};
+        chart_角色活动祈愿.setOption(option_角色活动祈愿);
+    </script>
+<br/>                <div id="武器活动祈愿" class="chart-container" style="position: absolute; width: 720px; height: 540px; top: 0px; left: 20px;"></div>
+    <script>
+        var chart_武器活动祈愿 = echarts.init(
+            document.getElementById('武器活动祈愿'), 'macarons', {renderer: 'canvas'});
+            
+                       option_defult = {
+
+            series: [
+                {type:'pie',
+                    name:武器活动祈愿,
+
+                    itemStyle: {
+                Radius: 5,
+        borderColor: 'yellow',
+        borderWidth: 2
+      },
+                    startAngle:-75,
+                    selectedMode: 'single',
+                     label: {
+                        position: 'outside',
+                        fontSize: 20,
+
+                        }
+                       }]};
+                       chart_武器活动祈愿.setOption(option_defult);
+        var option_武器活动祈愿 = {
+    "animation": true,
+    "animationThreshold": 2000,
+    "animationDuration": 1000,
+    "animationEasing": "cubicOut",
+    "animationDelay": 0,
+    "animationDurationUpdate": 300,
+    "animationEasingUpdate": "cubicOut",
+    "animationDelayUpdate": 0,
+    "series": [
+        {
+            "type": "pie",
+            "name": "\u6b66\u5668\u6d3b\u52a8\u7948\u613f",
+            "clockwise": true,
+            "data": [
+                {
+                    "name": "\u4e09\u661f",
+                    "value": 188
+                },
+                {
+                    "name": "\u56db\u661f\u6b66\u5668",
+                    "value": 29
+                },
+                {
+                    "name": "\u56db\u661f\u89d2\u8272",
+                    "value": 5
+                },
+                {
+                    "name": "\u4e94\u661f\u6b66\u5668",
+                    "value": 4
+                },
+                {
+                    "name": "\u4e94\u661f\u89d2\u8272",
+                    "value": 0
+                }
+            ],
+            "radius": [
+                "35%",
+                "70%"
+            ],
+            "center": [
+                "50%",
+                "50%"
+            ],
+            "label": {
+                "show": true,
+                "position": "top",
+                "margin": 8
+            },
+            "tooltip": {
+                "show": true,
+                "trigger": "item",
+                "triggerOn": "mousemove|click",
+                "axisPointer": {
+                    "type": "line"
+                },
+                "showContent": true,
+                "alwaysShowContent": false,
+                "showDelay": 0,
+                "hideDelay": 100,
+                "formatter": function(parg){                    if( parg.name == '\u4e09\u661f')                    {                    return ' \u4e09\u661f\uff1a 188 ( 83.18 % )</br>'+' \u9b54\u5bfc\u7eea\u8bba[19]  \u6c90\u6d74\u9f99\u8840\u7684\u5251[19]  \u7fe1\u7389\u6cd5\u7403[16] </br>  \u8ba8\u9f99\u82f1\u6770\u8c2d[16]  \u5f39\u5f13[15]  \u51b7\u5203[15] </br>  \u98de\u5929\u5fa1\u5251[14]  \u9e26\u7fbd\u5f13[14]  \u9ece\u660e\u795e\u5251[14] </br>  \u4ee5\u7406\u670d\u4eba[12]  \u94c1\u5f71\u9614\u5251[12]  \u795e\u5c04\u624b\u4e4b\u8a93[11] </br>  \u9ed1\u7f28\u67aa[11] ' ;                    }else if (parg.name == '\u56db\u661f\u6b66\u5668')                    {                    return ' \u56db\u661f\u6b66\u5668\uff1a 34 ( 15.04 % )</br>'+'[3]-- \u796d\u793c\u5927\u5251 --[7]-- \u6d41\u6d6a\u4e50\u7ae0 --[2]-- \u7b1b\u5251 --</br> [7]-- \u8f9b\u7131 --[1]-- \u796d\u793c\u5927\u5251 --[2]-- \u5323\u91cc\u706d\u8fb0 --</br> [7]-- \u5f13\u85cf --[7]-- \u8bfa\u827e\u5c14 --[7]-- \u662d\u5fc3 --</br> [8]-- \u5323\u91cc\u706d\u8fb0 --[4]-- \u796d\u793c\u5f13 --[2]-- \u796d\u793c\u5f13 --</br> [7]-- \u949f\u5251 --[3]-- \u6d41\u6d6a\u4e50\u7ae0 --[5]-- \u6258\u9a6c --</br> [8]-- \u6d41\u6d6a\u4e50\u7ae0 --[4]-- \u8f9b\u7131 --[7]-- \u5323\u91cc\u9f99\u541f --</br> [4]-- \u6697\u5df7\u7684\u9152\u4e0e\u8bd7 --[2]-- \u6697\u5df7\u7684\u9152\u4e0e\u8bd7 --[8]-- \u6697\u5df7\u7684\u9152\u4e0e\u8bd7 --</br> [8]-- \u5323\u91cc\u706d\u8fb0 --[6]-- \u5323\u91cc\u9f99\u541f --[7]-- \u6697\u5df7\u7684\u9152\u4e0e\u8bd7 --</br> [3]-- \u6697\u5df7\u7684\u9152\u4e0e\u8bd7 --[7]-- \u5323\u91cc\u9f99\u541f --[7]-- \u796d\u793c\u5927\u5251 --</br> [4]-- \u66da\u4e91\u4e4b\u6708 --[8]-- \u65ad\u6d6a\u957f\u9ccd --[5]-- \u82ad\u82ad\u62c9 --</br> [6]-- \u6076\u738b\u4e38 --[7]-- \u897f\u98ce\u5251 --[7]-- \u897f\u98ce\u957f\u67aa --</br> [7]-- \u6076\u738b\u4e38 --' ;                    }else if (parg.name == '\u4e94\u661f\u6b66\u5668')                    {                    return ' \u4e94\u661f\uff1a 4 ( 1.76 % )</br>'+'[53]-- \u78d0\u5ca9\u7ed3\u7eff --[64]-- \u677e\u7c41\u54cd\u8d77\u4e4b\u65f6 --[38]-- \u82cd\u53e4\u81ea\u7531\u4e4b\u8a93 --</br> [65]-- \u548c\u749e\u9e22 --[2]' ;                    }else if (parg.name == '\u56db\u661f\u89d2\u8272')                    {                    return ' \u56db\u661f\u89d2\u8272\uff1a 34 ( 15.04 % )</br>'+'[3]-- \u796d\u793c\u5927\u5251 --[7]-- \u6d41\u6d6a\u4e50\u7ae0 --[2]-- \u7b1b\u5251 --</br> [7]-- \u8f9b\u7131 --[1]-- \u796d\u793c\u5927\u5251 --[2]-- \u5323\u91cc\u706d\u8fb0 --</br> [7]-- \u5f13\u85cf --[7]-- \u8bfa\u827e\u5c14 --[7]-- \u662d\u5fc3 --</br> [8]-- \u5323\u91cc\u706d\u8fb0 --[4]-- \u796d\u793c\u5f13 --[2]-- \u796d\u793c\u5f13 --</br> [7]-- \u949f\u5251 --[3]-- \u6d41\u6d6a\u4e50\u7ae0 --[5]-- \u6258\u9a6c --</br> [8]-- \u6d41\u6d6a\u4e50\u7ae0 --[4]-- \u8f9b\u7131 --[7]-- \u5323\u91cc\u9f99\u541f --</br> [4]-- \u6697\u5df7\u7684\u9152\u4e0e\u8bd7 --[2]-- \u6697\u5df7\u7684\u9152\u4e0e\u8bd7 --[8]-- \u6697\u5df7\u7684\u9152\u4e0e\u8bd7 --</br> [8]-- \u5323\u91cc\u706d\u8fb0 --[6]-- \u5323\u91cc\u9f99\u541f --[7]-- \u6697\u5df7\u7684\u9152\u4e0e\u8bd7 --</br> [3]-- \u6697\u5df7\u7684\u9152\u4e0e\u8bd7 --[7]-- \u5323\u91cc\u9f99\u541f --[7]-- \u796d\u793c\u5927\u5251 --</br> [4]-- \u66da\u4e91\u4e4b\u6708 --[8]-- \u65ad\u6d6a\u957f\u9ccd --[5]-- \u82ad\u82ad\u62c9 --</br> [6]-- \u6076\u738b\u4e38 --[7]-- \u897f\u98ce\u5251 --[7]-- \u897f\u98ce\u957f\u67aa --</br> [7]-- \u6076\u738b\u4e38 --' ;                    }else if (parg.name == '\u4e94\u661f\u89d2\u8272')                    {                    return ' \u4e94\u661f\uff1a 4 ( 1.76 % )</br>'+'[53]-- \u78d0\u5ca9\u7ed3\u7eff --[64]-- \u677e\u7c41\u54cd\u8d77\u4e4b\u65f6 --[38]-- \u82cd\u53e4\u81ea\u7531\u4e4b\u8a93 --</br> [65]-- \u548c\u749e\u9e22 --[2]' ;                    }                }                                                   ,
+                "textStyle": {
+                    "fontSize": 16
+                },
+                "borderColor": "red",
+                "borderWidth": "1",
+                "padding": 5
+            }
+        }
+    ],
+    "legend": [
+        {
+            "data": [
+                "\u4e09\u661f",
+                "\u56db\u661f\u6b66\u5668",
+                "\u56db\u661f\u89d2\u8272",
+                "\u4e94\u661f\u6b66\u5668",
+                "\u4e94\u661f\u89d2\u8272"
+            ],
+            "selected": {},
+            "show": true,
+            "padding": 5,
+            "itemGap": 10,
+            "itemWidth": 25,
+            "itemHeight": 14
+        }
+    ],
+    "tooltip": {
+        "show": true,
+        "trigger": "item",
+        "triggerOn": "mousemove|click",
+        "axisPointer": {
+            "type": "line"
+        },
+        "showContent": true,
+        "alwaysShowContent": false,
+        "showDelay": 0,
+        "hideDelay": 100,
+        "textStyle": {
+            "fontSize": 14
+        },
+        "borderWidth": 0,
+        "padding": 5
+    },
+    "title": [
+        {
+            "text": "\u6b66\u5668\u6d3b\u52a8\u7948\u613f",
+            "padding": 5,
+            "itemGap": 10
+        }
+    ]
+};
+        chart_武器活动祈愿.setOption(option_武器活动祈愿);
+    </script>
+<br/>                <div id="常驻祈愿" class="chart-container" style="position: absolute; width: 720px; height: 540px; top: 0px; left: 1210px;"></div>
+    <script>
+        var chart_常驻祈愿 = echarts.init(
+            document.getElementById('常驻祈愿'), 'macarons', {renderer: 'canvas'});
+            
+                       option_defult = {
+
+            series: [
+                {type:'pie',
+                    name:常驻祈愿,
+
+                    itemStyle: {
+                Radius: 5,
+        borderColor: 'yellow',
+        borderWidth: 2
+      },
+                    startAngle:-75,
+                    selectedMode: 'single',
+                     label: {
+                        position: 'outside',
+                        fontSize: 20,
+
+                        }
+                       }]};
+                       chart_常驻祈愿.setOption(option_defult);
+        var option_常驻祈愿 = {
+    "animation": true,
+    "animationThreshold": 2000,
+    "animationDuration": 1000,
+    "animationEasing": "cubicOut",
+    "animationDelay": 0,
+    "animationDurationUpdate": 300,
+    "animationEasingUpdate": "cubicOut",
+    "animationDelayUpdate": 0,
+    "series": [
+        {
+            "type": "pie",
+            "name": "\u5e38\u9a7b\u7948\u613f",
+            "clockwise": true,
+            "data": [
+                {
+                    "name": "\u4e09\u661f",
+                    "value": 60
+                },
+                {
+                    "name": "\u56db\u661f\u6b66\u5668",
+                    "value": 6
+                },
+                {
+                    "name": "\u56db\u661f\u89d2\u8272",
+                    "value": 4
+                },
+                {
+                    "name": "\u4e94\u661f\u6b66\u5668",
+                    "value": 1
+                },
+                {
+                    "name": "\u4e94\u661f\u89d2\u8272",
+                    "value": 0
+                }
+            ],
+            "radius": [
+                "35%",
+                "70%"
+            ],
+            "center": [
+                "50%",
+                "50%"
+            ],
+            "label": {
+                "show": true,
+                "position": "top",
+                "margin": 8
+            },
+            "tooltip": {
+                "show": true,
+                "trigger": "item",
+                "triggerOn": "mousemove|click",
+                "axisPointer": {
+                    "type": "line"
+                },
+                "showContent": true,
+                "alwaysShowContent": false,
+                "showDelay": 0,
+                "hideDelay": 100,
+                "formatter": function(parg){                    if( parg.name == '\u4e09\u661f')                    {                    return ' \u4e09\u661f\uff1a 60 ( 84.5 % )</br>'+' \u6c90\u6d74\u9f99\u8840\u7684\u5251[9]  \u9ece\u660e\u795e\u5251[8]  \u9ed1\u7f28\u67aa[8] </br>  \u4ee5\u7406\u670d\u4eba[5]  \u8ba8\u9f99\u82f1\u6770\u8c2d[5]  \u9b54\u5bfc\u7eea\u8bba[4] </br>  \u98de\u5929\u5fa1\u5251[4]  \u7fe1\u7389\u6cd5\u7403[3]  \u51b7\u5203[3] </br>  \u795e\u5c04\u624b\u4e4b\u8a93[3]  \u9e26\u7fbd\u5f13[3]  \u94c1\u5f71\u9614\u5251[3] </br>  \u5f39\u5f13[2] ' ;                    }else if (parg.name == '\u56db\u661f\u6b66\u5668')                    {                    return ' \u56db\u661f\u6b66\u5668\uff1a 10 ( 14.08 % )</br>'+'[2]-- \u8f9b\u7131 --[8]-- \u5f13\u85cf --[8]-- \u65e9\u67da --</br> [8]-- \u796d\u793c\u6b8b\u7ae0 --[8]-- \u8bfa\u827e\u5c14 --[8]-- \u662d\u5fc3 --</br> [9]-- \u5323\u91cc\u706d\u8fb0 --[0]-- \u8fea\u5965\u5a1c --[7]-- \u96e8\u88c1 --</br> [3]-- \u796d\u793c\u5251 --' ;                    }else if (parg.name == '\u4e94\u661f\u6b66\u5668')                    {                    return ' \u4e94\u661f\uff1a 1 ( 1.4 % )</br>'+'[12]-- \u963f\u83ab\u65af\u4e4b\u5f13 --[58]' ;                    }else if (parg.name == '\u56db\u661f\u89d2\u8272')                    {                    return ' \u56db\u661f\u89d2\u8272\uff1a 10 ( 14.08 % )</br>'+'[2]-- \u8f9b\u7131 --[8]-- \u5f13\u85cf --[8]-- \u65e9\u67da --</br> [8]-- \u796d\u793c\u6b8b\u7ae0 --[8]-- \u8bfa\u827e\u5c14 --[8]-- \u662d\u5fc3 --</br> [9]-- \u5323\u91cc\u706d\u8fb0 --[0]-- \u8fea\u5965\u5a1c --[7]-- \u96e8\u88c1 --</br> [3]-- \u796d\u793c\u5251 --' ;                    }else if (parg.name == '\u4e94\u661f\u89d2\u8272')                    {                    return ' \u4e94\u661f\uff1a 1 ( 1.4 % )</br>'+'[12]-- \u963f\u83ab\u65af\u4e4b\u5f13 --[58]' ;                    }                }                                                   ,
+                "textStyle": {
+                    "fontSize": 16
+                },
+                "borderColor": "red",
+                "borderWidth": "1",
+                "padding": 5
+            }
+        }
+    ],
+    "legend": [
+        {
+            "data": [
+                "\u4e09\u661f",
+                "\u56db\u661f\u6b66\u5668",
+                "\u56db\u661f\u89d2\u8272",
+                "\u4e94\u661f\u6b66\u5668",
+                "\u4e94\u661f\u89d2\u8272"
+            ],
+            "selected": {},
+            "show": true,
+            "padding": 5,
+            "itemGap": 10,
+            "itemWidth": 25,
+            "itemHeight": 14
+        }
+    ],
+    "tooltip": {
+        "show": true,
+        "trigger": "item",
+        "triggerOn": "mousemove|click",
+        "axisPointer": {
+            "type": "line"
+        },
+        "showContent": true,
+        "alwaysShowContent": false,
+        "showDelay": 0,
+        "hideDelay": 100,
+        "textStyle": {
+            "fontSize": 14
+        },
+        "borderWidth": 0,
+        "padding": 5
+    },
+    "title": [
+        {
+            "text": "\u5e38\u9a7b\u7948\u613f",
+            "padding": 5,
+            "itemGap": 10
+        }
+    ]
+};
+        chart_常驻祈愿.setOption(option_常驻祈愿);
+    </script>
+<br/>                <div id="出货时间分布" class="chart-container" style="position: absolute; width: 720px; height: 480px; top: 480px; left: 1185px;"></div>
+    <script>
+        var chart_出货时间分布 = echarts.init(
+            document.getElementById('出货时间分布'), 'macarons', {renderer: 'canvas'});
+        var option_出货时间分布 = {
+    "animation": true,
+    "animationThreshold": 2000,
+    "animationDuration": 1000,
+    "animationEasing": "cubicOut",
+    "animationDelay": 0,
+    "animationDurationUpdate": 300,
+    "animationEasingUpdate": "cubicOut",
+    "animationDelayUpdate": 0,
+    "series": [
+        {
+            "type": "scatter",
+            "name": "\u4e09\u661f",
+            "symbolSize": 10,
+            "data": [
+                [
+                    "00:00",
+                    17
+                ],
+                [
+                    "01:00",
+                    20
+                ],
+                [
+                    "02:00",
+                    31
+                ],
+                [
+                    "03:00",
+                    71
+                ],
+                [
+                    "04:00",
+                    101
+                ],
+                [
+                    "05:00",
+                    4
+                ],
+                [
+                    "06:00",
+                    2
+                ],
+                [
+                    "07:00",
+                    10
+                ],
+                [
+                    "08:00",
+                    2
+                ],
+                [
+                    "09:00",
+                    9
+                ],
+                [
+                    "10:00",
+                    74
+                ],
+                [
+                    "11:00",
+                    1
+                ],
+                [
+                    "12:00",
+                    8
+                ],
+                [
+                    "13:00",
+                    7
+                ],
+                [
+                    "14:00",
+                    4
+                ],
+                [
+                    "15:00",
+                    2
+                ],
+                [
+                    "16:00",
+                    3
+                ],
+                [
+                    "17:00",
+                    6
+                ],
+                [
+                    "18:00",
+                    8
+                ],
+                [
+                    "19:00",
+                    32
+                ],
+                [
+                    "20:00",
+                    25
+                ],
+                [
+                    "21:00",
+                    11
+                ]
+            ],
+            "label": {
+                "show": true,
+                "position": "right",
+                "margin": 8
+            }
+        },
+        {
+            "type": "scatter",
+            "name": "\u56db\u661f",
+            "symbolSize": 10,
+            "data": [
+                [
+                    "00:00",
+                    5
+                ],
+                [
+                    "01:00",
+                    4
+                ],
+                [
+                    "02:00",
+                    4
+                ],
+                [
+                    "03:00",
+                    12
+                ],
+                [
+                    "04:00",
+                    21
+                ],
+                [
+                    "05:00",
+                    1
+                ],
+                [
+                    "06:00",
+                    2
+                ],
+                [
+                    "07:00",
+                    9
+                ],
+                [
+                    "08:00",
+                    2
+                ],
+                [
+                    "09:00",
+                    2
+                ],
+                [
+                    "10:00",
+                    1
+                ],
+                [
+                    "11:00",
+                    3
+                ],
+                [
+                    "12:00",
+                    5
+                ],
+                [
+                    "13:00",
+                    2
+                ],
+                [
+                    "14:00",
+                    1
+                ]
+            ],
+            "label": {
+                "show": true,
+                "position": "right",
+                "margin": 8
+            }
+        },
+        {
+            "type": "scatter",
+            "name": "\u4e94\u661f",
+            "symbolSize": 10,
+            "data": [
+                [
+                    "00:00",
+                    1
+                ],
+                [
+                    "01:00",
+                    4
+                ],
+                [
+                    "02:00",
+                    1
+                ],
+                [
+                    "03:00",
+                    2
+                ]
+            ],
+            "label": {
+                "show": true,
+                "position": "right",
+                "margin": 8
+            }
+        }
+    ],
+    "legend": [
+        {
+            "data": [
+                "\u4e09\u661f",
+                "\u56db\u661f",
+                "\u4e94\u661f"
+            ],
+            "selected": {
+                "\u4e09\u661f": true,
+                "\u56db\u661f": true,
+                "\u4e94\u661f": true
+            },
+            "show": true,
+            "padding": 5,
+            "itemGap": 10,
+            "itemWidth": 25,
+            "itemHeight": 14
+        }
+    ],
+    "tooltip": {
+        "show": true,
+        "trigger": "item",
+        "triggerOn": "mousemove|click",
+        "axisPointer": {
+            "type": "line"
+        },
+        "showContent": true,
+        "alwaysShowContent": false,
+        "showDelay": 0,
+        "hideDelay": 100,
+        "textStyle": {
+            "fontSize": 14
+        },
+        "borderWidth": 0,
+        "padding": 5
+    },
+    "xAxis": [
+        {
+            "show": true,
+            "scale": false,
+            "nameLocation": "end",
+            "nameGap": 15,
+            "gridIndex": 0,
+            "inverse": false,
+            "offset": 0,
+            "splitNumber": 5,
+            "minInterval": 0,
+            "splitLine": {
+                "show": false,
+                "lineStyle": {
+                    "show": true,
+                    "width": 1,
+                    "opacity": 1,
+                    "curveness": 0,
+                    "type": "solid"
+                }
+            },
+            "data": [
+                "00:00",
+                "01:00",
+                "02:00",
+                "03:00",
+                "04:00",
+                "05:00",
+                "06:00",
+                "07:00",
+                "08:00",
+                "09:00",
+                "10:00",
+                "11:00",
+                "12:00",
+                "13:00",
+                "14:00",
+                "15:00",
+                "16:00",
+                "17:00",
+                "18:00",
+                "19:00",
+                "20:00",
+                "21:00",
+                "22:00",
+                "23:00"
+            ]
+        }
+    ],
+    "yAxis": [
+        {
+            "show": true,
+            "scale": false,
+            "nameLocation": "end",
+            "nameGap": 15,
+            "gridIndex": 0,
+            "inverse": false,
+            "offset": 0,
+            "splitNumber": 5,
+            "minInterval": 0,
+            "splitLine": {
+                "show": false,
+                "lineStyle": {
+                    "show": true,
+                    "width": 1,
+                    "opacity": 1,
+                    "curveness": 0,
+                    "type": "solid"
+                }
+            }
+        }
+    ],
+    "title": [
+        {
+            "text": "\u51fa\u8d27\u65f6\u95f4\u5206\u5e03",
+            "padding": 5,
+            "itemGap": 10
+        }
+    ],
+    "visualMap": {
+        "show": true,
+        "type": "continuous",
+        "min": 1,
+        "max": 21,
+        "inRange": {
+            "symbolSize": [
+                20,
+                50
+            ]
+        },
+        "calculable": true,
+        "inverse": false,
+        "splitNumber": 5,
+        "orient": "vertical",
+        "showLabel": true,
+        "itemWidth": 20,
+        "itemHeight": 140,
+        "borderWidth": 0
+    }
+};
+        chart_出货时间分布.setOption(option_出货时间分布);
+    </script>
+<br/>                <div id="calendar2021" class="chart-container" style="position: absolute; width: 1160px; height: 240px; top: 480px; left: 20px;"></div>
+    <script>
+        var chart_calendar2021 = echarts.init(
+            document.getElementById('calendar2021'), 'macarons', {renderer: 'canvas'});
+        var option_calendar2021 = {
+    "animation": true,
+    "animationThreshold": 2000,
+    "animationDuration": 1000,
+    "animationEasing": "cubicOut",
+    "animationDelay": 0,
+    "animationDurationUpdate": 300,
+    "animationEasingUpdate": "cubicOut",
+    "animationDelayUpdate": 0,
+    "series": [
+        {
+            "type": "heatmap",
+            "coordinateSystem": "calendar",
+            "name": "2021",
+            "data": [
+                [
+                    "2021-12-11",
+                    68
+                ],
+                [
+                    "2021-11-01",
+                    14
+                ],
+                [
+                    "2021-12-01",
+                    11
+                ],
+                [
+                    "2021-12-28",
+                    10
+                ],
+                [
+                    "2021-12-02",
+                    8
+                ],
+                [
+                    "2021-10-20",
+                    7
+                ],
+                [
+                    "2021-10-28",
+                    7
+                ],
+                [
+                    "2021-12-12",
+                    7
+                ],
+                [
+                    "2021-10-18",
+                    6
+                ],
+                [
+                    "2021-12-14",
+                    6
+                ],
+                [
+                    "2021-12-21",
+                    6
+                ],
+                [
+                    "2021-12-27",
+                    6
+                ],
+                [
+                    "2021-10-31",
+                    4
+                ],
+                [
+                    "2021-12-13",
+                    4
+                ],
+                [
+                    "2021-12-26",
+                    4
+                ],
+                [
+                    "2021-10-22",
+                    3
+                ],
+                [
+                    "2021-11-09",
+                    3
+                ],
+                [
+                    "2021-12-06",
+                    3
+                ],
+                [
+                    "2021-10-24",
+                    2
+                ],
+                [
+                    "2021-10-25",
+                    2
+                ],
+                [
+                    "2021-10-29",
+                    2
+                ],
+                [
+                    "2021-11-04",
+                    2
+                ],
+                [
+                    "2021-11-05",
+                    2
+                ],
+                [
+                    "2021-11-07",
+                    2
+                ],
+                [
+                    "2021-11-28",
+                    2
+                ],
+                [
+                    "2021-12-16",
+                    2
+                ],
+                [
+                    "2021-12-22",
+                    2
+                ],
+                [
+                    "2021-12-25",
+                    2
+                ],
+                [
+                    "2021-12-31",
+                    2
+                ],
+                [
+                    "2021-10-21",
+                    1
+                ],
+                [
+                    "2021-10-26",
+                    1
+                ],
+                [
+                    "2021-10-27",
+                    1
+                ],
+                [
+                    "2021-10-30",
+                    1
+                ],
+                [
+                    "2021-11-03",
+                    1
+                ],
+                [
+                    "2021-11-06",
+                    1
+                ],
+                [
+                    "2021-11-08",
+                    1
+                ],
+                [
+                    "2021-11-25",
+                    1
+                ],
+                [
+                    "2021-12-07",
+                    1
+                ],
+                [
+                    "2021-12-18",
+                    1
+                ],
+                [
+                    "2021-12-24",
+                    1
+                ]
+            ],
+            "label": {
+                "show": true,
+                "position": "top",
+                "margin": 8
+            }
+        }
+    ],
+    "legend": [
+        {
+            "data": [
+                "2021"
+            ],
+            "selected": {
+                "2021": true
+            },
+            "show": true,
+            "padding": 5,
+            "itemGap": 10,
+            "itemWidth": 25,
+            "itemHeight": 14
+        }
+    ],
+    "tooltip": {
+        "show": true,
+        "trigger": "item",
+        "triggerOn": "mousemove|click",
+        "axisPointer": {
+            "type": "line"
+        },
+        "showContent": true,
+        "alwaysShowContent": false,
+        "showDelay": 0,
+        "hideDelay": 100,
+        "textStyle": {
+            "fontSize": 14
+        },
+        "borderWidth": 0,
+        "padding": 5
+    },
+    "calendar": {
+        "left": "30",
+        "width": "auto",
+        "orient": "horizontal",
+        "range": "2021",
+        "cellSize": 20,
+        "yearLabel": {
+            "show": false,
+            "color": "#000",
+            "fontStyle": "normal",
+            "fontWeight": "normal",
+            "fontFamily": "sans-serif",
+            "fontSize": 12
+        }
+    },
+    "title": [
+        {
+            "text": "\u62bd\u5361\u5206\u5e03",
+            "left": "left",
+            "padding": 5,
+            "itemGap": 10
+        }
+    ],
+    "visualMap": {
+        "show": true,
+        "type": "continuous",
+        "min": 1,
+        "max": 68,
+        "inRange": {
+            "color": [
+                "#50a3ba",
+                "#eac763",
+                "#d94e5d"
+            ]
+        },
+        "calculable": true,
+        "inverse": false,
+        "splitNumber": 5,
+        "orient": "horizontal",
+        "left": "center",
+        "showLabel": true,
+        "itemWidth": 20,
+        "itemHeight": 140,
+        "borderWidth": 0
+    }
+};
+        chart_calendar2021.setOption(option_calendar2021);
+    </script>
+<br/>                <div id="calendar2022" class="chart-container" style="position: absolute; width: 1160px; height: 240px; top: 720px; left: 20px;"></div>
+    <script>
+        var chart_calendar2022 = echarts.init(
+            document.getElementById('calendar2022'), 'macarons', {renderer: 'canvas'});
+        var option_calendar2022 = {
+    "animation": true,
+    "animationThreshold": 2000,
+    "animationDuration": 1000,
+    "animationEasing": "cubicOut",
+    "animationDelay": 0,
+    "animationDurationUpdate": 300,
+    "animationEasingUpdate": "cubicOut",
+    "animationDelayUpdate": 0,
+    "series": [
+        {
+            "type": "heatmap",
+            "coordinateSystem": "calendar",
+            "name": "2022",
+            "data": [
+                [
+                    "2022-02-16",
+                    91
+                ],
+                [
+                    "2022-01-05",
+                    29
+                ],
+                [
+                    "2022-02-06",
+                    23
+                ],
+                [
+                    "2022-03-01",
+                    12
+                ],
+                [
+                    "2022-03-24",
+                    11
+                ],
+                [
+                    "2022-02-17",
+                    10
+                ],
+                [
+                    "2022-03-08",
+                    10
+                ],
+                [
+                    "2022-04-01",
+                    9
+                ],
+                [
+                    "2022-01-02",
+                    7
+                ],
+                [
+                    "2022-03-30",
+                    7
+                ],
+                [
+                    "2022-01-01",
+                    6
+                ],
+                [
+                    "2022-01-08",
+                    6
+                ],
+                [
+                    "2022-04-10",
+                    6
+                ],
+                [
+                    "2022-04-16",
+                    6
+                ],
+                [
+                    "2022-01-07",
+                    5
+                ],
+                [
+                    "2022-03-20",
+                    5
+                ],
+                [
+                    "2022-03-23",
+                    5
+                ],
+                [
+                    "2022-03-26",
+                    5
+                ],
+                [
+                    "2022-04-07",
+                    5
+                ],
+                [
+                    "2022-02-21",
+                    4
+                ],
+                [
+                    "2022-02-28",
+                    4
+                ],
+                [
+                    "2022-02-24",
+                    3
+                ],
+                [
+                    "2022-03-03",
+                    3
+                ],
+                [
+                    "2022-03-17",
+                    3
+                ],
+                [
+                    "2022-04-09",
+                    3
+                ],
+                [
+                    "2022-02-19",
+                    2
+                ],
+                [
+                    "2022-03-05",
+                    2
+                ],
+                [
+                    "2022-03-07",
+                    2
+                ],
+                [
+                    "2022-03-11",
+                    2
+                ],
+                [
+                    "2022-03-27",
+                    2
+                ],
+                [
+                    "2022-04-03",
+                    2
+                ],
+                [
+                    "2022-04-12",
+                    2
+                ],
+                [
+                    "2022-04-14",
+                    2
+                ],
+                [
+                    "2022-04-19",
+                    2
+                ],
+                [
+                    "2022-01-12",
+                    1
+                ],
+                [
+                    "2022-01-19",
+                    1
+                ],
+                [
+                    "2022-01-26",
+                    1
+                ],
+                [
+                    "2022-02-03",
+                    1
+                ],
+                [
+                    "2022-02-08",
+                    1
+                ],
+                [
+                    "2022-02-22",
+                    1
+                ],
+                [
+                    "2022-02-23",
+                    1
+                ],
+                [
+                    "2022-02-26",
+                    1
+                ],
+                [
+                    "2022-03-06",
+                    1
+                ],
+                [
+                    "2022-03-10",
+                    1
+                ],
+                [
+                    "2022-03-12",
+                    1
+                ],
+                [
+                    "2022-03-13",
+                    1
+                ],
+                [
+                    "2022-03-14",
+                    1
+                ],
+                [
+                    "2022-03-15",
+                    1
+                ],
+                [
+                    "2022-03-16",
+                    1
+                ],
+                [
+                    "2022-03-18",
+                    1
+                ],
+                [
+                    "2022-03-22",
+                    1
+                ],
+                [
+                    "2022-03-25",
+                    1
+                ],
+                [
+                    "2022-03-29",
+                    1
+                ],
+                [
+                    "2022-03-31",
+                    1
+                ],
+                [
+                    "2022-04-05",
+                    1
+                ],
+                [
+                    "2022-04-13",
+                    1
+                ],
+                [
+                    "2022-04-15",
+                    1
+                ],
+                [
+                    "2022-04-18",
+                    1
+                ]
+            ],
+            "label": {
+                "show": true,
+                "position": "top",
+                "margin": 8
+            }
+        }
+    ],
+    "legend": [
+        {
+            "data": [
+                "2022"
+            ],
+            "selected": {
+                "2022": true
+            },
+            "show": true,
+            "padding": 5,
+            "itemGap": 10,
+            "itemWidth": 25,
+            "itemHeight": 14
+        }
+    ],
+    "tooltip": {
+        "show": true,
+        "trigger": "item",
+        "triggerOn": "mousemove|click",
+        "axisPointer": {
+            "type": "line"
+        },
+        "showContent": true,
+        "alwaysShowContent": false,
+        "showDelay": 0,
+        "hideDelay": 100,
+        "textStyle": {
+            "fontSize": 14
+        },
+        "borderWidth": 0,
+        "padding": 5
+    },
+    "calendar": {
+        "left": "30",
+        "width": "auto",
+        "orient": "horizontal",
+        "range": "2022",
+        "cellSize": 20,
+        "yearLabel": {
+            "show": false,
+            "color": "#000",
+            "fontStyle": "normal",
+            "fontWeight": "normal",
+            "fontFamily": "sans-serif",
+            "fontSize": 12
+        }
+    },
+    "title": [
+        {
+            "text": "\u62bd\u5361\u5206\u5e03",
+            "left": "left",
+            "padding": 5,
+            "itemGap": 10
+        }
+    ],
+    "visualMap": {
+        "show": true,
+        "type": "continuous",
+        "min": 1,
+        "max": 91,
+        "inRange": {
+            "color": [
+                "#50a3ba",
+                "#eac763",
+                "#d94e5d"
+            ]
+        },
+        "calculable": true,
+        "inverse": false,
+        "splitNumber": 5,
+        "orient": "horizontal",
+        "left": "center",
+        "showLabel": true,
+        "itemWidth": 20,
+        "itemHeight": 140,
+        "borderWidth": 0
+    }
+};
+        chart_calendar2022.setOption(option_calendar2022);
+    </script>
+<br/>    </div>
+    <script>
+            $('#角色活动祈愿').css('border-style', 'dashed').css('border-width', '0px');$("#角色活动祈愿>div:nth-child(1)").width("100%").height("100%");
+            new ResizeSensor(jQuery('#角色活动祈愿'), function() { chart_角色活动祈愿.resize()});
+            $('#武器活动祈愿').css('border-style', 'dashed').css('border-width', '0px');$("#武器活动祈愿>div:nth-child(1)").width("100%").height("100%");
+            new ResizeSensor(jQuery('#武器活动祈愿'), function() { chart_武器活动祈愿.resize()});
+            $('#常驻祈愿').css('border-style', 'dashed').css('border-width', '0px');$("#常驻祈愿>div:nth-child(1)").width("100%").height("100%");
+            new ResizeSensor(jQuery('#常驻祈愿'), function() { chart_常驻祈愿.resize()});
+            $('#出货时间分布').css('border-style', 'dashed').css('border-width', '0px');$("#出货时间分布>div:nth-child(1)").width("100%").height("100%");
+            new ResizeSensor(jQuery('#出货时间分布'), function() { chart_出货时间分布.resize()});
+            $('#calendar2021').css('border-style', 'dashed').css('border-width', '0px');$("#calendar2021>div:nth-child(1)").width("100%").height("100%");
+            new ResizeSensor(jQuery('#calendar2021'), function() { chart_calendar2021.resize()});
+            $('#calendar2022').css('border-style', 'dashed').css('border-width', '0px');$("#calendar2022>div:nth-child(1)").width("100%").height("100%");
+            new ResizeSensor(jQuery('#calendar2022'), function() { chart_calendar2022.resize()});
+            var charts_id = ['角色活动祈愿','武器活动祈愿','常驻祈愿','出货时间分布','calendar2021','calendar2022'];
+function downloadCfg () {
+    const fileName = 'chart_config.json'
+    let downLink = document.createElement('a')
+    downLink.download = fileName
+
+    let result = []
+    for(let i=0; i<charts_id.length; i++) {
+        chart = $('#'+charts_id[i])
+        result.push({
+            cid: charts_id[i],
+            width: chart.css("width"),
+            height: chart.css("height"),
+            top: chart.offset().top + "px",
+            left: chart.offset().left + "px"
+        })
+    }
+
+    let blob = new Blob([JSON.stringify(result)])
+    downLink.href = URL.createObjectURL(blob)
+    document.body.appendChild(downLink)
+    downLink.click()
+    document.body.removeChild(downLink)
+}
+    </script>
+</body>
+</html>
