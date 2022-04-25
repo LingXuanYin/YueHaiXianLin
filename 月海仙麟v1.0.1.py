@@ -58,11 +58,12 @@ class Log():  # 日志类
 
     # 获取初始url
     def get_url(self):
-        self.get_log()
+        #
         if os.path.exists(self_path + '/output_log.txt'):
             log = open(self_path + '/output_log.txt', 'r', encoding='UTF-8').read()
         else:
-            log=''
+            self.get_log()
+            log=open(self_path + '/output_log.txt', 'r', encoding='UTF-8').read()
         start = log.rfind('https://webstatic.mihoyo.com/hk4e/event/')
         end = log.rfind('#/log') + 5
         url = str(log[start:end])
@@ -919,6 +920,7 @@ def main():
     open(self_path + "/chart_config.json", 'w+').write(open(file_json, 'r+').read())
     if not os.path.exists('chart_config.json'):
         open("chart_config.json", 'w+').writelines(open(file_json, 'r+', encoding='utf-8').read())
+
     print('Checking URL...\n')
     try:
         page, endid = 1, 0
@@ -928,7 +930,7 @@ def main():
         response_list =request(). request(url, request_data)
         print('URL correct !\n')
     except  Exception as e:
-        #os.remove(self_path + '/output_log.txt')
+        os.remove(self_path + '/output_log.txt')
 
         if (os.path.exists('ERRORFLAG')):
             raise Exception('\n请登录 原神->祈愿->历史记录 刷新链接后重试\n')
@@ -957,7 +959,7 @@ def main():
         data().charactivity().total + data().wapactivity().total + data().permanent().total + data().novice().total)  # 调用Save保存数据到对应文件
     print('Saving success !\n')
     print('Merging...')
-    data().merge_data(Save.Read_all_data(data().charactivity().total[0]['uid']))  # 调用Save读取对应uid数据文件中的旧数据
+    data().merge_data(Save.Read_all_data(data().charactivity().total[0]['uid']))  # 调用Save读取对应uid数据文件中的数据
     print("Merge success !\n")
     print("Processing main-data...\n")
     data().maindata_process()
