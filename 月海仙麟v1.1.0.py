@@ -609,7 +609,6 @@ class Log():
             'size': 20,
             'end_id': end_id
         }
-        # print(region)
         if 'cn' not in region:
             url = '''https://hk4e-api-os.hoyoverse.com/event/gacha_info/api/getGachaLog'''
         else:
@@ -662,6 +661,7 @@ class Log():
                 if not self.checkURL(url_in):
                     print("\n国服链接失效\n请登录 原神->祈愿->历史记录 刷新链接后重试")
                     URL['国服'] = ''
+
                 else:
                     print("\nCN")
         if os.path.exists(log_path_out) and (type == 1 or type == 2):  # 获取外服链接
@@ -986,60 +986,73 @@ class charts():  # 图表类
         os.remove(self_path + '/' + 'TEST' + str(self.sever_class.ALL_DATA[0]['uid']) + '.html')
         # 需要改变图表布局则屏蔽这两行，在测试网页里保存配置(*.json)，或者直接修改
 
+def getData( server):
+    global data_cn,data_os
+    if server == '国服':
+        _data = data_cn
+    elif server == '国际服':
+        _data = data_os
+    else: raise ValueError("Unexpected server")
+    thread_301 = threading.Thread(target=_data.getSrcdata, args=(301, server,))
+    thread_302 = threading.Thread(target=_data.getSrcdata, args=(302, server,))
+    thread_200 = threading.Thread(target=_data.getSrcdata, args=(200, server,))
+    thread_100 = threading.Thread(target=_data.getSrcdata, args=(100, server,))
+    thread_301.start()
+    thread_302.start()
+    thread_200.start()
+    thread_100.start()
+
+def processData(server):
+    global data_cn,data_os
+    if server == '国服':
+        _data = data_cn
+    elif server == '国际服':
+        _data = data_os
+    else: raise ValueError("Unexpected server")
+    Tool().SAVE(_data.ALL_DATA)
+
+    _data.merge_data(Tool().READ(_data.ALL_DATA[0]['uid']))
+
+    _data.maindata_process()
+
+    _data.datetimedata_process()
+
+def drawCharts(server):
+    global data_cn,data_os
+    if server == '国服':
+        _data = data_cn
+    elif server == '国际服':
+        _data = data_os
+    else: raise ValueError("Unexpected server")
+    _charts = charts(_data)
+
+    _charts.draw_charts()
+    webbrowser.open(self_path + '/' + '山泽麟迹' + str(_data.ALL_DATA[0]['uid']) + '.html')
 
 def main():
+    global URL
     Initialization()
 
     Log().getURL()
     print("\nGetting data from miHoYo API ...\n")
-    data_cn = data()
-    data_os = data()
-    thread_301_cn = threading.Thread(target=data_cn.getSrcdata, args=(301, '国服',))
-    thread_302_cn = threading.Thread(target=data_cn.getSrcdata, args=(302, '国服',))
-    thread_200_cn = threading.Thread(target=data_cn.getSrcdata, args=(200, '国服',))
-    thread_100_cn = threading.Thread(target=data_cn.getSrcdata, args=(100, '国服',))
-    thread_301_os = threading.Thread(target=data_os.getSrcdata, args=(301, '国际服',))
-    thread_302_os = threading.Thread(target=data_os.getSrcdata, args=(302, '国际服',))
-    thread_200_os = threading.Thread(target=data_os.getSrcdata, args=(200, '国际服',))
-    thread_100_os = threading.Thread(target=data_os.getSrcdata, args=(100, '国际服',))
-
-    thread_301_cn.start()
-    thread_302_cn.start()
-    thread_200_cn.start()
-    thread_100_cn.start()
-    thread_301_os.start()
-    thread_302_os.start()
-    thread_200_os.start()
-    thread_100_os.start()
-
+    if URL['国服'] !='':
+        getData('国服')
+    if URL['国际服']!='':
+        getData('国际服')
     while True:
         # t.sleep(0.5)
         if len(threading.enumerate()) == 1: break
     print("\nProcessing data and drawing ...")
-    Tool().SAVE(data_os.ALL_DATA)
-    Tool().SAVE(data_cn.ALL_DATA)
+    if URL['国服'] !='':
+        processData('国服')
+    if URL['国际服'] != '':
 
-    data_cn.merge_data(Tool().READ(data_cn.ALL_DATA[0]['uid']))
-    data_os.merge_data(Tool().READ(data_os.ALL_DATA[0]['uid']))
+        processData('国际服')
 
-    data_os.maindata_process()
-    data_cn.maindata_process()
-
-    data_os.datetimedata_process()
-    data_cn.datetimedata_process()
-
-    charts_cn = charts(data_cn)
-
-    charts_cn.draw_charts()
-
-    del charts_cn
-    charts_os = charts(data_os)
-
-    charts_os.draw_charts()
-    del charts_os
-    t.sleep(1)
-    webbrowser.open(self_path + '/' + '山泽麟迹' + str(data_os.ALL_DATA[0]['uid']) + '.html')
-    webbrowser.open(self_path + '/' + '山泽麟迹' + str(data_cn.ALL_DATA[0]['uid']) + '.html')
+    if URL['国服'] != '':
+        drawCharts('国服')
+    if URL['国际服'] != '':
+        drawCharts('国际服')
     print("\nSuccess ! ")
     print('\nExit...')
     os.remove('cacert.pem')
@@ -1052,6 +1065,8 @@ self_path = ''
 log_path_in = ''
 log_path_out = ''
 URL = {'国服': '', '国际服': ''}
+data_cn=data()
+data_os=data()
 try:
     main()
 except Exception as e:
