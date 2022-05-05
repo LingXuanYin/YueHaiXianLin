@@ -2,21 +2,21 @@
 
 print('''
                               月海仙麟 -- 原神祈愿数据统计 v1.1.0
-                            
+
                     作者：南辰燏炚  联系QQ：3546599908  原神交流群：777974176
-            
+
                     github：https://github.com/LingXuanYin/YueHaiXianLin
-            
+
                     bilibili：https://space.bilibili.com/162599415
-            
+
                     使用出现任何问题请直接联系开发者
-            
+
                     本软件禁止任何未授权转载、转发
-            
+
                     请勿删除软件目录下的‘藏弓待用.txt’
                     这是您的数据文件
                     删除或更改其内容会导致展示数据不准确等错误
-            
+
         1.1.0已支持国际服
             自动检测是否存在有效链接，同时爬取国服和国际服
             每次仅支持两个不同服务器的uid
@@ -61,9 +61,8 @@ def Initialization():
     file_json = resource_path(os.path.join("res", "chart_config.json"))
     file_dem = resource_path(os.path.join("res", "cacert.pem"))
     open(self_path + "/cacert.pem", 'w+').write(open(file_dem, 'r+').read())
-    open(self_path + "/chart_config.json", 'w+').write(open(file_json, 'r+').read())
-    if not os.path.exists('chart_config.json'):
-        open("chart_config.json", 'w+').writelines(open(file_json, 'r+', encoding='UTF-8').read())
+    if not os.path.exists(self_path + "/chart_config.json"):
+        open(self_path + "/chart_config.json", 'w+').writelines(open(file_json, 'r+', encoding='UTF-8').read())
     # 释放完成
     print("\nInitialize success")
     return 1
@@ -833,7 +832,7 @@ class charts():  # 图表类
                 )
                     .set_global_opts
                     (
-                    title_opts=pyecharts.options.TitleOpts(pos_left="left", title="抽卡分布"),
+                    title_opts=pyecharts.options.TitleOpts(pos_left="left", title="祈愿日历"),
                     visualmap_opts=pyecharts.options.VisualMapOpts
                         (
                         max_=y_data_2021[0][1], min_=1, orient="horizontal", is_piecewise=False, pos_left='center'
@@ -859,7 +858,7 @@ class charts():  # 图表类
                 )
                     .set_global_opts
                     (
-                    title_opts=pyecharts.options.TitleOpts(pos_left="left", title="抽卡分布"),
+                    title_opts=pyecharts.options.TitleOpts(pos_left="left", title="祈愿日历"),
                     visualmap_opts=pyecharts.options.VisualMapOpts
                         (
                         max_=y_data_2022[0][1], min_=1, orient="horizontal", is_piecewise=False, pos_left='center'
@@ -934,7 +933,7 @@ class charts():  # 图表类
         return scatter
 
     def draw_charts(self):  # 绘制所有图表对象
-        page = pyecharts.charts.Page(page_title= '山泽麟迹'+str(self.sever_class.ALL_DATA[0]['uid']) ,
+        page = pyecharts.charts.Page(page_title='山泽麟迹' + str(self.sever_class.ALL_DATA[0]['uid']),
                                      layout=pyecharts.charts.Page.DraggablePageLayout)
 
         if self.sever_class.charactivity.total != []:
@@ -986,13 +985,15 @@ class charts():  # 图表类
         os.remove(self_path + '/' + 'TEST' + str(self.sever_class.ALL_DATA[0]['uid']) + '.html')
         # 需要改变图表布局则屏蔽这两行，在测试网页里保存配置(*.json)，或者直接修改
 
-def getData( server):
-    global data_cn,data_os
+
+def getData(server):
+    global data_cn, data_os
     if server == '国服':
         _data = data_cn
     elif server == '国际服':
         _data = data_os
-    else: raise ValueError("Unexpected server")
+    else:
+        raise ValueError("Unexpected server")
     thread_301 = threading.Thread(target=_data.getSrcdata, args=(301, server,))
     thread_302 = threading.Thread(target=_data.getSrcdata, args=(302, server,))
     thread_200 = threading.Thread(target=_data.getSrcdata, args=(200, server,))
@@ -1002,13 +1003,15 @@ def getData( server):
     thread_200.start()
     thread_100.start()
 
+
 def processData(server):
-    global data_cn,data_os
+    global data_cn, data_os
     if server == '国服':
         _data = data_cn
     elif server == '国际服':
         _data = data_os
-    else: raise ValueError("Unexpected server")
+    else:
+        raise ValueError("Unexpected server")
     Tool().SAVE(_data.ALL_DATA)
 
     _data.merge_data(Tool().READ(_data.ALL_DATA[0]['uid']))
@@ -1017,17 +1020,20 @@ def processData(server):
 
     _data.datetimedata_process()
 
+
 def drawCharts(server):
-    global data_cn,data_os
+    global data_cn, data_os
     if server == '国服':
         _data = data_cn
     elif server == '国际服':
         _data = data_os
-    else: raise ValueError("Unexpected server")
+    else:
+        raise ValueError("Unexpected server")
     _charts = charts(_data)
 
     _charts.draw_charts()
     webbrowser.open(self_path + '/' + '山泽麟迹' + str(_data.ALL_DATA[0]['uid']) + '.html')
+
 
 def main():
     global URL
@@ -1035,18 +1041,17 @@ def main():
 
     Log().getURL()
     print("\nGetting data from miHoYo API ...\n")
-    if URL['国服'] !='':
+    if URL['国服'] != '':
         getData('国服')
-    if URL['国际服']!='':
+    if URL['国际服'] != '':
         getData('国际服')
     while True:
         # t.sleep(0.5)
         if len(threading.enumerate()) == 1: break
     print("\nProcessing data and drawing ...")
-    if URL['国服'] !='':
+    if URL['国服'] != '':
         processData('国服')
     if URL['国际服'] != '':
-
         processData('国际服')
 
     if URL['国服'] != '':
@@ -1065,8 +1070,8 @@ self_path = ''
 log_path_in = ''
 log_path_out = ''
 URL = {'国服': '', '国际服': ''}
-data_cn=data()
-data_os=data()
+data_cn = data()
+data_os = data()
 try:
     main()
 except Exception as e:
