@@ -3,7 +3,7 @@
 
 import datetime
 import winreg
-
+from chardet.universaldetector import UniversalDetector
 print('''
                                       月海仙麟 -- 原神祈愿数据统计 v1.1.1
         
@@ -690,7 +690,14 @@ class Log():
 
         if os.path.exists(log_path_in) and (type == 0 or type == 2):  # 获取国服链接
             print("\nUpdating cn URL ...")
-            log = open(log_path_in, 'r', encoding='UTF-8').read()
+            dec=UniversalDetector()
+            dec.reset()
+            for each in open(log_path_in,'rb'):
+                dec.feed(each)
+                if dec.done:break
+            dec.close()
+
+            log = open(log_path_in, 'r',encoding=dec.result['encoding']).read()
             start = log.rfind('https://webstatic.mihoyo.com/hk4e/event/')
             end = log.rfind('#/log') + 5
             url_in = str(log[start:end])
@@ -708,7 +715,14 @@ class Log():
                     print("\nCN")
         if os.path.exists(log_path_out) and (type == 1 or type == 2):  # 获取外服链接
             print("\nUpdating os URL ...")
-            log = open(log_path_out, 'r', encoding='UTF-8').read()
+            dec=UniversalDetector()
+            dec.reset()
+            for each in open(log_path_in,'rb'):
+                dec.feed(each)
+                if dec.done:break
+            dec.close()
+
+            log = open(log_path_out, 'r',encoding=dec.result['encoding']).read()
             start = log.rfind('https://webstatic-sea.hoyoverse.com/genshin/event/')
             end = log.rfind('#/log') + 5
             url_out = str(log[start:end])
