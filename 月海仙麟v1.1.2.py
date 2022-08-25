@@ -8,10 +8,11 @@ import time as t
 import urllib.parse as parse
 import webbrowser
 import winreg
+from tkinter import filedialog
 
 import pyecharts
 import requests
-import win32ui
+import tkinter as tk
 
 print('''
                                       月海仙麟 -- 原神祈愿数据统计 v1.1.2
@@ -62,11 +63,10 @@ def Initialization():
     # 获取游戏目录
     if not os.path.exists(os.path.join(self_path, 'cfg.ini')):
         while True:
-            dlg = win32ui.CreateFileDialog(1)
-            dlg.SetOFNInitialDir("C:\\")
-            dlg.DoModal()
+            root = tk.Tk()
+            root.withdraw()
             # 获取选择文件的绝对路径
-            GAME_PATH = dlg.GetPathName()
+            GAME_PATH = filedialog.askdirectory()
             if not os.path.exists(os.path.join(GAME_PATH,'YuanShen.exe')):
                 print('游戏路径错误,路径下应当包含YuanShen.exe')
             else:break
@@ -75,11 +75,10 @@ def Initialization():
         GAME_PATH = open(os.path.join(self_path, 'cfg.ini'), 'r', encoding='UTF-8').read()
     else:
         while True:
-            dlg = win32ui.CreateFileDialog(1)
-            dlg.SetOFNInitialDir("C:\\")
-            dlg.DoModal()
+            root = tk.Tk()
+            root.withdraw()
             # 获取选择文件的绝对路径
-            GAME_PATH = dlg.GetPathName()
+            GAME_PATH = filedialog.askdirectory()
             if not os.path.exists(os.path.join(GAME_PATH,'YuanShen.exe')):
                 print('游戏路径错误,路径下应当包含YuanShen.exe')
             else:break
