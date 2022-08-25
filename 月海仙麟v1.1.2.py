@@ -1,22 +1,17 @@
 # -*- coding: utf-8 -*-
 import datetime
-import urllib.parse as parse
-import winreg
-import tkinter as tk
-from tkinter import filedialog
-from tkinter import messagebox
-from chardet.universaldetector import UniversalDetector
-
 import glob
 import os
 import sys
 import threading
-
 import time as t
+import urllib.parse as parse
 import webbrowser
+import winreg
 
 import pyecharts
 import requests
+import win32ui
 
 print('''
                                       月海仙麟 -- 原神祈愿数据统计 v1.1.2
@@ -30,7 +25,7 @@ print('''
                             使用出现任何问题请直接联系开发者
 
                             本软件禁止任何未授权转载、转发
-                            
+
                             首次使用时请选择游戏安装目录（包含YuanShen.exe）
                             请勿删除软件目录下的‘藏弓待用.txt’
                             这是您的数据文件
@@ -62,26 +57,31 @@ def Initialization():
     else:
         PROXY = None
     self_path = os.getcwd()  # 获取运行目录
+
     # print(self_path)
     # 获取游戏目录
     if not os.path.exists(os.path.join(self_path, 'cfg.ini')):
-        root = tk.Tk()
-        root.withdraw()
         while True:
-            GAME_PATH = filedialog.askdirectory()
+            dlg = win32ui.CreateFileDialog(1)
+            dlg.SetOFNInitialDir("C:\\")
+            dlg.DoModal()
+            # 获取选择文件的绝对路径
+            GAME_PATH = dlg.GetPathName()
             if not os.path.exists(os.path.join(GAME_PATH,'YuanShen.exe')):
-                messagebox.showerror(title='游戏路径错误',message='路径下应当包含YuanShen.exe')
+                print('游戏路径错误,路径下应当包含YuanShen.exe')
             else:break
         open(os.path.join(self_path, 'cfg.ini'), 'w+', encoding='UTF-8').write(GAME_PATH)
     elif os.path.exists(open(os.path.join(self_path, 'cfg.ini'), 'r', encoding='UTF-8').read()):
         GAME_PATH = open(os.path.join(self_path, 'cfg.ini'), 'r', encoding='UTF-8').read()
     else:
-        root = tk.Tk()
-        root.withdraw()
         while True:
-            GAME_PATH = filedialog.askdirectory()
+            dlg = win32ui.CreateFileDialog(1)
+            dlg.SetOFNInitialDir("C:\\")
+            dlg.DoModal()
+            # 获取选择文件的绝对路径
+            GAME_PATH = dlg.GetPathName()
             if not os.path.exists(os.path.join(GAME_PATH,'YuanShen.exe')):
-                messagebox.showerror(title='游戏路径错误',message='路径下应当包含YuanShen.exe')
+                print('游戏路径错误,路径下应当包含YuanShen.exe')
             else:break
         open(os.path.join(self_path, 'cfg.ini'), 'w+', encoding='UTF-8').write(GAME_PATH)
 
@@ -653,7 +653,12 @@ class _URL():
         _fdata = {}
         _URL = None
         for _f in _flist:
-            _fdata[_f] = open(os.path.join(_P, _f), 'rb').readlines()
+            try:
+                _fdata[_f] = open(os.path.join(_P, _f), 'rb').readlines()
+            except PermissionError:
+                print('文件被占用，请关闭原神后再使用本软件')
+                t.sleep(10)
+                Tool().EXIT()
             for _l in _fdata[_f]:
                 if self.HOST_CN.encode(encoding='UTF-8') in _l:
                     _start = _l.rfind(self.HOST_CN.encode(encoding='UTF-8'))
