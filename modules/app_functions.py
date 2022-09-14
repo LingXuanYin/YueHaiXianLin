@@ -37,7 +37,9 @@ def _reset_charts(window):
     window.ui.Chart_1.setHtml(_aubot_blank)
     window.ui.Chart_2.setHtml(_aubot_blank)
     window.ui.Chart_3.setHtml(_aubot_blank)
-
+    window.ui.ChartsText_label_1.setText('')
+    window.ui.ChartsText_label_2.setText('')
+    window.ui.ChartsText_label_3.setText('')
 
 class AppFunctions(MainWindow):
 
@@ -48,7 +50,7 @@ class AppFunctions(MainWindow):
             if self.ui.CK_Table.item(i, 0):
                 _current_list.append(self.ui.CK_Table.item(i, 0).text())
         for _user in list(_d.keys()):
-            if _user not in _current_list:
+            if _user not in _current_list and _d[_user]!='':
                 _mys = mysapi.mys(_d[_user])
                 try:
                     mysapi.Cookie.checkCookie(_d[_user])
@@ -244,7 +246,7 @@ class AppFunctions(MainWindow):
             if self.ui.Links_Table.item(i, 0):
                 _current_list.append(self.ui.Links_Table.item(i, 0).text())
         for _user in list(_d.keys()):
-            if _user not in _current_list:
+            if _user not in _current_list and _d[_user] !='':
                 self.ui.Links_Table.setItem(self.ui.Links_Table.rowCount() - 1, 0, QTableWidgetItem(_user))
                 self.ui.Links_Table.setItem(self.ui.Links_Table.rowCount() - 1, 1,
                                             QTableWidgetItem(_url_class.getServer(_d[_user])))
@@ -353,18 +355,19 @@ class AppFunctions(MainWindow):
 
     def Chart_pageLoad(self):
         _current_list = []
+        _UD = gachaAPI.DatabaseManager('UserData').DATA
+
         for i in range(self.ui.ChartsChoose_Combox.count()):
             _current_list.append(self.ui.ChartsChoose_Combox.itemText(i))
         for i in range(self.ui.Links_Table.rowCount()):
             if self.ui.Links_Table.item(i, 0):
-                if self.ui.Links_Table.item(i, 0).text() not in _current_list and self.ui.Links_Table.item(i,
-                                                                                                           2).text() == '可用':
+                if self.ui.Links_Table.item(i, 0).text() not in _current_list and self.ui.Links_Table.item(i,2).text() == '可用':
                     self.ui.ChartsChoose_Combox.addItem(self.ui.Links_Table.item(i, 0).text())
                     _current_list.append(self.ui.Links_Table.item(i, 0).text())
-        _UD = gachaAPI.DatabaseManager('UserData').DATA
         for i in list(_UD.keys()):
             if i not in _current_list:
-                self.ui.ChartsChoose_Combox.addItem(i)
+                if _UD[i] != {} and _UD[i] != {"char": [], "wap": [], "permanent": [], "novice": []}:
+                    self.ui.ChartsChoose_Combox.addItem(i)
         # print(_uid_list)
 
     def Chart_draw(self):
@@ -413,24 +416,28 @@ class AppFunctions(MainWindow):
                                  QMessageBox.StandardButton.Yes, QMessageBox.StandardButton.No)
         if _b == QMessageBox.StandardButton.No:
             return
-        _b = QMessageBox.warning(self, 'Delete Warning !', '此操作将会删除所选UID的本地数据！！！请确认！！！3',
+        _b = QMessageBox.warning(self, 'Delete Warning !', '此操作将会删除所选UID的本地数据！！！请确认！！！2',
                                  QMessageBox.StandardButton.Yes, QMessageBox.StandardButton.No)
         if _b == QMessageBox.StandardButton.No:
             return
-        _b = QMessageBox.warning(self, 'Delete Warning !', '此操作将会删除所选UID的本地数据！！！请确认！！！3',
+        _b = QMessageBox.warning(self, 'Delete Warning !', '此操作将会删除所选UID的本地数据！！！请确认！！！1',
                                  QMessageBox.StandardButton.Yes, QMessageBox.StandardButton.No)
         if _b == QMessageBox.StandardButton.No:
             return
 
         _gachaAPI = gachaAPI.GachaData(self.ui.ChartsChoose_Combox.currentText())
         _gachaAPI.UDBM.DBM_UD.set_NodeData(_gachaAPI.USER_ID, {'char': [], 'wap': [], 'permanent': [], 'novice': []})
-        _gachaAPI.UDBM.DBM_URL.set_NodeData(_gachaAPI.USER_ID, '')
+        #_gachaAPI.UDBM.DBM_URL.set_NodeData(_gachaAPI.USER_ID, '')
         for _f in glob(f'./DATA/charts/{_gachaAPI.USER_ID}_c*.html'):
             os.remove(_f)
         _reset_charts(self)
-        self.ui.ChartsChoose_Combox.removeItem(self.ui.ChartsChoose_Combox.currentindex())
+        self.ui.ChartsChoose_Combox.removeItem(self.ui.ChartsChoose_Combox.currentIndex())
 
     def Chart_import(self):
+        _current_list = []
+        for i in range(self.ui.ChartsChoose_Combox.count()):
+            _current_list.append(self.ui.ChartsChoose_Combox.itemText(i))
+
         _UD = eval(open(QFileDialog.getOpenFileName(self, '选择数据文件')[0], 'r', encoding='UTF-8').read())
 
         if _UD == []:
@@ -442,24 +449,25 @@ class AppFunctions(MainWindow):
         else:
             _gachaAPI = _gachaAPI = gachaAPI.GachaData(self.ui.ChartsChoose_Combox.currentText())
         _gachaAPI.UserData_import(_UD)
-        self.ui.ChartsChoose_Combox.addItem(_UD[0]['uid'])
+        if _UD[0]['uid'] not in _current_list:
+            self.ui.ChartsChoose_Combox.addItem(_UD[0]['uid'])
         _echarts = gachaAPI.echarts(_gachaAPI.UDBM)
 
         _echarts.draw_charts()
 
         if os.path.exists(
                 os.path.join(os.getcwd(), f'DATA/charts/{self.ui.ChartsChoose_Combox.currentText()}_c1.html')):
-            self.ui.ChartsText_label_1.setText(_echarts._make_detail(_echarts._pre_process(_UD.char))[2])
+            self.ui.ChartsText_label_1.setText(_echarts._make_detail(_echarts._pre_process(_gachaAPI.UDBM.char))[2])
             self.ui.Chart_1.load(QUrl.fromLocalFile(
                 os.path.join(os.getcwd(), f'DATA/charts/{self.ui.ChartsChoose_Combox.currentText()}_c1.html')))
         if os.path.exists(
                 os.path.join(os.getcwd(), f'DATA/charts/{self.ui.ChartsChoose_Combox.currentText()}_c2.html')):
-            self.ui.ChartsText_label_2.setText(_echarts._make_detail(_echarts._pre_process(_UD.wap))[2])
+            self.ui.ChartsText_label_2.setText(_echarts._make_detail(_echarts._pre_process(_gachaAPI.UDBM.wap))[2])
             self.ui.Chart_2.load(QUrl.fromLocalFile(
                 os.path.join(os.getcwd(), f'DATA/charts/{self.ui.ChartsChoose_Combox.currentText()}_c2.html')))
         if os.path.exists(
                 os.path.join(os.getcwd(), f'DATA/charts/{self.ui.ChartsChoose_Combox.currentText()}_c3.html')):
-            self.ui.ChartsText_label_3.setText(_echarts._make_detail(_echarts._pre_process(_UD.permanent))[2])
+            self.ui.ChartsText_label_3.setText(_echarts._make_detail(_echarts._pre_process(_gachaAPI.UDBM.permanent))[2])
             self.ui.Chart_3.load(QUrl.fromLocalFile(
                 os.path.join(os.getcwd(), f'DATA/charts/{self.ui.ChartsChoose_Combox.currentText()}_c3.html')))
 
