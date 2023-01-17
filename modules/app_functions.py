@@ -456,19 +456,36 @@ class AppFunctions(MainWindow):
 
         _UD = eval(open(QFileDialog.getOpenFileName(self, '选择数据文件')[0], 'r', encoding='UTF-8').read())
 
-        if _UD == []:
-            QMessageBox.warning(self, 'Import Error !', '文件为空')
-            return
+        if 'info' not in list(_UD.keys()):
 
-        if self.ui.ChartsChoose_Combox.currentText() == '':
+            if _UD == []:
+                QMessageBox.warning(self, 'Import Error !', '文件为空')
+                return
+
             _gachaAPI = gachaAPI.GachaData(gachaAPI.UserData(_UD[0]['uid']))
-        else:
-            _gachaAPI = _gachaAPI = gachaAPI.GachaData(gachaAPI.UserData(self.ui.ChartsChoose_Combox.currentText()))
-        _gachaAPI.UserData_import(_UD)
-        if _UD[0]['uid'] not in _current_list:
-            self.ui.ChartsChoose_Combox.addItem(_UD[0]['uid'])
-        _echarts = gachaAPI.echarts(_gachaAPI.UDBM)
 
+        else:
+            if _UD == []or _UD['info']=={}:
+                QMessageBox.warning(self, 'Import Error !', '文件为空')
+                return
+
+            _gachaAPI = gachaAPI.GachaData(gachaAPI.UserData(_UD['info']['uid']))
+            _UD=_UD['list']
+            for _i  in range (len(_UD)):
+                _UD[_i]['uid']=str(_gachaAPI.UDBM.USER_ID)
+                _UD[_i]['id']=int(_UD[_i]['id'])
+                _UD[_i]["item_id"]= ""
+                _UD[_i]["count"]= "1"
+                _UD[_i]["lang"]= "zh-cn"
+                del _UD[_i]['uigf_gacha_type']
+                #print(_UD[_i])
+                #break
+        _gachaAPI.UserData_import(_UD)
+        if _gachaAPI.UDBM.USER_ID not in _current_list:
+            self.ui.ChartsChoose_Combox.addItem(_gachaAPI.UDBM.USER_ID)
+            self.ui.ChartsChoose_Combox.setCurrentIndex(self.ui.ChartsChoose_Combox.findText(_gachaAPI.UDBM.USER_ID))
+
+        _echarts = gachaAPI.echarts(_gachaAPI.UDBM)
         _echarts.draw_charts()
 
         if os.path.exists(

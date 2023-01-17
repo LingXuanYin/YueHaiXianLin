@@ -268,8 +268,7 @@ class GachaData():
     def UserData_import(self, _userdata: list):
         for _i in _userdata:
 
-            if _i['gacha_type'] == 400 or _i['gacha_type'] == 301 or _i['gacha_type'] == '400' or _i[
-                'gacha_type'] == '301':  # 角色活动祈愿
+            if _i['gacha_type'] == 400 or _i['gacha_type'] == 301 or _i['gacha_type'] == '400' or _i['gacha_type'] == '301':  # 角色活动祈愿
                 if _i not in self.UDBM.char:
                     self.UDBM.char.append(_i)
             elif _i['gacha_type'] == 302 or _i['gacha_type'] == '302':  # 武器活动祈愿

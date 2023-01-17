@@ -20,7 +20,7 @@
 import sys
 import os
 from PySide6 import QtWebEngineCore
-from PySide6.QtCore import QThread, Qt, Signal
+from PySide6.QtCore import QThread, Qt
 from PySide6.QtGui import QCursor
 from PySide6.QtWidgets import QMainWindow, QHeaderView, QApplication
 
@@ -184,7 +184,7 @@ class MainWindow(QMainWindow):
     # Post here your functions for clicked buttons
     # ///////////////////////////////////////////////////////////////
     def buttonClick(self):
-        def __click(self:MainWindow):
+        #def __click(self:MainWindow):
             self.ui.contentBox.setDisabled(True)
             self.ui.extraLeftBox.setDisabled(True)
             self.ui.leftMenuBg.setDisabled(True)
@@ -202,71 +202,72 @@ class MainWindow(QMainWindow):
                 btn.setStyleSheet(UIFunctions.selectMenu(btn.styleSheet()))
 
             # SHOW WIDGETS PAGE
-            if btnName == "btn_Links":
+            elif btnName == "btn_Links":
                 self.ui.stackedWidget.setCurrentWidget(self.ui.Links_Page)
                 UIFunctions.resetStyle(self, btnName)
                 btn.setStyleSheet(UIFunctions.selectMenu(btn.styleSheet()))
                 AppFunctions.Links_pageLoad(self)
             # SHOW NEW PAGE
-            if btnName == "btn_Cookies":
+            elif btnName == "btn_Cookies":
                 self.ui.stackedWidget.setCurrentWidget(self.ui.Cookies_Page)
                 UIFunctions.resetStyle(self, btnName)  # RESET ANOTHERS BUTTONS SELECTED
                 btn.setStyleSheet(UIFunctions.selectMenu(btn.styleSheet()))  # SELECT MENU
                 AppFunctions.Cookies_Pageload(self)
 
             # SHOW NEW PAGE
-            if btnName == "btn_Pie":
+            elif btnName == "btn_Pie":
                 self.ui.stackedWidget.setCurrentWidget(self.ui.Charts_Page)
                 UIFunctions.resetStyle(self, btnName)  # RESET ANOTHERS BUTTONS SELECTED
                 btn.setStyleSheet(UIFunctions.selectMenu(btn.styleSheet()))  # SELECT MENU
                 AppFunctions.Chart_pageLoad(self)
 
             # Exit Button
-            if btnName == "btn_exit":
+            elif btnName == "btn_exit":
                 widgets.closeAppBtn.click()
             # Setting Button
-            if btnName == "Setting_btn":
+            elif btnName == "Setting_btn":
                 widgets.stackedWidget.setCurrentWidget(widgets.Setting_Page)  # SET PAGE
                 UIFunctions.resetStyle(self, btnName)  # RESET ANOTHERS BUTTONS SELECTED
                 btn.setStyleSheet(UIFunctions.selectMenu(btn.styleSheet()))  # SELECT MENU
-            if btnName == "More_btn":
-                os.system('https://www.baidu.com')
+            elif btnName == "More_btn":
+                return
+                #os.system('https://www.baidu.com')
             # ChartRenew_btn
-            if btnName == "ChartRenew_btn":
+            elif btnName == "ChartRenew_btn":
                 AppFunctions.Chart_renew(self)
-            if btnName == 'ChartImport_btn':
+            elif btnName == 'ChartImport_btn':
                 AppFunctions.Chart_import(self)
-            if btnName == 'ChartDelete_btn':
+            elif btnName == 'ChartDelete_btn':
                 AppFunctions.Chart_delete(self)
-            if btnName == 'ChartCopy_btn':
+            elif btnName == 'ChartCopy_btn':
                 AppFunctions.Chart_copy(self)
-            if btnName == 'ChartSave_btn':
+            elif btnName == 'ChartSave_btn':
                 AppFunctions.Chart_save(self)
-            if btnName == 'ChartDraw_btn':
+            elif btnName == 'ChartDraw_btn':
                 AppFunctions.Chart_draw(self)
-            if btnName == 'URLSearch_btn':
+            elif btnName == 'URLSearch_btn':
                 AppFunctions.Links_search(self)
-            if btnName == 'URLCheck_btn':
+            elif btnName == 'URLCheck_btn':
                 AppFunctions.Links_check(self)
-            if btnName == 'URLDelete_btn':
+            elif btnName == 'URLDelete_btn':
                 AppFunctions.Links_delete(self)
-            if btnName == 'URLCopy_btn':
+            elif btnName == 'URLCopy_btn':
                 AppFunctions.Links_copy(self)
-            if btnName == 'URLSave_btn':
+            elif btnName == 'URLSave_btn':
                 AppFunctions.Links_save(self)
-            if btnName == 'URL_Input_btn':
+            elif btnName == 'URL_Input_btn':
                 AppFunctions.Links_import_btn(self)
-            if btnName == 'CKSearch_btn':
+            elif btnName == 'CKSearch_btn':
                 AppFunctions.Cookies_search(self)
-            if btnName == 'CKCheck_btn':
+            elif btnName == 'CKCheck_btn':
                 AppFunctions.Cookies_check(self)
-            if btnName == 'CKDelete_btn':
+            elif btnName == 'CKDelete_btn':
                 AppFunctions.Cookies_delete(self)
-            if btnName == 'CKCopy_btn':
+            elif btnName == 'CKCopy_btn':
                 AppFunctions.Cookies_copy(self)
-            if btnName == 'CKSave_btn':
+            elif btnName == 'CKSave_btn':
                 AppFunctions.Cookies_save(self)
-            if btnName == 'CK_Input_btn':
+            elif btnName == 'CK_Input_btn':
                 AppFunctions.Cookies_import_btn(self)
 
 
@@ -279,9 +280,9 @@ class MainWindow(QMainWindow):
             self.setCursor(QCursor(Qt.CustomCursor))
             # self.setDisabled(False)
 
-        _th=Thread(__click,self)
-        #_th.FLAG.connect(__reset)
-        _th.run()
+        # _th=Thread(__click,self)
+        # #_th.FLAG.connect(__reset)
+        # _th.run()
 
 
     # RESIZE EVENTS

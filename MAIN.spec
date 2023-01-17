@@ -5,10 +5,10 @@ block_cipher = None
 
 
 a = Analysis(
-    ['MAIN.py'],
+    ['Main.py'],
     pathex=[],
     binaries=[],
-    datas=[],
+    datas=[('.\\templates', 'pyecharts\\render\\templates\\.')],
     hiddenimports=[],
     hookspath=[],
     hooksconfig={},
@@ -28,7 +28,7 @@ exe = EXE(
     a.zipfiles,
     a.datas,
     [],
-    name='MAIN',
+    name='Main',
     debug=False,
     bootloader_ignore_signals=False,
     strip=False,
