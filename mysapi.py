@@ -53,22 +53,28 @@ class Cookie(LocalCookie.LocalCookie):
         except:
             pass
         try:
-            jCookie['ltoken'] = _sC[_sC.index('ltoken=') + 7: _sC.index('ltoken=') + 7 + 40]
+            jCookie['ltoken_v2'] = _sC[_sC.index('ltoken_v2=') + 7: _sC.index('ltoken_v2=') + 7 + 40]
         except:
             raise Exception('Cookie 不完整，缺失 ltoken')
         try:
-            jCookie['ltuid'] = _sC[_sC.index('ltuid=') + 6: _sC.index('ltuid=') + 6 + 9]
+            jCookie['ltuid_v2'] = _sC[_sC.index('ltuid_v2=') + 6: _sC.index('ltuid_v2=') + 6 + 9]
         except:
             raise Exception('Cookie 不完整，缺失 ltuid')
         try:
-            jCookie['cookie_token'] = _sC[_sC.index('cookie_token=') + 13: _sC.index('cookie_token=') + 13 + 40]
+            jCookie['cookie_token_v2'] = _sC[_sC.index('cookie_token_v2=') + 13: _sC.index('cookie_token_v2=') + 13 + 40]
         except:
             pass
             # raise Exception('Cookie 不完整，缺失 cookie_token')
         try:
-            jCookie['account_id'] = jCookie['ltuid']
+            jCookie['account_id_v2'] = jCookie['ltuid_v2']
         except:
             pass
+        try:
+            jCookie['account_mid_v2'] = jCookie['ltuid_v2']
+        except:
+            pass
+
+
         # print(jCookie)
         return jCookie
 
@@ -90,20 +96,23 @@ class mys():
         self.PROXY = None
 
     def getToken(self):
-        if 'cookie_token' in self.COOKIES.keys() and 'ltuid' in self.COOKIES.keys() and 'ltoken' in self.COOKIES.keys():
-            return 'ltoken=' + self.COOKIES['ltoken'] + ';ltuid=' + self.COOKIES["ltuid"] + ';' + 'cookie_token=' + \
-                   self.COOKIES["cookie_token"] + ';' + 'account_id=' + self.COOKIES["ltuid"] + ';'
-        elif 'ltuid' in self.COOKIES.keys() and 'ltoken' in self.COOKIES.keys():
-            return 'ltoken=' + self.COOKIES['ltoken'] + ';ltuid=' + self.COOKIES["ltuid"] + ';' + 'account_id=' + \
-                   self.COOKIES["ltuid"] + ';'
+        if 'cookie_token_v2' in self.COOKIES.keys() and 'ltuid_v2' in self.COOKIES.keys() and 'ltoken_v2' in self.COOKIES.keys():
+            return 'ltoken_v2=' + self.COOKIES['ltoken_v2'] + ';ltuid_v2=' + self.COOKIES["ltuid_v2"] + ';' + 'cookie_token_v2=' + \
+                   self.COOKIES["cookie_token_v2"] + ';' + 'account_id_v2=' + self.COOKIES["ltuid_v2"] + ';' + 'account_mid_v2=' + \
+                   self.COOKIES['account_mid_v2'] + ';' + 'ltmid_v2=' + self.COOKIES['ltmid_v2']+';'
+        elif 'ltuid_v2' in self.COOKIES.keys() and 'ltoken_v2' in self.COOKIES.keys():
+            return 'ltoken_v2=' + self.COOKIES['ltoken_v2'] + ';ltuid_v2=' + self.COOKIES["ltuid_v2"] + ';' + 'account_id_v2=' + \
+                   self.COOKIES["ltuid_v2"] + ';' + 'account_mid_v2=' + \
+                   self.COOKIES['account_mid_v2'] + ';' + 'ltmid_v2=' + self.COOKIES['ltmid_v2']+';'
         else:
             raise Exception('Cookie keys ERROR')
 
     def getUID_MYS(self):
-        return self.COOKIES['ltuid']
+        return self.COOKIES['ltuid_v2']
 
     def checkResponse(self, response):
         # print(response.json())
+        # print(self.TOKEN)
         if response.status_code != 200:
             raise Exception('API ERROR')
         response = response.json()
@@ -247,12 +256,12 @@ class mys():
         _url = "https://api-takumi.mihoyo.com/" + "binding/api/getUserGameRolesByCookie?game_biz=hk4e_cn"
 
         response = requests.get(url=_url, headers=headers, proxies=self.PROXY)
-
+        print(response.text)
         if not self.checkResponse(response): raise Exception('Unexpected response: ' + response.json())
 
         self.DATA_ROAL = response.json()['data']
         self.UID_GAME = self.DATA_ROAL['list'][0]['game_uid']
-        self.UID_MYS = self.COOKIES['ltuid']
+        self.UID_MYS = self.COOKIES['ltuid_v2']
         return response
 
     def getDailyNote(self):

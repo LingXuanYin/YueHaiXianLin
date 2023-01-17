@@ -3,7 +3,6 @@ import json
 import os
 import threading
 import time
-from typing import Union
 from urllib.parse import unquote
 
 import pyecharts
@@ -16,8 +15,8 @@ PATH_SELF = os.getcwd()
 PATH_USERDATA = os.path.join(PATH_SELF, 'DATA')
 PATH_CACHEDATA = os.path.join(PATH_SELF, 'cache')
 
-URL_OS = '''https://hk4e-api-os.hoyoverse.com/event/gacha_info/api/getGachaLog'''
-URL_CN = '''https://hk4e-api.mihoyo.com/event/gacha_info/api/getGachaLog'''
+# URL_OS = '''https://hk4e-api-os.hoyoverse.com/event/gacha_info/api/getGachaLog'''
+# URL_CN = '''https://hk4e-api.mihoyo.com/event/gacha_info/api/getGachaLog'''
 
 
 class Tool():  # 工具类函数
@@ -102,6 +101,9 @@ class UserData():
             self.DBM_UD.set_NodeData(user_id, {"char": [], "wap": [], "permanent": [], "novice": []})
         if self.DBM_UD.get_NodeData(user_id) == {}:
             self.DBM_UD.set_NodeData(user_id, {"char": [], "wap": [], "permanent": [], "novice": []})
+        if user_id not in list(self.DBM_URL.DATA.keys()):
+            self.DBM_URL.set_NodeData(user_id, '')
+
         self.USER_GACHADATA = self.DBM_UD.get_NodeData(user_id)
         # print(self.USER_GACHADATA)
         self.novice = self.USER_GACHADATA['novice']
@@ -170,14 +172,16 @@ class _URL():
         return _buf
         # break
 
-    def transURL(self, url_forfirst, gacha_type, page, end_id):
+    @staticmethod
+    def transURL( url_forfirst, gacha_type, page, end_id):
+        #print(url_forfirst)
         authkey_ver = int(url_forfirst[url_forfirst.rfind('authkey_ver=') + 12])
         sign_type = int(url_forfirst[url_forfirst.rfind('sign_type=') + 10])
         auth_appid = url_forfirst[url_forfirst.rfind('auth_appid=') + 11:url_forfirst.rfind('&init_type')]
         init_type = int(url_forfirst[url_forfirst.rfind('init_type=') + 10:url_forfirst.rfind('&gacha_id')])
         gacha_id = url_forfirst[url_forfirst.rfind('gacha_id=') + 9:url_forfirst.rfind('&timestamp')]
         timestamp = int(url_forfirst[url_forfirst.rfind('timestamp=') + 10:url_forfirst.rfind('&lang')])
-        device_type = url_forfirst[url_forfirst.rfind('device_type=') + 12:url_forfirst.rfind('&game_version=')]
+        device_type = url_forfirst[url_forfirst.rfind('device_type=') + 12:url_forfirst.rfind('&game_version')]
         game_version = url_forfirst[url_forfirst.rfind('game_version=') + 13:url_forfirst.rfind('&plat_type')]
         plat_type = url_forfirst[url_forfirst.rfind('plat_type=') + 10:url_forfirst.rfind('&region')]
         region = url_forfirst[url_forfirst.rfind('region=') + 7:url_forfirst.rfind('&authkey')]
@@ -203,9 +207,9 @@ class _URL():
             'end_id': end_id
         }
         if 'cn' not in region:
-            return self.HOST_OS, data
+            return _URL.HOST_OS, data
         else:
-            return self.HOST_CN, data
+            return _URL.HOST_CN, data
 
     def getURL(self, user_id):
         if self.checkURL(self.DBM.get_NodeData(user_id)):
@@ -217,10 +221,12 @@ class _URL():
         user_id, _url = self.scanURL(DatabaseManager('GamePath').get_NodeData('path'))
         self.DBM.set_NodeData(user_id, _url)
 
-    def checkURL(self, url):
+    @staticmethod
+    def checkURL( url):
         try:
-            _url, _data = self.transURL(url, 301, 1, 0)
+            _url, _data = _URL.transURL(url, 301, 1, 0)
             UID = Tool.get(_url, _data)[0]['uid']  # 获取一次以校验链接
+            #print(_url)
             return UID
         except Exception as e:
             # raise e
@@ -230,11 +236,11 @@ class _URL():
 
 class GachaData():
 
-    def __init__(self, user_id: Union[str]):
+    def __init__(self, UDBM: UserData):
 
-        self.USER_ID = user_id
-        self.UDBM = UserData(user_id)
-        self.URL, self.AUTHDATA = _URL().transURL(self.UDBM.DBM_URL.get_NodeData(user_id), 301, 1, 0)
+        self.UDBM = UDBM
+        self.URL, self.AUTHDATA = _URL().transURL(self.UDBM.DBM_URL.get_NodeData(UDBM.USER_ID), 301, 1, 0)
+        self.THREAD_FLAG=0
 
     def SrcData_processor(self, response_list, gacha_type):
 
@@ -283,11 +289,12 @@ class GachaData():
         self.UDBM.permanent = sorted(self.UDBM.permanent, key=lambda x: x['id'], reverse=True)
         self.UDBM.novice = sorted(self.UDBM.novice, key=lambda x: x['id'], reverse=True)
         # 保存
-        self.UDBM.DBM_UD.set_NodeData(self.USER_ID,
+        self.UDBM.DBM_UD.set_NodeData(self.UDBM.USER_ID,
                                       {'char': self.UDBM.char, 'wap': self.UDBM.wap, 'permanent': self.UDBM.permanent,
                                        'novice': self.UDBM.novice})
 
     def GetSrcdata(self, _url, _data: dict, gacha_type):
+        self.THREAD_FLAG=self.THREAD_FLAG+1
         _data['page'] = 1
         _data['end_id'] = 0
         _data['gacha_type'] = gacha_type
@@ -306,28 +313,31 @@ class GachaData():
             _data['end_id'] = response_list[len(response_list) - 1]['id']
             # 处理页数
             _data['page'] += 1
+        self.THREAD_FLAG=self.THREAD_FLAG-1
 
     def Main_DataGetter(self):
         _url = self.URL
         _authdata = self.AUTHDATA
-        _th301 = threading.Thread(target=self.GetSrcdata, args=((_url, _authdata, 301,)))
-        _th400 = threading.Thread(target=self.GetSrcdata, args=((_url, _authdata, 400,)))
-        _th302 = threading.Thread(target=self.GetSrcdata, args=((_url, _authdata, 302,)))
-        _th200 = threading.Thread(target=self.GetSrcdata, args=((_url, _authdata, 200,)))
-        _th301.setDaemon(False)
-        _th400.setDaemon(False)
-        _th302.setDaemon(False)
-        _th200.setDaemon(False)
-        _th301.run()
-        _th400.run()
-        _th302.run()
-        _th200.run()
-        print('start')
-        self.UDBM.DBM_UD.set_NodeData(self.USER_ID,
-                                      {'char': self.UDBM.char, 'wap': self.UDBM.wap, 'permanent': self.UDBM.permanent,
-                                       'novice': self.UDBM.novice})
+        _th301 = threading.Thread(target=self.GetSrcdata, args=((_url, copy.deepcopy(_authdata), 301,)))
+        _th400 = threading.Thread(target=self.GetSrcdata, args=((_url, copy.deepcopy(_authdata), 400,)))
+        _th302 = threading.Thread(target=self.GetSrcdata, args=((_url, copy.deepcopy(_authdata), 302,)))
+        _th200 = threading.Thread(target=self.GetSrcdata, args=((_url, copy.deepcopy(_authdata), 200,)))
+        #_th100 = threading.Thread(target=self.GetSrcdata, args=((_url, copy.deepcopy(_authdata), 100,)))
+        # _th301.setDaemon(False)
+        # _th400.setDaemon(False)
+        # _th302.setDaemon(False)
+        # _th200.setDaemon(False)
+        _th301.start()
+        _th400.start()
+        _th302.start()
+        _th200.start()
+        #_th100.start()
+        #print('start')
+        # self.UDBM.DBM_UD.set_NodeData(self.UDBM.USER_ID,
+        #                               {'char': self.UDBM.char, 'wap': self.UDBM.wap, 'permanent': self.UDBM.permanent,
+        #                                'novice': self.UDBM.novice})
 
-        return self.UDBM
+        #return self.UDBM
 
 
 class echarts():  # 图表类
@@ -466,7 +476,7 @@ option_defult = {
             _page.add(_pie)
             _page.render('./cache/cache.html')
             _page.save_resize_html(source='./cache/cache.html', dest=f'./DATA/charts/{self.UDBM.USER_ID}_c1.html',
-                                   cfg_dict=[{"cid": "角色活动祈愿", "width": "420px", "height": "410px", "top": "0px",
+                                   cfg_dict=[{"cid": "角色活动祈愿", "width": "430px", "height": "410px", "top": "0px",
                                               "left": "0px"}])
             _b = open(f'./DATA/charts/{self.UDBM.USER_ID}_c1.html', 'r', encoding='UTF-8').read().replace(
                 'https://assets.pyecharts.org/assets/echarts.min.js', 'echarts.js')
@@ -478,7 +488,7 @@ option_defult = {
             _page.add(_pie)
             _page.render('./cache/cache.html')
             _page.save_resize_html(source='./cache/cache.html', dest=f'./DATA/charts/{self.UDBM.USER_ID}_c2.html',
-                                   cfg_dict=[{"cid": "武器活动祈愿", "width": "420px", "height": "410px", "top": "0px",
+                                   cfg_dict=[{"cid": "武器活动祈愿", "width": "430px", "height": "410px", "top": "0px",
                                               "left": "0px"}])
             _b = open(f'./DATA/charts/{self.UDBM.USER_ID}_c2.html', 'r', encoding='UTF-8').read().replace(
                 'https://assets.pyecharts.org/assets/echarts.min.js', 'echarts.js')
@@ -490,7 +500,7 @@ option_defult = {
             _page.add(_pie)
             _page.render('./cache/cache.html')
             _page.save_resize_html(source='./cache/cache.html', dest=f'./DATA/charts/{self.UDBM.USER_ID}_c4.html',
-                                   cfg_dict=[{"cid": "新手祈愿", "width": "420px", "height": "410px", "top": "0px",
+                                   cfg_dict=[{"cid": "新手祈愿", "width": "430px", "height": "410px", "top": "0px",
                                               "left": "0px"}])
             _b = open(f'./DATA/charts/{self.UDBM.USER_ID}_c4.html', 'r', encoding='UTF-8').read().replace(
                 'https://assets.pyecharts.org/assets/echarts.min.js', 'echarts.js')
@@ -501,7 +511,7 @@ option_defult = {
             _page.add(_pie)
             _page.render('./cache/cache.html')
             _page.save_resize_html(source='./cache/cache.html', dest=f'./DATA/charts/{self.UDBM.USER_ID}_c3.html',
-                                   cfg_dict=[{"cid": "常驻祈愿", "width": "420px", "height": "410px", "top": "0px",
+                                   cfg_dict=[{"cid": "常驻祈愿", "width": "430px", "height": "410px", "top": "0px",
                                               "left": "0px"}])
             _b = open(f'./DATA/charts/{self.UDBM.USER_ID}_c3.html', 'r', encoding='UTF-8').read().replace(
                 'https://assets.pyecharts.org/assets/echarts.min.js', 'echarts.js')

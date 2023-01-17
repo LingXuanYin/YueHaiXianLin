@@ -32,7 +32,7 @@ class LocalCookie():
         return s_plaintext
 
     # 获取 Chrome 或 Edge 登录本地cookies
-    def get_cookie_from_chrome(self, s_browser_name='Chrome', s_host='.mihoyo.com'):
+    def get_cookie_from_chrome(self, s_browser_name='Chrome', s_host='.miyoushe.com'):
         """
             s_browser_name: 浏览器名称(Google Chrome, Microsoft Edge)
             s_host: 域名   例如： '.umeng.com'
@@ -69,3 +69,7 @@ class LocalCookie():
         for _k in list(d_cookie.keys()):
             _s += f'{_k}={d_cookie[_k]};'
         return _s
+
+# if __name__ == '__main__':
+#     _buf=LocalCookie().get_cookie_from_chrome()
+#     print(_buf)

@@ -132,12 +132,15 @@ class AppFunctions(MainWindow):
 
     def Cookies_check(self):
         _current_list = []
+        _d = gachaAPI.DatabaseManager('Cookies').DATA
+
         for i in range(self.ui.CK_Table.rowCount() - 1):
-            _cookie = mysapi.Cookie.fatchCookie(self.ui.CK_Table.item(i, 3).text())
+            _cookie =_d[self.ui.CK_Table.item(i, 0).text()]
             try:
                 mysapi.Cookie.checkCookie(_cookie)
                 self.ui.CK_Table.setItem(i, 2, QTableWidgetItem('可用'))
-            except:
+            except Exception as e:
+                raise e
                 self.ui.CK_Table.setItem(i, 2, QTableWidgetItem('不可用'))
         QMessageBox.information(self, '已检查Cookies有效性！', '已检查Cookies有效性！')
 
@@ -168,7 +171,7 @@ class AppFunctions(MainWindow):
     def Links_import_btn(self):
         _p = QFileDialog.getOpenFileName(self, '选择链接文件')[0]
         _url_class = gachaAPI._URL()
-        print(_p)
+        #print(_p)
         if not os.path.exists(_p):
             return
         _current_list = []
@@ -310,6 +313,8 @@ class AppFunctions(MainWindow):
 
     def Links_search(self):
         GAME_PATH = load(open('./DATA/GamePath.json', 'r', encoding='UTF-8'))
+        _url_class = gachaAPI._URL()
+
         if self.ui.ServersChoose_Combox.currentText() == 'CN':
             if not GAME_PATH["CN"] or not os.path.exists(os.path.join(GAME_PATH["CN"], 'YuanShen.exe')):
                 _p = QFileDialog.getExistingDirectory(self, '选择原神安装目录')
@@ -320,10 +325,10 @@ class AppFunctions(MainWindow):
                     return
                 GAME_PATH["CN"] = _p
                 dump(GAME_PATH, open('./DATA/GamePath.json', 'w+', encoding='UTF-8'))
-                return
-            _url_class = gachaAPI._URL()
+                #_url_class = gachaAPI._URL()
+                #return
             _U = _url_class.scanURL(GAME_PATH["CN"])
-        if self.ui.ServersChoose_Combox.currentText() == 'OS':
+        elif self.ui.ServersChoose_Combox.currentText() == 'OS':
             if not GAME_PATH["OS"] or not os.path.exists(os.path.join(GAME_PATH["OS"], 'GenshinImpact.exe')):
                 _p = QFileDialog.getExistingDirectory(self, '选择原神安装目录')
                 if not _p: return
@@ -332,38 +337,48 @@ class AppFunctions(MainWindow):
                     return
                 GAME_PATH["OS"] = _p
                 dump(GAME_PATH, open('./DATA/GamePath.json', 'w+', encoding='UTF-8'))
-                return
-            _url_class = gachaAPI._URL()
+                #_url_class = gachaAPI._URL()
+                #return
             _U = _url_class.scanURL(GAME_PATH["OS"])
+        else:
+            QMessageBox.warning(self, 'Error !', '请先选择服务器')
+            return
+
         if _U == {}:
             QMessageBox.warning(self, 'Links Error !', '未检索到有效的链接')
-        _current_list = []
+            return
+        _current_list = {}
 
         for i in range(self.ui.Links_Table.rowCount()):
             if self.ui.Links_Table.item(i, 0):
-                _current_list.append(self.ui.Links_Table.item(i, 0).text())
+                _current_list[self.ui.Links_Table.item(i, 0).text()]=self.ui.Links_Table.item(i, 2).text()
         for _user in list(_U.keys()):
             _url_class.DBM.set_NodeData(_user, _U[_user])
-            if _user not in _current_list:
-                self.ui.Links_Table.setItem(self.ui.Links_Table.rowCount() - 1, 0, QTableWidgetItem(_user))
-                self.ui.Links_Table.setItem(self.ui.Links_Table.rowCount() - 1, 1,
-                                            QTableWidgetItem(self.ui.ServersChoose_Combox.currentText()))
-                self.ui.Links_Table.setItem(self.ui.Links_Table.rowCount() - 1, 2, QTableWidgetItem('可用'))
-                self.ui.Links_Table.setItem(self.ui.Links_Table.rowCount() - 1, 3, QTableWidgetItem(_U[_user]))
+            if _user not in list(_current_list.keys()):
+                _index=self.ui.Links_Table.rowCount() - 1
+                self.ui.Links_Table.setItem(_index, 0, QTableWidgetItem(_user))
+                self.ui.Links_Table.setItem(_index, 1,QTableWidgetItem(self.ui.ServersChoose_Combox.currentText()))
+                self.ui.Links_Table.setItem(_index, 2, QTableWidgetItem('可用'))
+                self.ui.Links_Table.setItem(_index, 3, QTableWidgetItem(_U[_user]))
                 self.ui.Links_Table.setRowCount(self.ui.Links_Table.rowCount() + 1)
-        QMessageBox.Information(self, 'Links Information', f'检索到共{self.ui.Links_Table.rowCount() - 1}条链接！')
+            elif _current_list[_user]=='不可用':
+                _index=list(_current_list.keys()).index(_user)
+                self.ui.Links_Table.setItem(_index, 0, QTableWidgetItem(_user))
+                self.ui.Links_Table.setItem(_index, 1,QTableWidgetItem(self.ui.ServersChoose_Combox.currentText()))
+                self.ui.Links_Table.setItem(_index, 2, QTableWidgetItem('可用'))
+                self.ui.Links_Table.setItem(_index, 3, QTableWidgetItem(_U[_user]))
+        QMessageBox.information(self, 'Links Information', f'检索到共{self.ui.Links_Table.rowCount() - 1}条链接！')
 
     def Chart_pageLoad(self):
         _current_list = []
         _UD = gachaAPI.DatabaseManager('UserData').DATA
-
+        _URL=gachaAPI.DatabaseManager('URL').DATA
         for i in range(self.ui.ChartsChoose_Combox.count()):
             _current_list.append(self.ui.ChartsChoose_Combox.itemText(i))
-        for i in range(self.ui.Links_Table.rowCount()):
-            if self.ui.Links_Table.item(i, 0):
-                if self.ui.Links_Table.item(i, 0).text() not in _current_list and self.ui.Links_Table.item(i,2).text() == '可用':
-                    self.ui.ChartsChoose_Combox.addItem(self.ui.Links_Table.item(i, 0).text())
-                    _current_list.append(self.ui.Links_Table.item(i, 0).text())
+        for i in list(_URL.keys()):
+            if gachaAPI._URL.checkURL(_URL[i])!=0 and i not in _current_list:
+                self.ui.ChartsChoose_Combox.addItem(i)
+                _current_list.append(i)
         for i in list(_UD.keys()):
             if i not in _current_list:
                 if _UD[i] != {} and _UD[i] != {"char": [], "wap": [], "permanent": [], "novice": []}:
@@ -425,10 +440,11 @@ class AppFunctions(MainWindow):
         if _b == QMessageBox.StandardButton.No:
             return
 
-        _gachaAPI = gachaAPI.GachaData(self.ui.ChartsChoose_Combox.currentText())
-        _gachaAPI.UDBM.DBM_UD.set_NodeData(_gachaAPI.USER_ID, {'char': [], 'wap': [], 'permanent': [], 'novice': []})
+        _UDBM=gachaAPI.UserData(self.ui.ChartsChoose_Combox.currentText())
+        _gachaAPI = gachaAPI.GachaData(_UDBM)
+        _gachaAPI.UDBM.DBM_UD.set_NodeData(_gachaAPI.UDBM.USER_ID, {'char': [], 'wap': [], 'permanent': [], 'novice': []})
         #_gachaAPI.UDBM.DBM_URL.set_NodeData(_gachaAPI.USER_ID, '')
-        for _f in glob(f'./DATA/charts/{_gachaAPI.USER_ID}_c*.html'):
+        for _f in glob(f'./DATA/charts/{_gachaAPI.UDBM.USER_ID}_c*.html'):
             os.remove(_f)
         _reset_charts(self)
         self.ui.ChartsChoose_Combox.removeItem(self.ui.ChartsChoose_Combox.currentIndex())
@@ -445,9 +461,9 @@ class AppFunctions(MainWindow):
             return
 
         if self.ui.ChartsChoose_Combox.currentText() == '':
-            _gachaAPI = gachaAPI.GachaData(_UD[0]['uid'])
+            _gachaAPI = gachaAPI.GachaData(gachaAPI.UserData(_UD[0]['uid']))
         else:
-            _gachaAPI = _gachaAPI = gachaAPI.GachaData(self.ui.ChartsChoose_Combox.currentText())
+            _gachaAPI = _gachaAPI = gachaAPI.GachaData(gachaAPI.UserData(self.ui.ChartsChoose_Combox.currentText()))
         _gachaAPI.UserData_import(_UD)
         if _UD[0]['uid'] not in _current_list:
             self.ui.ChartsChoose_Combox.addItem(_UD[0]['uid'])
@@ -479,31 +495,47 @@ class AppFunctions(MainWindow):
             return
         else:
             _current_list = []
-            for i in range(self.ui.Links_Table.rowCount()):
-                if self.ui.Links_Table.item(i, 0):
-                    _current_list.append(self.ui.Links_Table.item(i, 0).text())
+            for i in range(self.ui.ChartsChoose_Combox.count()):
+                _current_list.append(self.ui.ChartsChoose_Combox.itemText(i))
+
             if self.ui.ChartsChoose_Combox.currentText() not in _current_list:
                 QMessageBox.warning(self, 'Charts Warning', f'{self.ui.ChartsChoose_Combox.currentText()}无链接！')
                 return
-            _gachaAPI = gachaAPI.GachaData(self.ui.ChartsChoose_Combox.currentText())
-            _UD = _gachaAPI.Main_DataGetter()
-            _echarts = gachaAPI.echarts(_UD)
+            _UDBM=gachaAPI.UserData(self.ui.ChartsChoose_Combox.currentText())
+            _gachaAPI = gachaAPI.GachaData(_UDBM)
+            _gachaAPI.Main_DataGetter()
 
+            while True:
+                #print(_gachaAPI.THREAD_FLAG)
+                if _gachaAPI.THREAD_FLAG==0:
+                    #print('end')
+                    self.ui.progressBar.setValue(4 - _gachaAPI.THREAD_FLAG)
+                    break
+                else:
+                    #print(_gachaAPI.THREAD_FLAG)
+                    #pass
+                    self.ui.progressBar.setValue(4 - _gachaAPI.THREAD_FLAG)
+            _gachaAPI.UDBM.DBM_UD.set_NodeData(_gachaAPI.UDBM.USER_ID,
+                                          {'char': _gachaAPI.UDBM.char, 'wap': _gachaAPI.UDBM.wap,
+                                           'permanent': _gachaAPI.UDBM.permanent,
+                                           'novice': _gachaAPI.UDBM.novice})
+
+            _echarts = gachaAPI.echarts(_gachaAPI.UDBM)
             _echarts.draw_charts()
 
             if os.path.exists(
                     os.path.join(os.getcwd(), f'DATA/charts/{self.ui.ChartsChoose_Combox.currentText()}_c1.html')):
-                self.ui.ChartsText_label_1.setText(_echarts._make_detail(_echarts._pre_process(_UD.char))[2])
+                self.ui.ChartsText_label_1.setText(_echarts._make_detail(_echarts._pre_process(_UDBM.char))[2])
                 self.ui.Chart_1.load(QUrl.fromLocalFile(
                     os.path.join(os.getcwd(), f'DATA/charts/{self.ui.ChartsChoose_Combox.currentText()}_c1.html')))
             if os.path.exists(
                     os.path.join(os.getcwd(), f'DATA/charts/{self.ui.ChartsChoose_Combox.currentText()}_c2.html')):
-                self.ui.ChartsText_label_2.setText(_echarts._make_detail(_echarts._pre_process(_UD.wap))[2])
+                self.ui.ChartsText_label_2.setText(_echarts._make_detail(_echarts._pre_process(_UDBM.wap))[2])
                 self.ui.Chart_2.load(QUrl.fromLocalFile(
                     os.path.join(os.getcwd(), f'DATA/charts/{self.ui.ChartsChoose_Combox.currentText()}_c2.html')))
             if os.path.exists(
                     os.path.join(os.getcwd(), f'DATA/charts/{self.ui.ChartsChoose_Combox.currentText()}_c3.html')):
-                self.ui.ChartsText_label_3.setText(_echarts._make_detail(_echarts._pre_process(_UD.permanent))[2])
+                self.ui.ChartsText_label_3.setText(_echarts._make_detail(_echarts._pre_process(_UDBM.permanent))[2])
                 self.ui.Chart_3.load(QUrl.fromLocalFile(
                     os.path.join(os.getcwd(), f'DATA/charts/{self.ui.ChartsChoose_Combox.currentText()}_c3.html')))
 

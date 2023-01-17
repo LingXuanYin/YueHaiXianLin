@@ -3,7 +3,7 @@
 ################################################################################
 ## Form generated from reading UI file 'main.ui'
 ##
-## Created by: Qt User Interface Compiler version 6.3.1
+## Created by: Qt User Interface Compiler version 6.4.0
 ##
 ## WARNING! All changes made in this file will be lost when recompiling UI file!
 ################################################################################
@@ -18,15 +18,16 @@ from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
 from PySide6.QtWebEngineWidgets import QWebEngineView
 from PySide6.QtWidgets import (QAbstractItemView, QAbstractScrollArea, QApplication, QComboBox,
     QFrame, QGridLayout, QHBoxLayout, QHeaderView,
-    QLabel, QLineEdit, QMainWindow, QPushButton,
-    QSizePolicy, QStackedWidget, QTableWidget, QTableWidgetItem,
-    QTextEdit, QVBoxLayout, QWidget)
+    QLabel, QLineEdit, QMainWindow, QProgressBar,
+    QPushButton, QSizePolicy, QStackedWidget, QTableWidget,
+    QTableWidgetItem, QTextEdit, QVBoxLayout, QWidget)
 import resources_rc
 
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         if not MainWindow.objectName():
             MainWindow.setObjectName(u"MainWindow")
+        MainWindow.setEnabled(True)
         MainWindow.resize(1440, 810)
         MainWindow.setMinimumSize(QSize(1440, 810))
         MainWindow.setMaximumSize(QSize(1440, 810))
@@ -569,7 +570,7 @@ class Ui_MainWindow(object):
         self.appMargins = QVBoxLayout(self.styleSheet)
         self.appMargins.setSpacing(0)
         self.appMargins.setObjectName(u"appMargins")
-        self.appMargins.setContentsMargins(10, 10, 10, 10)
+        self.appMargins.setContentsMargins(0, 0, 0, 0)
         self.bgApp = QFrame(self.styleSheet)
         self.bgApp.setObjectName(u"bgApp")
         self.bgApp.setStyleSheet(u"")
@@ -843,6 +844,7 @@ class Ui_MainWindow(object):
         self.verticalLayout_11.setContentsMargins(0, 0, 0, 0)
         self.Setting_btn = QPushButton(self.extraTopMenu)
         self.Setting_btn.setObjectName(u"Setting_btn")
+        self.Setting_btn.setEnabled(False)
         sizePolicy.setHeightForWidth(self.Setting_btn.sizePolicy().hasHeightForWidth())
         self.Setting_btn.setSizePolicy(sizePolicy)
         self.Setting_btn.setMinimumSize(QSize(0, 45))
@@ -885,13 +887,6 @@ class Ui_MainWindow(object):
 
 
         self.verticalLayout_12.addWidget(self.extraCenter)
-
-        self.extraBottom = QFrame(self.extraContent)
-        self.extraBottom.setObjectName(u"extraBottom")
-        self.extraBottom.setFrameShape(QFrame.NoFrame)
-        self.extraBottom.setFrameShadow(QFrame.Raised)
-
-        self.verticalLayout_12.addWidget(self.extraBottom)
 
 
         self.extraColumLayout.addWidget(self.extraContent)
@@ -1374,6 +1369,7 @@ class Ui_MainWindow(object):
         sizePolicy3.setHeightForWidth(self.Charts_widget.sizePolicy().hasHeightForWidth())
         self.Charts_widget.setSizePolicy(sizePolicy3)
         self.verticalLayout = QVBoxLayout(self.Charts_widget)
+        self.verticalLayout.setSpacing(0)
         self.verticalLayout.setObjectName(u"verticalLayout")
         self.ChartsToolframe = QFrame(self.Charts_widget)
         self.ChartsToolframe.setObjectName(u"ChartsToolframe")
@@ -1382,6 +1378,7 @@ class Ui_MainWindow(object):
         self.ChartsToolframe.setFrameShape(QFrame.StyledPanel)
         self.ChartsToolframe.setFrameShadow(QFrame.Raised)
         self.horizontalLayout_17 = QHBoxLayout(self.ChartsToolframe)
+        self.horizontalLayout_17.setSpacing(0)
         self.horizontalLayout_17.setObjectName(u"horizontalLayout_17")
         self.ChartsToolframeleft = QFrame(self.ChartsToolframe)
         self.ChartsToolframeleft.setObjectName(u"ChartsToolframeleft")
@@ -1507,11 +1504,36 @@ class Ui_MainWindow(object):
 
         self.verticalLayout.addWidget(self.ChartsToolframe)
 
+        self.progressBar = QProgressBar(self.Charts_widget)
+        self.progressBar.setObjectName(u"progressBar")
+        sizePolicy9 = QSizePolicy(QSizePolicy.Fixed, QSizePolicy.Fixed)
+        sizePolicy9.setHorizontalStretch(0)
+        sizePolicy9.setVerticalStretch(0)
+        sizePolicy9.setHeightForWidth(self.progressBar.sizePolicy().hasHeightForWidth())
+        self.progressBar.setSizePolicy(sizePolicy9)
+        self.progressBar.setMinimumSize(QSize(1290, 3))
+        self.progressBar.setMaximumSize(QSize(1272, 3))
+        self.progressBar.setContextMenuPolicy(Qt.DefaultContextMenu)
+        self.progressBar.setStyleSheet(u"QProgressBar::chunk{\n"
+"background: rgb(255,0,0);\n"
+"}\n"
+"")
+        self.progressBar.setInputMethodHints(Qt.ImhNone)
+        self.progressBar.setMaximum(4)
+        self.progressBar.setValue(0)
+        self.progressBar.setAlignment(Qt.AlignCenter)
+        self.progressBar.setTextVisible(False)
+        self.progressBar.setInvertedAppearance(False)
+        self.progressBar.setTextDirection(QProgressBar.TopToBottom)
+
+        self.verticalLayout.addWidget(self.progressBar, 0, Qt.AlignHCenter)
+
         self.Charts_frame = QFrame(self.Charts_widget)
         self.Charts_frame.setObjectName(u"Charts_frame")
         sizePolicy1.setHeightForWidth(self.Charts_frame.sizePolicy().hasHeightForWidth())
         self.Charts_frame.setSizePolicy(sizePolicy1)
         self.Charts_frame.setMinimumSize(QSize(0, 430))
+        self.Charts_frame.setStyleSheet(u"background-color: rgb(40, 44, 53);")
         self.Charts_frame.setFrameShape(QFrame.StyledPanel)
         self.Charts_frame.setFrameShadow(QFrame.Raised)
         self.horizontalLayout_12 = QHBoxLayout(self.Charts_frame)
@@ -1663,11 +1685,11 @@ class Ui_MainWindow(object):
         self.gridLayout.setContentsMargins(-1, -1, -1, 0)
         self.URL_Input_btn = QPushButton(self.frame_content_wid_2)
         self.URL_Input_btn.setObjectName(u"URL_Input_btn")
-        sizePolicy9 = QSizePolicy(QSizePolicy.Maximum, QSizePolicy.Fixed)
-        sizePolicy9.setHorizontalStretch(0)
-        sizePolicy9.setVerticalStretch(0)
-        sizePolicy9.setHeightForWidth(self.URL_Input_btn.sizePolicy().hasHeightForWidth())
-        self.URL_Input_btn.setSizePolicy(sizePolicy9)
+        sizePolicy10 = QSizePolicy(QSizePolicy.Maximum, QSizePolicy.Fixed)
+        sizePolicy10.setHorizontalStretch(0)
+        sizePolicy10.setVerticalStretch(0)
+        sizePolicy10.setHeightForWidth(self.URL_Input_btn.sizePolicy().hasHeightForWidth())
+        self.URL_Input_btn.setSizePolicy(sizePolicy10)
         self.URL_Input_btn.setMinimumSize(QSize(150, 30))
         self.URL_Input_btn.setFont(font)
         self.URL_Input_btn.setCursor(QCursor(Qt.PointingHandCursor))
@@ -1694,11 +1716,11 @@ class Ui_MainWindow(object):
 
         self.URL_ButtonFrame = QFrame(self.Links_widget)
         self.URL_ButtonFrame.setObjectName(u"URL_ButtonFrame")
-        sizePolicy10 = QSizePolicy(QSizePolicy.Expanding, QSizePolicy.Maximum)
-        sizePolicy10.setHorizontalStretch(0)
-        sizePolicy10.setVerticalStretch(200)
-        sizePolicy10.setHeightForWidth(self.URL_ButtonFrame.sizePolicy().hasHeightForWidth())
-        self.URL_ButtonFrame.setSizePolicy(sizePolicy10)
+        sizePolicy11 = QSizePolicy(QSizePolicy.Expanding, QSizePolicy.Maximum)
+        sizePolicy11.setHorizontalStretch(0)
+        sizePolicy11.setVerticalStretch(200)
+        sizePolicy11.setHeightForWidth(self.URL_ButtonFrame.sizePolicy().hasHeightForWidth())
+        self.URL_ButtonFrame.setSizePolicy(sizePolicy11)
         self.URL_ButtonFrame.setFrameShape(QFrame.StyledPanel)
         self.URL_ButtonFrame.setFrameShadow(QFrame.Raised)
         self.horizontalLayout_6 = QHBoxLayout(self.URL_ButtonFrame)
@@ -2006,13 +2028,13 @@ class Ui_MainWindow(object):
         self.creditsLabel.setFont(font6)
         self.creditsLabel.setAlignment(Qt.AlignLeading|Qt.AlignLeft|Qt.AlignVCenter)
 
-        self.horizontalLayout_5.addWidget(self.creditsLabel)
+        self.horizontalLayout_5.addWidget(self.creditsLabel, 0, Qt.AlignLeft)
 
         self.version = QLabel(self.bottomBar)
         self.version.setObjectName(u"version")
         self.version.setAlignment(Qt.AlignRight|Qt.AlignTrailing|Qt.AlignVCenter)
 
-        self.horizontalLayout_5.addWidget(self.version)
+        self.horizontalLayout_5.addWidget(self.version, 0, Qt.AlignRight)
 
         self.frame_size_grip = QFrame(self.bottomBar)
         self.frame_size_grip.setObjectName(u"frame_size_grip")
@@ -2067,11 +2089,13 @@ class Ui_MainWindow(object):
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><meta charset=\"utf-8\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
 "hr { height: 1px; border-width: 0; }\n"
+"li.unchecked::marker { content: \"\\2610\"; }\n"
+"li.checked::marker { content: \"\\2612\"; }\n"
 "</style></head><body style=\" font-family:'Segoe UI'; font-size:10pt; font-weight:400; font-style:normal;\">\n"
 "<p align=\"center\" style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:12pt; font-weight:600; color:#ff79c6;\">\u6708\u6d77\u4ed9\u9e9f</span></p>\n"
-"<p align=\"center\" style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" color:#ffffff;\">\u539f\u795e\u62bd\u5361\u94fe\u63a5\u548c\u7c73\u6e38\u793eCookies\u7684\u7efc\u5408\u5de5\u5177</span></p>\n"
-"<p align=\"center\" style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-ri"
-                        "ght:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" color:#bd93f9;\">Created by: \u5357\u8fb0\u71cf\u709a</span></p></body></html>", None))
+"<p align=\"center\" style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" color:#ffffff;\">\u539f\u795e\u62bd\u5361\u94fe\u63a5\u548c\u7c73\u6e38\u793eCookies\u7684\u7efc\u5408\u5de5\u5177</span></p"
+                        ">\n"
+"<p align=\"center\" style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" color:#bd93f9;\">Created by: \u5357\u8fb0\u71cf\u709a</span></p></body></html>", None))
         self.titleRightInfo.setText(QCoreApplication.translate("MainWindow", u"TEST INFO", None))
 #if QT_CONFIG(tooltip)
         self.settingsTopBtn.setToolTip("")

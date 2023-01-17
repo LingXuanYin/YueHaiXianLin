@@ -3,6 +3,9 @@
  <author>Wanderson M. Pimenta</author>
  <class>MainWindow</class>
  <widget class="QMainWindow" name="MainWindow">
+  <property name="enabled">
+   <bool>true</bool>
+  </property>
   <property name="geometry">
    <rect>
     <x>0</x>
@@ -27,7 +30,7 @@
    <string>MainWindow</string>
   </property>
   <property name="windowIcon">
-   <iconset resource="resources.qrc">
+   <iconset>
     <normaloff>:/images/images/images/titel_icon_small.png</normaloff>:/images/images/images/titel_icon_small.png</iconset>
   </property>
   <widget class="QWidget" name="styleSheet">
@@ -567,16 +570,16 @@ QScrollBar:vertical
      <number>0</number>
     </property>
     <property name="leftMargin">
-     <number>10</number>
+     <number>0</number>
     </property>
     <property name="topMargin">
-     <number>10</number>
+     <number>0</number>
     </property>
     <property name="rightMargin">
-     <number>10</number>
+     <number>0</number>
     </property>
     <property name="bottomMargin">
-     <number>10</number>
+     <number>0</number>
     </property>
     <item>
      <widget class="QFrame" name="bgApp">
@@ -1268,7 +1271,7 @@ QScrollBar:vertical
                   <string/>
                  </property>
                  <property name="icon">
-                  <iconset resource="resources.qrc">
+                  <iconset>
                    <normaloff>:/icons/images/icons/icon_close.png</normaloff>:/icons/images/icons/icon_close.png</iconset>
                  </property>
                  <property name="iconSize">
@@ -1334,6 +1337,9 @@ QScrollBar:vertical
                 </property>
                 <item>
                  <widget class="QPushButton" name="Setting_btn">
+                  <property name="enabled">
+                   <bool>false</bool>
+                  </property>
                   <property name="sizePolicy">
                    <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
                     <horstretch>0</horstretch>
@@ -1438,6 +1444,8 @@ QScrollBar:vertical
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;meta charset=&quot;utf-8&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
 hr { height: 1px; border-width: 0; }
+li.unchecked::marker { content: &quot;\2610&quot;; }
+li.checked::marker { content: &quot;\2612&quot;; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Segoe UI'; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;
 &lt;p align=&quot;center&quot; style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:12pt; font-weight:600; color:#ff79c6;&quot;&gt;月海仙麟&lt;/span&gt;&lt;/p&gt;
 &lt;p align=&quot;center&quot; style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; color:#ffffff;&quot;&gt;原神抽卡链接和米游社Cookies的综合工具&lt;/span&gt;&lt;/p&gt;
@@ -1446,16 +1454,6 @@ hr { height: 1px; border-width: 0; }
                  </widget>
                 </item>
                </layout>
-              </widget>
-             </item>
-             <item>
-              <widget class="QFrame" name="extraBottom">
-               <property name="frameShape">
-                <enum>QFrame::NoFrame</enum>
-               </property>
-               <property name="frameShadow">
-                <enum>QFrame::Raised</enum>
-               </property>
               </widget>
              </item>
             </layout>
@@ -1649,7 +1647,7 @@ font: 12pt &quot;黑体&quot;;</string>
                    <string/>
                   </property>
                   <property name="icon">
-                   <iconset resource="resources.qrc">
+                   <iconset>
                     <normaloff>:/icons/images/icons/icon_settings.png</normaloff>:/icons/images/icons/icon_settings.png</iconset>
                   </property>
                   <property name="iconSize">
@@ -1684,7 +1682,7 @@ font: 12pt &quot;黑体&quot;;</string>
                    <string/>
                   </property>
                   <property name="icon">
-                   <iconset resource="resources.qrc">
+                   <iconset>
                     <normaloff>:/icons/images/icons/icon_minimize.png</normaloff>:/icons/images/icons/icon_minimize.png</iconset>
                   </property>
                   <property name="iconSize">
@@ -1731,7 +1729,7 @@ font: 12pt &quot;黑体&quot;;</string>
                    <string/>
                   </property>
                   <property name="icon">
-                   <iconset resource="resources.qrc">
+                   <iconset>
                     <normaloff>:/icons/images/icons/icon_maximize.png</normaloff>:/icons/images/icons/icon_maximize.png</iconset>
                   </property>
                   <property name="iconSize">
@@ -1766,7 +1764,7 @@ font: 12pt &quot;黑体&quot;;</string>
                    <string/>
                   </property>
                   <property name="icon">
-                   <iconset resource="resources.qrc">
+                   <iconset>
                     <normaloff>:/icons/images/icons/icon_close.png</normaloff>:/icons/images/icons/icon_close.png</iconset>
                   </property>
                   <property name="iconSize">
@@ -1987,7 +1985,7 @@ font: 12pt &quot;黑体&quot;;</string>
                                   <string>Open</string>
                                  </property>
                                  <property name="icon">
-                                  <iconset resource="resources.qrc">
+                                  <iconset>
                                    <normaloff>:/icons/images/icons/cil-folder-open.png</normaloff>:/icons/images/icons/cil-folder-open.png</iconset>
                                  </property>
                                 </widget>
@@ -2622,6 +2620,9 @@ color:rgb(102, 204, 255);
                        </sizepolicy>
                       </property>
                       <layout class="QVBoxLayout" name="verticalLayout">
+                       <property name="spacing">
+                        <number>0</number>
+                       </property>
                        <item>
                         <widget class="QFrame" name="ChartsToolframe">
                          <property name="sizePolicy">
@@ -2637,6 +2638,9 @@ color:rgb(102, 204, 255);
                           <enum>QFrame::Raised</enum>
                          </property>
                          <layout class="QHBoxLayout" name="horizontalLayout_17">
+                          <property name="spacing">
+                           <number>0</number>
+                          </property>
                           <item alignment="Qt::AlignLeft">
                            <widget class="QFrame" name="ChartsToolframeleft">
                             <property name="sizePolicy">
@@ -2904,6 +2908,58 @@ background-repeat: no-repeat;</string>
                          </layout>
                         </widget>
                        </item>
+                       <item alignment="Qt::AlignHCenter">
+                        <widget class="QProgressBar" name="progressBar">
+                         <property name="sizePolicy">
+                          <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                           <horstretch>0</horstretch>
+                           <verstretch>0</verstretch>
+                          </sizepolicy>
+                         </property>
+                         <property name="minimumSize">
+                          <size>
+                           <width>1290</width>
+                           <height>3</height>
+                          </size>
+                         </property>
+                         <property name="maximumSize">
+                          <size>
+                           <width>1272</width>
+                           <height>3</height>
+                          </size>
+                         </property>
+                         <property name="contextMenuPolicy">
+                          <enum>Qt::DefaultContextMenu</enum>
+                         </property>
+                         <property name="styleSheet">
+                          <string notr="true">QProgressBar::chunk{
+background: rgb(255,0,0);
+}
+</string>
+                         </property>
+                         <property name="inputMethodHints">
+                          <set>Qt::ImhNone</set>
+                         </property>
+                         <property name="maximum">
+                          <number>4</number>
+                         </property>
+                         <property name="value">
+                          <number>0</number>
+                         </property>
+                         <property name="alignment">
+                          <set>Qt::AlignCenter</set>
+                         </property>
+                         <property name="textVisible">
+                          <bool>false</bool>
+                         </property>
+                         <property name="invertedAppearance">
+                          <bool>false</bool>
+                         </property>
+                         <property name="textDirection">
+                          <enum>QProgressBar::TopToBottom</enum>
+                         </property>
+                        </widget>
+                       </item>
                        <item>
                         <widget class="QFrame" name="Charts_frame">
                          <property name="sizePolicy">
@@ -2917,6 +2973,9 @@ background-repeat: no-repeat;</string>
                            <width>0</width>
                            <height>430</height>
                           </size>
+                         </property>
+                         <property name="styleSheet">
+                          <string notr="true">background-color: rgb(40, 44, 53);</string>
                          </property>
                          <property name="frameShape">
                           <enum>QFrame::StyledPanel</enum>
@@ -3213,7 +3272,7 @@ border-width:2px;
                                   <string>Open</string>
                                  </property>
                                  <property name="icon">
-                                  <iconset resource="resources.qrc">
+                                  <iconset>
                                    <normaloff>:/icons/images/icons/cil-folder-open.png</normaloff>:/icons/images/icons/cil-folder-open.png</iconset>
                                  </property>
                                 </widget>
@@ -4092,7 +4151,7 @@ background-repeat: no-repeat;</string>
                 <property name="bottomMargin">
                  <number>0</number>
                 </property>
-                <item>
+                <item alignment="Qt::AlignLeft">
                  <widget class="QLabel" name="creditsLabel">
                   <property name="maximumSize">
                    <size>
@@ -4116,7 +4175,7 @@ background-repeat: no-repeat;</string>
                   </property>
                  </widget>
                 </item>
-                <item>
+                <item alignment="Qt::AlignRight">
                  <widget class="QLabel" name="version">
                   <property name="text">
                    <string>v2.0.0.Beta</string>
