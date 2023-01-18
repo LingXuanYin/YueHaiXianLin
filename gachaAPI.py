@@ -309,7 +309,7 @@ class GachaData():
         _data['end_id'] = 0
         _data['gacha_type'] = gacha_type
         while True:
-
+            #print(gacha_type)
             response_list = Tool().get(_url, _data)
             if response_list == []: break  # 无数据提前跳出
             if response_list == 'visit too frequently':

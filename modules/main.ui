@@ -1826,7 +1826,7 @@ font: 12pt &quot;黑体&quot;;</string>
                    <string notr="true">background-color: rgb(40, 44, 52);</string>
                   </property>
                   <property name="currentIndex">
-                   <number>2</number>
+                   <number>1</number>
                   </property>
                   <widget class="QWidget" name="Cookies_Page">
                    <layout class="QVBoxLayout" name="verticalLayout_20">
@@ -2588,7 +2588,7 @@ color:rgb(102, 204, 255);
 </string>
                             </property>
                             <property name="text">
-                             <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:700;&quot;&gt;祈愿记录链接更新方式：&lt;/span&gt;&lt;/p&gt;&lt;p&gt;进入 原神-&amp;gt;抽卡界面-&amp;gt;历史记录-&amp;gt;抽卡界面-&amp;gt;软件内点击自动获取链接&lt;/p&gt;&lt;p&gt;第一次使用需要选择游戏安装目录（包含YuanShen.exe或GenshinImpact.exe）&lt;/p&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-weight:700;&quot;&gt;米游社Cookie获取方式：&lt;/span&gt;&lt;/p&gt;&lt;p&gt;使用Chrome浏览器登录米游社-&amp;gt;软件内点击自动获取Cookies&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;注：多账号请打开浏览器隐身模式，开发者模式输入‘document.cookie’复制输出信息后手动导入&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;br/&gt;&lt;a href=&quot;https://github.com/LingXuanYin&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#66ccff;&quot;&gt;南辰燏炚@github&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;https://github.com/LingXuanYin&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#66ccff;&quot;&gt;南辰燏炚@&lt;/span&gt;&lt;/a&gt;&lt;a href=&quot;https://space.bilibili.com/162599415&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#66ccff;&quot;&gt;bilibili&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                             <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:700;&quot;&gt;祈愿记录链接更新方式：&lt;/span&gt;&lt;/p&gt;&lt;p&gt;进入 原神-&amp;gt;抽卡界面-&amp;gt;历史记录-&amp;gt;抽卡界面-&amp;gt;软件内点击左侧Charts-&amp;gt;右侧刷新按钮&lt;/p&gt;&lt;p&gt;第一次使用需要选择游戏安装目录（包含YuanShen.exe或GenshinImpact.exe）&lt;/p&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-weight:700;&quot;&gt;米游社Cookie获取方式：&lt;/span&gt;&lt;/p&gt;&lt;p&gt;使用Chrome浏览器登录米游社-&amp;gt;软件内点击左侧Cookies-&amp;gt;右侧点击最左边按钮&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;注：多账号请打开浏览器隐身模式，开发者模式输入‘document.cookie’复制输出信息后手动导入&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;p&gt;&lt;br/&gt;&lt;a href=&quot;https://github.com/LingXuanYin&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#66ccff;&quot;&gt;南辰燏炚@github&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;https://github.com/LingXuanYin&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#66ccff;&quot;&gt;南辰燏炚@&lt;/span&gt;&lt;/a&gt;&lt;a href=&quot;https://space.bilibili.com/162599415&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#66ccff;&quot;&gt;bilibili&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                             </property>
                             <property name="textFormat">
                              <enum>Qt::AutoText</enum>

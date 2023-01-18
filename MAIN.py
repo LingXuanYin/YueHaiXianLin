@@ -346,9 +346,10 @@ class MainWindow(QMainWindow):
 
     # MOUSE CLICK EVENTS
     # ///////////////////////////////////////////////////////////////
-    def mousePressEvent(self, event):
+    #def mousePressEvent(self, event):
         # SET DRAG POS WINDOW
-        self.dragPos = event.globalPos()
+
+        #self.dragPos = event.globalPos()
 
         # PRINT MOUSE EVENTS
         # if event.buttons() == Qt.LeftButton:

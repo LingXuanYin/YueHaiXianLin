@@ -52,7 +52,7 @@ class Thread(QThread):
     def run(self) -> None:
         #self.GD_Class.Main_DataGetter()
         #print(self.GD_Class.THREAD_FLAG)
-        self.msleep(200)
+        self.sleep(1)
         while self.GD_Class.THREAD_FLAG!=0:
             #print(self.GD_Class.THREAD_FLAG)
             self.msleep(100)

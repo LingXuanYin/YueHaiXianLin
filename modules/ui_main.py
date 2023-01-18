@@ -2072,7 +2072,7 @@ class Ui_MainWindow(object):
 
         self.retranslateUi(MainWindow)
 
-        self.stackedWidget.setCurrentIndex(2)
+        self.stackedWidget.setCurrentIndex(1)
 
 
         QMetaObject.connectSlotsByName(MainWindow)
@@ -2149,8 +2149,8 @@ class Ui_MainWindow(object):
         self.CK_Table.setSortingEnabled(__sortingEnabled)
 
         self.MainLogo_Label.setText("")
-        self.MainInfo_Label.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p><span style=\" font-weight:700;\">\u7948\u613f\u8bb0\u5f55\u94fe\u63a5\u66f4\u65b0\u65b9\u5f0f\uff1a</span></p><p>\u8fdb\u5165 \u539f\u795e-&gt;\u62bd\u5361\u754c\u9762-&gt;\u5386\u53f2\u8bb0\u5f55-&gt;\u62bd\u5361\u754c\u9762-&gt;\u8f6f\u4ef6\u5185\u70b9\u51fb\u81ea\u52a8\u83b7\u53d6\u94fe\u63a5</p><p>\u7b2c\u4e00\u6b21\u4f7f\u7528\u9700\u8981\u9009\u62e9\u6e38\u620f\u5b89\u88c5\u76ee\u5f55\uff08\u5305\u542bYuanShen.exe\u6216GenshinImpact.exe\uff09</p><p><br/></p><p><span style=\" font-weight:700;\">\u7c73\u6e38\u793eCookie\u83b7\u53d6\u65b9\u5f0f\uff1a</span></p><p>\u4f7f\u7528Chrome\u6d4f\u89c8\u5668\u767b\u5f55\u7c73\u6e38\u793e-&gt;\u8f6f\u4ef6\u5185\u70b9\u51fb\u81ea\u52a8\u83b7\u53d6Cookies</p><p><span style=\" font-size:10pt;\">\u6ce8\uff1a\u591a\u8d26\u53f7\u8bf7\u6253\u5f00\u6d4f\u89c8\u5668\u9690\u8eab\u6a21\u5f0f\uff0c\u5f00\u53d1\u8005\u6a21\u5f0f\u8f93\u5165\u2018document.cookie\u2019\u590d\u5236\u8f93\u51fa\u4fe1\u606f\u540e\u624b\u52a8\u5bfc\u5165</span></p><p><br/><a href"
-                        "=\"https://github.com/LingXuanYin\"><span style=\" text-decoration: underline; color:#66ccff;\">\u5357\u8fb0\u71cf\u709a@github</span></a></p><p><a href=\"https://github.com/LingXuanYin\"><span style=\" text-decoration: underline; color:#66ccff;\">\u5357\u8fb0\u71cf\u709a@</span></a><a href=\"https://space.bilibili.com/162599415\"><span style=\" text-decoration: underline; color:#66ccff;\">bilibili</span></a></p><p><br/></p></body></html>", None))
+        self.MainInfo_Label.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p><span style=\" font-weight:700;\">\u7948\u613f\u8bb0\u5f55\u94fe\u63a5\u66f4\u65b0\u65b9\u5f0f\uff1a</span></p><p>\u8fdb\u5165 \u539f\u795e-&gt;\u62bd\u5361\u754c\u9762-&gt;\u5386\u53f2\u8bb0\u5f55-&gt;\u62bd\u5361\u754c\u9762-&gt;\u8f6f\u4ef6\u5185\u70b9\u51fb\u5de6\u4fa7Charts-&gt;\u53f3\u4fa7\u5237\u65b0\u6309\u94ae</p><p>\u7b2c\u4e00\u6b21\u4f7f\u7528\u9700\u8981\u9009\u62e9\u6e38\u620f\u5b89\u88c5\u76ee\u5f55\uff08\u5305\u542bYuanShen.exe\u6216GenshinImpact.exe\uff09</p><p><br/></p><p><span style=\" font-weight:700;\">\u7c73\u6e38\u793eCookie\u83b7\u53d6\u65b9\u5f0f\uff1a</span></p><p>\u4f7f\u7528Chrome\u6d4f\u89c8\u5668\u767b\u5f55\u7c73\u6e38\u793e-&gt;\u8f6f\u4ef6\u5185\u70b9\u51fb\u5de6\u4fa7Cookies-&gt;\u53f3\u4fa7\u70b9\u51fb\u6700\u5de6\u8fb9\u6309\u94ae</p><p><span style=\" font-size:10pt;\">\u6ce8\uff1a\u591a\u8d26\u53f7\u8bf7\u6253\u5f00\u6d4f\u89c8\u5668\u9690\u8eab\u6a21\u5f0f\uff0c\u5f00\u53d1\u8005\u6a21\u5f0f\u8f93\u5165\u2018document.cookie\u2019\u590d\u5236\u8f93\u51fa"
+                        "\u4fe1\u606f\u540e\u624b\u52a8\u5bfc\u5165</span></p><p><br/></p><p><br/><a href=\"https://github.com/LingXuanYin\"><span style=\" text-decoration: underline; color:#66ccff;\">\u5357\u8fb0\u71cf\u709a@github</span></a></p><p><a href=\"https://github.com/LingXuanYin\"><span style=\" text-decoration: underline; color:#66ccff;\">\u5357\u8fb0\u71cf\u709a@</span></a><a href=\"https://space.bilibili.com/162599415\"><span style=\" text-decoration: underline; color:#66ccff;\">bilibili</span></a></p><p><br/></p></body></html>", None))
         self.label.setText(QCoreApplication.translate("MainWindow", u"UID : ", None))
         self.label_prograss.setText("")
         self.ChartImport_btn.setText("")
