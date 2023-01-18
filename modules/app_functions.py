@@ -607,22 +607,19 @@ class AppFunctions(MainWindow):
             try:
                 _gachaAPI = gachaAPI.GachaData(gachaAPI.UserData(_UD[0]['uid']))
             except Exception as e:
-                raise  e
+                #raise  e
                 self.ui.label_prograss.setText('文件错误！')
                 QMessageBox.warning(self, 'Import Error !', '文件错误！')
                 _reset_window(self)
                 return
+            _gachaAPI.UserData_import(_UD)
+
         elif 'info' not in list(_UD.keys()):
-
-            if _UD == []:
-                self.ui.label_prograss.setText('Error:文件为空')
-
-                QMessageBox.warning(self, 'Import Error !', '文件为空')
-                _reset_window(self)
-                return
             self.ui.label_prograss.setText('正在导入...')
             try:
-                _gachaAPI = gachaAPI.GachaData(gachaAPI.UserData(_UD[0]['uid']))
+                for _uid in list(_UD.keys()):
+                    _gachaAPI = gachaAPI.GachaData(gachaAPI.UserData(_uid))
+                    _gachaAPI.UserData_import(_UD[_uid]['char']+_UD[_uid]['wap']+_UD[_uid]['permanent']+_UD[_uid]['novice'])
             except:
                 self.ui.label_prograss.setText('文件错误！')
                 QMessageBox.warning(self, 'Import Error !', '文件错误！')
@@ -655,7 +652,7 @@ class AppFunctions(MainWindow):
                 del _UD[_i]['uigf_gacha_type']
                 #print(_UD[_i])
                 #break
-        _gachaAPI.UserData_import(_UD)
+            _gachaAPI.UserData_import(_UD)
         if _gachaAPI.UDBM.USER_ID not in _current_list:
             self.ui.ChartsChoose_Combox.addItem(_gachaAPI.UDBM.USER_ID)
             self.ui.ChartsChoose_Combox.setCurrentIndex(self.ui.ChartsChoose_Combox.findText(_gachaAPI.UDBM.USER_ID))
