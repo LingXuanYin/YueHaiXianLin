@@ -40,6 +40,16 @@ def _reset_charts(window):
     window.ui.ChartsText_label_1.setText('')
     window.ui.ChartsText_label_2.setText('')
     window.ui.ChartsText_label_3.setText('')
+def _reset_window(window):
+    window.ui.ChartsText_frame.setDisabled(False)
+    window.ui.ChartsToolframeleft.setDisabled(False)
+    window.ui.ChartsToolframeright.setDisabled(False)
+    window.ui.Charts_frame.setDisabled(False)
+
+    window.ui.extraLeftBox.setDisabled(False)
+    window.ui.leftMenuBg.setDisabled(False)
+    window.setCursor(QCursor(Qt.CustomCursor))
+
 
 class Thread(QThread):
     FLAG=Signal(int)
@@ -76,6 +86,7 @@ class AppFunctions(MainWindow):
             mysapi.Cookie.checkCookie(_cookie)
         except:
             QMessageBox.warning(self, 'Cookies Error', 'Cookies无效,请重新登录！')
+            _reset_window(self)
             return
         _current_list = []
         for i in range(self.ui.CK_Table.rowCount()):
@@ -129,6 +140,7 @@ class AppFunctions(MainWindow):
             mysapi.Cookie.checkCookie(_cookie)
         except:
             QMessageBox.warning(self, 'Cookies Error', 'Cookies无效,请重新登录！')
+            _reset_window(self)
             return
         _mys = mysapi.mys(_cookie)
         _uid = _mys.UID_MYS
@@ -154,21 +166,27 @@ class AppFunctions(MainWindow):
 
     def Cookies_delete(self):
         _delrow_list = []
-        if not self.ui.CK_Table.selectedItems(): return
+        if not self.ui.CK_Table.selectedItems():
+            _reset_window(self)
+            return
+
         for _i in self.ui.CK_Table.selectedItems():
             if _i:
                 _delrow_list.append(_i.row())
         _b = QMessageBox.warning(self, 'Cookies Warning !', f'此操作将会删除所选UID的本地Cookies！！！请确认！！！3',
                                  QMessageBox.StandardButton.Yes, QMessageBox.StandardButton.No)
         if _b == QMessageBox.StandardButton.No:
+            _reset_window(self)
             return
         _b = QMessageBox.warning(self, 'Cookies Warning !', f'此操作将会删除所选UID的本地Cookies！！！请确认！！！2',
                                  QMessageBox.StandardButton.Yes, QMessageBox.StandardButton.No)
         if _b == QMessageBox.StandardButton.No:
+            _reset_window(self)
             return
         _b = QMessageBox.warning(self, 'Cookies Warning !', f'此操作将会删除所选UID的本地Cookies！！！请确认！！！1',
                                  QMessageBox.StandardButton.Yes, QMessageBox.StandardButton.No)
         if _b == QMessageBox.StandardButton.No:
+            _reset_window(self)
             return
         for _l in _delrow_list:
             gachaAPI.DatabaseManager('Cookies').set_NodeData(self.ui.CK_Table.item(_l, 0).text(), '')
@@ -176,7 +194,10 @@ class AppFunctions(MainWindow):
 
     def Cookies_copy(self):
 
-        if not self.ui.CK_Table.selectedItems(): return
+        if not self.ui.CK_Table.selectedItems():
+            _reset_window(self)
+            return
+
         for _i in self.ui.CK_Table.selectedItems():
             if _i:
                 gachaAPI.Tool.set_clipboard(_i.text())
@@ -258,9 +279,11 @@ class AppFunctions(MainWindow):
         if (not GAME_PATH["CN"] or not os.path.exists(os.path.join(GAME_PATH["CN"], 'YuanShen.exe'))) and (not GAME_PATH["OS"] or not os.path.exists(os.path.join(GAME_PATH["OS"], 'GenshinImpact.exe'))):
             _p = QFileDialog.getExistingDirectory(self, '选择原神安装目录')
             if not _p:
+                _reset_window(self)
                 return
             if not os.path.exists(os.path.join(_p, 'YuanShen.exe')) and not os.path.exists(os.path.join(GAME_PATH["OS"], 'GenshinImpact.exe')):
                 QMessageBox.warning(self, 'Path Error !', '游戏路径错误')
+                _reset_window(self)
                 return
             if os.path.exists(os.path.join(_p, 'YuanShen.exe')):
                 GAME_PATH["CN"] = _p
@@ -310,6 +333,7 @@ class AppFunctions(MainWindow):
         _url_class = gachaAPI._URL()
         #print(_p)
         if not os.path.exists(_p):
+            _reset_window(self)
             return
         _current_list = []
         for i in range(self.ui.Links_Table.rowCount()):
@@ -319,6 +343,7 @@ class AppFunctions(MainWindow):
         try:
             _text = open(_p, 'rb').read()
         except FileNotFoundError:
+            _reset_window(self)
             return
         _start = _text.rfind(_url_class.HOST_CN.encode(encoding='UTF-8'))
         _end = _text.rfind('&game_biz=hk4e_cn'.encode(encoding='UTF-8')) + len('&game_biz=hk4e_cn')
@@ -349,10 +374,12 @@ class AppFunctions(MainWindow):
 
         if _url_class.HOST_CN not in _text and _url_class.HOST_OS not in _text:
             if not os.path.exists(_text):
+                _reset_window(self)
                 return
             try:
                 _text = open(_text, 'rb').read()
             except FileNotFoundError:
+                _reset_window(self)
                 return
             _start = _text.rfind(_url_class.HOST_CN.encode(encoding='UTF-8'))
             _end = _text.rfind('&game_biz=hk4e_cn'.encode(encoding='UTF-8')) + len('&game_biz=hk4e_cn')
@@ -406,7 +433,9 @@ class AppFunctions(MainWindow):
         QMessageBox.information(self, 'Links Information', '导出功能尚不可用，链接已保存')
 
     def Links_copy(self):
-        if not self.ui.Links_Table.selectedItems(): return
+        if not self.ui.Links_Table.selectedItems():
+            _reset_window(self)
+            return
         for _i in self.ui.Links_Table.selectedItems():
             if _i:
                 gachaAPI.Tool.set_clipboard(_i.text())
@@ -428,21 +457,27 @@ class AppFunctions(MainWindow):
 
     def Links_delete(self):
         _delrow_list = []
-        if not self.ui.Links_Table.selectedItems(): return
+        if not self.ui.Links_Table.selectedItems():
+            _reset_window(self)
+            return
+
         for _i in self.ui.Links_Table.selectedItems():
             if _i:
                 _delrow_list.append(_i.row())
         _b = QMessageBox.warning(self, 'Links Warning !', f'此操作将会删除所选UID的本地URL！！！请确认！！！3',
                                  QMessageBox.StandardButton.Yes, QMessageBox.StandardButton.No)
         if _b == QMessageBox.StandardButton.No:
+            _reset_window(self)
             return
         _b = QMessageBox.warning(self, 'Links Warning !', f'此操作将会删除所选UID的本地URL！！！请确认！！！2',
                                  QMessageBox.StandardButton.Yes, QMessageBox.StandardButton.No)
         if _b == QMessageBox.StandardButton.No:
+            _reset_window(self)
             return
         _b = QMessageBox.warning(self, 'Links Warning !', f'此操作将会删除所选UID的本地URL！！！请确认！！！1',
                                  QMessageBox.StandardButton.Yes, QMessageBox.StandardButton.No)
         if _b == QMessageBox.StandardButton.No:
+            _reset_window(self)
             return
         for _l in _delrow_list:
             _url_class = gachaAPI._URL()
@@ -479,12 +514,14 @@ class AppFunctions(MainWindow):
             self.ui.label_prograss.setText(f'Error:{self.ui.ChartsChoose_Combox.currentText()}无数据！')
 
             QMessageBox.warning(self, 'Charts Warning', f'{self.ui.ChartsChoose_Combox.currentText()}无数据！')
+            _reset_window(self)
             return
         if load(open('./DATA/UserData.json', 'r', encoding='UTF-8'))[self.ui.ChartsChoose_Combox.currentText()] == {
             "char": [], "wap": [], "permanent": [], "novice": []}:
             self.ui.label_prograss.setText(f'Error:{self.ui.ChartsChoose_Combox.currentText()}无数据！')
 
             QMessageBox.warning(self, 'Charts Warning', f'{self.ui.ChartsChoose_Combox.currentText()}无数据！')
+            _reset_window(self)
             return
         _UD = gachaAPI.UserData(self.ui.ChartsChoose_Combox.currentText())
         _echarts = gachaAPI.echarts(_UD)
@@ -519,18 +556,22 @@ class AppFunctions(MainWindow):
     def Chart_delete(self):
         if self.ui.ChartsChoose_Combox.currentText() == '':
             QMessageBox.warning(self, 'Delete Error !', '选择一个要删除的UID')
+            _reset_window(self)
             return
         _b = QMessageBox.warning(self, 'Delete Warning !', '此操作将会删除所选UID的本地数据！！！请确认！！！3',
                                  QMessageBox.StandardButton.Yes, QMessageBox.StandardButton.No)
         if _b == QMessageBox.StandardButton.No:
+            _reset_window(self)
             return
         _b = QMessageBox.warning(self, 'Delete Warning !', '此操作将会删除所选UID的本地数据！！！请确认！！！2',
                                  QMessageBox.StandardButton.Yes, QMessageBox.StandardButton.No)
         if _b == QMessageBox.StandardButton.No:
+            _reset_window(self)
             return
         _b = QMessageBox.warning(self, 'Delete Warning !', '此操作将会删除所选UID的本地数据！！！请确认！！！1',
                                  QMessageBox.StandardButton.Yes, QMessageBox.StandardButton.No)
         if _b == QMessageBox.StandardButton.No:
+            _reset_window(self)
             return
 
         _UDBM=gachaAPI.UserData(self.ui.ChartsChoose_Combox.currentText())
@@ -546,8 +587,14 @@ class AppFunctions(MainWindow):
         _current_list = []
         for i in range(self.ui.ChartsChoose_Combox.count()):
             _current_list.append(self.ui.ChartsChoose_Combox.itemText(i))
-
-        _UD = eval(open(QFileDialog.getOpenFileName(self, '选择数据文件')[0], 'r', encoding='UTF-8').read())
+        _f=QFileDialog.getOpenFileName(self, '选择数据文件')[0]
+        try:
+            _UD = eval(open(_f, 'r', encoding='UTF-8').read())
+        except:
+            self.ui.label_prograss.setText('文件错误！')
+            QMessageBox.warning(self, 'Import Error !', '文件错误！')
+            _reset_window(self)
+            return
 
         if 'info' not in list(_UD.keys()):
 
@@ -555,19 +602,33 @@ class AppFunctions(MainWindow):
                 self.ui.label_prograss.setText('Error:文件为空')
 
                 QMessageBox.warning(self, 'Import Error !', '文件为空')
+                _reset_window(self)
                 return
             self.ui.label_prograss.setText('正在导入...')
-
-            _gachaAPI = gachaAPI.GachaData(gachaAPI.UserData(_UD[0]['uid']))
+            try:
+                _gachaAPI = gachaAPI.GachaData(gachaAPI.UserData(_UD[0]['uid']))
+            except:
+                self.ui.label_prograss.setText('文件错误！')
+                QMessageBox.warning(self, 'Import Error !', '文件错误！')
+                _reset_window(self)
+                return
 
         else:
             if _UD == []or _UD['info']=={}:
                 self.ui.label_prograss.setText('Error:文件为空')
 
                 QMessageBox.warning(self, 'Import Error !', '文件为空')
+                _reset_window(self)
                 return
             self.ui.label_prograss.setText('正在导入...')
-            _gachaAPI = gachaAPI.GachaData(gachaAPI.UserData(_UD['info']['uid']))
+            try:
+                _gachaAPI = gachaAPI.GachaData(gachaAPI.UserData(_UD['info']['uid']))
+            except:
+                self.ui.label_prograss.setText('文件错误！')
+                QMessageBox.warning(self, 'Import Error !', '文件错误！')
+                _reset_window(self)
+                return
+
             _UD=_UD['list']
             for _i  in range (len(_UD)):
                 _UD[_i]['uid']=str(_gachaAPI.UDBM.USER_ID)
@@ -614,26 +675,12 @@ class AppFunctions(MainWindow):
 
             _p = QFileDialog.getExistingDirectory(self, '选择原神安装目录')
             if not _p:
-                self.ui.ChartsText_frame.setDisabled(False)
-                self.ui.ChartsToolframeleft.setDisabled(False)
-                self.ui.ChartsToolframeright.setDisabled(False)
-                self.ui.Charts_frame.setDisabled(False)
-
-                self.ui.extraLeftBox.setDisabled(False)
-                self.ui.leftMenuBg.setDisabled(False)
-                self.setCursor(QCursor(Qt.CustomCursor))
+                _reset_window(self)
 
                 return
             if not os.path.exists(os.path.join(_p, 'YuanShen.exe')) and not os.path.exists(os.path.join(GAME_PATH["OS"], 'GenshinImpact.exe')):
                 QMessageBox.warning(self, 'Path Error !', '游戏路径错误')
-                self.ui.ChartsText_frame.setDisabled(False)
-                self.ui.ChartsToolframeleft.setDisabled(False)
-                self.ui.ChartsToolframeright.setDisabled(False)
-                self.ui.Charts_frame.setDisabled(False)
-
-                self.ui.extraLeftBox.setDisabled(False)
-                self.ui.leftMenuBg.setDisabled(False)
-                self.setCursor(QCursor(Qt.CustomCursor))
+                _reset_window(self)
 
                 return
             if os.path.exists(os.path.join(_p, 'YuanShen.exe')):
@@ -690,6 +737,7 @@ class AppFunctions(MainWindow):
             # print('test')
             _reset_charts(self)
             self.ui.label_prograss.setText('已重置图表！')
+            _reset_window(self)
             return
         else:
             _current_list = []
@@ -714,14 +762,7 @@ class AppFunctions(MainWindow):
                 QMessageBox.warning(self, 'Charts Warning', f'{self.ui.ChartsChoose_Combox.currentText()}无链接或链接已失效！')
                 self.ui.label_prograss.setText(f'Error:{self.ui.ChartsChoose_Combox.currentText()}无链接或链接已失效！')
 
-                self.ui.ChartsText_frame.setDisabled(False)
-                self.ui.ChartsToolframeleft.setDisabled(False)
-                self.ui.ChartsToolframeright.setDisabled(False)
-                self.ui.Charts_frame.setDisabled(False)
-
-                self.ui.extraLeftBox.setDisabled(False)
-                self.ui.leftMenuBg.setDisabled(False)
-                self.setCursor(QCursor(Qt.CustomCursor))
+                _reset_window(self)
                 # self.setDisabled(False)
 
                 return
