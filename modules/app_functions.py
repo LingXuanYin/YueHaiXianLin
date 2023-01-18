@@ -316,14 +316,14 @@ class AppFunctions(MainWindow):
                 if _user not in list(_current_list.keys()):
                     _index=self.ui.Links_Table.rowCount() - 1
                     self.ui.Links_Table.setItem(_index, 0, QTableWidgetItem(_user))
-                    self.ui.Links_Table.setItem(_index, 1,QTableWidgetItem(self.ui.ServersChoose_Combox.currentText()))
+                    self.ui.Links_Table.setItem(_index, 1,QTableWidgetItem(_url_class.getServer(_U[_user])))
                     self.ui.Links_Table.setItem(_index, 2, QTableWidgetItem('可用'))
                     self.ui.Links_Table.setItem(_index, 3, QTableWidgetItem(_U[_user]))
                     self.ui.Links_Table.setRowCount(self.ui.Links_Table.rowCount() + 1)
                 elif _current_list[_user]=='不可用':
                     _index=list(_current_list.keys()).index(_user)
                     self.ui.Links_Table.setItem(_index, 0, QTableWidgetItem(_user))
-                    self.ui.Links_Table.setItem(_index, 1,QTableWidgetItem(self.ui.ServersChoose_Combox.currentText()))
+                    self.ui.Links_Table.setItem(_index, 1,QTableWidgetItem(_url_class.getServer(_U[_user])))
                     self.ui.Links_Table.setItem(_index, 2, QTableWidgetItem('可用'))
                     self.ui.Links_Table.setItem(_index, 3, QTableWidgetItem(_U[_user]))
         QMessageBox.information(self, 'Links Information', f'检索到共{self.ui.Links_Table.rowCount() - 1}条链接！')
@@ -719,14 +719,14 @@ class AppFunctions(MainWindow):
                 if _user not in list(_current_list.keys()):
                     _index=self.ui.Links_Table.rowCount() - 1
                     self.ui.Links_Table.setItem(_index, 0, QTableWidgetItem(_user))
-                    self.ui.Links_Table.setItem(_index, 1,QTableWidgetItem(self.ui.ServersChoose_Combox.currentText()))
+                    self.ui.Links_Table.setItem(_index, 1,QTableWidgetItem(_url_class.getServer(_U[_user])))
                     self.ui.Links_Table.setItem(_index, 2, QTableWidgetItem('可用'))
                     self.ui.Links_Table.setItem(_index, 3, QTableWidgetItem(_U[_user]))
                     self.ui.Links_Table.setRowCount(self.ui.Links_Table.rowCount() + 1)
                 elif _current_list[_user]=='不可用':
                     _index=list(_current_list.keys()).index(_user)
                     self.ui.Links_Table.setItem(_index, 0, QTableWidgetItem(_user))
-                    self.ui.Links_Table.setItem(_index, 1,QTableWidgetItem(self.ui.ServersChoose_Combox.currentText()))
+                    self.ui.Links_Table.setItem(_index, 1,QTableWidgetItem(_url_class.getServer(_U[_user])))
                     self.ui.Links_Table.setItem(_index, 2, QTableWidgetItem('可用'))
                     self.ui.Links_Table.setItem(_index, 3, QTableWidgetItem(_U[_user]))
         #QMessageBox.information(self, 'Links Information', f'检索到共{self.ui.Links_Table.rowCount() - 1}条链接！')
