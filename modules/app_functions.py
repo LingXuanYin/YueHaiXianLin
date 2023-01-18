@@ -614,9 +614,27 @@ class AppFunctions(MainWindow):
 
             _p = QFileDialog.getExistingDirectory(self, '选择原神安装目录')
             if not _p:
+                self.ui.ChartsText_frame.setDisabled(False)
+                self.ui.ChartsToolframeleft.setDisabled(False)
+                self.ui.ChartsToolframeright.setDisabled(False)
+                self.ui.Charts_frame.setDisabled(False)
+
+                self.ui.extraLeftBox.setDisabled(False)
+                self.ui.leftMenuBg.setDisabled(False)
+                self.setCursor(QCursor(Qt.CustomCursor))
+
                 return
             if not os.path.exists(os.path.join(_p, 'YuanShen.exe')) and not os.path.exists(os.path.join(GAME_PATH["OS"], 'GenshinImpact.exe')):
                 QMessageBox.warning(self, 'Path Error !', '游戏路径错误')
+                self.ui.ChartsText_frame.setDisabled(False)
+                self.ui.ChartsToolframeleft.setDisabled(False)
+                self.ui.ChartsToolframeright.setDisabled(False)
+                self.ui.Charts_frame.setDisabled(False)
+
+                self.ui.extraLeftBox.setDisabled(False)
+                self.ui.leftMenuBg.setDisabled(False)
+                self.setCursor(QCursor(Qt.CustomCursor))
+
                 return
             if os.path.exists(os.path.join(_p, 'YuanShen.exe')):
                 GAME_PATH["CN"] = _p
