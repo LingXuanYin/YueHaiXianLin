@@ -1,10 +1,10 @@
 # 月海仙麟原神工具
 ## 说明：
 
-·这是一个可以一键查询原神抽卡记录（六个月内）并可视化的脚本\n
-·支持自动保存并合并历史记录\n
-·支持导入标准格式数据：[统一可交换祈愿记录标准](https://github.com/DGP-Studio/Snap.Genshin/wiki/StandardFormat#export_app)\n
-·支持一键获取V2版本米游社Cookie和校验\n
+·这是一个可以一键查询原神抽卡记录（六个月内）并可视化的脚本<br>
+·支持自动保存并合并历史记录<br>
+·支持导入标准格式数据：[统一可交换祈愿记录标准](https://github.com/DGP-Studio/Snap.Genshin/wiki/StandardFormat#export_app)<br>
+·支持一键获取V2版本米游社Cookie和校验<br>
 
 
 ## 使用方法：
