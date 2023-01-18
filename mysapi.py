@@ -1,6 +1,5 @@
 # @https://github.com/Le-niao/Yunzai-Bot/blob/master/lib/app/mysApi.js
-# python实现by:南辰燏炚@
-####################################上传后填写链接
+# python实现by:南辰燏炚@https://github.com/LingXuanYin/YueHaiXianLin/blob/master/mysapi.py
 import hashlib
 import json
 import os
