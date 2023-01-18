@@ -250,7 +250,10 @@ class GachaData():
     def __init__(self, UDBM: UserData):
 
         self.UDBM = UDBM
-        self.URL, self.AUTHDATA = _URL().transURL(self.UDBM.DBM_URL.get_NodeData(UDBM.USER_ID), 301, 1, 0)
+        if self.UDBM.DBM_URL.get_NodeData(UDBM.USER_ID) !='':
+            self.URL, self.AUTHDATA = _URL().transURL(self.UDBM.DBM_URL.get_NodeData(UDBM.USER_ID), 301, 1, 0)
+        else:
+            self.URL, self.AUTHDATA =None,None
         self.THREAD_FLAG=0
 
     def SrcData_processor(self, response_list, gacha_type):
@@ -382,17 +385,18 @@ class echarts():  # 图表类
     def _make_detail( _pre_data: dict):
         _detail3, _detail4, _detail5 = '', '', ''
         _l3 = {}
-        for _i in _pre_data['3']:
-            if _i['name'] not in list(_l3.keys()):
-                _l3[_i['name']] = 0
-            _l3[_i['name']] += 1
+        if len(_pre_data['3'])!=0:
+            for _i in _pre_data['3']:
+                if _i['name'] not in list(_l3.keys()):
+                    _l3[_i['name']] = 0
+                _l3[_i['name']] += 1
 
-        _l3 = Tool.dict_to_list(_l3)
-        _l3 = sorted(_l3, key=lambda x: x[1], reverse=True)
+            _l3 = Tool.dict_to_list(_l3)
+            _l3 = sorted(_l3, key=lambda x: x[1], reverse=True)
 
-        for _i in _l3:
-            _detail3 += f' [{_i[1]}]{_i[0]}'
-
+            for _i in _l3:
+                _detail3 += f' [{_i[1]}]{_i[0]}'
+        else:_detail3='[N/A]'
         # for _i in _pre_data['4']:
         #     if _pre_data['4'].index(_i) == len(_pre_data['4']) - 1:
         #         _detail4 += f' [N/A]{_i["name"]}'
@@ -403,23 +407,29 @@ class echarts():  # 图表类
         #         _detail5 += f' [N/A]{_i["name"]}'
         #     else:
         #         _detail5 += f' [{_pre_data["5"][_pre_data["5"].index(_i) + 1]["index"] - _i["index"]}]{_i["name"]}'
-        _len=len(_pre_data['3']+_pre_data['4']+_pre_data['5'])
-        for _i in _pre_data['4']:
-            if _pre_data['4'].index(_i) == 0:
-                _detail4 += f'[{_i["index"]-1}]--{_i["name"]}--[{_pre_data["4"][_pre_data["4"].index(_i) + 1]["index"] - _i["index"]-1}]'
-            elif _pre_data['4'].index(_i) == len(_pre_data['4']) - 1:
-                _detail4 += f'--{_i["name"]}--[{_len-_i["index"]-1}]--'
-            else:
-                _detail4 += f'--{_i["name"]}--[{_pre_data["4"][_pre_data["4"].index(_i) + 1]["index"] - _i["index"]-1}]'
-
-        for _i in _pre_data['5']:
-            if _pre_data['5'].index(_i) == 0:
-                _detail5 += f'[{_i["index"]-1}]--{_i["name"]}--[{_pre_data["5"][_pre_data["5"].index(_i) + 1]["index"] - _i["index"]-1}]'
-            elif _pre_data['5'].index(_i) == len(_pre_data['5']) - 1:
-                _detail5 += f'--{_i["name"]}--[{_len-_i["index"]-1}]--'
-            else:
-                _detail5 += f'--{_i["name"]}--[{_pre_data["5"][_pre_data["5"].index(_i) + 1]["index"] - _i["index"]-1}]'
-
+        _len=len(_pre_data['3'])+len(_pre_data['4'])+len(_pre_data['5'])
+        if len(_pre_data['4'])!=0:
+            for _i in _pre_data['4']:
+                if len(_pre_data['4'])==1:
+                    _detail4 += f'[{_i["index"]-1}]--{_i["name"]}--[{_len-_i["index"]-1}]'
+                elif _pre_data['4'].index(_i) == 0:
+                    _detail4 += f'[{_i["index"]-1}]--{_i["name"]}--[{_pre_data["4"][_pre_data["4"].index(_i) + 1]["index"] - _i["index"]-1}]'
+                elif _pre_data['4'].index(_i) == len(_pre_data['4']) - 1:
+                    _detail4 += f'--{_i["name"]}--[{_len-_i["index"]-1}]--'
+                else:
+                    _detail4 += f'--{_i["name"]}--[{_pre_data["4"][_pre_data["4"].index(_i) + 1]["index"] - _i["index"]-1}]'
+        else:_detail4='[N/A]'
+        if len(_pre_data['5'])!=0:
+            for _i in _pre_data['5']:
+                if len(_pre_data['5'])==1:
+                    _detail5 += f'[{_i["index"]-1}]--{_i["name"]}--[{_len-_i["index"]-1}]'
+                elif _pre_data['5'].index(_i) == 0:
+                    _detail5 += f'[{_i["index"]-1}]--{_i["name"]}--[{_pre_data["5"][_pre_data["5"].index(_i) + 1]["index"] - _i["index"]-1}]'
+                elif _pre_data['5'].index(_i) == len(_pre_data['5']) - 1:
+                    _detail5 += f'--{_i["name"]}--[{_len-_i["index"]-1}]--'
+                else:
+                    _detail5 += f'--{_i["name"]}--[{_pre_data["5"][_pre_data["5"].index(_i) + 1]["index"] - _i["index"]-1}]'
+        else:_detail5='[N/A]'
         return _detail3, _detail4, _detail5
 
     def make_pie(self, _pre_data: dict):  # 构造饼图对象，传入数据类

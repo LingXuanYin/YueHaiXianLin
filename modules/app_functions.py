@@ -596,7 +596,23 @@ class AppFunctions(MainWindow):
             _reset_window(self)
             return
 
-        if 'info' not in list(_UD.keys()):
+        if type(_UD) is list:
+            if _UD == []:
+                self.ui.label_prograss.setText('Error:文件为空')
+
+                QMessageBox.warning(self, 'Import Error !', '文件为空')
+                _reset_window(self)
+                return
+            self.ui.label_prograss.setText('正在导入...')
+            try:
+                _gachaAPI = gachaAPI.GachaData(gachaAPI.UserData(_UD[0]['uid']))
+            except Exception as e:
+                raise  e
+                self.ui.label_prograss.setText('文件错误！')
+                QMessageBox.warning(self, 'Import Error !', '文件错误！')
+                _reset_window(self)
+                return
+        elif 'info' not in list(_UD.keys()):
 
             if _UD == []:
                 self.ui.label_prograss.setText('Error:文件为空')
