@@ -699,10 +699,12 @@ class AppFunctions(MainWindow):
         for _serv in list(GAME_PATH.keys()):
             self.ui.label_prograss.setText(f'正在扫描有效链接：{list(GAME_PATH.keys()).index(_serv)}/{len(list(GAME_PATH.keys()))}')
 
-            if not os.path.exists(os.path.join(GAME_PATH[_serv], 'YuanShen.exe')) or not os.path.exists(os.path.join(GAME_PATH[_serv], 'GenshinImpact.exe')):
+            if _serv=='CN' and not os.path.exists(os.path.join(GAME_PATH[_serv], 'YuanShen.exe')) :
+                continue
+            if _serv=='OS' and not os.path.exists(os.path.join(GAME_PATH[_serv], 'GenshinImpact.exe')) :
                 continue
             _U = _url_class.scanURL(GAME_PATH[_serv])
-
+            #print(1)
             if _U == {}:
                 #QMessageBox.warning(self, 'Links Error !', '未检索到有效的链接')
                 continue
