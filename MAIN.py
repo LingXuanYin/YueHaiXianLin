@@ -85,7 +85,8 @@ class MainWindow(QMainWindow):
 
         # BUTTONS CLICK
         # ///////////////////////////////////////////////////////////////
-
+            #Thread
+            #self._Thread=Thread()
         # LEFT MENUS
         widgets.btn_home.clicked.connect(self.buttonClick)
         widgets.btn_Links.clicked.connect(self.buttonClick)
@@ -180,12 +181,55 @@ class MainWindow(QMainWindow):
         # ///////////////////////////////////////////////////////////////
         widgets.btn_home.setStyleSheet(UIFunctions.selectMenu(widgets.btn_home.styleSheet()))
 
+    def getDataEnd(self,_GD_Class):
+
+        if os.path.exists(
+                os.path.join(os.getcwd(), f'DATA/charts/{self.ui.ChartsChoose_Combox.currentText()}_c1.html')):
+            self.ui.ChartsText_label_1.setText(gachaAPI.echarts._make_detail(gachaAPI.echarts._pre_process(_GD_Class.UDBM.char))[2])
+            self.ui.Chart_1.load(QUrl.fromLocalFile(
+                os.path.join(os.getcwd(), f'DATA/charts/{self.ui.ChartsChoose_Combox.currentText()}_c1.html')))
+        if os.path.exists(
+                os.path.join(os.getcwd(), f'DATA/charts/{self.ui.ChartsChoose_Combox.currentText()}_c2.html')):
+            self.ui.ChartsText_label_2.setText(gachaAPI.echarts._make_detail(gachaAPI.echarts._pre_process(_GD_Class.UDBM.wap))[2])
+            self.ui.Chart_2.load(QUrl.fromLocalFile(
+                os.path.join(os.getcwd(), f'DATA/charts/{self.ui.ChartsChoose_Combox.currentText()}_c2.html')))
+        if os.path.exists(
+                os.path.join(os.getcwd(), f'DATA/charts/{self.ui.ChartsChoose_Combox.currentText()}_c3.html')):
+            self.ui.ChartsText_label_3.setText(gachaAPI.echarts._make_detail(gachaAPI.echarts._pre_process(_GD_Class.UDBM.permanent))[2])
+            self.ui.Chart_3.load(QUrl.fromLocalFile(
+                os.path.join(os.getcwd(), f'DATA/charts/{self.ui.ChartsChoose_Combox.currentText()}_c3.html')))
+
+        # self.ui.Charts_frame.repaint()
+
+        self.ui.ChartsText_frame.setDisabled(False)
+        self.ui.ChartsToolframeleft.setDisabled(False)
+        self.ui.ChartsToolframeright.setDisabled(False)
+        self.ui.Charts_frame.setDisabled(False)
+
+        self.ui.extraLeftBox.setDisabled(False)
+        self.ui.leftMenuBg.setDisabled(False)
+        #self.setCursor(QCursor(Qt.CustomCursor))
+        self.unsetCursor()
+        # self.setDisabled(False)
+        self.ui.label_prograss.setText('完成！')
+
+    def progressBarChange(self,value:int):
+        if value==0:
+            self.ui.label_prograss.setText(f'正在绘图...')
+        else:
+            self.ui.progressBar.setValue(value)
+            self.ui.label_prograss.setText(f'正在获取数据...{value}/4')
+
     # BUTTONS CLICK
     # Post here your functions for clicked buttons
     # ///////////////////////////////////////////////////////////////
     def buttonClick(self):
         #def __click(self:MainWindow):
-            self.ui.contentBox.setDisabled(True)
+            self.ui.ChartsText_frame.setDisabled(True)
+            self.ui.ChartsToolframeleft.setDisabled(True)
+            self.ui.ChartsToolframeright.setDisabled(True)
+            self.ui.Charts_frame.setDisabled(True)
+
             self.ui.extraLeftBox.setDisabled(True)
             self.ui.leftMenuBg.setDisabled(True)
             self.setCursor(QCursor(Qt.BusyCursor))
@@ -235,6 +279,7 @@ class MainWindow(QMainWindow):
             # ChartRenew_btn
             elif btnName == "ChartRenew_btn":
                 AppFunctions.Chart_renew(self)
+                return
             elif btnName == 'ChartImport_btn':
                 AppFunctions.Chart_import(self)
             elif btnName == 'ChartDelete_btn':
@@ -274,10 +319,16 @@ class MainWindow(QMainWindow):
             # PRINT BTN NAME
             # print(f'Button "{btnName}" pressed!')
         #def __reset(self):
-            self.ui.contentBox.setDisabled(False)
+            self.ui.ChartsText_frame.setDisabled(False)
+            self.ui.ChartsToolframeleft.setDisabled(False)
+            self.ui.ChartsToolframeright.setDisabled(False)
+            self.ui.Charts_frame.setDisabled(False)
+
             self.ui.extraLeftBox.setDisabled(False)
             self.ui.leftMenuBg.setDisabled(False)
-            self.setCursor(QCursor(Qt.CustomCursor))
+            #self.setCursor(QCursor(Qt.CustomCursor))
+            self.unsetCursor()
+
             # self.setDisabled(False)
 
         # _th=Thread(__click,self)
@@ -305,15 +356,6 @@ class MainWindow(QMainWindow):
         # if event.buttons() == Qt.RightButton:
         #     print('Mouse click: RIGHT CLICK')
 
-class Thread(QThread):
-    #FLAG=Signal(MainWindow)
-    def __init__(self,any_func,any_args):
-        super(Thread, self).__init__()
-        self.func = any_func
-        self.args=any_args
-    def run(self)->None:
-        self.func(self.args)
-        #self.FLAG.emit(self.args)
 
 def Initialization():
 

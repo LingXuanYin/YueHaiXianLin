@@ -3,7 +3,7 @@
 ################################################################################
 ## Form generated from reading UI file 'main.ui'
 ##
-## Created by: Qt User Interface Compiler version 6.4.0
+## Created by: Qt User Interface Compiler version 6.4.2
 ##
 ## WARNING! All changes made in this file will be lost when recompiling UI file!
 ################################################################################
@@ -1244,8 +1244,10 @@ class Ui_MainWindow(object):
         palette.setBrush(QPalette.Active, QPalette.ButtonText, brush)
         palette.setBrush(QPalette.Active, QPalette.Base, brush1)
         palette.setBrush(QPalette.Active, QPalette.Window, brush1)
+        brush2 = QBrush(QColor(221, 221, 221, 128))
+        brush2.setStyle(Qt.SolidPattern)
 #if QT_VERSION >= QT_VERSION_CHECK(5, 12, 0)
-        palette.setBrush(QPalette.Active, QPalette.PlaceholderText, brush)
+        palette.setBrush(QPalette.Active, QPalette.PlaceholderText, brush2)
 #endif
         palette.setBrush(QPalette.Inactive, QPalette.WindowText, brush)
         palette.setBrush(QPalette.Inactive, QPalette.Button, brush1)
@@ -1254,7 +1256,7 @@ class Ui_MainWindow(object):
         palette.setBrush(QPalette.Inactive, QPalette.Base, brush1)
         palette.setBrush(QPalette.Inactive, QPalette.Window, brush1)
 #if QT_VERSION >= QT_VERSION_CHECK(5, 12, 0)
-        palette.setBrush(QPalette.Inactive, QPalette.PlaceholderText, brush)
+        palette.setBrush(QPalette.Inactive, QPalette.PlaceholderText, brush2)
 #endif
         palette.setBrush(QPalette.Disabled, QPalette.WindowText, brush)
         palette.setBrush(QPalette.Disabled, QPalette.Button, brush1)
@@ -1263,7 +1265,7 @@ class Ui_MainWindow(object):
         palette.setBrush(QPalette.Disabled, QPalette.Base, brush1)
         palette.setBrush(QPalette.Disabled, QPalette.Window, brush1)
 #if QT_VERSION >= QT_VERSION_CHECK(5, 12, 0)
-        palette.setBrush(QPalette.Disabled, QPalette.PlaceholderText, brush)
+        palette.setBrush(QPalette.Disabled, QPalette.PlaceholderText, brush2)
 #endif
         self.CK_Table.setPalette(palette)
         self.CK_Table.setStyleSheet(u"border-color: rgb(102, 204, 255);\n"
@@ -1408,6 +1410,14 @@ class Ui_MainWindow(object):
 
 
         self.horizontalLayout_17.addWidget(self.ChartsToolframeleft, 0, Qt.AlignLeft)
+
+        self.label_prograss = QLabel(self.ChartsToolframe)
+        self.label_prograss.setObjectName(u"label_prograss")
+        self.label_prograss.setMinimumSize(QSize(200, 0))
+        self.label_prograss.setStyleSheet(u"color: rgb(255, 255, 0);")
+        self.label_prograss.setAlignment(Qt.AlignCenter)
+
+        self.horizontalLayout_17.addWidget(self.label_prograss, 0, Qt.AlignHCenter|Qt.AlignBottom)
 
         self.ChartsToolframeright = QFrame(self.ChartsToolframe)
         self.ChartsToolframeright.setObjectName(u"ChartsToolframeright")
@@ -1733,6 +1743,7 @@ class Ui_MainWindow(object):
         self.horizontalLayout_8.setObjectName(u"horizontalLayout_8")
         self.label_2 = QLabel(self.frame_3)
         self.label_2.setObjectName(u"label_2")
+        self.label_2.setEnabled(False)
         sizePolicy8.setHeightForWidth(self.label_2.sizePolicy().hasHeightForWidth())
         self.label_2.setSizePolicy(sizePolicy8)
         self.label_2.setStyleSheet(u"font: 14pt ;")
@@ -1741,8 +1752,8 @@ class Ui_MainWindow(object):
 
         self.ServersChoose_Combox = QComboBox(self.frame_3)
         self.ServersChoose_Combox.addItem("")
-        self.ServersChoose_Combox.addItem("")
         self.ServersChoose_Combox.setObjectName(u"ServersChoose_Combox")
+        self.ServersChoose_Combox.setEnabled(False)
         sizePolicy8.setHeightForWidth(self.ServersChoose_Combox.sizePolicy().hasHeightForWidth())
         self.ServersChoose_Combox.setSizePolicy(sizePolicy8)
         self.ServersChoose_Combox.setMinimumSize(QSize(160, 0))
@@ -1862,7 +1873,7 @@ class Ui_MainWindow(object):
         palette1.setBrush(QPalette.Active, QPalette.Base, brush1)
         palette1.setBrush(QPalette.Active, QPalette.Window, brush1)
 #if QT_VERSION >= QT_VERSION_CHECK(5, 12, 0)
-        palette1.setBrush(QPalette.Active, QPalette.PlaceholderText, brush)
+        palette1.setBrush(QPalette.Active, QPalette.PlaceholderText, brush2)
 #endif
         palette1.setBrush(QPalette.Inactive, QPalette.WindowText, brush)
         palette1.setBrush(QPalette.Inactive, QPalette.Button, brush1)
@@ -1871,7 +1882,7 @@ class Ui_MainWindow(object):
         palette1.setBrush(QPalette.Inactive, QPalette.Base, brush1)
         palette1.setBrush(QPalette.Inactive, QPalette.Window, brush1)
 #if QT_VERSION >= QT_VERSION_CHECK(5, 12, 0)
-        palette1.setBrush(QPalette.Inactive, QPalette.PlaceholderText, brush)
+        palette1.setBrush(QPalette.Inactive, QPalette.PlaceholderText, brush2)
 #endif
         palette1.setBrush(QPalette.Disabled, QPalette.WindowText, brush)
         palette1.setBrush(QPalette.Disabled, QPalette.Button, brush1)
@@ -1880,7 +1891,7 @@ class Ui_MainWindow(object):
         palette1.setBrush(QPalette.Disabled, QPalette.Base, brush1)
         palette1.setBrush(QPalette.Disabled, QPalette.Window, brush1)
 #if QT_VERSION >= QT_VERSION_CHECK(5, 12, 0)
-        palette1.setBrush(QPalette.Disabled, QPalette.PlaceholderText, brush)
+        palette1.setBrush(QPalette.Disabled, QPalette.PlaceholderText, brush2)
 #endif
         self.Links_Table.setPalette(palette1)
         self.Links_Table.setStyleSheet(u"border-color: rgb(102, 204, 255);\n"
@@ -2061,7 +2072,7 @@ class Ui_MainWindow(object):
 
         self.retranslateUi(MainWindow)
 
-        self.stackedWidget.setCurrentIndex(1)
+        self.stackedWidget.setCurrentIndex(2)
 
 
         QMetaObject.connectSlotsByName(MainWindow)
@@ -2141,6 +2152,7 @@ class Ui_MainWindow(object):
         self.MainInfo_Label.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p><span style=\" font-weight:700;\">\u7948\u613f\u8bb0\u5f55\u94fe\u63a5\u66f4\u65b0\u65b9\u5f0f\uff1a</span></p><p>\u8fdb\u5165 \u539f\u795e-&gt;\u62bd\u5361\u754c\u9762-&gt;\u5386\u53f2\u8bb0\u5f55-&gt;\u62bd\u5361\u754c\u9762-&gt;\u8f6f\u4ef6\u5185\u70b9\u51fb\u81ea\u52a8\u83b7\u53d6\u94fe\u63a5</p><p>\u7b2c\u4e00\u6b21\u4f7f\u7528\u9700\u8981\u9009\u62e9\u6e38\u620f\u5b89\u88c5\u76ee\u5f55\uff08\u5305\u542bYuanShen.exe\u6216GenshinImpact.exe\uff09</p><p><br/></p><p><span style=\" font-weight:700;\">\u7c73\u6e38\u793eCookie\u83b7\u53d6\u65b9\u5f0f\uff1a</span></p><p>\u4f7f\u7528Chrome\u6d4f\u89c8\u5668\u767b\u5f55\u7c73\u6e38\u793e-&gt;\u8f6f\u4ef6\u5185\u70b9\u51fb\u81ea\u52a8\u83b7\u53d6Cookies</p><p><span style=\" font-size:10pt;\">\u6ce8\uff1a\u591a\u8d26\u53f7\u8bf7\u6253\u5f00\u6d4f\u89c8\u5668\u9690\u8eab\u6a21\u5f0f\uff0c\u5f00\u53d1\u8005\u6a21\u5f0f\u8f93\u5165\u2018document.cookie\u2019\u590d\u5236\u8f93\u51fa\u4fe1\u606f\u540e\u624b\u52a8\u5bfc\u5165</span></p><p><br/><a href"
                         "=\"https://github.com/LingXuanYin\"><span style=\" text-decoration: underline; color:#66ccff;\">\u5357\u8fb0\u71cf\u709a@github</span></a></p><p><a href=\"https://github.com/LingXuanYin\"><span style=\" text-decoration: underline; color:#66ccff;\">\u5357\u8fb0\u71cf\u709a@</span></a><a href=\"https://space.bilibili.com/162599415\"><span style=\" text-decoration: underline; color:#66ccff;\">bilibili</span></a></p><p><br/></p></body></html>", None))
         self.label.setText(QCoreApplication.translate("MainWindow", u"UID : ", None))
+        self.label_prograss.setText("")
         self.ChartImport_btn.setText("")
         self.ChartDraw_btn.setText("")
         self.ChartRenew_btn.setText("")
@@ -2155,8 +2167,7 @@ class Ui_MainWindow(object):
         self.URL_Input_textedit.setText("")
         self.URL_Input_textedit.setPlaceholderText(QCoreApplication.translate("MainWindow", u"File Path Or URL", None))
         self.label_2.setText(QCoreApplication.translate("MainWindow", u"Server : ", None))
-        self.ServersChoose_Combox.setItemText(0, QCoreApplication.translate("MainWindow", u"CN", None))
-        self.ServersChoose_Combox.setItemText(1, QCoreApplication.translate("MainWindow", u"OS", None))
+        self.ServersChoose_Combox.setItemText(0, QCoreApplication.translate("MainWindow", u"All Servers", None))
 
         self.URLSearch_btn.setText("")
         self.URLCheck_btn.setText("")

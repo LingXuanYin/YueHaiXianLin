@@ -1826,7 +1826,7 @@ font: 12pt &quot;黑体&quot;;</string>
                    <string notr="true">background-color: rgb(40, 44, 52);</string>
                   </property>
                   <property name="currentIndex">
-                   <number>1</number>
+                   <number>2</number>
                   </property>
                   <widget class="QWidget" name="Cookies_Page">
                    <layout class="QVBoxLayout" name="verticalLayout_20">
@@ -2242,7 +2242,7 @@ background-repeat: no-repeat;</string>
                             </colorrole>
                             <colorrole role="PlaceholderText">
                              <brush brushstyle="SolidPattern">
-                              <color alpha="255">
+                              <color alpha="128">
                                <red>221</red>
                                <green>221</green>
                                <blue>221</blue>
@@ -2307,7 +2307,7 @@ background-repeat: no-repeat;</string>
                             </colorrole>
                             <colorrole role="PlaceholderText">
                              <brush brushstyle="SolidPattern">
-                              <color alpha="255">
+                              <color alpha="128">
                                <red>221</red>
                                <green>221</green>
                                <blue>221</blue>
@@ -2372,7 +2372,7 @@ background-repeat: no-repeat;</string>
                             </colorrole>
                             <colorrole role="PlaceholderText">
                              <brush brushstyle="SolidPattern">
-                              <color alpha="255">
+                              <color alpha="128">
                                <red>221</red>
                                <green>221</green>
                                <blue>221</blue>
@@ -2693,6 +2693,25 @@ font: 14pt ;</string>
                               </widget>
                              </item>
                             </layout>
+                           </widget>
+                          </item>
+                          <item alignment="Qt::AlignHCenter|Qt::AlignBottom">
+                           <widget class="QLabel" name="label_prograss">
+                            <property name="minimumSize">
+                             <size>
+                              <width>200</width>
+                              <height>0</height>
+                             </size>
+                            </property>
+                            <property name="styleSheet">
+                             <string notr="true">color: rgb(255, 255, 0);</string>
+                            </property>
+                            <property name="text">
+                             <string/>
+                            </property>
+                            <property name="alignment">
+                             <set>Qt::AlignCenter</set>
+                            </property>
                            </widget>
                           </item>
                           <item>
@@ -3330,6 +3349,9 @@ border-width:2px;
                             <layout class="QHBoxLayout" name="horizontalLayout_8">
                              <item>
                               <widget class="QLabel" name="label_2">
+                               <property name="enabled">
+                                <bool>false</bool>
+                               </property>
                                <property name="sizePolicy">
                                 <sizepolicy hsizetype="Maximum" vsizetype="Maximum">
                                  <horstretch>0</horstretch>
@@ -3346,6 +3368,9 @@ border-width:2px;
                              </item>
                              <item>
                               <widget class="QComboBox" name="ServersChoose_Combox">
+                               <property name="enabled">
+                                <bool>false</bool>
+                               </property>
                                <property name="sizePolicy">
                                 <sizepolicy hsizetype="Maximum" vsizetype="Maximum">
                                  <horstretch>0</horstretch>
@@ -3364,12 +3389,7 @@ font: 14pt ;</string>
                                </property>
                                <item>
                                 <property name="text">
-                                 <string>CN</string>
-                                </property>
-                               </item>
-                               <item>
-                                <property name="text">
-                                 <string>OS</string>
+                                 <string>All Servers</string>
                                 </property>
                                </item>
                               </widget>
@@ -3612,7 +3632,7 @@ background-repeat: no-repeat;</string>
                             </colorrole>
                             <colorrole role="PlaceholderText">
                              <brush brushstyle="SolidPattern">
-                              <color alpha="255">
+                              <color alpha="128">
                                <red>221</red>
                                <green>221</green>
                                <blue>221</blue>
@@ -3677,7 +3697,7 @@ background-repeat: no-repeat;</string>
                             </colorrole>
                             <colorrole role="PlaceholderText">
                              <brush brushstyle="SolidPattern">
-                              <color alpha="255">
+                              <color alpha="128">
                                <red>221</red>
                                <green>221</green>
                                <blue>221</blue>
@@ -3742,7 +3762,7 @@ background-repeat: no-repeat;</string>
                             </colorrole>
                             <colorrole role="PlaceholderText">
                              <brush brushstyle="SolidPattern">
-                              <color alpha="255">
+                              <color alpha="128">
                                <red>221</red>
                                <green>221</green>
                                <blue>221</blue>

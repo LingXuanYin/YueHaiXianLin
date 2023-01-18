@@ -9,6 +9,7 @@ import pyecharts
 import requests
 import win32api
 import win32con
+from PySide6.QtCore import QThread
 from win32clipboard import GetClipboardData, OpenClipboard, CloseClipboard, EmptyClipboard, SetClipboardData
 
 PATH_SELF = os.getcwd()
@@ -20,6 +21,16 @@ PATH_CACHEDATA = os.path.join(PATH_SELF, 'cache')
 
 
 class Tool():  # 工具类函数
+
+    class Thread(QThread):
+        # FLAG=Signal(MainWindow)
+        def __init__(self, _func,_url, _authdata,_type):
+            super(Tool.Thread, self).__init__()
+            self.func = _func
+            self._url, self._authdata, self._type=_url, _authdata,_type
+        def run(self) -> None:
+            self.func(self._url, self._authdata, self._type)
+            # self.FLAG.emit(self.args)
 
     @staticmethod
     def gachaType_transFromcode(code):
@@ -82,7 +93,7 @@ class Tool():  # 工具类函数
             response = requests.get(src_url, src_data, proxies=PROXY, timeout=10)  # 超时10s，使用代理
         else:
             response = requests.get(src_url, src_data)
-        # print(response.text)
+        #print(response.text)
         if response.json()['message'] == 'OK' and response.json()['retcode'] == 0:
             return eval(response.text)['data']['list']
         elif 'visit too frequently' in response.text:
@@ -243,7 +254,7 @@ class GachaData():
         self.THREAD_FLAG=0
 
     def SrcData_processor(self, response_list, gacha_type):
-
+        #print(gacha_type)
         def _process_response(response_list: list, data_list: list):
             for _i in response_list:
                 if _i not in data_list:
@@ -315,23 +326,20 @@ class GachaData():
         self.THREAD_FLAG=self.THREAD_FLAG-1
 
     def Main_DataGetter(self):
-        _url = self.URL
-        _authdata = self.AUTHDATA
-        _th301 = threading.Thread(target=self.GetSrcdata, args=((_url, copy.deepcopy(_authdata), 301,)))
-        _th400 = threading.Thread(target=self.GetSrcdata, args=((_url, copy.deepcopy(_authdata), 400,)))
-        _th302 = threading.Thread(target=self.GetSrcdata, args=((_url, copy.deepcopy(_authdata), 302,)))
-        _th200 = threading.Thread(target=self.GetSrcdata, args=((_url, copy.deepcopy(_authdata), 200,)))
-        #_th100 = threading.Thread(target=self.GetSrcdata, args=((_url, copy.deepcopy(_authdata), 100,)))
+        _th301 = threading.Thread(target=self.GetSrcdata, args=((self.URL, copy.deepcopy(self.AUTHDATA), 301,)))
+        _th400 = threading.Thread(target=self.GetSrcdata, args=((self.URL, copy.deepcopy(self.AUTHDATA), 400,)))
+        _th302 = threading.Thread(target=self.GetSrcdata, args=((self.URL, copy.deepcopy(self.AUTHDATA), 302,)))
+        _th200 = threading.Thread(target=self.GetSrcdata, args=((self.URL, copy.deepcopy(self.AUTHDATA), 200,)))
+        #_th100 = threading.Thread(target=self.GetSrcdata, args=((self.URL, copy.deepcopy(self.AUTHDATA), 100,)))
         # _th301.setDaemon(False)
         # _th400.setDaemon(False)
         # _th302.setDaemon(False)
         # _th200.setDaemon(False)
         _th301.start()
-        _th400.start()
-        _th302.start()
         _th200.start()
+        _th302.start()
+        _th400.start()
         #_th100.start()
-        #print('start')
         # self.UDBM.DBM_UD.set_NodeData(self.UDBM.USER_ID,
         #                               {'char': self.UDBM.char, 'wap': self.UDBM.wap, 'permanent': self.UDBM.permanent,
         #                                'novice': self.UDBM.novice})
@@ -353,7 +361,8 @@ class echarts():  # 图表类
         self._permanent = copy.deepcopy(self.UDBM.permanent)
         self._novice = copy.deepcopy(self.UDBM.novice)
 
-    def _pre_process(self, _data: list):
+    @staticmethod
+    def _pre_process( _data: list):
         _l3, _l4, _l5 = [], [], []
         for _item in _data:
             _item['index'] = _data.index(_item) + 1
@@ -369,7 +378,8 @@ class echarts():  # 图表类
         return {'3': _l3, '4': _l4, '5': _l5, 'gacha_type': _data[0]['gacha_type']}
 
     # 构造出货列表
-    def _make_detail(self, _pre_data: dict):
+    @staticmethod
+    def _make_detail( _pre_data: dict):
         _detail3, _detail4, _detail5 = '', '', ''
         _l3 = {}
         for _i in _pre_data['3']:
@@ -382,21 +392,38 @@ class echarts():  # 图表类
 
         for _i in _l3:
             _detail3 += f' [{_i[1]}]{_i[0]}'
+
+        # for _i in _pre_data['4']:
+        #     if _pre_data['4'].index(_i) == len(_pre_data['4']) - 1:
+        #         _detail4 += f' [N/A]{_i["name"]}'
+        #     else:
+        #         _detail4 += f' [{_pre_data["4"][_pre_data["4"].index(_i) + 1]["index"] - _i["index"]}]{_i["name"]}'
+        # for _i in _pre_data['5']:
+        #     if _pre_data['5'].index(_i) == len(_pre_data['5']) - 1:
+        #         _detail5 += f' [N/A]{_i["name"]}'
+        #     else:
+        #         _detail5 += f' [{_pre_data["5"][_pre_data["5"].index(_i) + 1]["index"] - _i["index"]}]{_i["name"]}'
+        _len=len(_pre_data['3']+_pre_data['4']+_pre_data['5'])
         for _i in _pre_data['4']:
-            if _pre_data['4'].index(_i) == len(_pre_data['4']) - 1:
-                _detail4 += f' [N/A]{_i["name"]}'
+            if _pre_data['4'].index(_i) == 0:
+                _detail4 += f'[{_i["index"]-1}]--{_i["name"]}--[{_pre_data["4"][_pre_data["4"].index(_i) + 1]["index"] - _i["index"]-1}]'
+            elif _pre_data['4'].index(_i) == len(_pre_data['4']) - 1:
+                _detail4 += f'--{_i["name"]}--[{_len-_i["index"]-1}]--'
             else:
-                _detail4 += f' [{_pre_data["4"][_pre_data["4"].index(_i) + 1]["index"] - _i["index"]}]{_i["name"]}'
+                _detail4 += f'--{_i["name"]}--[{_pre_data["4"][_pre_data["4"].index(_i) + 1]["index"] - _i["index"]-1}]'
+
         for _i in _pre_data['5']:
-            if _pre_data['5'].index(_i) == len(_pre_data['5']) - 1:
-                _detail5 += f' [N/A]{_i["name"]}'
+            if _pre_data['5'].index(_i) == 0:
+                _detail5 += f'[{_i["index"]-1}]--{_i["name"]}--[{_pre_data["5"][_pre_data["5"].index(_i) + 1]["index"] - _i["index"]-1}]'
+            elif _pre_data['5'].index(_i) == len(_pre_data['5']) - 1:
+                _detail5 += f'--{_i["name"]}--[{_len-_i["index"]-1}]--'
             else:
-                _detail5 += f' [{_pre_data["5"][_pre_data["5"].index(_i) + 1]["index"] - _i["index"]}]{_i["name"]}'
+                _detail5 += f'--{_i["name"]}--[{_pre_data["5"][_pre_data["5"].index(_i) + 1]["index"] - _i["index"]-1}]'
 
         return _detail3, _detail4, _detail5
 
     def make_pie(self, _pre_data: dict):  # 构造饼图对象，传入数据类
-        _detail3, _detail4, _detail5 = self._make_detail(_pre_data)
+        #_detail3, _detail4, _detail5 = self._make_detail(_pre_data)
         _pie_percent = [['三星', len(_pre_data['3'])], ['四星', len(_pre_data['4'])], ['五星', len(_pre_data['5'])]]
 
         charts_name = Tool.gachaType_transFromcode(_pre_data['gacha_type'])
