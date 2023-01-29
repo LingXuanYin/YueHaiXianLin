@@ -496,7 +496,36 @@ option_defult = {
                     position: 'outside',
                     fontSize: 20,
                     }
-            }]
+            }],
+        "legend": [
+        {
+            "data": [
+                "\u4e09\u661f",
+                "\u56db\u661f",
+                "\u4e94\u661f"
+            ],
+            "show": true,
+            "padding": 5,
+            "itemGap": 10,
+            "itemWidth": 25,
+            "itemHeight": 14,
+            "backgroundColor": "transparent",
+            "borderColor": "#2f4554",
+            "borderWidth": 0,
+            "borderRadius": 0,
+            "pageButtonItemGap": 5,
+            "pageButtonPosition": "end",
+            "pageFormatter": "{current}/{total}",
+            "pageIconColor": "#2f4554",
+            "pageIconInactiveColor": "#2f4554",
+            "pageIconSize": 15,
+            "animationDurationUpdate": 800,
+            "selector": false,
+            "selectorPosition": "auto",
+            "selectorItemGap": 7,
+            "selectorButtonGap": 10,
+            "textStyle":{color:'#66CCFF'}
+        }]
         };
         chart_''' + charts_name + '''.setOption(option_defult);''')  # 以额外的js代码设置样式
         pie.width = '420px'
@@ -515,7 +544,7 @@ option_defult = {
                                    cfg_dict=[{"cid": "角色活动祈愿", "width": "430px", "height": "410px", "top": "0px",
                                               "left": "0px"}])
             _b = open(f'./DATA/charts/{self.UDBM.USER_ID}_c1.html', 'r', encoding='UTF-8').read().replace(
-                'https://assets.pyecharts.org/assets/echarts.min.js', 'echarts.js')
+                'https://assets.pyecharts.org/assets/v5/echarts.min.js', 'echarts.js')
             open(f'./DATA/charts/{self.UDBM.USER_ID}_c1.html', 'w+', encoding='UTF-8').write(_b)
 
         if self._wap != []:
@@ -527,7 +556,7 @@ option_defult = {
                                    cfg_dict=[{"cid": "武器活动祈愿", "width": "430px", "height": "410px", "top": "0px",
                                               "left": "0px"}])
             _b = open(f'./DATA/charts/{self.UDBM.USER_ID}_c2.html', 'r', encoding='UTF-8').read().replace(
-                'https://assets.pyecharts.org/assets/echarts.min.js', 'echarts.js')
+                'https://assets.pyecharts.org/assets/v5/echarts.min.js', 'echarts.js')
             open(f'./DATA/charts/{self.UDBM.USER_ID}_c2.html', 'w+', encoding='UTF-8').write(_b)
 
         if self._novice != []:
@@ -539,7 +568,7 @@ option_defult = {
                                    cfg_dict=[{"cid": "新手祈愿", "width": "430px", "height": "410px", "top": "0px",
                                               "left": "0px"}])
             _b = open(f'./DATA/charts/{self.UDBM.USER_ID}_c4.html', 'r', encoding='UTF-8').read().replace(
-                'https://assets.pyecharts.org/assets/echarts.min.js', 'echarts.js')
+                'https://assets.pyecharts.org/assets/v5/echarts.min.js', 'echarts.js')
             open(f'./DATA/charts/{self.UDBM.USER_ID}_c4.html', 'w+', encoding='UTF-8').write(_b)
         if self._permanent != []:
             _pie = self.make_pie(self._pre_process(self._permanent))
@@ -550,7 +579,7 @@ option_defult = {
                                    cfg_dict=[{"cid": "常驻祈愿", "width": "430px", "height": "410px", "top": "0px",
                                               "left": "0px"}])
             _b = open(f'./DATA/charts/{self.UDBM.USER_ID}_c3.html', 'r', encoding='UTF-8').read().replace(
-                'https://assets.pyecharts.org/assets/echarts.min.js', 'echarts.js')
+                'https://assets.pyecharts.org/assets/v5/echarts.min.js', 'echarts.js')
             open(f'./DATA/charts/{self.UDBM.USER_ID}_c3.html', 'w+', encoding='UTF-8').write(_b)
 
         open('./DATA/charts/echarts.js', 'w+', encoding='UTF-8').write(

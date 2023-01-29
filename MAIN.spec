@@ -8,7 +8,7 @@ a = Analysis(
     ['Main.py'],
     pathex=[],
     binaries=[],
-    datas=[('.\\templates', 'pyecharts\\render\\templates\\.')],
+    datas=[('.\\templates', 'pyecharts\\render\\templates\\.'), ('S:\\Project\\Project\\BUF\\venv\\Lib\\site-packages\\pyecharts', 'pyecharts')],
     hiddenimports=[],
     hookspath=[],
     hooksconfig={},
