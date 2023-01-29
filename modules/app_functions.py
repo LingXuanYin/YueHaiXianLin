@@ -138,7 +138,8 @@ class AppFunctions(MainWindow):
         _cookie = mysapi.Cookie.fatchCookie(_text)
         try:
             mysapi.Cookie.checkCookie(_cookie)
-        except:
+        except Exception as e:
+            #raise e
             QMessageBox.warning(self, 'Cookies Error', 'Cookies无效,请重新登录！')
             _reset_window(self)
             return

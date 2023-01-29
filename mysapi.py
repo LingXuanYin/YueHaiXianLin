@@ -39,7 +39,7 @@ class Cookie(LocalCookie.LocalCookie):
         except:
             pass
         try:
-            jCookie['_ga'] = _sC[_sC.index('_ga=') + 4: _sC.index('_ga=') + 4 + 27]
+            jCookie['_ga'] = _sC[_sC.index('_ga=') + 4: _sC.index('_ga=') + 4 + 26]
         except:
             pass
         try:
@@ -52,15 +52,15 @@ class Cookie(LocalCookie.LocalCookie):
         except:
             pass
         try:
-            jCookie['ltoken_v2'] = _sC[_sC.index('ltoken_v2=') + 7: _sC.index('ltoken_v2=') + 7 + 40]
+            jCookie['ltoken_v2'] = _sC[_sC.index('ltoken_v2=') + 10: _sC.index('ltoken_v2=') + 10 + 99]
         except:
             raise Exception('Cookie 不完整，缺失 ltoken')
         try:
-            jCookie['ltuid_v2'] = _sC[_sC.index('ltuid_v2=') + 6: _sC.index('ltuid_v2=') + 6 + 9]
+            jCookie['ltuid_v2'] = _sC[_sC.index('ltuid_v2=') + 9: _sC.index('ltuid_v2=') + 9 + 9]
         except:
             raise Exception('Cookie 不完整，缺失 ltuid')
         try:
-            jCookie['cookie_token_v2'] = _sC[_sC.index('cookie_token_v2=') + 13: _sC.index('cookie_token_v2=') + 13 + 40]
+            jCookie['cookie_token_v2'] = _sC[_sC.index('cookie_token_v2=') + 16: _sC.index('cookie_token_v2=') + 16 + 119]
         except:
             pass
             # raise Exception('Cookie 不完整，缺失 cookie_token')
@@ -69,12 +69,16 @@ class Cookie(LocalCookie.LocalCookie):
         except:
             pass
         try:
-            jCookie['account_mid_v2'] = jCookie['ltuid_v2']
+            jCookie['account_mid_v2'] = _sC[_sC.index('account_mid_v2=') + 15: _sC.index('account_mid_v2=') + 15 + 14]
+            #print(jCookie['account_mid_v2'])
+        except:
+            pass
+        try:
+            jCookie['ltmid_v2'] = jCookie['account_mid_v2']
         except:
             pass
 
-
-        # print(jCookie)
+        #print(jCookie)
         return jCookie
 
     @staticmethod
